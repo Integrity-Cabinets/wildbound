@@ -210,7 +210,7 @@ const Battle=(()=>{
 const SPR=DATA.spr,KITH=DATA.kith,CHART=DATA.chart;
 /*BATTLE_CORE*/
 /*BATTLE_GAME*/
-return{dbg:()=>B,music:()=>mus&&{i:mus.i,state:AC.state},start,newKith,healKith,calcStats,evoTarget,evolve,xpAt,NAT,MV,TC,ITEMS,moveSub,gsym,isOpen:()=>isOpen,frame:frameAnim,load:loadSprites,sfx:n=>{audio();S[n]&&S[n]()},setSound:v=>{sndOn=v;if(v)audio();else musicStop(.1)}};
+return{dbg:()=>B,music:()=>mus&&{name:mus.name,i:mus.i,state:AC.state},playMusic:musicPlay,stopMusic:musicStop,start,newKith,healKith,calcStats,evoTarget,evolve,xpAt,NAT,MV,TC,ITEMS,moveSub,gsym,isOpen:()=>isOpen,frame:frameAnim,load:loadSprites,sfx:n=>{audio();S[n]&&S[n]()},setSound:v=>{sndOn=v;if(v)audio();else musicStop(.1)}};
 })();
 (()=>{
 const $=id=>document.getElementById(id);

@@ -85,7 +85,7 @@ const removeEnt=e=>{const i=ents.indexOf(e);if(i>=0)ents.splice(i,1)};
 const TABLES={day:[['peeplet',35,2,4],['burrowbit',30,2,4],['silkling',20,2,3],['sparkit',15,3,4]],dusk:[['burrowbit',35,2,4],['silkling',30,2,4],['peeplet',25,2,4],['sparkit',10,3,4]]};
 const TINT={am:null,pm:'rgb(255,214,170)',night:'rgb(120,134,205)'};
 async function flashIn(){$('ctrl').classList.add('hide');const fl=$('flash');fl.classList.remove('go');void fl.offsetWidth;fl.classList.add('go');Battle.sfx('zap');await pause(880);setTimeout(()=>fl.classList.remove('go'),200)}
-async function runBattle(o){await flashIn();const r=await Battle.start(Object.assign({party:G.party,bag:G.bag,dex:G.dex,resonance:!!G.flags.resonance,tint:TINT[tod],arena:'glade'},o));$('ctrl').classList.remove('hide');await refreshFollower();return r}
+async function runBattle(o){await flashIn();const r=await Battle.start(Object.assign({party:G.party,bag:G.bag,dex:G.dex,resonance:!!G.flags.resonance,tint:TINT[tod],arena:'glade'},o));$('ctrl').classList.remove('hide');playArea({delay:.3,fadeIn:1});await refreshFollower();return r}
 async function wildBattle(){await cutscene(async()=>{const tab=TABLES[tod==='am'?'day':'dusk'];let r=Math.random()*100,pick=tab[0];for(const t of tab){if(r<t[1]){pick=t;break}r-=t[1]}
     const foe=Battle.newKith(pick[0],pick[2]+Math.floor(Math.random()*(pick[3]-pick[2]+1)));
     const res=await runBattle({kind:'wild',foes:[foe]});await afterBattle(res)})}
@@ -226,11 +226,13 @@ async function openMenu(){if(busy()||player.moving)return;Battle.sfx('sel');
   for(;;){const i=await UI.choose({title:pcName()+' · Archive Field Assistant',opts:[{label:'Kith',sub:G.party.length?`${G.party.length} with you`+(G.box.length?` · ${G.box.length} at the lab`:''):'None yet'},{label:'Bag',sub:'Tether Orbs and supplies'},{label:'Survey',sub:'Every Kith you have met'},{label:'Save',sub:'Your progress also saves after battles'},{label:G.snd?'Sound: on':'Sound: off'},{label:'Quit to title'}]});
     if(i<0)return;if(i===0)await partyMenu();else if(i===1)await bagMenu();else if(i===2)await surveyMenu();
     else if(i===3){const ok=save();await UI.choose({title:ok?'Saved':'Could not save',html:`<div class="note">${ok?'Your progress is saved on this device.':'This browser is blocking storage, so progress will be lost when you close the page.'}</div>`,opts:[{label:'OK'}],cancel:false})}
-    else if(i===4){G.snd=!G.snd;Battle.setSound(G.snd)}else if(i===5){save();showTitle();return}}}
+    else if(i===4){G.snd=!G.snd;Battle.setSound(G.snd);playArea()}else if(i===5){save();Battle.stopMusic(.6);showTitle();return}}}
 
 /* ================= world logic ================= */
 let area='',stepsSince=5;
-function setArea(){const a=player.ty<47?'ROUTE 1':'HEARTHMOSS VILLAGE';if(a!==area){area=a;const b=$('banner');b.textContent=a;b.classList.add('show');clearTimeout(b._t);b._t=setTimeout(()=>b.classList.remove('show'),2400)}}
+const areaSong=()=>player.ty<47?'route':'town';
+function playArea(o){if(G&&G.snd&&!titleOpen)Battle.playMusic(areaSong(),o)}
+function setArea(){const a=player.ty<47?'ROUTE 1':'HEARTHMOSS VILLAGE';playArea({fade:1.2,fadeIn:1.2});if(a!==area){area=a;const b=$('banner');b.textContent=a;b.classList.add('show');clearTimeout(b._t);b._t=setTimeout(()=>b.classList.remove('show'),2400)}}
 function seenBy(n){if(n.hidden||!n.trainer||G.flags['t_'+n.id])return false;const[dx,dy]=DV[n.dir];for(let i=1;i<=4;i++){const x=n.tx+dx*i,y=n.ty+dy*i;if(x===player.tx&&y===player.ty)return true;const t=getT(x,y);if(t!==0&&t!==3)return false}return false}
 function arrive(a){a.steps++;if(a!==player)return;setArea();stepsSince++;const f=G.flags;
   if(!f.starter&&player.ty<=49){cutscene(async()=>{await note(["The tall grass on Route 1 is no place to be without a Kith.","Professor Wren is expecting you at the lab, across the plaza."]);await walk(player,[0])});return}
@@ -271,7 +273,7 @@ async function begin(state){G=state;Battle.setSound(G.snd);$('title').style.disp
   for(const k in PROPS.orbs)PROPS.orbs[k].dead=false;PROPS.sensor.dead=true;block(23,18,23,18,G.flags.sensor?1:0);
   player=actor({tx:G.pos.x,ty:G.pos.y,dir:G.pos.dir,frames:CH[G.pc].walk,sc:.68,sh:.42});follower=actor({tx:G.pos.x,ty:G.pos.y+(G.pos.dir===0?-1:1),dir:1,sc:1});
   if(getT(follower.tx,follower.ty)!==0&&getT(follower.tx,follower.ty)!==3)warp(follower,player.tx,player.ty);
-  buildNpcs();await refreshFollower();area='';setArea();titleOpen=false;await UI.fade(false);
+  buildNpcs();await refreshFollower();area='';titleOpen=false;setArea();await UI.fade(false);
   if(!G.flags.begun){G.flags.begun=1;cutscene(async()=>{const j=npc('june');warp(j,18,61,1);
       await note(["Hearthmoss Village, at the southern edge of the Calder Reach.","The morning of your sixteenth birthday."]);
       await walk(j,[1]);await tell('june',["{happy} There you are, birthday kid. Sixteen. I'm not ready, but nobody asked me.","Professor Wren sent word at dawn. He wants you at the lab, the big timbered hall across the plaza.","{serious} Cole's been pacing out front since sunrise, so don't keep either of them waiting.","{happy} Come back whenever you need a rest. I'll be in the garden, pretending not to worry."]);

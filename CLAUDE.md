@@ -58,7 +58,7 @@ python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scr
 4. Money, shops and a healing station.
 5. More of the 279 moves in `MV`, and more working traits (currently: Overgrowth, Kindling, Undercurrent, Hard Claws, Sharp Eyes, Static Fur, Accelerate, Opening Gambit, Molting, Gatherer).
 6. Trust, Oathbonds and organization Standing (designed, not built).
-7. Music. Sound effects are synthesized in `S`.
+7. More music. `SONGS` in `src/battle_game.js` holds the synthesized themes (`town`, `route`, `battle`); `Battle.playMusic(name)` plays one. Add a theme per new area. Recorded tracks may replace these later.
 8. Engineering: split the big single-line functions into readable modules, move map layout and scene scripts into data files, add automated playthrough tests.
 
 ## Known shortcuts

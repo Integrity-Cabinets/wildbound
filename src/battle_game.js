@@ -203,7 +203,7 @@ async function act(pa){if(busy||over||!B)return;setBusy(true);const fa=aiPick(B.
   setBusy(false);menu()}
 
 function start(o){return new Promise(async resolve=>{audio();
-  musicStart(o.trainer?'trainer':'wild');
+  musicStop(.2);mus=null;musicPlay('battle'+(o.trainer?'T':''),o.trainer?{bpm:164,tr:2,fade:.2}:{fade:.2});
   B={kind:o.kind,party:o.party,foes:o.foes,trainer:o.trainer||null,bag:o.bag,dex:o.dex,skill:o.trainer?o.trainer.skill??1:.75,resOn:!!o.resonance,resMe:!!o.resonance,resFoe:!!(o.resonance&&o.trainer&&o.trainer.resonance),part:new Set(),resolve,me:null,foe:null};
   over=false;resArmed=false;isOpen=true;tint=o.tint||null;const app=$('app');app.classList.add('open');setBusy(true);
   $('bars').classList.remove('on');$('resCard').classList.remove('on');$('pFoe').classList.add('hide');$('pMe').classList.add('hide');$('moves').innerHTML='';$('msg').innerHTML='';
@@ -224,32 +224,65 @@ let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(isO
 
 const frameAnim=now=>{for(const m of mons)if(m&&m.sp2)m.sp=Math.floor(now/250)%2?m.sp2:m.sp1;frame(now)};
 
-/* ================= battle music (synthesized, no audio files) ================= */
+/* ================= music (synthesized, no audio files) ================= */
 const SEMI={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
 const hz=(n,tr=0)=>{const m=/^([A-G])(#?)(\d)$/.exec(n);return 440*Math.pow(2,(SEMI[m[1]]+(m[2]?1:0)+(+m[3]+1)*12-69+tr)/12)};
-const CH={Am:['A','C','E'],F:['F','A','C'],C:['C','E','G'],G:['G','B','D'],E:['E','G#','B']};
-/* 16 bars: [chord, lead]. Lead is sixteen 16th-note steps; "." holds or rests. */
-const SONG=[
- ['Am','A4 . C5 . E5 . A5 . G5 . E5 . C5 . E5 .'],['F','F5 . . E5 . . C5 . A4 . . C5 . . F5 .'],
- ['C','E5 . G5 . C6 . G5 . E5 . G5 . E5 . C5 .'],['G','D5 . . G5 . . B5 . D6 . . B5 . G5 . .'],
- ['Am','A5 . . . E5 . A5 . C6 . . . B5 . A5 .'],['F','F5 . A5 . C6 . A5 . F5 . . . G5 . A5 .'],
- ['E','G#5 . . . B5 . . . E6 . . . D6 . B5 .'],['E','E5 . G#5 . B5 . E6 . D6 . B5 . G#5 . B5 .'],
- ['F','C6 . . . A5 . F5 . A5 . . . C6 . . .'],['G','B5 . . . G5 . D5 . G5 . . . B5 . D6 .'],
- ['Am','C6 . B5 . A5 . E5 . A5 . . . E5 . A5 .'],['Am','C6 . . B5 . . A5 . E6 . . . . . . .'],
- ['F','F5 . A5 . C6 . F6 . E6 . C6 . A5 . C6 .'],['G','G5 . B5 . D6 . G6 . F6 . D6 . B5 . D6 .'],
- ['E','E6 . . . D6 . . . B5 . . . G#5 . . .'],['E','E5 . E5 E5 . E5 . E5 G#5 . B5 . E6 . . .']
-].map(([c,l])=>{const t=l.split(' '),lead=[];t.forEach((n,i)=>{if(n==='.')return;let d=1;while(i+d<16&&t[i+d]==='.')d++;lead[i]=[n,Math.min(d,4)]});return{c,lead}});
+const CHD={Am:['A','C','E'],F:['F','A','C'],C:['C','E','G'],G:['G','B','D'],E:['E','G#','B'],Em:['E','G','B'],Dm:['D','F','A'],D:['D','F#','A']};
+/* A song is a list of bars: [chord, lead]. Lead is sixteen 16th-note steps; "." holds or rests. */
+const bars=(cap,list)=>list.map(([c,l])=>{const t=l.split(' '),lead=[];t.forEach((n,i)=>{if(n==='.')return;let d=1;while(i+d<16&&t[i+d]==='.')d++;lead[i]=[n,Math.min(d,cap)]});return{c,lead}});
+const SONGS={
+ battle:{bpm:148,style:'battle',vol:.42,bars:bars(4,[
+  ['Am','A4 . C5 . E5 . A5 . G5 . E5 . C5 . E5 .'],['F','F5 . . E5 . . C5 . A4 . . C5 . . F5 .'],
+  ['C','E5 . G5 . C6 . G5 . E5 . G5 . E5 . C5 .'],['G','D5 . . G5 . . B5 . D6 . . B5 . G5 . .'],
+  ['Am','A5 . . . E5 . A5 . C6 . . . B5 . A5 .'],['F','F5 . A5 . C6 . A5 . F5 . . . G5 . A5 .'],
+  ['E','G#5 . . . B5 . . . E6 . . . D6 . B5 .'],['E','E5 . G#5 . B5 . E6 . D6 . B5 . G#5 . B5 .'],
+  ['F','C6 . . . A5 . F5 . A5 . . . C6 . . .'],['G','B5 . . . G5 . D5 . G5 . . . B5 . D6 .'],
+  ['Am','C6 . B5 . A5 . E5 . A5 . . . E5 . A5 .'],['Am','C6 . . B5 . . A5 . E6 . . . . . . .'],
+  ['F','F5 . A5 . C6 . F6 . E6 . C6 . A5 . C6 .'],['G','G5 . B5 . D6 . G6 . F6 . D6 . B5 . D6 .'],
+  ['E','E6 . . . D6 . . . B5 . . . G#5 . . .'],['E','E5 . E5 E5 . E5 . E5 G#5 . B5 . E6 . . .']])},
+ /* Hearthmoss: slow, warm, no drums */
+ town:{bpm:84,style:'calm',vol:.36,bars:bars(8,[
+  ['C','E5 . . . G5 . . . C6 . . . G5 . . .'],['G','D5 . . . G5 . . . B5 . . . A5 . G5 .'],
+  ['Am','A5 . . . . . E5 . C5 . . . E5 . . .'],['F','F5 . . . A5 . . . G5 . . . . . . .'],
+  ['C','E5 . . . G5 . . . C6 . . . E6 . . .'],['G','D6 . . . B5 . . . G5 . . . B5 . . .'],
+  ['F','A5 . . . C6 . . . A5 . . . F5 . . .'],['G','G5 . . . . . . . D5 . . . G5 . . .'],
+  ['Am','C6 . . . B5 . A5 . E5 . . . . . . .'],['Em','B5 . . . G5 . E5 . G5 . . . . . . .'],
+  ['F','A5 . . . G5 . F5 . C5 . . . F5 . . .'],['C','E5 . . . . . . . G5 . . . C5 . . .'],
+  ['Dm','D5 . . . F5 . . . A5 . . . D6 . . .'],['G','B5 . . . A5 . G5 . D5 . . . G5 . . .'],
+  ['C','E5 . . . G5 . . . C6 . . . . . . .'],['C','C6 . . . . . . . . . . . . . . .']])},
+ /* Route 1: a light walking tune with soft percussion */
+ route:{bpm:104,style:'calm',perc:1,vol:.36,bars:bars(6,[
+  ['G','B5 . D6 . G5 . B5 . D6 . . . B5 . G5 .'],['D','A5 . . . F#5 . A5 . D6 . . . A5 . . .'],
+  ['Em','G5 . B5 . E6 . . . D6 . B5 . G5 . . .'],['C','E5 . G5 . C6 . . . B5 . G5 . E5 . . .'],
+  ['G','B5 . D6 . G6 . . . D6 . B5 . D6 . . .'],['D','A5 . . . D6 . F#6 . E6 . D6 . A5 . . .'],
+  ['C','G5 . . . C6 . E6 . D6 . C6 . G5 . . .'],['D','A5 . . . . . F#5 . A5 . . . D6 . . .'],
+  ['Em','E6 . . . D6 . B5 . G5 . . . B5 . . .'],['C','C6 . . . B5 . G5 . E5 . . . G5 . . .'],
+  ['G','D6 . . . B5 . G5 . D5 . . . G5 . B5 .'],['D','A5 . . . . . . . F#5 . A5 . D6 . . .'],
+  ['Em','G5 . B5 . E6 . G6 . F#6 . E6 . B5 . . .'],['C','E6 . . . C6 . G5 . E5 . G5 . C6 . . .'],
+  ['D','D6 . . . A5 . . . F#5 . . . A5 . . .'],['D','D5 . F#5 . A5 . D6 . . . . . . . . .']])}};
+SONGS.battleT=SONGS.battle;
 let mus=null;
-function mVoice(t,f,dur,vol,type){const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.006);g.gain.setValueAtTime(vol*.8,t+dur*.55);g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g).connect(mus.g);o.start(t);o.stop(t+dur+.03)}
-function mDrum(t,k){if(k==='k'){const o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(.55,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g).connect(mus.g);o.start(t);o.stop(t+.18);return}
-  const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),d=k==='s'?.13:.035;s.buffer=noiseB;f.type=k==='s'?'bandpass':'highpass';f.frequency.value=k==='s'?1900:7500;g.gain.setValueAtTime(k==='s'?.28:.08,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f).connect(g).connect(mus.g);s.start(t,R()*.5);s.stop(t+d+.02)}
-function mStep(i,t){const bar=Math.floor(i/16)%SONG.length,s=i%16,B=SONG[bar],ch=CH[B.c],tr=mus.tr,st=mus.step,fill=(bar%8===7)&&s>=12;
-  const L=B.lead[s];if(L)mVoice(t,hz(L[0],tr),st*L[1]*.95,.085,'square');
-  if(s%2===0)mVoice(t,hz(ch[0]+(s%4===0?'2':'3'),tr),st*1.7,.2,'triangle');
-  mVoice(t,hz(ch[[0,1,2,1][s%4]]+'4',tr),st*.9,.028,'square');
-  if(s===0||s===8||s===10&&bar%2)mDrum(t,'k');if(s===4||s===12||fill)mDrum(t,'s');if(s%2===0)mDrum(t,'h')}
+function mVoice(t,f,dur,vol,type,soft){const o=AC.createOscillator(),g=AC.createGain(),a=soft?.03:.006;o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+a);g.gain.setValueAtTime(vol*(soft?.7:.8),t+Math.max(a,dur*.5));g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g).connect(mus.g);o.start(t);o.stop(t+dur+.03)}
+function mDrum(t,k,v=1){if(k==='k'){const o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(.55*v,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g).connect(mus.g);o.start(t);o.stop(t+.18);return}
+  const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),d=k==='s'?.13:.035;s.buffer=noiseB;f.type=k==='s'?'bandpass':'highpass';f.frequency.value=k==='s'?1900:7500;g.gain.setValueAtTime((k==='s'?.28:.08)*v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f).connect(g).connect(mus.g);s.start(t,R()*.5);s.stop(t+d+.02)}
+function mStep(i,t){const S0=mus.song,bar=Math.floor(i/16)%S0.bars.length,s=i%16,Bq=S0.bars[bar],ch=CHD[Bq.c],tr=mus.tr,st=mus.step,L=Bq.lead[s];
+  if(S0.style==='battle'){const fill=(bar%8===7)&&s>=12;
+    if(L)mVoice(t,hz(L[0],tr),st*L[1]*.95,.085,'square');
+    if(s%2===0)mVoice(t,hz(ch[0]+(s%4===0?'2':'3'),tr),st*1.7,.2,'triangle');
+    mVoice(t,hz(ch[[0,1,2,1][s%4]]+'4',tr),st*.9,.028,'square');
+    if(s===0||s===8||s===10&&bar%2)mDrum(t,'k');if(s===4||s===12||fill)mDrum(t,'s');if(s%2===0)mDrum(t,'h');return}
+  if(L){const f=hz(L[0],tr-12);mVoice(t,f,st*L[1]*1.05,.15,'triangle',1);mVoice(t,f*2,st*L[1]*.9,.035,'sine',1)}
+  if(s===0||s===8)mVoice(t,hz(ch[0]+(s?'3':'2'),tr),st*7.5,.2,'triangle',1);
+  if(s%2===0)mVoice(t,hz(ch[[0,1,2,1][(s/2)%4]]+'4',tr),st*2.4,.05,'sine',1);
+  if(s===4||s===12)mVoice(t,hz(ch[2]+'3',tr),st*3.5,.045,'sine',1);
+  if(S0.perc){if(s===0||s===8)mDrum(t,'k',.35);if(s%4===2)mDrum(t,'h',.55)}}
 function mSched(){if(!mus||!AC)return;if(mus.next<AC.currentTime-.3)mus.next=AC.currentTime+.05;while(mus.next<AC.currentTime+.25){mStep(mus.i++,mus.next);mus.next+=mus.step}}
-function musicStop(fade=.5){if(!mus)return;const m=mus;mus=null;clearInterval(m.iv);try{m.g.gain.cancelScheduledValues(AC.currentTime);m.g.gain.setValueAtTime(m.g.gain.value,AC.currentTime);m.g.gain.linearRampToValueAtTime(0,AC.currentTime+fade);setTimeout(()=>m.g.disconnect(),fade*1000+400)}catch(e){}}
-function musicStart(kind){musicStop(0);audio();if(!AC||!sndOn)return;try{if(AC.state==='suspended')AC.resume();const g=AC.createGain();g.gain.setValueAtTime(0,AC.currentTime);g.gain.linearRampToValueAtTime(.42,AC.currentTime+.5);g.connect(AC.destination);
-    const bpm=kind==='trainer'?164:148;mus={g,step:60/bpm/4,tr:kind==='trainer'?2:0,next:AC.currentTime+.1,i:0,iv:setInterval(mSched,60)};mSched()}catch(e){mus=null}}
+function musicStop(fade=.5){if(!mus)return;const m=mus;mus=null;clearInterval(m.iv);try{m.g.gain.cancelScheduledValues(AC.currentTime);m.g.gain.setValueAtTime(m.g.gain.value,AC.currentTime);m.g.gain.linearRampToValueAtTime(0,AC.currentTime+fade);setTimeout(()=>{for(const n of m.nodes)try{n.disconnect()}catch(e){}},fade*1000+2500)}catch(e){}}
+function musicPlay(name,o={}){if(mus&&mus.name===name)return;musicStop(o.fade??.7);audio();if(!AC||!sndOn||!SONGS[name])return;
+  try{if(AC.state==='suspended')AC.resume();const S0=SONGS[name],t0=AC.currentTime+(o.delay||0),g=AC.createGain(),nodes=[g];g.gain.setValueAtTime(0,t0);g.gain.linearRampToValueAtTime(S0.vol,t0+(o.fadeIn??.6));g.connect(AC.destination);
+    const bpm=o.bpm||S0.bpm,step=60/bpm/4;
+    if(S0.style==='calm'){const d=AC.createDelay(1.5),fb=AC.createGain(),lp=AC.createBiquadFilter(),out=AC.createGain();d.delayTime.value=step*3;fb.gain.value=.3;lp.type='lowpass';lp.frequency.value=2200;out.gain.value=.4;
+      g.connect(d);d.connect(lp);lp.connect(fb);fb.connect(d);lp.connect(out);out.connect(AC.destination);nodes.push(d,fb,lp,out)}
+    mus={name,song:S0,g,nodes,step,tr:o.tr||0,next:t0+.1,i:0,iv:setInterval(mSched,60)};mSched()}catch(e){mus=null}}
 addEventListener('pointerdown',()=>{if(AC&&AC.state==='suspended')AC.resume()});
+addEventListener('keydown',()=>{if(AC&&AC.state==='suspended')AC.resume()});
