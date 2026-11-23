@@ -1,0 +1,5015 @@
+{
+  "schema_version": 1,
+  "scope": "Hearthmoss and Route 1",
+  "status": "approved",
+  "native_atlases_or_sheets": 15,
+  "indexed_world_elements_or_states": 99,
+  "ground_view": "top_down",
+  "standing_object_view": "front_on_billboard",
+  "canonical_pivot_convention": "Frame-local pixel-edge coordinates; bottom center is [frame_width/2, frame_height]. Last occupied pixel row is frame_height-1, a distinct index.",
+  "collision_and_walkability": "Proposals only; no engine collision or gameplay tested.",
+  "assets": [
+    {
+      "id": "tiles_hearthmoss_ground",
+      "category": "tiles",
+      "kind": "ground_atlas",
+      "path": "assets/tiles/tiles_hearthmoss_ground.png",
+      "sha256": "3e67848725c09adbd5449553035baa6942522a6f0e36a624e692605c2be5f71b",
+      "bytes": 6212,
+      "master_path": "assets/tiles/tiles_hearthmoss_ground@8x.png",
+      "master_sha256": "82b04a9c456757fdcd139775b536a0468f0ddb093470bfe35cd9f359c911a154",
+      "frame": [
+        16,
+        16
+      ],
+      "sheet": [
+        256,
+        256
+      ],
+      "grid": [
+        16,
+        16
+      ],
+      "frame_count": 50,
+      "logical_slot_count": 50,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "terrain",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/terrain/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "occupied_cells": 50,
+      "unused_cells": 206,
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "tiles_tallgrass",
+      "category": "tiles",
+      "kind": "foliage_animation",
+      "path": "assets/tiles/tiles_tallgrass.png",
+      "sha256": "831b902b556746ed53122c4d4c39db2651536dd55c820739d21756104dbd9482",
+      "bytes": 1396,
+      "master_path": "assets/tiles/tiles_tallgrass@8x.png",
+      "master_sha256": "98495bf2452ecc106821e60429568b11ec4d971ad0abc9975ee994d30ca35da2",
+      "frame": [
+        20,
+        18
+      ],
+      "sheet": [
+        60,
+        36
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "frame_count": 6,
+      "logical_slot_count": 6,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "terrain",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/terrain/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "props_hearthmoss_trees",
+      "category": "props",
+      "kind": "foliage_atlas",
+      "path": "assets/props/props_hearthmoss_trees.png",
+      "sha256": "5c6a5278c760b82dc8c6c4dc6d642403ce0b5b48fbd77447182df8b02514b4a2",
+      "bytes": 7576,
+      "master_path": "assets/props/props_hearthmoss_trees@8x.png",
+      "master_sha256": "8ed4fc1aa66ac35e37db80840411070c9a14242f66c1c4e4b0c73ef45f510ab4",
+      "frame": [
+        64,
+        80
+      ],
+      "sheet": [
+        320,
+        80
+      ],
+      "grid": [
+        5,
+        1
+      ],
+      "frame_count": 5,
+      "logical_slot_count": 5,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "terrain",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/terrain/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "props_hearthmoss_plants",
+      "category": "props",
+      "kind": "foliage_atlas",
+      "path": "assets/props/props_hearthmoss_plants.png",
+      "sha256": "8cd57771b9e408cbe018031d0fa8a8c5d4bc35dc2887f9b6ab67e997946bcc69",
+      "bytes": 2870,
+      "master_path": "assets/props/props_hearthmoss_plants@8x.png",
+      "master_sha256": "576179c5b5eeed936edc196feb95c6a6da22218bce17fa0e0ee48098e8997244",
+      "frame": [
+        32,
+        24
+      ],
+      "sheet": [
+        192,
+        24
+      ],
+      "grid": [
+        6,
+        1
+      ],
+      "frame_count": 6,
+      "logical_slot_count": 6,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "terrain",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/terrain/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "bld_hearthmoss_house_a",
+      "category": "props",
+      "kind": "building",
+      "path": "assets/props/bld_hearthmoss_house_a.png",
+      "sha256": "71d52e1cc0e98c457eac1426d13fe543d73d2bc99cb180028836fb1956d0965d",
+      "bytes": 2888,
+      "master_path": "assets/props/bld_hearthmoss_house_a@8x.png",
+      "master_sha256": "b45540e018b7ee03bd98dbfd8735eb5e82788fcd5f9c4c09c4132cb234459a95",
+      "frame": [
+        96,
+        112
+      ],
+      "sheet": [
+        96,
+        112
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "bld_hearthmoss_house_b",
+      "category": "props",
+      "kind": "building",
+      "path": "assets/props/bld_hearthmoss_house_b.png",
+      "sha256": "7985d36a3163a99ce668162b405f68744c744a1f8e17b630a6f569eaaba865e2",
+      "bytes": 2774,
+      "master_path": "assets/props/bld_hearthmoss_house_b@8x.png",
+      "master_sha256": "ed3b511261da44d96bdc26d3503a1465487dbc4c99de71abc6214c6014bbc138",
+      "frame": [
+        128,
+        128
+      ],
+      "sheet": [
+        128,
+        128
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "bld_player_house",
+      "category": "props",
+      "kind": "building",
+      "path": "assets/props/bld_player_house.png",
+      "sha256": "a1878d6912b8058cdfc2cade5a8955bb25b4c90751d27d93ca47589bc0f69f31",
+      "bytes": 5425,
+      "master_path": "assets/props/bld_player_house@8x.png",
+      "master_sha256": "9233e69ca41d56831faff2a05900469003393c9bd0e78ccb2285ee5c01d71bc9",
+      "frame": [
+        160,
+        144
+      ],
+      "sheet": [
+        160,
+        144
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "bld_wren_lab",
+      "category": "props",
+      "kind": "building",
+      "path": "assets/props/bld_wren_lab.png",
+      "sha256": "87cd8a936e4900e6614b970c2736837026540cfd7c9ffa0d50698bf7ddb83518",
+      "bytes": 6916,
+      "master_path": "assets/props/bld_wren_lab@8x.png",
+      "master_sha256": "19438a56030b7f39aac933b1231f30003e9e678e7279cab84a133fe1d67d950c",
+      "frame": [
+        160,
+        144
+      ],
+      "sheet": [
+        160,
+        144
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "prop_door_hearthmoss_house_a",
+      "category": "props",
+      "kind": "door_states",
+      "path": "assets/props/prop_door_hearthmoss_house_a.png",
+      "sha256": "ab6888e3221c7ca7a1a5879c2bd250add31f9a56c20545fb519e789fa39b4044",
+      "bytes": 674,
+      "master_path": "assets/props/prop_door_hearthmoss_house_a@8x.png",
+      "master_sha256": "72d0938a765df3747fc90da0f966d3610ee488dcd3cb599bfd04810047e7d204",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "logical_slot_count": 2,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "prop_door_hearthmoss_house_b",
+      "category": "props",
+      "kind": "door_states",
+      "path": "assets/props/prop_door_hearthmoss_house_b.png",
+      "sha256": "33ec50b7bdc80f7d0c4b6102c515759414751d180549ce5bb13296e9be6c9a5c",
+      "bytes": 592,
+      "master_path": "assets/props/prop_door_hearthmoss_house_b@8x.png",
+      "master_sha256": "31cff5ac4a96e3bcdd1feaf213aaa77a7fe9720679df14761aa0e18cc2a34e5d",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "logical_slot_count": 2,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "prop_door_player_house",
+      "category": "props",
+      "kind": "door_states",
+      "path": "assets/props/prop_door_player_house.png",
+      "sha256": "4ab56f4aa4c8e40be2552446e29a587702b4f6a9294ec26c73e293757a99e2d2",
+      "bytes": 406,
+      "master_path": "assets/props/prop_door_player_house@8x.png",
+      "master_sha256": "805fdd97cad76471ad5b3b4794b991087ffd1e8ac9e0af6c55663537a523fe00",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "logical_slot_count": 2,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "prop_door_wren_lab",
+      "category": "props",
+      "kind": "door_states",
+      "path": "assets/props/prop_door_wren_lab.png",
+      "sha256": "d1d5b5768caa4eb63f97f6c9faeed66aa6b6587906784409352b4f153fe07dc8",
+      "bytes": 903,
+      "master_path": "assets/props/prop_door_wren_lab@8x.png",
+      "master_sha256": "e2557ebd0763f7caf852e61ef350b06ebffb73cb272cb04eb76ff32a25c10982",
+      "frame": [
+        32,
+        56
+      ],
+      "sheet": [
+        64,
+        56
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "logical_slot_count": 2,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "props_hearthmoss_fences",
+      "category": "props",
+      "kind": "prop_atlas",
+      "path": "assets/props/props_hearthmoss_fences.png",
+      "sha256": "7a58bab5e6fdb1aa5cdbf2ad704f55078ec08f085e986e647d66ffb705df5eb4",
+      "bytes": 1599,
+      "master_path": "assets/props/props_hearthmoss_fences@8x.png",
+      "master_sha256": "38dd2d9219da3f3e57bc44f31983cc088b15545298824b0fcc6b4dbb680b5e0a",
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        256,
+        32
+      ],
+      "grid": [
+        8,
+        1
+      ],
+      "frame_count": 8,
+      "logical_slot_count": 8,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "props_hearthmoss_large",
+      "category": "props",
+      "kind": "prop_atlas",
+      "path": "assets/props/props_hearthmoss_large.png",
+      "sha256": "193a3755b0b09098ef66056408df9a08696dcffdeec7b5010a8fa23b625aaa36",
+      "bytes": 4363,
+      "master_path": "assets/props/props_hearthmoss_large@8x.png",
+      "master_sha256": "e75c454baba852d99f1c8562d9e57b68bf3a214ee34489e66e7951246499ca53",
+      "frame": [
+        64,
+        64
+      ],
+      "sheet": [
+        256,
+        64
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "frame_count": 4,
+      "logical_slot_count": 4,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "props_hearthmoss_small",
+      "category": "props",
+      "kind": "prop_atlas",
+      "path": "assets/props/props_hearthmoss_small.png",
+      "sha256": "adae71e21a5f77854b662a0bca2d5a3af2f504a784e29d02fd2504ae232c169c",
+      "bytes": 4311,
+      "master_path": "assets/props/props_hearthmoss_small@8x.png",
+      "master_sha256": "ee1ba20c134a611fe7ce833bdd64ad603d86b3086fe4a2112b058bab0cf1d41d",
+      "frame": [
+        64,
+        64
+      ],
+      "sheet": [
+        256,
+        128
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "frame_count": 8,
+      "logical_slot_count": 8,
+      "slot_semantics": "indexed world cells or states",
+      "approval_status": "approved",
+      "approval_basis": "Explicit user approval of current batch 2, preserving the original NPC eye selection.",
+      "production_group": "architecture",
+      "phase": 2,
+      "batch": 2,
+      "producer_manifest": "metadata/phase_two/batch_02/architecture/production/asset_manifest.json",
+      "world_asset_index": "world_asset_index.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    }
+  ],
+  "ground": {
+    "schema_version": 1,
+    "asset": "assets/tiles/tiles_hearthmoss_ground.png",
+    "tile_size": [
+      16,
+      16
+    ],
+    "atlas_size": [
+      256,
+      256
+    ],
+    "grid": [
+      16,
+      16
+    ],
+    "occupied_cell_count": 50,
+    "unused_cell_count": 206,
+    "unused_cells": "fully transparent; not authored tiles",
+    "tiles": [
+      {
+        "id": "grass_1",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          0,
+          0
+        ],
+        "source_crop_xyxy": [
+          2,
+          2,
+          254,
+          254
+        ],
+        "column": 0,
+        "row": 0,
+        "index": 0,
+        "rect": [
+          0,
+          0,
+          16,
+          16
+        ],
+        "material": "G",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "grass_2",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          1,
+          0
+        ],
+        "source_crop_xyxy": [
+          258,
+          2,
+          510,
+          254
+        ],
+        "column": 1,
+        "row": 0,
+        "index": 1,
+        "rect": [
+          16,
+          0,
+          16,
+          16
+        ],
+        "material": "G",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "grass_3",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          2,
+          0
+        ],
+        "source_crop_xyxy": [
+          514,
+          2,
+          766,
+          254
+        ],
+        "column": 2,
+        "row": 0,
+        "index": 2,
+        "rect": [
+          32,
+          0,
+          16,
+          16
+        ],
+        "material": "G",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "grass_4",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          3,
+          0
+        ],
+        "source_crop_xyxy": [
+          770,
+          2,
+          1022,
+          254
+        ],
+        "column": 3,
+        "row": 0,
+        "index": 3,
+        "rect": [
+          48,
+          0,
+          16,
+          16
+        ],
+        "material": "G",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "flower_grass",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          4,
+          0
+        ],
+        "source_crop_xyxy": [
+          1026,
+          2,
+          1278,
+          254
+        ],
+        "column": 4,
+        "row": 0,
+        "index": 4,
+        "rect": [
+          64,
+          0,
+          16,
+          16
+        ],
+        "material": "G",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_center",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          5,
+          0
+        ],
+        "source_crop_xyxy": [
+          1282,
+          2,
+          1534,
+          254
+        ],
+        "column": 5,
+        "row": 0,
+        "index": 5,
+        "rect": [
+          80,
+          0,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "D",
+          "east": "D",
+          "south": "D",
+          "west": "D"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_center_1",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          0
+        ],
+        "source_crop_xyxy": [
+          2,
+          2,
+          312,
+          312
+        ],
+        "column": 6,
+        "row": 0,
+        "index": 6,
+        "rect": [
+          96,
+          0,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "C",
+          "east": "C",
+          "south": "C",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 21,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_center_2",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          0
+        ],
+        "source_crop_xyxy": [
+          316,
+          2,
+          625,
+          312
+        ],
+        "column": 7,
+        "row": 0,
+        "index": 7,
+        "rect": [
+          112,
+          0,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "C",
+          "east": "C",
+          "south": "C",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 32,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_center_3",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          0
+        ],
+        "source_crop_xyxy": [
+          629,
+          2,
+          938,
+          312
+        ],
+        "column": 8,
+        "row": 0,
+        "index": 8,
+        "rect": [
+          128,
+          0,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "C",
+          "east": "C",
+          "south": "C",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 37,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_center_4",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          0
+        ],
+        "source_crop_xyxy": [
+          942,
+          2,
+          1252,
+          312
+        ],
+        "column": 9,
+        "row": 0,
+        "index": 9,
+        "rect": [
+          144,
+          0,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "C",
+          "east": "C",
+          "south": "C",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 45,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "pond_water_1",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          0
+        ],
+        "source_crop_xyxy": [
+          2,
+          2,
+          312,
+          312
+        ],
+        "column": 10,
+        "row": 0,
+        "index": 10,
+        "rect": [
+          160,
+          0,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "W",
+          "east": "W",
+          "south": "W",
+          "west": "W"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "deep_water",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          0
+        ],
+        "source_crop_xyxy": [
+          316,
+          2,
+          625,
+          312
+        ],
+        "column": 11,
+        "row": 0,
+        "index": 11,
+        "rect": [
+          176,
+          0,
+          16,
+          16
+        ],
+        "material": "X",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "X",
+          "east": "X",
+          "south": "X",
+          "west": "X"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "sand_center",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          0
+        ],
+        "source_crop_xyxy": [
+          629,
+          2,
+          938,
+          312
+        ],
+        "column": 12,
+        "row": 0,
+        "index": 12,
+        "rect": [
+          192,
+          0,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "D",
+          "east": "D",
+          "south": "D",
+          "west": "D"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "pond_water_2",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          0
+        ],
+        "source_crop_xyxy": [
+          942,
+          2,
+          1252,
+          312
+        ],
+        "column": 13,
+        "row": 0,
+        "index": 13,
+        "rect": [
+          208,
+          0,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "full",
+        "edge_profiles": {
+          "north": "W",
+          "east": "W",
+          "south": "W",
+          "west": "W"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_edge_n",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          0,
+          1
+        ],
+        "source_crop_xyxy": [
+          2,
+          258,
+          254,
+          510
+        ],
+        "column": 0,
+        "row": 1,
+        "index": 16,
+        "rect": [
+          0,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "edge_n",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GD",
+          "south": "D",
+          "west": "GD"
+        },
+        "registered_border_pixels_changed": 2,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_edge_s",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_crop_xyxy": [
+          258,
+          258,
+          510,
+          510
+        ],
+        "column": 1,
+        "row": 1,
+        "index": 17,
+        "rect": [
+          16,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "edge_s",
+        "edge_profiles": {
+          "north": "D",
+          "east": "DG",
+          "south": "G",
+          "west": "DG"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_edge_w",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          2,
+          1
+        ],
+        "source_crop_xyxy": [
+          514,
+          258,
+          766,
+          510
+        ],
+        "column": 2,
+        "row": 1,
+        "index": 18,
+        "rect": [
+          32,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "edge_w",
+        "edge_profiles": {
+          "north": "GD",
+          "east": "D",
+          "south": "GD",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 2,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_edge_e",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          3,
+          1
+        ],
+        "source_crop_xyxy": [
+          770,
+          258,
+          1022,
+          510
+        ],
+        "column": 3,
+        "row": 1,
+        "index": 19,
+        "rect": [
+          48,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "edge_e",
+        "edge_profiles": {
+          "north": "DG",
+          "east": "G",
+          "south": "DG",
+          "west": "D"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_outer_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          4,
+          1
+        ],
+        "source_crop_xyxy": [
+          1026,
+          258,
+          1278,
+          510
+        ],
+        "column": 4,
+        "row": 1,
+        "index": 20,
+        "rect": [
+          64,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "outer_nw",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GD",
+          "south": "GD",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 10,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_outer_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          5,
+          1
+        ],
+        "source_crop_xyxy": [
+          1282,
+          258,
+          1534,
+          510
+        ],
+        "column": 5,
+        "row": 1,
+        "index": 21,
+        "rect": [
+          80,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "outer_ne",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "DG",
+          "west": "GD"
+        },
+        "registered_border_pixels_changed": 9,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_outer_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          0,
+          2
+        ],
+        "source_crop_xyxy": [
+          2,
+          514,
+          254,
+          766
+        ],
+        "column": 6,
+        "row": 1,
+        "index": 22,
+        "rect": [
+          96,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "outer_sw",
+        "edge_profiles": {
+          "north": "GD",
+          "east": "DG",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 9,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_outer_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          1,
+          2
+        ],
+        "source_crop_xyxy": [
+          258,
+          514,
+          510,
+          766
+        ],
+        "column": 7,
+        "row": 1,
+        "index": 23,
+        "rect": [
+          112,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "outer_se",
+        "edge_profiles": {
+          "north": "DG",
+          "east": "G",
+          "south": "G",
+          "west": "DG"
+        },
+        "registered_border_pixels_changed": 9,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_inner_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          2,
+          2
+        ],
+        "source_crop_xyxy": [
+          514,
+          514,
+          766,
+          766
+        ],
+        "column": 8,
+        "row": 1,
+        "index": 24,
+        "rect": [
+          128,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "inner_nw",
+        "edge_profiles": {
+          "north": "GD",
+          "east": "D",
+          "south": "D",
+          "west": "GD"
+        },
+        "registered_border_pixels_changed": 6,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_inner_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          3,
+          2
+        ],
+        "source_crop_xyxy": [
+          770,
+          514,
+          1022,
+          766
+        ],
+        "column": 9,
+        "row": 1,
+        "index": 25,
+        "rect": [
+          144,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "inner_ne",
+        "edge_profiles": {
+          "north": "DG",
+          "east": "GD",
+          "south": "D",
+          "west": "D"
+        },
+        "registered_border_pixels_changed": 6,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_inner_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          4,
+          2
+        ],
+        "source_crop_xyxy": [
+          1026,
+          514,
+          1278,
+          766
+        ],
+        "column": 10,
+        "row": 1,
+        "index": 26,
+        "rect": [
+          160,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "inner_sw",
+        "edge_profiles": {
+          "north": "D",
+          "east": "D",
+          "south": "GD",
+          "west": "DG"
+        },
+        "registered_border_pixels_changed": 6,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "dirt_inner_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_grass_dirt_v1.png",
+        "source_grid": [
+          6,
+          4
+        ],
+        "source_cell": [
+          5,
+          2
+        ],
+        "source_crop_xyxy": [
+          1282,
+          514,
+          1534,
+          766
+        ],
+        "column": 11,
+        "row": 1,
+        "index": 27,
+        "rect": [
+          176,
+          16,
+          16,
+          16
+        ],
+        "material": "D",
+        "shape": "inner_se",
+        "edge_profiles": {
+          "north": "D",
+          "east": "DG",
+          "south": "DG",
+          "west": "D"
+        },
+        "registered_border_pixels_changed": 6,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_edge_n",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          1
+        ],
+        "source_crop_xyxy": [
+          2,
+          316,
+          312,
+          625
+        ],
+        "column": 0,
+        "row": 2,
+        "index": 32,
+        "rect": [
+          0,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "edge_n",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GC",
+          "south": "C",
+          "west": "GC"
+        },
+        "registered_border_pixels_changed": 16,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_edge_s",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_crop_xyxy": [
+          316,
+          316,
+          625,
+          625
+        ],
+        "column": 1,
+        "row": 2,
+        "index": 33,
+        "rect": [
+          16,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "edge_s",
+        "edge_profiles": {
+          "north": "C",
+          "east": "CG",
+          "south": "G",
+          "west": "CG"
+        },
+        "registered_border_pixels_changed": 19,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_edge_w",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          1
+        ],
+        "source_crop_xyxy": [
+          629,
+          316,
+          938,
+          625
+        ],
+        "column": 2,
+        "row": 2,
+        "index": 34,
+        "rect": [
+          32,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "edge_w",
+        "edge_profiles": {
+          "north": "GC",
+          "east": "C",
+          "south": "GC",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 17,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_edge_e",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          1
+        ],
+        "source_crop_xyxy": [
+          942,
+          316,
+          1252,
+          625
+        ],
+        "column": 3,
+        "row": 2,
+        "index": 35,
+        "rect": [
+          48,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "edge_e",
+        "edge_profiles": {
+          "north": "CG",
+          "east": "G",
+          "south": "CG",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 16,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_outer_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          2
+        ],
+        "source_crop_xyxy": [
+          2,
+          629,
+          312,
+          938
+        ],
+        "column": 4,
+        "row": 2,
+        "index": 36,
+        "rect": [
+          64,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "outer_nw",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GC",
+          "south": "GC",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 20,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_outer_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          2
+        ],
+        "source_crop_xyxy": [
+          316,
+          629,
+          625,
+          938
+        ],
+        "column": 5,
+        "row": 2,
+        "index": 37,
+        "rect": [
+          80,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "outer_ne",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "CG",
+          "west": "GC"
+        },
+        "registered_border_pixels_changed": 19,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_outer_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          2
+        ],
+        "source_crop_xyxy": [
+          629,
+          629,
+          938,
+          938
+        ],
+        "column": 6,
+        "row": 2,
+        "index": 38,
+        "rect": [
+          96,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "outer_sw",
+        "edge_profiles": {
+          "north": "GC",
+          "east": "CG",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 16,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_outer_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          2
+        ],
+        "source_crop_xyxy": [
+          942,
+          629,
+          1252,
+          938
+        ],
+        "column": 7,
+        "row": 2,
+        "index": 39,
+        "rect": [
+          112,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "outer_se",
+        "edge_profiles": {
+          "north": "CG",
+          "east": "G",
+          "south": "G",
+          "west": "CG"
+        },
+        "registered_border_pixels_changed": 16,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_inner_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          3
+        ],
+        "source_crop_xyxy": [
+          2,
+          942,
+          312,
+          1252
+        ],
+        "column": 8,
+        "row": 2,
+        "index": 40,
+        "rect": [
+          128,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "inner_nw",
+        "edge_profiles": {
+          "north": "GC",
+          "east": "C",
+          "south": "C",
+          "west": "GC"
+        },
+        "registered_border_pixels_changed": 30,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_inner_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          3
+        ],
+        "source_crop_xyxy": [
+          316,
+          942,
+          625,
+          1252
+        ],
+        "column": 9,
+        "row": 2,
+        "index": 41,
+        "rect": [
+          144,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "inner_ne",
+        "edge_profiles": {
+          "north": "CG",
+          "east": "GC",
+          "south": "C",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 38,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_inner_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          3
+        ],
+        "source_crop_xyxy": [
+          629,
+          942,
+          938,
+          1252
+        ],
+        "column": 10,
+        "row": 2,
+        "index": 42,
+        "rect": [
+          160,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "inner_sw",
+        "edge_profiles": {
+          "north": "C",
+          "east": "C",
+          "south": "GC",
+          "west": "CG"
+        },
+        "registered_border_pixels_changed": 36,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "cobble_inner_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_cobble_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          3
+        ],
+        "source_crop_xyxy": [
+          942,
+          942,
+          1252,
+          1252
+        ],
+        "column": 11,
+        "row": 2,
+        "index": 43,
+        "rect": [
+          176,
+          32,
+          16,
+          16
+        ],
+        "material": "C",
+        "shape": "inner_se",
+        "edge_profiles": {
+          "north": "C",
+          "east": "CG",
+          "south": "CG",
+          "west": "C"
+        },
+        "registered_border_pixels_changed": 42,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": true,
+          "note": "Ordinary ground suggested walkable."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_edge_n",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          1
+        ],
+        "source_crop_xyxy": [
+          2,
+          316,
+          312,
+          625
+        ],
+        "column": 0,
+        "row": 3,
+        "index": 48,
+        "rect": [
+          0,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "edge_n",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GW",
+          "south": "W",
+          "west": "GW"
+        },
+        "registered_border_pixels_changed": 1,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_edge_s",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          1
+        ],
+        "source_crop_xyxy": [
+          316,
+          316,
+          625,
+          625
+        ],
+        "column": 1,
+        "row": 3,
+        "index": 49,
+        "rect": [
+          16,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "edge_s",
+        "edge_profiles": {
+          "north": "W",
+          "east": "WG",
+          "south": "G",
+          "west": "WG"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_edge_w",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          1
+        ],
+        "source_crop_xyxy": [
+          629,
+          316,
+          938,
+          625
+        ],
+        "column": 2,
+        "row": 3,
+        "index": 50,
+        "rect": [
+          32,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "edge_w",
+        "edge_profiles": {
+          "north": "GW",
+          "east": "W",
+          "south": "GW",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 0,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_edge_e",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          1
+        ],
+        "source_crop_xyxy": [
+          942,
+          316,
+          1252,
+          625
+        ],
+        "column": 3,
+        "row": 3,
+        "index": 51,
+        "rect": [
+          48,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "edge_e",
+        "edge_profiles": {
+          "north": "WG",
+          "east": "G",
+          "south": "WG",
+          "west": "W"
+        },
+        "registered_border_pixels_changed": 2,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_outer_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          2
+        ],
+        "source_crop_xyxy": [
+          2,
+          629,
+          312,
+          938
+        ],
+        "column": 4,
+        "row": 3,
+        "index": 52,
+        "rect": [
+          64,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "outer_nw",
+        "edge_profiles": {
+          "north": "G",
+          "east": "GW",
+          "south": "GW",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 9,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_outer_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          2
+        ],
+        "source_crop_xyxy": [
+          316,
+          629,
+          625,
+          938
+        ],
+        "column": 5,
+        "row": 3,
+        "index": 53,
+        "rect": [
+          80,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "outer_ne",
+        "edge_profiles": {
+          "north": "G",
+          "east": "G",
+          "south": "WG",
+          "west": "GW"
+        },
+        "registered_border_pixels_changed": 7,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_outer_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          2
+        ],
+        "source_crop_xyxy": [
+          629,
+          629,
+          938,
+          938
+        ],
+        "column": 6,
+        "row": 3,
+        "index": 54,
+        "rect": [
+          96,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "outer_sw",
+        "edge_profiles": {
+          "north": "GW",
+          "east": "WG",
+          "south": "G",
+          "west": "G"
+        },
+        "registered_border_pixels_changed": 7,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_outer_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          2
+        ],
+        "source_crop_xyxy": [
+          942,
+          629,
+          1252,
+          938
+        ],
+        "column": 7,
+        "row": 3,
+        "index": 55,
+        "rect": [
+          112,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "outer_se",
+        "edge_profiles": {
+          "north": "WG",
+          "east": "G",
+          "south": "G",
+          "west": "WG"
+        },
+        "registered_border_pixels_changed": 6,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_inner_nw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          0,
+          3
+        ],
+        "source_crop_xyxy": [
+          2,
+          942,
+          312,
+          1252
+        ],
+        "column": 8,
+        "row": 3,
+        "index": 56,
+        "rect": [
+          128,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "inner_nw",
+        "edge_profiles": {
+          "north": "GW",
+          "east": "W",
+          "south": "W",
+          "west": "GW"
+        },
+        "registered_border_pixels_changed": 5,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_inner_ne",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          1,
+          3
+        ],
+        "source_crop_xyxy": [
+          316,
+          942,
+          625,
+          1252
+        ],
+        "column": 9,
+        "row": 3,
+        "index": 57,
+        "rect": [
+          144,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "inner_ne",
+        "edge_profiles": {
+          "north": "WG",
+          "east": "GW",
+          "south": "W",
+          "west": "W"
+        },
+        "registered_border_pixels_changed": 4,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_inner_sw",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          2,
+          3
+        ],
+        "source_crop_xyxy": [
+          629,
+          942,
+          938,
+          1252
+        ],
+        "column": 10,
+        "row": 3,
+        "index": 58,
+        "rect": [
+          160,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "inner_sw",
+        "edge_profiles": {
+          "north": "W",
+          "east": "W",
+          "south": "GW",
+          "west": "WG"
+        },
+        "registered_border_pixels_changed": 2,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      },
+      {
+        "id": "shore_inner_se",
+        "source": "provenance/phase_two/batch_02/terrain/raw/raw_ground_water_v1.png",
+        "source_grid": [
+          4,
+          4
+        ],
+        "source_cell": [
+          3,
+          3
+        ],
+        "source_crop_xyxy": [
+          942,
+          942,
+          1252,
+          1252
+        ],
+        "column": 11,
+        "row": 3,
+        "index": 59,
+        "rect": [
+          176,
+          48,
+          16,
+          16
+        ],
+        "material": "W",
+        "shape": "inner_se",
+        "edge_profiles": {
+          "north": "W",
+          "east": "WG",
+          "south": "WG",
+          "west": "W"
+        },
+        "registered_border_pixels_changed": 1,
+        "collision_suggestion": {
+          "status": "proposal_not_engine_rule",
+          "walkable": false,
+          "note": "Water traversal depends on actual game rules."
+        },
+        "pivot_px": [
+          8,
+          16
+        ],
+        "pivot_convention": "frame_local_pixel_edges_bottom_center",
+        "last_occupied_row": 15
+      }
+    ],
+    "edge_contracts": "Matching east/west or north/south profile codes have byte-identical touching border pixels. Do not reverse profiles or mirror tiles.",
+    "layout_guidance": [
+      "Use generated outer and inner corners with straight edges around regions at least two tiles wide.",
+      "All transition families meet the same grass profile. Direct dirt-to-cobble and pond-to-deep-water gradient transitions are not supplied.",
+      "The deep-water fill repeats with itself. Sand uses the soil edge profile and may vary a soil patch."
+    ],
+    "collision_metadata_status": "All collision/walkability values are proposals; no engine code changed."
+  },
+  "foliage": {
+    "schema_version": 1,
+    "view": "front-on standing billboards",
+    "pivot_convention": "Coordinates use pixel edges: [width/2,height] is bottom-center, with last occupied pixel row height-1.",
+    "mirroring_used": false,
+    "collision_recommendations_are_proposals": true,
+    "assets": [
+      {
+        "asset": "assets/props/props_hearthmoss_trees.png",
+        "frames": [
+          {
+            "id": "round_tree_1",
+            "column": 0,
+            "row": 0,
+            "rect": [
+              0,
+              0,
+              64,
+              80
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_trees_v1.png",
+            "source_cell": [
+              0,
+              0
+            ],
+            "source_crop_xyxy": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              49,
+              49,
+              466,
+              483
+            ],
+            "source_base_anchor_x": 256.0,
+            "scale": 0.14761904761904762,
+            "native_paste_rect": [
+              1,
+              16,
+              62,
+              64
+            ],
+            "occupied_rect": [
+              1,
+              16,
+              62,
+              64
+            ],
+            "pivot_px": [
+              32.0,
+              80
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 79,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                22,
+                72,
+                21,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "round_tree_2",
+            "column": 1,
+            "row": 0,
+            "rect": [
+              64,
+              0,
+              64,
+              80
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_trees_v1.png",
+            "source_cell": [
+              1,
+              0
+            ],
+            "source_crop_xyxy": [
+              512,
+              0,
+              1024,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              57,
+              31,
+              450,
+              483
+            ],
+            "source_base_anchor_x": 258.0,
+            "scale": 0.15422885572139303,
+            "native_paste_rect": [
+              1,
+              10,
+              61,
+              70
+            ],
+            "occupied_rect": [
+              1,
+              10,
+              61,
+              70
+            ],
+            "pivot_px": [
+              32.0,
+              80
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 79,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                22,
+                72,
+                21,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "round_tree_3",
+            "column": 2,
+            "row": 0,
+            "rect": [
+              128,
+              0,
+              64,
+              80
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_trees_v1.png",
+            "source_cell": [
+              2,
+              0
+            ],
+            "source_crop_xyxy": [
+              1024,
+              0,
+              1536,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              52,
+              75,
+              455,
+              483
+            ],
+            "source_base_anchor_x": 261.0,
+            "scale": 0.14832535885167464,
+            "native_paste_rect": [
+              1,
+              19,
+              60,
+              61
+            ],
+            "occupied_rect": [
+              1,
+              19,
+              60,
+              61
+            ],
+            "pivot_px": [
+              32.0,
+              80
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 79,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                22,
+                72,
+                21,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "pine_1",
+            "column": 3,
+            "row": 0,
+            "rect": [
+              192,
+              0,
+              64,
+              80
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_trees_v1.png",
+            "source_cell": [
+              0,
+              1
+            ],
+            "source_crop_xyxy": [
+              0,
+              512,
+              512,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              120,
+              34,
+              394,
+              478
+            ],
+            "source_base_anchor_x": 255.0,
+            "scale": 0.17792792792792791,
+            "native_paste_rect": [
+              8,
+              1,
+              49,
+              79
+            ],
+            "occupied_rect": [
+              8,
+              1,
+              49,
+              79
+            ],
+            "pivot_px": [
+              32.0,
+              80
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 79,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                22,
+                72,
+                21,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "pine_2",
+            "column": 4,
+            "row": 0,
+            "rect": [
+              256,
+              0,
+              64,
+              80
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_trees_v1.png",
+            "source_cell": [
+              1,
+              1
+            ],
+            "source_crop_xyxy": [
+              512,
+              512,
+              1024,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              47,
+              34,
+              464,
+              478
+            ],
+            "source_base_anchor_x": 255.5,
+            "scale": 0.1486810551558753,
+            "native_paste_rect": [
+              1,
+              14,
+              62,
+              66
+            ],
+            "occupied_rect": [
+              1,
+              14,
+              62,
+              66
+            ],
+            "pivot_px": [
+              32.0,
+              80
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 79,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                22,
+                72,
+                21,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          }
+        ],
+        "frame_size": [
+          64,
+          80
+        ],
+        "grid": [
+          5,
+          1
+        ]
+      },
+      {
+        "asset": "assets/props/props_hearthmoss_plants.png",
+        "frames": [
+          {
+            "id": "bush_1",
+            "column": 0,
+            "row": 0,
+            "rect": [
+              0,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              0,
+              0
+            ],
+            "source_crop_xyxy": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              67,
+              153,
+              456,
+              436
+            ],
+            "source_base_anchor_x": 252.0,
+            "scale": 0.07352941176470588,
+            "native_paste_rect": [
+              2,
+              3,
+              29,
+              21
+            ],
+            "occupied_rect": [
+              2,
+              3,
+              29,
+              21
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "bush_2",
+            "column": 1,
+            "row": 0,
+            "rect": [
+              32,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              1,
+              0
+            ],
+            "source_crop_xyxy": [
+              512,
+              0,
+              1024,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              21,
+              127,
+              490,
+              436
+            ],
+            "source_base_anchor_x": 278.5,
+            "scale": 0.05825242718446602,
+            "native_paste_rect": [
+              1,
+              6,
+              27,
+              18
+            ],
+            "occupied_rect": [
+              1,
+              6,
+              27,
+              18
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "bush_3",
+            "column": 2,
+            "row": 0,
+            "rect": [
+              64,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              2,
+              0
+            ],
+            "source_crop_xyxy": [
+              1024,
+              0,
+              1536,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              43,
+              92,
+              457,
+              436
+            ],
+            "source_base_anchor_x": 241.5,
+            "scale": 0.06686046511627906,
+            "native_paste_rect": [
+              3,
+              1,
+              28,
+              23
+            ],
+            "occupied_rect": [
+              3,
+              1,
+              28,
+              23
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "flower_bed_red_cream",
+            "column": 3,
+            "row": 0,
+            "rect": [
+              96,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              0,
+              1
+            ],
+            "source_crop_xyxy": [
+              0,
+              512,
+              512,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              49,
+              144,
+              463,
+              395
+            ],
+            "source_base_anchor_x": 257.0,
+            "scale": 0.07211538461538461,
+            "native_paste_rect": [
+              1,
+              6,
+              30,
+              18
+            ],
+            "occupied_rect": [
+              1,
+              6,
+              30,
+              18
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "flower_bed_yellow_cream",
+            "column": 4,
+            "row": 0,
+            "rect": [
+              128,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              1,
+              1
+            ],
+            "source_crop_xyxy": [
+              512,
+              512,
+              1024,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              31,
+              131,
+              480,
+              395
+            ],
+            "source_base_anchor_x": 256.5,
+            "scale": 0.06651884700665188,
+            "native_paste_rect": [
+              1,
+              6,
+              30,
+              18
+            ],
+            "occupied_rect": [
+              1,
+              6,
+              30,
+              18
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Base footprint only; canopy/leaf overhang should not automatically block the full sprite."
+            }
+          },
+          {
+            "id": "cuttable_shrub",
+            "column": 5,
+            "row": 0,
+            "rect": [
+              160,
+              0,
+              32,
+              24
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_hearthmoss_plants_v1.png",
+            "source_cell": [
+              2,
+              1
+            ],
+            "source_crop_xyxy": [
+              1024,
+              512,
+              1536,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              55,
+              61,
+              445,
+              409
+            ],
+            "source_base_anchor_x": 246.0,
+            "scale": 0.06609195402298851,
+            "native_paste_rect": [
+              3,
+              1,
+              26,
+              23
+            ],
+            "occupied_rect": [
+              3,
+              1,
+              26,
+              23
+            ],
+            "pivot_px": [
+              16.0,
+              24
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 23,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": true,
+              "rect": [
+                11,
+                16,
+                10,
+                8
+              ],
+              "note": "Suggested solid until a cut interaction; the engine owns actual behavior."
+            }
+          }
+        ],
+        "frame_size": [
+          32,
+          24
+        ],
+        "grid": [
+          6,
+          1
+        ]
+      },
+      {
+        "asset": "assets/tiles/tiles_tallgrass.png",
+        "frame_size": [
+          20,
+          18
+        ],
+        "grid": [
+          3,
+          2
+        ],
+        "columns": [
+          "variant_1",
+          "variant_2",
+          "variant_3"
+        ],
+        "rows": [
+          "rest",
+          "rustle"
+        ],
+        "frames": [
+          {
+            "id": "tallgrass_1_rest",
+            "variant": 1,
+            "pose": "rest",
+            "column": 0,
+            "row": 0,
+            "rect": [
+              0,
+              0,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              0,
+              0
+            ],
+            "source_crop_xyxy": [
+              0,
+              0,
+              512,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              78,
+              198,
+              426,
+              445
+            ],
+            "source_base_anchor_x": 254.5,
+            "scale": 0.05056179775280899,
+            "native_paste_rect": [
+              1,
+              6,
+              18,
+              12
+            ],
+            "occupied_rect": [
+              1,
+              6,
+              18,
+              12
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          },
+          {
+            "id": "tallgrass_1_rustle",
+            "variant": 1,
+            "pose": "rustle",
+            "column": 0,
+            "row": 1,
+            "rect": [
+              0,
+              18,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              0,
+              1
+            ],
+            "source_crop_xyxy": [
+              0,
+              512,
+              512,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              87,
+              179,
+              431,
+              437
+            ],
+            "source_base_anchor_x": 253.0,
+            "scale": 0.05056179775280899,
+            "native_paste_rect": [
+              2,
+              5,
+              17,
+              13
+            ],
+            "occupied_rect": [
+              2,
+              5,
+              17,
+              13
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          },
+          {
+            "id": "tallgrass_2_rest",
+            "variant": 2,
+            "pose": "rest",
+            "column": 1,
+            "row": 0,
+            "rect": [
+              20,
+              0,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              1,
+              0
+            ],
+            "source_crop_xyxy": [
+              512,
+              0,
+              1024,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              74,
+              90,
+              405,
+              445
+            ],
+            "source_base_anchor_x": 241.5,
+            "scale": 0.04696132596685083,
+            "native_paste_rect": [
+              2,
+              1,
+              16,
+              17
+            ],
+            "occupied_rect": [
+              2,
+              1,
+              16,
+              17
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          },
+          {
+            "id": "tallgrass_2_rustle",
+            "variant": 2,
+            "pose": "rustle",
+            "column": 1,
+            "row": 1,
+            "rect": [
+              20,
+              18,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              1,
+              1
+            ],
+            "source_crop_xyxy": [
+              512,
+              512,
+              1024,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              74,
+              75,
+              404,
+              437
+            ],
+            "source_base_anchor_x": 238.5,
+            "scale": 0.04696132596685083,
+            "native_paste_rect": [
+              2,
+              1,
+              15,
+              17
+            ],
+            "occupied_rect": [
+              2,
+              1,
+              15,
+              17
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          },
+          {
+            "id": "tallgrass_3_rest",
+            "variant": 3,
+            "pose": "rest",
+            "column": 2,
+            "row": 0,
+            "rect": [
+              40,
+              0,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              2,
+              0
+            ],
+            "source_crop_xyxy": [
+              1024,
+              0,
+              1536,
+              512
+            ],
+            "source_opaque_bounds_xyxy": [
+              17,
+              166,
+              450,
+              445
+            ],
+            "source_base_anchor_x": 241.0,
+            "scale": 0.03938730853391685,
+            "native_paste_rect": [
+              1,
+              7,
+              17,
+              11
+            ],
+            "occupied_rect": [
+              1,
+              7,
+              17,
+              11
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          },
+          {
+            "id": "tallgrass_3_rustle",
+            "variant": 3,
+            "pose": "rustle",
+            "column": 2,
+            "row": 1,
+            "rect": [
+              40,
+              18,
+              20,
+              18
+            ],
+            "source": "provenance/phase_two/batch_02/terrain/raw/raw_tallgrass_v1.png",
+            "source_cell": [
+              2,
+              1
+            ],
+            "source_crop_xyxy": [
+              1024,
+              512,
+              1536,
+              1024
+            ],
+            "source_opaque_bounds_xyxy": [
+              17,
+              146,
+              462,
+              437
+            ],
+            "source_base_anchor_x": 233.5,
+            "scale": 0.03938730853391685,
+            "native_paste_rect": [
+              1,
+              7,
+              18,
+              11
+            ],
+            "occupied_rect": [
+              1,
+              7,
+              18,
+              11
+            ],
+            "pivot_px": [
+              10.0,
+              18
+            ],
+            "pivot_normalized": [
+              0.5,
+              1.0
+            ],
+            "bottom_occupied_row": 17,
+            "collision_suggestion": {
+              "status": "proposal_not_engine_rule",
+              "solid": false,
+              "note": "Walkable encounter foliage is a suggestion; encounter rules and map triggers are engine-owned."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "architecture": {
+    "schema_version": 1,
+    "project": "Wildbound",
+    "group": "architecture",
+    "coordinate_convention": "Source rectangles use x,y,width,height. Pivots use continuous pixel edges: bottom-center is [width/2,height]. The last occupied pixel index is height-1.",
+    "elements": [
+      {
+        "id": "bld_hearthmoss_house_a_hearthmoss_house_a",
+        "asset_path": "assets/props/bld_hearthmoss_house_a.png",
+        "source_rect": [
+          0,
+          0,
+          96,
+          112
+        ],
+        "pivot": [
+          48.0,
+          112
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 111,
+        "occupied_bounds": [
+          2,
+          10,
+          94,
+          112
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "bld_hearthmoss_house_b_hearthmoss_house_b",
+        "asset_path": "assets/props/bld_hearthmoss_house_b.png",
+        "source_rect": [
+          0,
+          0,
+          128,
+          128
+        ],
+        "pivot": [
+          64.0,
+          128
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 127,
+        "occupied_bounds": [
+          2,
+          32,
+          125,
+          128
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "bld_player_house_player_house",
+        "asset_path": "assets/props/bld_player_house.png",
+        "source_rect": [
+          0,
+          0,
+          160,
+          144
+        ],
+        "pivot": [
+          80.0,
+          144
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 143,
+        "occupied_bounds": [
+          2,
+          19,
+          158,
+          144
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "bld_wren_lab_wren_lab",
+        "asset_path": "assets/props/bld_wren_lab.png",
+        "source_rect": [
+          0,
+          0,
+          160,
+          144
+        ],
+        "pivot": [
+          80.0,
+          144
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 143,
+        "occupied_bounds": [
+          2,
+          26,
+          158,
+          144
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "prop_door_hearthmoss_house_a_closed",
+        "asset_path": "assets/props/prop_door_hearthmoss_house_a.png",
+        "source_rect": [
+          0,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "closed",
+        "building_path": "assets/props/bld_hearthmoss_house_a.png",
+        "building_overlay_rect": [
+          55,
+          64,
+          32,
+          48
+        ],
+        "opening_rect": [
+          6,
+          9,
+          17,
+          37
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_hearthmoss_house_a_open",
+        "asset_path": "assets/props/prop_door_hearthmoss_house_a.png",
+        "source_rect": [
+          32,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "open",
+        "building_path": "assets/props/bld_hearthmoss_house_a.png",
+        "building_overlay_rect": [
+          55,
+          64,
+          32,
+          48
+        ],
+        "opening_rect": [
+          6,
+          9,
+          17,
+          37
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_hearthmoss_house_b_closed",
+        "asset_path": "assets/props/prop_door_hearthmoss_house_b.png",
+        "source_rect": [
+          0,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "closed",
+        "building_path": "assets/props/bld_hearthmoss_house_b.png",
+        "building_overlay_rect": [
+          16,
+          80,
+          32,
+          48
+        ],
+        "opening_rect": [
+          6,
+          9,
+          21,
+          38
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_hearthmoss_house_b_open",
+        "asset_path": "assets/props/prop_door_hearthmoss_house_b.png",
+        "source_rect": [
+          32,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "open",
+        "building_path": "assets/props/bld_hearthmoss_house_b.png",
+        "building_overlay_rect": [
+          16,
+          80,
+          32,
+          48
+        ],
+        "opening_rect": [
+          6,
+          9,
+          21,
+          38
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_player_house_closed",
+        "asset_path": "assets/props/prop_door_player_house.png",
+        "source_rect": [
+          0,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "closed",
+        "building_path": "assets/props/bld_player_house.png",
+        "building_overlay_rect": [
+          64,
+          96,
+          32,
+          48
+        ],
+        "opening_rect": [
+          5,
+          7,
+          22,
+          39
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_player_house_open",
+        "asset_path": "assets/props/prop_door_player_house.png",
+        "source_rect": [
+          32,
+          0,
+          32,
+          48
+        ],
+        "pivot": [
+          16.0,
+          48
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "open",
+        "building_path": "assets/props/bld_player_house.png",
+        "building_overlay_rect": [
+          64,
+          96,
+          32,
+          48
+        ],
+        "opening_rect": [
+          5,
+          7,
+          22,
+          39
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_wren_lab_closed",
+        "asset_path": "assets/props/prop_door_wren_lab.png",
+        "source_rect": [
+          0,
+          0,
+          32,
+          56
+        ],
+        "pivot": [
+          16.0,
+          56
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "closed",
+        "building_path": "assets/props/bld_wren_lab.png",
+        "building_overlay_rect": [
+          64,
+          88,
+          32,
+          56
+        ],
+        "opening_rect": [
+          6,
+          3,
+          20,
+          48
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "prop_door_wren_lab_open",
+        "asset_path": "assets/props/prop_door_wren_lab.png",
+        "source_rect": [
+          32,
+          0,
+          32,
+          56
+        ],
+        "pivot": [
+          16.0,
+          56
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "state": "open",
+        "building_path": "assets/props/bld_wren_lab.png",
+        "building_overlay_rect": [
+          64,
+          88,
+          32,
+          56
+        ],
+        "opening_rect": [
+          6,
+          3,
+          20,
+          48
+        ],
+        "collision_note": "Door interaction state and trigger must be wired in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_fence_straight",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          0,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          9,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_fence_left_end",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          32,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          6,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_fence_right_end",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          64,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          6,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_fence_post",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          96,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          11,
+          0,
+          21,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_fence_corner",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          128,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          3,
+          0,
+          28,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_gate_closed",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          160,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          4,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_gate_open_left",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          192,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          4,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_fences_gate_open_right",
+        "asset_path": "assets/props/props_hearthmoss_fences.png",
+        "source_rect": [
+          224,
+          0,
+          32,
+          32
+        ],
+        "pivot": [
+          16.0,
+          32
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 31,
+        "occupied_bounds": [
+          0,
+          4,
+          32,
+          32
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_large_boulder",
+        "asset_path": "assets/props/props_hearthmoss_large.png",
+        "source_rect": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          8,
+          32,
+          56,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_large_well",
+        "asset_path": "assets/props/props_hearthmoss_large.png",
+        "source_rect": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          5,
+          4,
+          58,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_large_fountain",
+        "asset_path": "assets/props/props_hearthmoss_large.png",
+        "source_rect": [
+          128,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          4,
+          11,
+          60,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_large_ledge",
+        "asset_path": "assets/props/props_hearthmoss_large.png",
+        "source_rect": [
+          192,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          2,
+          44,
+          62,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_signpost",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          0,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          18,
+          26,
+          46,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_mailbox",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          64,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          20,
+          22,
+          44,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_lamp_post",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          128,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          21,
+          5,
+          42,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_rock_angular",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          192,
+          0,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          20,
+          48,
+          44,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_rock_mossy",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          0,
+          64,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          19,
+          44,
+          44,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_crate",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          64,
+          64,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          17,
+          34,
+          46,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_barrel",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          128,
+          64,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          20,
+          39,
+          44,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      },
+      {
+        "id": "props_hearthmoss_small_bench",
+        "asset_path": "assets/props/props_hearthmoss_small.png",
+        "source_rect": [
+          192,
+          64,
+          64,
+          64
+        ],
+        "pivot": [
+          32.0,
+          64
+        ],
+        "pivot_convention": "pixel_edges_bottom_center",
+        "last_occupied_row": 63,
+        "occupied_bounds": [
+          5,
+          34,
+          58,
+          64
+        ],
+        "collision_note": "Suggested footprint should follow the lower occupied area; validate placement and collision in the engine."
+      }
+    ],
+    "doors": [
+      {
+        "id": "player_house",
+        "building": "bld_player_house",
+        "rect": [
+          64,
+          96,
+          32,
+          48
+        ],
+        "opening": [
+          5,
+          7,
+          22,
+          39
+        ]
+      },
+      {
+        "id": "wren_lab",
+        "building": "bld_wren_lab",
+        "rect": [
+          64,
+          88,
+          32,
+          56
+        ],
+        "opening": [
+          6,
+          3,
+          20,
+          48
+        ]
+      },
+      {
+        "id": "hearthmoss_house_a",
+        "building": "bld_hearthmoss_house_a",
+        "rect": [
+          55,
+          64,
+          32,
+          48
+        ],
+        "opening": [
+          6,
+          9,
+          17,
+          37
+        ]
+      },
+      {
+        "id": "hearthmoss_house_b",
+        "building": "bld_hearthmoss_house_b",
+        "rect": [
+          16,
+          80,
+          32,
+          48
+        ],
+        "opening": [
+          6,
+          9,
+          21,
+          38
+        ]
+      }
+    ],
+    "placement_note": "Use supplied door overlay rectangles without trimming or independently recentering frames. Collisions and interactions are integration suggestions, not implemented engine behavior.",
+    "fences_note": "These are front-facing billboard modules. Directional layout and junction placement require scene review; do not mirror modules.",
+    "engine_integration_tested": false
+  },
+  "fence_placement": {
+    "asset": "assets/props/props_hearthmoss_fences.png",
+    "cell_size": [
+      32,
+      32
+    ],
+    "coordinate_convention": "Local native pixel coordinates, x/y zero-based; all endpoint origins share local baseline y=31.",
+    "straight_to_straight": {
+      "full_rgba_boundary_columns_identical": true,
+      "upper_rail_opaque_rows": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "lower_rail_opaque_rows": [
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    "left_end_open_east_and_right_end_open_west": {
+      "upper_rail_opaque_rows": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "lower_rail_opaque_rows": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "difference_from_straight_edge_rows": [
+        15,
+        19
+      ],
+      "shared_upper_rail_rows": [
+        16,
+        17,
+        18
+      ],
+      "shared_lower_rail_rows": [
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    "verified_integer_connection_points": {
+      "straight_west": [
+        [
+          0,
+          17
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "straight_east": [
+        [
+          31,
+          17
+        ],
+        [
+          31,
+          25
+        ]
+      ],
+      "left_end_open_east": [
+        [
+          31,
+          17
+        ],
+        [
+          31,
+          25
+        ]
+      ],
+      "right_end_open_west": [
+        [
+          0,
+          17
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "all_listed_points_rgba": [
+        42,
+        30,
+        42,
+        255
+      ]
+    },
+    "placement_recipe": {
+      "left_end_origin": [
+        0,
+        0
+      ],
+      "straight_span_origins_example": [
+        [
+          32,
+          0
+        ],
+        [
+          64,
+          0
+        ],
+        [
+          96,
+          0
+        ]
+      ],
+      "right_end_origin_example": [
+        128,
+        0
+      ],
+      "general_rule": "For n straight spans, place left end at (0,0), straight k at (32*(k+1),0) for k=0..n-1, and right end at (32*(n+1),0). Keep the common y=31 foot baseline. No overlap is needed for a connected run.",
+      "remaining_visual_limit": "The end upper rails are shifted down one pixel relative to the straight span; the lower rail matches exactly. A y translation cannot align both rail envelopes simultaneously. Keep y unchanged to preserve the lower rail and accept the small upper-edge jog for this billboard prop set; do not claim a perfectly seamless end join."
+    },
+    "corner_and_gates": {
+      "corner_left_and_right_boundary_columns_fully_transparent": true,
+      "corner_occupied_x_range": [
+        3,
+        27
+      ],
+      "gate_outer_boundary_opaque_rows": [
+        5,
+        6,
+        7
+      ],
+      "recommendation": "Place corner and gate sprites as scene props using their visual posts, pivots and overlap. Review rail-to-post connections and collision in the scene. Do not auto-connect these cells by plain 32px adjacency or promise tile/autotile junction coverage."
+    },
+    "evidence": "metadata/phase_two/batch_02/architecture/validation/world_spot_check.json",
+    "status": "measured_placement_guidance_not_engine_implementation"
+  },
+  "ledge_placement": {
+    "asset": "assets/props/props_hearthmoss_large.png",
+    "element_id": "ledge",
+    "cell_width": 64,
+    "occupied_width": 60,
+    "transparent_side_margin_px": 2,
+    "auto_joining_strip": false,
+    "note": "Discrete placed billboard prop. Plain 64 px adjacency leaves a gap; no continuous ledge-strip guarantee is supplied.",
+    "evidence": "metadata/phase_two/batch_02/architecture/validation/world_spot_check.json"
+  },
+  "ground_edge_rules": {
+    "compatible_pairs": "metadata/phase_two/batch_02/terrain/production/ground_adjacency.json",
+    "border_registration": "metadata/phase_two/batch_02/terrain/production/seam_registration.json",
+    "rule": "Use matching opposing edge-profile labels. One-pixel border strips are copied from generated donor tiles; interiors remain unchanged after reduction/palette mapping.",
+    "occupied_tiles": 50,
+    "unused_transparent_cells": 206,
+    "limitations": [
+      "Angular corner shoulders and repeated fill motifs remain visible.",
+      "No direct dirt/cobble or pond/deep-water transition families are supplied."
+    ]
+  },
+  "engine_import_tested": false,
+  "engine_code_changed": false,
+  "current_environment_art_direction": "HD2D_ENVIRONMENT_ART_DIRECTION.md",
+  "environment_implementation_checklist": "HD2D_ENVIRONMENT_CHECKLIST.json",
+  "latest_production_constraint": "metadata/phase_two/batch_02/original_eyes_01/hd2d_environment_constraint.json",
+  "ground_scene_use": "tilted_ground_texture_or_scene_plane_under_existing_engine_contract",
+  "presentation_review_status": "Source-art and placement review; not a finished HD-2D scene.",
+  "camera_dependent_extensions": "Additional building side/roof/depth surfaces require the actual selected camera and visible-surface need. No blanket isometric conversion.",
+  "latest_approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+}

@@ -1,0 +1,477 @@
+[
+ {
+  "name": "Kindling",
+  "category": "Pinch",
+  "effect": "Ember moves deal 1.5x damage when the user is at 1/3 HP or less."
+ },
+ {
+  "name": "Overgrowth",
+  "category": "Pinch",
+  "effect": "Bloom moves deal 1.5x damage when the user is at 1/3 HP or less."
+ },
+ {
+  "name": "Undercurrent",
+  "category": "Pinch",
+  "effect": "Tide moves deal 1.5x damage when the user is at 1/3 HP or less."
+ },
+ {
+  "name": "Hive Mind",
+  "category": "Pinch",
+  "effect": "Swarm moves deal 1.5x damage when the user is at 1/3 HP or less."
+ },
+ {
+  "name": "Suncaller",
+  "category": "Weather",
+  "effect": "Summons harsh sunlight for 5 turns on entry."
+ },
+ {
+  "name": "Raincaller",
+  "category": "Weather",
+  "effect": "Summons rain for 5 turns on entry."
+ },
+ {
+  "name": "Dustcaller",
+  "category": "Weather",
+  "effect": "Summons a dust storm for 5 turns on entry."
+ },
+ {
+  "name": "Snowcaller",
+  "category": "Weather",
+  "effect": "Summons snow for 5 turns on entry."
+ },
+ {
+  "name": "Ashcaller",
+  "category": "Weather",
+  "effect": "Summons ashfall for 5 turns on entry."
+ },
+ {
+  "name": "Sun Chaser",
+  "category": "Weather",
+  "effect": "Doubles Speed in harsh sunlight."
+ },
+ {
+  "name": "Rain Runner",
+  "category": "Weather",
+  "effect": "Doubles Speed in rain."
+ },
+ {
+  "name": "Sand Strider",
+  "category": "Weather",
+  "effect": "Doubles Speed in a dust storm; immune to dust damage."
+ },
+ {
+  "name": "Snow Glider",
+  "category": "Weather",
+  "effect": "Doubles Speed in snow."
+ },
+ {
+  "name": "Ash Walker",
+  "category": "Weather",
+  "effect": "Doubles Speed in ashfall; immune to ash damage."
+ },
+ {
+  "name": "Calm Eye",
+  "category": "Weather",
+  "effect": "While on the field, weather has no effect."
+ },
+ {
+  "name": "Weatherproof",
+  "category": "Weather",
+  "effect": "Immune to weather damage and powder moves."
+ },
+ {
+  "name": "Seedling Surge",
+  "category": "Terrain",
+  "effect": "Sets Bloom terrain on entry."
+ },
+ {
+  "name": "Static Surge",
+  "category": "Terrain",
+  "effect": "Sets Charged terrain on entry."
+ },
+ {
+  "name": "Mind Surge",
+  "category": "Terrain",
+  "effect": "Sets Mind terrain on entry."
+ },
+ {
+  "name": "Mist Surge",
+  "category": "Terrain",
+  "effect": "Sets Fae mist on entry."
+ },
+ {
+  "name": "Imposing",
+  "category": "Entry",
+  "effect": "On entry, lowers the Attack of adjacent foes by 1."
+ },
+ {
+  "name": "Opening Gambit",
+  "category": "Entry",
+  "effect": "On entry, raises the user's Speed by 1 (once per battle)."
+ },
+ {
+  "name": "Echo Soul",
+  "category": "Entry",
+  "effect": "On entry, copies a foe's trait."
+ },
+ {
+  "name": "Mend on Retreat",
+  "category": "Switching",
+  "effect": "Heals 1/3 of max HP when switching out."
+ },
+ {
+  "name": "Fresh Start",
+  "category": "Switching",
+  "effect": "Cures status conditions when switching out."
+ },
+ {
+  "name": "Shadow Hold",
+  "category": "Switching",
+  "effect": "Adjacent foes cannot switch out (Shade types excepted)."
+ },
+ {
+  "name": "Mighty Build",
+  "category": "Power",
+  "effect": "Doubles Attack."
+ },
+ {
+  "name": "Finesse",
+  "category": "Power",
+  "effect": "Moves with 60 power or less deal 1.5x damage."
+ },
+ {
+  "name": "Specialist",
+  "category": "Power",
+  "effect": "Same-type bonus becomes 2x instead of 1.5x."
+ },
+ {
+  "name": "Raw Power",
+  "category": "Power",
+  "effect": "Moves with secondary effects deal 1.3x damage, but the effects are lost."
+ },
+ {
+  "name": "Overeager",
+  "category": "Power",
+  "effect": "Attack x1.5, but physical moves are 20% less accurate."
+ },
+ {
+  "name": "Grit",
+  "category": "Power",
+  "effect": "Attack x1.5 while the user has a status condition; burn no longer halves Attack."
+ },
+ {
+  "name": "Piercing Gaze",
+  "category": "Power",
+  "effect": "Not-very-effective moves deal normal damage."
+ },
+ {
+  "name": "Marksman",
+  "category": "Power",
+  "effect": "Critical hits deal 2.25x instead of 1.5x."
+ },
+ {
+  "name": "Lucky Eye",
+  "category": "Power",
+  "effect": "Raises the critical-hit stage by 1."
+ },
+ {
+  "name": "Sharp Eyes",
+  "category": "Power",
+  "effect": "Move accuracy x1.3."
+ },
+ {
+  "name": "Relentless",
+  "category": "Power",
+  "effect": "Multi-hit moves always hit the maximum number of times."
+ },
+ {
+  "name": "Lucky Star",
+  "category": "Power",
+  "effect": "Doubles the chance of secondary effects."
+ },
+ {
+  "name": "Unstoppable",
+  "category": "Power",
+  "effect": "Moves ignore the target's defensive traits."
+ },
+ {
+  "name": "Kindred Rival",
+  "category": "Power",
+  "effect": "Deals 1.25x damage to foes that share a type with the user."
+ },
+ {
+  "name": "Brawler",
+  "category": "Family",
+  "effect": "Punch moves deal 1.2x damage."
+ },
+ {
+  "name": "Crushing Jaw",
+  "category": "Family",
+  "effect": "Bite moves deal 1.5x damage."
+ },
+ {
+  "name": "Keen Edge",
+  "category": "Family",
+  "effect": "Slice moves deal 1.5x damage."
+ },
+ {
+  "name": "Pulse Amplifier",
+  "category": "Family",
+  "effect": "Pulse moves deal 1.5x damage."
+ },
+ {
+  "name": "Resonant Voice",
+  "category": "Family",
+  "effect": "Sound moves deal 1.3x damage; takes half damage from sound moves."
+ },
+ {
+  "name": "Hard Claws",
+  "category": "Family",
+  "effect": "Contact moves deal 1.3x damage."
+ },
+ {
+  "name": "Accelerate",
+  "category": "Speed",
+  "effect": "Raises Speed by 1 at the end of each turn."
+ },
+ {
+  "name": "Lightweight",
+  "category": "Speed",
+  "effect": "Doubles Speed after the user loses its held item."
+ },
+ {
+  "name": "Tailwind Born",
+  "category": "Speed",
+  "effect": "Gale moves get +1 priority while the user is at full HP."
+ },
+ {
+  "name": "Trickster",
+  "category": "Speed",
+  "effect": "Status moves get +1 priority. Shade types are immune to moves boosted this way."
+ },
+ {
+  "name": "Momentum",
+  "category": "Speed",
+  "effect": "Raises Attack by 1 after knocking out a foe."
+ },
+ {
+  "name": "Sturdy Frame",
+  "category": "Defense",
+  "effect": "Survives any hit from full HP with 1 HP left."
+ },
+ {
+  "name": "Full Scales",
+  "category": "Defense",
+  "effect": "Takes half damage while at full HP."
+ },
+ {
+  "name": "Warded",
+  "category": "Defense",
+  "effect": "Takes damage only from direct attacks."
+ },
+ {
+  "name": "Insulated",
+  "category": "Defense",
+  "effect": "Takes half damage from Ember and Frost moves."
+ },
+ {
+  "name": "Shock Absorber",
+  "category": "Defense",
+  "effect": "Super-effective damage taken is reduced to 0.75x."
+ },
+ {
+  "name": "Hover",
+  "category": "Defense",
+  "effect": "Immune to ground moves and hazards that affect grounded creatures."
+ },
+ {
+  "name": "Bulletproof Shell",
+  "category": "Defense",
+  "effect": "Immune to bullet moves."
+ },
+ {
+  "name": "Deaf Ears",
+  "category": "Defense",
+  "effect": "Immune to sound moves."
+ },
+ {
+  "name": "Reflective Hide",
+  "category": "Defense",
+  "effect": "Bounces back status moves aimed at the user."
+ },
+ {
+  "name": "Unshakable",
+  "category": "Defense",
+  "effect": "Other creatures cannot lower the user's stats."
+ },
+ {
+  "name": "Unfazed",
+  "category": "Defense",
+  "effect": "Ignores the target's stat changes when attacking, and the attacker's when defending."
+ },
+ {
+  "name": "Toughening",
+  "category": "Defense",
+  "effect": "Raises Defense by 1 whenever hit by an attack."
+ },
+ {
+  "name": "Brittle Shell",
+  "category": "Defense",
+  "effect": "When hit by a physical move: Defense -1, Speed +2."
+ },
+ {
+  "name": "Wellspring",
+  "category": "Absorb",
+  "effect": "Immune to Tide moves; heals 25% when hit by one."
+ },
+ {
+  "name": "Grounding",
+  "category": "Absorb",
+  "effect": "Immune to Volt moves; heals 25% when hit by one."
+ },
+ {
+  "name": "Firebrand",
+  "category": "Absorb",
+  "effect": "Immune to Ember moves; its own Ember moves deal 1.5x after absorbing one."
+ },
+ {
+  "name": "Sapling",
+  "category": "Absorb",
+  "effect": "Immune to Bloom moves; raises Attack by 1 when hit by one."
+ },
+ {
+  "name": "Wind Rider",
+  "category": "Absorb",
+  "effect": "Immune to wind moves; raises Attack by 1 when hit by one."
+ },
+ {
+  "name": "Static Fur",
+  "category": "Contact",
+  "effect": "Contact attackers have a 30% chance to be paralyzed."
+ },
+ {
+  "name": "Ember Hide",
+  "category": "Contact",
+  "effect": "Contact attackers have a 30% chance to be burned."
+ },
+ {
+  "name": "Barbed Skin",
+  "category": "Contact",
+  "effect": "Contact attackers have a 30% chance to be poisoned."
+ },
+ {
+  "name": "Jagged Hide",
+  "category": "Contact",
+  "effect": "Contact attackers lose 1/8 of their max HP."
+ },
+ {
+  "name": "Molting",
+  "category": "Status",
+  "effect": "30% chance to cure its status condition at the end of each turn."
+ },
+ {
+  "name": "Toxic Thrive",
+  "category": "Status",
+  "effect": "Heals 1/8 of max HP each turn while poisoned instead of taking damage."
+ },
+ {
+  "name": "Mirror Spirit",
+  "category": "Status",
+  "effect": "When given burn, poison or paralysis, gives the same condition to the source."
+ },
+ {
+  "name": "Composed",
+  "category": "Status",
+  "effect": "Cannot flinch; immune to Imposing."
+ },
+ {
+  "name": "Even Keel",
+  "category": "Status",
+  "effect": "Cannot be confused."
+ },
+ {
+  "name": "Sleepless",
+  "category": "Status",
+  "effect": "Cannot fall asleep."
+ },
+ {
+  "name": "Hardy Gut",
+  "category": "Status",
+  "effect": "Cannot be poisoned."
+ },
+ {
+  "name": "Loose Joints",
+  "category": "Status",
+  "effect": "Cannot be paralyzed."
+ },
+ {
+  "name": "Damp Coat",
+  "category": "Status",
+  "effect": "Cannot be burned."
+ },
+ {
+  "name": "Warm Blooded",
+  "category": "Status",
+  "effect": "Cannot be frostbitten."
+ },
+ {
+  "name": "Defiance",
+  "category": "Reaction",
+  "effect": "Raises Attack by 2 when a foe lowers any of its stats."
+ },
+ {
+  "name": "Proud",
+  "category": "Reaction",
+  "effect": "Raises Special Attack by 2 when a foe lowers any of its stats."
+ },
+ {
+  "name": "Spurred",
+  "category": "Reaction",
+  "effect": "Raises Speed by 1 when it flinches."
+ },
+ {
+  "name": "Righteous",
+  "category": "Reaction",
+  "effect": "Raises Attack by 1 when hit by a Shade move."
+ },
+ {
+  "name": "Weight of Presence",
+  "category": "Reaction",
+  "effect": "Foes use 2 PP per move."
+ },
+ {
+  "name": "Shifting Hide",
+  "category": "Reaction",
+  "effect": "Before attacking, becomes the type of the move it uses (once per switch-in)."
+ },
+ {
+  "name": "Gatherer",
+  "category": "Item",
+  "effect": "50% chance to regrow a used berry each turn (100% in sun)."
+ },
+ {
+  "name": "Devoted",
+  "category": "Bond",
+  "effect": "At max Trust, takes 10% less damage."
+ },
+ {
+  "name": "Loyal Heart",
+  "category": "Bond",
+  "effect": "At Trust 220+, survives one knockout blow per battle with 1 HP."
+ },
+ {
+  "name": "Oathkeeper",
+  "category": "Bond",
+  "effect": "If Oathbound, Initiative can trigger twice per battle."
+ },
+ {
+  "name": "Home Turf",
+  "category": "Bond",
+  "effect": "Deals 1.2x damage in the area where it was first caught or hatched."
+ },
+ {
+  "name": "Pack Bond",
+  "category": "Bond",
+  "effect": "Deals 1.1x damage for each fainted party member (max 1.3x)."
+ }
+]

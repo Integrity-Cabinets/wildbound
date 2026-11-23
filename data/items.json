@@ -1,0 +1,142 @@
+[
+ {
+  "name": "Life Charm",
+  "category": "Attack",
+  "effect": "Moves deal 1.3x damage; the holder loses 1/10 max HP per attack."
+ },
+ {
+  "name": "Champion's Band",
+  "category": "Attack",
+  "effect": "Attack x1.5, but locked into the first move chosen."
+ },
+ {
+  "name": "Scholar's Specs",
+  "category": "Attack",
+  "effect": "Sp. Atk x1.5, but locked into the first move chosen."
+ },
+ {
+  "name": "Racer's Scarf",
+  "category": "Speed",
+  "effect": "Speed x1.5, but locked into the first move chosen."
+ },
+ {
+  "name": "Coach's Belt",
+  "category": "Attack",
+  "effect": "Super-effective moves deal 1.2x damage."
+ },
+ {
+  "name": "Hunter's Lens",
+  "category": "Attack",
+  "effect": "Raises the critical-hit stage by 1."
+ },
+ {
+  "name": "Type charms (16)",
+  "category": "Attack",
+  "effect": "One per type (e.g. Ember Coal, Tide Pearl): moves of that type deal 1.2x damage."
+ },
+ {
+  "name": "Trail Rations",
+  "category": "Recovery",
+  "effect": "Heals 1/16 max HP each turn."
+ },
+ {
+  "name": "Venom Sac",
+  "category": "Recovery",
+  "effect": "Venom types heal 1/16 each turn; others lose 1/8."
+ },
+ {
+  "name": "Calder Fig",
+  "category": "Berry",
+  "effect": "Heals 25% max HP at half HP or less."
+ },
+ {
+  "name": "Clearfruit",
+  "category": "Berry",
+  "effect": "Cures any status condition once."
+ },
+ {
+  "name": "Resist berries (16)",
+  "category": "Berry",
+  "effect": "One per type: halves one super-effective hit of that type."
+ },
+ {
+  "name": "Last Thread",
+  "category": "Defense",
+  "effect": "Survives one hit from full HP with 1 HP. Single use."
+ },
+ {
+  "name": "Padded Vest",
+  "category": "Defense",
+  "effect": "Sp. Def x1.5; the holder can only use damaging moves."
+ },
+ {
+  "name": "Growth Ring",
+  "category": "Defense",
+  "effect": "Defense and Sp. Def x1.5 if the holder can still evolve."
+ },
+ {
+  "name": "Spiked Helmet",
+  "category": "Defense",
+  "effect": "Contact attackers lose 1/6 of their max HP."
+ },
+ {
+  "name": "Trail Boots",
+  "category": "Defense",
+  "effect": "The holder ignores entry hazards."
+ },
+ {
+  "name": "Float Bladder",
+  "category": "Defense",
+  "effect": "The holder floats (immune to ground moves) until hit."
+ },
+ {
+  "name": "Counterplan",
+  "category": "Reaction",
+  "effect": "When hit super-effectively: Attack and Sp. Atk +2. Single use."
+ },
+ {
+  "name": "Recall Whistle",
+  "category": "Reaction",
+  "effect": "When hit, the holder switches out. Single use."
+ },
+ {
+  "name": "Lucky Spur",
+  "category": "Speed",
+  "effect": "20% chance to move first in its priority bracket."
+ },
+ {
+  "name": "Ward Clay",
+  "category": "Field",
+  "effect": "Screens set by the holder last 8 turns."
+ },
+ {
+  "name": "Weather stones (5)",
+  "category": "Field",
+  "effect": "Sun, Rain, Dust, Snow and Ash stones: that weather lasts 8 turns when set by the holder."
+ },
+ {
+  "name": "Ember Vial / Toxin Vial",
+  "category": "Status",
+  "effect": "Burns or badly poisons the holder at the end of its first turn (for Grit and Toxic Thrive)."
+ },
+ {
+  "name": "Oath Charm",
+  "category": "Bond",
+  "effect": "Oathbound only: when Initiative triggers, the holder also heals 10% max HP."
+ },
+ {
+  "name": "Trust Ribbon",
+  "category": "Bond",
+  "effect": "Doubles Trust gained while held. No battle effect."
+ },
+ {
+  "name": "Calm Stone",
+  "category": "Breeding",
+  "effect": "Passes the holder's nature to its offspring."
+ },
+ {
+  "name": "Heirloom Knot",
+  "category": "Breeding",
+  "effect": "Offspring inherit 5 Potentials from the parents instead of 3."
+ }
+]

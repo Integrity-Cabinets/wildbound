@@ -1,0 +1,4 @@
+tests/shots/
+__pycache__/
+*.pyc
+dist/game.check.js

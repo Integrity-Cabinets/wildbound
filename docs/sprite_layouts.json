@@ -1,0 +1,1851 @@
+{
+  "schema_version": 3,
+  "format": "PNG",
+  "runtime_scale": 1,
+  "masters_scale": 8,
+  "alpha_values": [
+    0,
+    255
+  ],
+  "maximum_opaque_colors_per_frame": 16,
+  "sampling": "nearest_neighbor",
+  "no_mirroring": true,
+  "style": "Flat/even pixel sprites; HD-2D engine adds lighting, shadows, bloom, depth of field, parallax and particles.",
+  "layouts": {
+    "creature_front": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        96,
+        96
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "engine_slot": "front"
+    },
+    "creature_back": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        96,
+        96
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "engine_slot": "mback"
+    },
+    "creature_follow": {
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        64,
+        128
+      ],
+      "grid": [
+        2,
+        4
+      ],
+      "frame_count": 8,
+      "engine_slot": "follow",
+      "rows": [
+        "down",
+        "up",
+        "left",
+        "right"
+      ],
+      "columns": [
+        "step_a",
+        "step_b"
+      ]
+    },
+    "creature_icon": {
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        64,
+        32
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "engine_slot": "icon",
+      "columns": [
+        "rest",
+        "bounce"
+      ]
+    },
+    "creature_idle": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        192,
+        96
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "engine_slot": "idle",
+      "columns": [
+        "static_pose",
+        "opposite_extreme"
+      ],
+      "recommended_fps": 4
+    },
+    "creature_back_idle": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        192,
+        96
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2,
+      "engine_slot": "back_idle",
+      "columns": [
+        "static_pose",
+        "opposite_extreme"
+      ],
+      "recommended_fps": 4
+    },
+    "character_walk": {
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        96,
+        192
+      ],
+      "grid": [
+        3,
+        4
+      ],
+      "frame_count": 12,
+      "engine_slot": "walk",
+      "rows": [
+        "down",
+        "up",
+        "left",
+        "right"
+      ],
+      "columns": [
+        "stand",
+        "step_a",
+        "step_b"
+      ]
+    },
+    "character_run": {
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        96,
+        192
+      ],
+      "grid": [
+        3,
+        4
+      ],
+      "frame_count": 12,
+      "engine_slot": "run",
+      "rows": [
+        "down",
+        "up",
+        "left",
+        "right"
+      ],
+      "columns": [
+        "stand",
+        "step_a",
+        "step_b"
+      ]
+    },
+    "character_battle": {
+      "frame": [
+        96,
+        128
+      ],
+      "sheet": [
+        96,
+        128
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "engine_slot": "battle"
+    },
+    "character_back": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        384,
+        96
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "frame_count": 4,
+      "engine_slot": "back",
+      "columns": [
+        "ready",
+        "wind_up",
+        "release",
+        "follow_through"
+      ]
+    },
+    "character_portrait": {
+      "frame": [
+        96,
+        96
+      ],
+      "sheet": [
+        384,
+        96
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "frame_count": 4,
+      "engine_slot": "portrait",
+      "columns": [
+        "neutral",
+        "happy",
+        "determined",
+        "surprised"
+      ]
+    },
+    "ground_hearthmoss": {
+      "frame": [
+        16,
+        16
+      ],
+      "sheet": [
+        256,
+        256
+      ],
+      "grid": [
+        16,
+        16
+      ],
+      "occupied_cells": 50,
+      "unused_transparent_cells": 206,
+      "index": "world_asset_index.json#ground"
+    },
+    "tallgrass": {
+      "frame": [
+        20,
+        18
+      ],
+      "sheet": [
+        60,
+        36
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "frame_count": 6,
+      "columns": [
+        "variant_1",
+        "variant_2",
+        "variant_3"
+      ],
+      "rows": [
+        "rest",
+        "rustle"
+      ],
+      "index": "world_asset_index.json#foliage"
+    },
+    "hearthmoss_trees": {
+      "frame": [
+        64,
+        80
+      ],
+      "sheet": [
+        320,
+        80
+      ],
+      "grid": [
+        5,
+        1
+      ],
+      "frame_count": 5
+    },
+    "hearthmoss_plants": {
+      "frame": [
+        32,
+        24
+      ],
+      "sheet": [
+        192,
+        24
+      ],
+      "grid": [
+        6,
+        1
+      ],
+      "frame_count": 6
+    }
+  },
+  "source_rect_formula": "x=column*frame_width; y=row*frame_height; width=frame_width; height=frame_height",
+  "back_slot_mapping": {
+    "creature": "mback slot -> _back.png, one 96x96 frame",
+    "player": "back slot -> _back.png, four 96x96 frames in a 384x96 sheet"
+  },
+  "animation_timing": {
+    "battle_idle_fps": 4,
+    "battle_idle_note": "Approximately 4 fps per directive; frame 1 is the exact static pose and frame 2 is the opposite wing/streamer extreme.",
+    "other_timing": "Not supplied; validate against the actual engine."
+  },
+  "alignment": "Use full frame rectangles and supplied registration; do not independently trim or recenter each frame.",
+  "asymmetry": {
+    "burrowbit_and_thumpwarren_floppy_ear": "anatomical_left",
+    "barnacub_and_barnaclaw_enlarged_claw": "anatomical_right"
+  },
+  "world_asset_index": "world_asset_index.json",
+  "generic_npc_roster": "npc_roster.json",
+  "world_layouts": [
+    {
+      "id": "tiles_hearthmoss_ground",
+      "path": "assets/tiles/tiles_hearthmoss_ground.png",
+      "kind": "ground_atlas",
+      "frame": [
+        16,
+        16
+      ],
+      "sheet": [
+        256,
+        256
+      ],
+      "grid": [
+        16,
+        16
+      ],
+      "frame_count": 50
+    },
+    {
+      "id": "tiles_tallgrass",
+      "path": "assets/tiles/tiles_tallgrass.png",
+      "kind": "foliage_animation",
+      "frame": [
+        20,
+        18
+      ],
+      "sheet": [
+        60,
+        36
+      ],
+      "grid": [
+        3,
+        2
+      ],
+      "frame_count": 6
+    },
+    {
+      "id": "props_hearthmoss_trees",
+      "path": "assets/props/props_hearthmoss_trees.png",
+      "kind": "foliage_atlas",
+      "frame": [
+        64,
+        80
+      ],
+      "sheet": [
+        320,
+        80
+      ],
+      "grid": [
+        5,
+        1
+      ],
+      "frame_count": 5
+    },
+    {
+      "id": "props_hearthmoss_plants",
+      "path": "assets/props/props_hearthmoss_plants.png",
+      "kind": "foliage_atlas",
+      "frame": [
+        32,
+        24
+      ],
+      "sheet": [
+        192,
+        24
+      ],
+      "grid": [
+        6,
+        1
+      ],
+      "frame_count": 6
+    },
+    {
+      "id": "bld_hearthmoss_house_a",
+      "path": "assets/props/bld_hearthmoss_house_a.png",
+      "kind": "building",
+      "frame": [
+        96,
+        112
+      ],
+      "sheet": [
+        96,
+        112
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1
+    },
+    {
+      "id": "bld_hearthmoss_house_b",
+      "path": "assets/props/bld_hearthmoss_house_b.png",
+      "kind": "building",
+      "frame": [
+        128,
+        128
+      ],
+      "sheet": [
+        128,
+        128
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1
+    },
+    {
+      "id": "bld_player_house",
+      "path": "assets/props/bld_player_house.png",
+      "kind": "building",
+      "frame": [
+        160,
+        144
+      ],
+      "sheet": [
+        160,
+        144
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1
+    },
+    {
+      "id": "bld_wren_lab",
+      "path": "assets/props/bld_wren_lab.png",
+      "kind": "building",
+      "frame": [
+        160,
+        144
+      ],
+      "sheet": [
+        160,
+        144
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1
+    },
+    {
+      "id": "prop_door_hearthmoss_house_a",
+      "path": "assets/props/prop_door_hearthmoss_house_a.png",
+      "kind": "door_states",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2
+    },
+    {
+      "id": "prop_door_hearthmoss_house_b",
+      "path": "assets/props/prop_door_hearthmoss_house_b.png",
+      "kind": "door_states",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2
+    },
+    {
+      "id": "prop_door_player_house",
+      "path": "assets/props/prop_door_player_house.png",
+      "kind": "door_states",
+      "frame": [
+        32,
+        48
+      ],
+      "sheet": [
+        64,
+        48
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2
+    },
+    {
+      "id": "prop_door_wren_lab",
+      "path": "assets/props/prop_door_wren_lab.png",
+      "kind": "door_states",
+      "frame": [
+        32,
+        56
+      ],
+      "sheet": [
+        64,
+        56
+      ],
+      "grid": [
+        2,
+        1
+      ],
+      "frame_count": 2
+    },
+    {
+      "id": "props_hearthmoss_fences",
+      "path": "assets/props/props_hearthmoss_fences.png",
+      "kind": "prop_atlas",
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        256,
+        32
+      ],
+      "grid": [
+        8,
+        1
+      ],
+      "frame_count": 8
+    },
+    {
+      "id": "props_hearthmoss_large",
+      "path": "assets/props/props_hearthmoss_large.png",
+      "kind": "prop_atlas",
+      "frame": [
+        64,
+        64
+      ],
+      "sheet": [
+        256,
+        64
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "frame_count": 4
+    },
+    {
+      "id": "props_hearthmoss_small",
+      "path": "assets/props/props_hearthmoss_small.png",
+      "kind": "prop_atlas",
+      "frame": [
+        64,
+        64
+      ],
+      "sheet": [
+        256,
+        128
+      ],
+      "grid": [
+        4,
+        2
+      ],
+      "frame_count": 8
+    }
+  ],
+  "world_pivots": "Use canonical pixel-edge pivots from world_asset_index.json. Production reports also preserve last-occupied-row pixel indices.",
+  "ui_asset_index": "ui_asset_index.json",
+  "battle_asset_index": "battle_asset_index.json",
+  "ui_and_battle_layouts": {
+    "bg_meadow": {
+      "frame": [
+        240,
+        160
+      ],
+      "sheet": [
+        240,
+        160
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "plat_meadow": {
+      "frame": [
+        128,
+        32
+      ],
+      "sheet": [
+        128,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "registration": {
+        "bbox_center_px": [
+          64,
+          18
+        ],
+        "origin_pixel_edge": [
+          64,
+          32
+        ],
+        "surface_contact_px": [
+          64,
+          18
+        ]
+      }
+    },
+    "bg_cave": {
+      "frame": [
+        240,
+        160
+      ],
+      "sheet": [
+        240,
+        160
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "plat_cave": {
+      "frame": [
+        128,
+        32
+      ],
+      "sheet": [
+        128,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "registration": {
+        "bbox_center_px": [
+          64,
+          18
+        ],
+        "origin_pixel_edge": [
+          64,
+          32
+        ],
+        "surface_contact_px": [
+          64,
+          18
+        ]
+      }
+    },
+    "bg_shore": {
+      "frame": [
+        240,
+        160
+      ],
+      "sheet": [
+        240,
+        160
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "plat_shore": {
+      "frame": [
+        128,
+        32
+      ],
+      "sheet": [
+        128,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "registration": {
+        "bbox_center_px": [
+          64,
+          18
+        ],
+        "origin_pixel_edge": [
+          64,
+          32
+        ],
+        "surface_contact_px": [
+          64,
+          18
+        ]
+      }
+    },
+    "bg_night_forest": {
+      "frame": [
+        240,
+        160
+      ],
+      "sheet": [
+        240,
+        160
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "plat_night_forest": {
+      "frame": [
+        128,
+        32
+      ],
+      "sheet": [
+        128,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "registration": {
+        "bbox_center_px": [
+          64,
+          18
+        ],
+        "origin_pixel_edge": [
+          64,
+          32
+        ],
+        "surface_contact_px": [
+          64,
+          18
+        ]
+      }
+    },
+    "icon_type_beast": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_ember": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_tide": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_bloom": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_volt": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_gale": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_stone": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_frost": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_brawl": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_venom": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_mind": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_shade": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_metal": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_fae": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_wyrm": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "icon_type_swarm": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_beast": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_ember": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_tide": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_bloom": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_volt": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_gale": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_stone": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_frost": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_brawl": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_venom": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_mind": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_shade": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_metal": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_fae": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_wyrm": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "label_type_swarm": {
+      "frame": [
+        32,
+        14
+      ],
+      "sheet": [
+        32,
+        14
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "item_tether_orb": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "item_tether_orb_great": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "item_tether_orb_ultra": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_tether_orb_states": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        96,
+        24
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "frame_count": 4,
+      "logical_slot_count": 4,
+      "states": [
+        "closed",
+        "open",
+        "wobble_left",
+        "wobble_right"
+      ],
+      "recommended_sequences": {
+        "wobble": {
+          "frames": [
+            0,
+            2,
+            0,
+            3,
+            0
+          ],
+          "frame_ms": [
+            160,
+            160,
+            160,
+            160,
+            160
+          ]
+        },
+        "opening": {
+          "frames": [
+            0,
+            1
+          ],
+          "frame_ms": [
+            160,
+            240
+          ]
+        }
+      },
+      "timing_status": "art_preview_recommendation_not_engine_contract",
+      "pivot": [
+        12,
+        23
+      ],
+      "pivot_convention": "pixel_edges_at_bottom_of_occupied_row",
+      "baseline": 22
+    },
+    "item_potion": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "item_running_shoes": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "item_field_notebook": {
+      "frame": [
+        24,
+        24
+      ],
+      "sheet": [
+        24,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_dialog": {
+      "kind": "nine_slice",
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        32,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "nine_slice": {
+        "margins_ltrb": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "minimum_size": [
+          17,
+          17
+        ],
+        "mode": "tile_edges_and_center",
+        "center_sampled_from_source": true
+      },
+      "content_insets_ltrb": [
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "ui_menu": {
+      "kind": "nine_slice",
+      "frame": [
+        32,
+        32
+      ],
+      "sheet": [
+        32,
+        32
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "nine_slice": {
+        "margins_ltrb": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "minimum_size": [
+          17,
+          17
+        ],
+        "mode": "tile_edges_and_center",
+        "center_sampled_from_source": true
+      },
+      "content_insets_ltrb": [
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "ui_name_tag": {
+      "kind": "nine_slice",
+      "frame": [
+        64,
+        24
+      ],
+      "sheet": [
+        64,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "nine_slice": {
+        "margins_ltrb": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "minimum_size": [
+          17,
+          17
+        ],
+        "mode": "tile_edges_and_center",
+        "center_sampled_from_source": true
+      },
+      "content_insets_ltrb": [
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    "ui_hp_frame": {
+      "kind": "horizontal_gauge",
+      "frame": [
+        64,
+        24
+      ],
+      "sheet": [
+        64,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "gauge_insets_ltrb": [
+        2,
+        9,
+        2,
+        9
+      ],
+      "suggested_fill_height": 6,
+      "horizontal_slice": {
+        "caps_lr": [
+          8,
+          8
+        ],
+        "minimum_width": 17,
+        "fixed_canvas_height": 24,
+        "visible_track_rect": [
+          0,
+          8,
+          64,
+          8
+        ],
+        "mode": "tile_center_profile_x",
+        "content_height": 8
+      },
+      "change_from_previous": "New slim gauge content is 8px high within the unchanged 64x24 canvas. Use horizontal caps; do not vertically stretch the track."
+    },
+    "ui_xp_bar": {
+      "kind": "horizontal_gauge",
+      "frame": [
+        64,
+        24
+      ],
+      "sheet": [
+        64,
+        24
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "gauge_insets_ltrb": [
+        2,
+        9,
+        2,
+        9
+      ],
+      "suggested_fill_height": 6,
+      "horizontal_slice": {
+        "caps_lr": [
+          8,
+          8
+        ],
+        "minimum_width": 17,
+        "fixed_canvas_height": 24,
+        "visible_track_rect": [
+          0,
+          8,
+          64,
+          8
+        ],
+        "mode": "tile_center_profile_x",
+        "content_height": 8
+      },
+      "change_from_previous": "New slim gauge content is 8px high within the unchanged 64x24 canvas. Use horizontal caps; do not vertically stretch the track."
+    },
+    "ui_cursor": {
+      "kind": "cursor",
+      "frame": [
+        12,
+        12
+      ],
+      "sheet": [
+        12,
+        12
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_prompt": {
+      "kind": "prompt",
+      "frame": [
+        12,
+        8
+      ],
+      "sheet": [
+        12,
+        8
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_hp_fill": {
+      "kind": "fill_strip",
+      "frame": [
+        32,
+        6
+      ],
+      "sheet": [
+        32,
+        6
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "fill_contract": {
+        "resize_mode": "tile_x",
+        "clip_direction": "left_to_right",
+        "thresholds": "game_logic_defined",
+        "ramp": [
+          "#3E663B",
+          "#78B64B",
+          "#B2D377"
+        ]
+      }
+    },
+    "ui_hp_fill_mid": {
+      "kind": "fill_strip",
+      "frame": [
+        32,
+        6
+      ],
+      "sheet": [
+        32,
+        6
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "fill_contract": {
+        "resize_mode": "tile_x",
+        "clip_direction": "left_to_right",
+        "thresholds": "game_logic_defined",
+        "ramp": [
+          "#A77834",
+          "#C8A65E",
+          "#E8DEBF"
+        ]
+      }
+    },
+    "ui_hp_fill_low": {
+      "kind": "fill_strip",
+      "frame": [
+        32,
+        6
+      ],
+      "sheet": [
+        32,
+        6
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "fill_contract": {
+        "resize_mode": "tile_x",
+        "clip_direction": "left_to_right",
+        "thresholds": "game_logic_defined",
+        "ramp": [
+          "#7D3D3A",
+          "#C45F4B",
+          "#E59782"
+        ]
+      }
+    },
+    "ui_xp_fill": {
+      "kind": "fill_strip",
+      "frame": [
+        32,
+        6
+      ],
+      "sheet": [
+        32,
+        6
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1,
+      "fill_contract": {
+        "resize_mode": "tile_x",
+        "clip_direction": "left_to_right",
+        "thresholds": "game_logic_defined",
+        "ramp": [
+          "#2D5677",
+          "#5796BD",
+          "#A4C8D8"
+        ]
+      }
+    },
+    "ui_title_background": {
+      "frame": [
+        480,
+        270
+      ],
+      "sheet": [
+        480,
+        270
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_title_logo": {
+      "frame": [
+        256,
+        96
+      ],
+      "sheet": [
+        256,
+        96
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    },
+    "ui_title_screen": {
+      "frame": [
+        480,
+        270
+      ],
+      "sheet": [
+        480,
+        270
+      ],
+      "grid": [
+        1,
+        1
+      ],
+      "frame_count": 1,
+      "logical_slot_count": 1
+    }
+  },
+  "battle_presentation_profile": "battle_presentation_profile.json",
+  "hd_presentation_asset_index": "presentation_asset_index.json",
+  "pixel_contract_scope": "Existing layouts and 16-color/binary-alpha/8x contracts apply to pixel-compatible assets. HD scene presentation layers have a separate index and contract."
+}

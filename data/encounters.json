@@ -1,0 +1,213 @@
+{
+ "encounters": [
+  {
+   "area": "Route 1",
+   "method": "Tall grass, morning/day",
+   "table": [
+    {
+     "kith": "Peeplet",
+     "chance": 35,
+     "levels": "2–4"
+    },
+    {
+     "kith": "Burrowbit",
+     "chance": 30,
+     "levels": "2–4"
+    },
+    {
+     "kith": "Silkling",
+     "chance": 20,
+     "levels": "2–3"
+    },
+    {
+     "kith": "Sparkit",
+     "chance": 15,
+     "levels": "3–4"
+    }
+   ]
+  },
+  {
+   "area": "Route 1",
+   "method": "Tall grass, evening/night",
+   "table": [
+    {
+     "kith": "Burrowbit",
+     "chance": 35,
+     "levels": "2–4"
+    },
+    {
+     "kith": "Silkling",
+     "chance": 30,
+     "levels": "2–4"
+    },
+    {
+     "kith": "Peeplet",
+     "chance": 25,
+     "levels": "2–4"
+    },
+    {
+     "kith": "Sparkit",
+     "chance": 10,
+     "levels": "3–4"
+    }
+   ]
+  },
+  {
+   "area": "Route 2",
+   "method": "Tall grass",
+   "table": [
+    {
+     "kith": "Burrowbit",
+     "chance": 30,
+     "levels": "5–8"
+    },
+    {
+     "kith": "Peeplet",
+     "chance": 25,
+     "levels": "5–8"
+    },
+    {
+     "kith": "Cobblit",
+     "chance": 20,
+     "levels": "6–8"
+    },
+    {
+     "kith": "Silkling",
+     "chance": 15,
+     "levels": "5–7"
+    },
+    {
+     "kith": "Sparkit",
+     "chance": 10,
+     "levels": "6–8"
+    }
+   ]
+  },
+  {
+   "area": "Cindervale Mines",
+   "method": "Cave floor",
+   "table": [
+    {
+     "kith": "Cobblit",
+     "chance": 60,
+     "levels": "8–12"
+    },
+    {
+     "kith": "Burrowbit",
+     "chance": 25,
+     "levels": "8–11"
+    },
+    {
+     "kith": "Thumpwarren",
+     "chance": 15,
+     "levels": "20–22 (rare, after badge 1)"
+    }
+   ]
+  },
+  {
+   "area": "Route 3",
+   "method": "Tall grass",
+   "table": [
+    {
+     "kith": "Peeplet",
+     "chance": 30,
+     "levels": "10–13"
+    },
+    {
+     "kith": "Peeplark",
+     "chance": 10,
+     "levels": "14–15"
+    },
+    {
+     "kith": "Burrowbit",
+     "chance": 25,
+     "levels": "10–13"
+    },
+    {
+     "kith": "Sparkit",
+     "chance": 20,
+     "levels": "11–13"
+    },
+    {
+     "kith": "Silkling",
+     "chance": 15,
+     "levels": "10–12"
+    }
+   ]
+  },
+  {
+   "area": "Route 3",
+   "method": "Tide pools",
+   "table": [
+    {
+     "kith": "Barnacub",
+     "chance": 70,
+     "levels": "11–14"
+    },
+    {
+     "kith": "Ottide",
+     "chance": 5,
+     "levels": "12 (rare)"
+    },
+    {
+     "kith": "Peeplet",
+     "chance": 25,
+     "levels": "10–13"
+    }
+   ]
+  },
+  {
+   "area": "Bramblewood edge",
+   "method": "Night only",
+   "table": [
+    {
+     "kith": "Silkling",
+     "chance": 50,
+     "levels": "12–14"
+    },
+    {
+     "kith": "Lumoth",
+     "chance": 25,
+     "levels": "14–16"
+    },
+    {
+     "kith": "Sparkit",
+     "chance": 20,
+     "levels": "13–15"
+    },
+    {
+     "kith": "Threadwraith",
+     "chance": 5,
+     "levels": "15–16 (rare)"
+    }
+   ]
+  }
+ ],
+ "trainer_teams": [
+  {
+   "battle": "Cole (battle 1, Hearthmoss)",
+   "team": "Starter strong against yours, L5",
+   "notes": "No items"
+  },
+  {
+   "battle": "Cole (battle 2, Route 3)",
+   "team": "Peeplet L11; his starter L13",
+   "notes": "Calder Fig on the starter"
+  },
+  {
+   "battle": "Dara Flint (Gym 1)",
+   "team": "Burrowbit L11; Cobblit L12; Cobblit L14 (ace)",
+   "notes": "Ace holds a Growth Ring; uses Shard Field and Sturdy Frame"
+  },
+  {
+   "battle": "Cole (battle 3, Marrowind double)",
+   "team": "Peeplark L16; Sparkit L16; his starter L18",
+   "notes": "Partners with the player"
+  },
+  {
+   "battle": "Isla Marlowe (Gym 2)",
+   "team": "Barnacub L17; Peeplark L18; Barnaclaw L20 (ace)",
+   "notes": "Opens with Rain Call; ace holds Trail Rations"
+  }
+ ]
+}

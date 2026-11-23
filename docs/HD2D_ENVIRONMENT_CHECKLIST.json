@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "project": "Wildbound",
+  "status": "active_production_constraint",
+  "recorded_date": "2026-11-23",
+  "user_directive": "The one thing you HAVE to take into consideration is that this is going to be HD-2D graphics. Try and take that into consideration as we build out the environment assets.",
+  "guide": "HD2D_ENVIRONMENT_ART_DIRECTION.md",
+  "source_bible": "source/Wildbound_Character_and_Asset_Bible_v2_3.md",
+  "source_sections": ["Phase 1 review and Phase 2 queue", "Art direction and sprite specs", "Environment, tiles and UI"],
+  "rendering_contract": {
+    "target": "pixel-art sprites in a lit diorama with depth and atmospheric separation",
+    "ground_source_view": "straight_top_down",
+    "ground_scene_use": "tilted_ground_texture_or_scene_plane_under_existing_engine_contract",
+    "standing_source_view": "front_on_billboard",
+    "lighting_in_source_art": "flat_even_with_simple_form_shading",
+    "lighting_and_effects_owner": "engine",
+    "native_sampling": "nearest_neighbor",
+    "sprite_alpha": "binary",
+    "mirroring_allowed": false,
+    "camera_dependent_extensions": "Additional building side/roof/depth surfaces require the actual selected camera and visible-surface need. No blanket isometric conversion."
+  },
+  "camera_calibration": {
+    "status": "not_verified_in_supplied_engine",
+    "projection": null,
+    "pitch_degrees": null,
+    "world_units_per_native_pixel": null,
+    "target_viewport": null,
+    "billboard_behavior": null,
+    "note": "The flat asset study does not establish these values. Record them from a working scene slice."
+  },
+  "existing_assets": {
+    "world_native_files": 15,
+    "world_elements_or_states": 99,
+    "art_review_status": "pending_user_review",
+    "scene_integration_tested": false,
+    "flat_study_is_finished_hd2d_target": false,
+    "three_npc_eye_corrections_do_not_change_environment_art": true
+  },
+  "not_delivered_as_completed_systems": [
+    "camera-calibrated scene geometry",
+    "split building and canopy assemblies",
+    "collision meshes or gameplay depth sorting",
+    "lighting materials or normal maps",
+    "water reflection or motion systems",
+    "foreground/background scenery system",
+    "playable HD-2D map or engine capture"
+  ],
+  "integration_tasks": [
+    {"id":"hd2d_camera_scale_slice","status":"planned_not_implemented","task":"Assemble one Hearthmoss house, door, path, tree, prop/fence group, NPC, Kith and pond edge in the actual renderer; record camera and world scale."},
+    {"id":"hd2d_contact_and_occlusion","status":"planned_not_implemented","task":"Check foot/base contact, entry thresholds, depth ordering, visual overhang and base collision; identify required roof/canopy layers."},
+    {"id":"hd2d_material_and_lighting","status":"planned_not_implemented","task":"Check neutral day and dusk/window-light setups with shadows and restrained bloom; identify any required clean emissive masks."},
+    {"id":"hd2d_water_and_atmosphere","status":"planned_not_implemented","task":"Define water motion/reflection and atmospheric layer treatment in the renderer before commissioning dependent masks or overlays."},
+    {"id":"hd2d_pixel_and_focus_review","status":"planned_not_implemented","task":"Inspect moving sprites and camera motion for atlas bleed, texture shimmer, scale mismatch and excessive depth blur; preserve gameplay focus."},
+    {"id":"hd2d_dependent_asset_pass","status":"planned_after_camera_slice","task":"Produce only the side/roof surfaces, terrain banks, continuous ledges, separated occluders and scenery layers that the checked scene actually needs."}
+  ],
+  "future_asset_prompt_required_fields": ["scene_role", "native_dimensions", "source_view", "palette", "contact_point_or_shared_pivot", "neighbor_or_component_contract", "flat_source_lighting", "camera_reference_if_view_dependent"],
+  "review_required_views": ["clean_native_asset", "calibrated_engine_scene_when_available"],
+  "approval_effect": "Records a visual-production constraint only; no new art approval is inferred.",
+  "queue_effect": "Does not silently reorder the existing v2.3 UI and character queue; the calibrated scene is a dependency for further camera-dependent environment art."
+}

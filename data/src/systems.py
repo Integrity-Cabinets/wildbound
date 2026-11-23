@@ -1,0 +1,198 @@
+STATS = ['atk', 'def', 'spa', 'spd', 'spe']
+SN = {'atk': 'Attack', 'def': 'Defense', 'spa': 'Sp. Atk', 'spd': 'Sp. Def', 'spe': 'Speed'}
+# NATURES[(up, down)] = name ; up==down -> neutral
+NATURES = {
+ ('atk','atk'):'Even',   ('atk','def'):'Brash',     ('atk','spa'):'Gritty',  ('atk','spd'):'Reckless', ('atk','spe'):'Stubborn',
+ ('def','atk'):'Guarded',('def','def'):'Mellow',    ('def','spa'):'Stoic',   ('def','spd'):'Thickset', ('def','spe'):'Steadfast',
+ ('spa','atk'):'Studious',('spa','def'):'Bright',   ('spa','spa'):'Plain',   ('spa','spd'):'Fiery',    ('spa','spe'):'Pensive',
+ ('spd','atk'):'Serene', ('spd','def'):'Earnest',   ('spd','spa'):'Prudent', ('spd','spd'):'Easy',     ('spd','spe'):'Patient',
+ ('spe','atk'):'Skittish',('spe','def'):'Restless', ('spe','spa'):'Brisk',   ('spe','spd'):'Impulsive',('spe','spe'):'Wry',
+}
+
+# (name, category, effect)
+TRAITS = [
+ # pinch boosters (starters)
+ ('Kindling','Pinch','Ember moves deal 1.5x damage when the user is at 1/3 HP or less.'),
+ ('Overgrowth','Pinch','Bloom moves deal 1.5x damage when the user is at 1/3 HP or less.'),
+ ('Undercurrent','Pinch','Tide moves deal 1.5x damage when the user is at 1/3 HP or less.'),
+ ('Hive Mind','Pinch','Swarm moves deal 1.5x damage when the user is at 1/3 HP or less.'),
+ # weather setters / abusers
+ ('Suncaller','Weather','Summons harsh sunlight for 5 turns on entry.'),
+ ('Raincaller','Weather','Summons rain for 5 turns on entry.'),
+ ('Dustcaller','Weather','Summons a dust storm for 5 turns on entry.'),
+ ('Snowcaller','Weather','Summons snow for 5 turns on entry.'),
+ ('Ashcaller','Weather','Summons ashfall for 5 turns on entry.'),
+ ('Sun Chaser','Weather','Doubles Speed in harsh sunlight.'),
+ ('Rain Runner','Weather','Doubles Speed in rain.'),
+ ('Sand Strider','Weather','Doubles Speed in a dust storm; immune to dust damage.'),
+ ('Snow Glider','Weather','Doubles Speed in snow.'),
+ ('Ash Walker','Weather','Doubles Speed in ashfall; immune to ash damage.'),
+ ('Calm Eye','Weather','While on the field, weather has no effect.'),
+ ('Weatherproof','Weather','Immune to weather damage and powder moves.'),
+ # terrain
+ ('Seedling Surge','Terrain','Sets Bloom terrain on entry.'),
+ ('Static Surge','Terrain','Sets Charged terrain on entry.'),
+ ('Mind Surge','Terrain','Sets Mind terrain on entry.'),
+ ('Mist Surge','Terrain','Sets Fae mist on entry.'),
+ # entry and switching
+ ('Imposing','Entry','On entry, lowers the Attack of adjacent foes by 1.'),
+ ('Opening Gambit','Entry','On entry, raises the user\'s Speed by 1 (once per battle).'),
+ ('Echo Soul','Entry','On entry, copies a foe\'s trait.'),
+ ('Mend on Retreat','Switching','Heals 1/3 of max HP when switching out.'),
+ ('Fresh Start','Switching','Cures status conditions when switching out.'),
+ ('Shadow Hold','Switching','Adjacent foes cannot switch out (Shade types excepted).'),
+ # stat multipliers
+ ('Mighty Build','Power','Doubles Attack.'),
+ ('Finesse','Power','Moves with 60 power or less deal 1.5x damage.'),
+ ('Specialist','Power','Same-type bonus becomes 2x instead of 1.5x.'),
+ ('Raw Power','Power','Moves with secondary effects deal 1.3x damage, but the effects are lost.'),
+ ('Overeager','Power','Attack x1.5, but physical moves are 20% less accurate.'),
+ ('Grit','Power','Attack x1.5 while the user has a status condition; burn no longer halves Attack.'),
+ ('Piercing Gaze','Power','Not-very-effective moves deal normal damage.'),
+ ('Marksman','Power','Critical hits deal 2.25x instead of 1.5x.'),
+ ('Lucky Eye','Power','Raises the critical-hit stage by 1.'),
+ ('Sharp Eyes','Power','Move accuracy x1.3.'),
+ ('Relentless','Power','Multi-hit moves always hit the maximum number of times.'),
+ ('Lucky Star','Power','Doubles the chance of secondary effects.'),
+ ('Unstoppable','Power','Moves ignore the target\'s defensive traits.'),
+ ('Kindred Rival','Power','Deals 1.25x damage to foes that share a type with the user.'),
+ # move-family boosters
+ ('Brawler','Family','Punch moves deal 1.2x damage.'),
+ ('Crushing Jaw','Family','Bite moves deal 1.5x damage.'),
+ ('Keen Edge','Family','Slice moves deal 1.5x damage.'),
+ ('Pulse Amplifier','Family','Pulse moves deal 1.5x damage.'),
+ ('Resonant Voice','Family','Sound moves deal 1.3x damage; takes half damage from sound moves.'),
+ ('Hard Claws','Family','Contact moves deal 1.3x damage.'),
+ # speed
+ ('Accelerate','Speed','Raises Speed by 1 at the end of each turn.'),
+ ('Lightweight','Speed','Doubles Speed after the user loses its held item.'),
+ ('Tailwind Born','Speed','Gale moves get +1 priority while the user is at full HP.'),
+ ('Trickster','Speed','Status moves get +1 priority. Shade types are immune to moves boosted this way.'),
+ ('Momentum','Speed','Raises Attack by 1 after knocking out a foe.'),
+ # defensive
+ ('Sturdy Frame','Defense','Survives any hit from full HP with 1 HP left.'),
+ ('Full Scales','Defense','Takes half damage while at full HP.'),
+ ('Warded','Defense','Takes damage only from direct attacks.'),
+ ('Insulated','Defense','Takes half damage from Ember and Frost moves.'),
+ ('Shock Absorber','Defense','Super-effective damage taken is reduced to 0.75x.'),
+ ('Hover','Defense','Immune to ground moves and hazards that affect grounded creatures.'),
+ ('Bulletproof Shell','Defense','Immune to bullet moves.'),
+ ('Deaf Ears','Defense','Immune to sound moves.'),
+ ('Reflective Hide','Defense','Bounces back status moves aimed at the user.'),
+ ('Unshakable','Defense','Other creatures cannot lower the user\'s stats.'),
+ ('Unfazed','Defense','Ignores the target\'s stat changes when attacking, and the attacker\'s when defending.'),
+ ('Toughening','Defense','Raises Defense by 1 whenever hit by an attack.'),
+ ('Brittle Shell','Defense','When hit by a physical move: Defense -1, Speed +2.'),
+ # absorbs
+ ('Wellspring','Absorb','Immune to Tide moves; heals 25% when hit by one.'),
+ ('Grounding','Absorb','Immune to Volt moves; heals 25% when hit by one.'),
+ ('Firebrand','Absorb','Immune to Ember moves; its own Ember moves deal 1.5x after absorbing one.'),
+ ('Sapling','Absorb','Immune to Bloom moves; raises Attack by 1 when hit by one.'),
+ ('Wind Rider','Absorb','Immune to wind moves; raises Attack by 1 when hit by one.'),
+ # contact punishers
+ ('Static Fur','Contact','Contact attackers have a 30% chance to be paralyzed.'),
+ ('Ember Hide','Contact','Contact attackers have a 30% chance to be burned.'),
+ ('Barbed Skin','Contact','Contact attackers have a 30% chance to be poisoned.'),
+ ('Jagged Hide','Contact','Contact attackers lose 1/8 of their max HP.'),
+ # status
+ ('Molting','Status','30% chance to cure its status condition at the end of each turn.'),
+ ('Toxic Thrive','Status','Heals 1/8 of max HP each turn while poisoned instead of taking damage.'),
+ ('Mirror Spirit','Status','When given burn, poison or paralysis, gives the same condition to the source.'),
+ ('Composed','Status','Cannot flinch; immune to Imposing.'),
+ ('Even Keel','Status','Cannot be confused.'),
+ ('Sleepless','Status','Cannot fall asleep.'),
+ ('Hardy Gut','Status','Cannot be poisoned.'),
+ ('Loose Joints','Status','Cannot be paralyzed.'),
+ ('Damp Coat','Status','Cannot be burned.'),
+ ('Warm Blooded','Status','Cannot be frostbitten.'),
+ # stat reactions
+ ('Defiance','Reaction','Raises Attack by 2 when a foe lowers any of its stats.'),
+ ('Proud','Reaction','Raises Special Attack by 2 when a foe lowers any of its stats.'),
+ ('Spurred','Reaction','Raises Speed by 1 when it flinches.'),
+ ('Righteous','Reaction','Raises Attack by 1 when hit by a Shade move.'),
+ ('Weight of Presence','Reaction','Foes use 2 PP per move.'),
+ ('Shifting Hide','Reaction','Before attacking, becomes the type of the move it uses (once per switch-in).'),
+ # items
+ ('Gatherer','Item','50% chance to regrow a used berry each turn (100% in sun).'),
+ # bond traits (unique to Wildbound)
+ ('Devoted','Bond','At max Trust, takes 10% less damage.'),
+ ('Loyal Heart','Bond','At Trust 220+, survives one knockout blow per battle with 1 HP.'),
+ ('Oathkeeper','Bond','If Oathbound, Initiative can trigger twice per battle.'),
+ ('Home Turf','Bond','Deals 1.2x damage in the area where it was first caught or hatched.'),
+ ('Pack Bond','Bond','Deals 1.1x damage for each fainted party member (max 1.3x).'),
+]
+
+STATUSES = [
+ ('Burn','Loses 1/16 max HP each turn; physical damage halved. Ember types are immune.'),
+ ('Poison','Loses 1/8 max HP each turn. Venom and Metal types are immune.'),
+ ('Bad poison','Loses 1/16, then 2/16, 3/16... each turn; resets on switching. Same immunities as Poison.'),
+ ('Paralysis','Speed halved; 25% chance each turn to be unable to move. Volt types are immune.'),
+ ('Sleep','Cannot move for 1–3 turns. Sleep-only moves can still be used.'),
+ ('Frostbite','Loses 1/16 max HP each turn; special damage halved. Frost types are immune. Replaces the classic freeze.'),
+ ('Confusion (volatile)','2–5 turns; 33% chance each turn to hit itself with a 40-power typeless attack.'),
+ ('Flinch (volatile)','Loses its move this turn. Only works if the attacker moved first.'),
+ ('Trapped (volatile)','Cannot switch out; some traps deal 1/8 max HP each turn.'),
+ ('Seeded (volatile)','Loses 1/8 max HP each turn to the seeder.'),
+ ('Goaded (volatile)','Can only use damaging moves for 3 turns.'),
+]
+
+WEATHER = [
+ ('Harsh sunlight','Ember moves x1.5, Tide moves x0.5. Solar Lance fires instantly. Sun-chasers double Speed.'),
+ ('Rain','Tide moves x1.5, Ember moves x0.5. Storm Strike and Cyclone never miss.'),
+ ('Dust storm','Non-Stone, non-Metal creatures lose 1/16 max HP per turn. Stone types get Sp. Def x1.5.'),
+ ('Snow','Frost types get Defense x1.5. Whiteout never misses. Enables Aurora Screen.'),
+ ('Ashfall','Unique to the Reach. Non-Ember, non-Stone creatures lose 1/16 max HP per turn. Ember moves x1.2. Healing moves and drain are halved.'),
+]
+TERRAIN = [
+ ('Bloom terrain','Grounded creatures heal 1/16 each turn. Bloom moves x1.3. Ground moves deal half damage.'),
+ ('Charged terrain','Grounded creatures cannot fall asleep. Volt moves x1.3.'),
+ ('Mind terrain','Grounded creatures are protected from priority moves. Mind moves x1.3.'),
+ ('Fae mist','Grounded creatures cannot gain status conditions. Wyrm moves against grounded targets deal half damage.'),
+]
+HAZARDS = [
+ ('Shard Field','Switch-ins take Stone-effectiveness damage: 1/32 (4x resist) up to 1/2 (4x weak); 1/8 at neutral.'),
+ ('Caltrops','1–3 layers: grounded switch-ins lose 1/8, 1/6 or 1/4 max HP.'),
+ ('Venom Thorns','1–2 layers: grounded switch-ins are poisoned, or badly poisoned. A grounded Venom type removes them.'),
+ ('Silk Snare','Grounded switch-ins lose 1 Speed.'),
+ ('Bramble Bed','Grounded, non-Bloom switch-ins lose 1/8 max HP.'),
+]
+SCREENS = [
+ ('Plate Wall','Physical damage to the side halved for 5 turns (2/3 in doubles).'),
+ ('Mind Ward','Special damage to the side halved for 5 turns.'),
+ ('Aurora Screen','All damage halved for 5 turns; requires snow.'),
+ ('Tailgust','Side Speed doubled for 4 turns.'),
+ ('Mist Veil','Side stats cannot be lowered for 5 turns.'),
+ ('Sanctuary','Side cannot gain status conditions for 5 turns.'),
+ ('Inverted Hour','Field: slower creatures move first within each priority bracket for 5 turns.'),
+]
+
+ITEMS = [
+ ('Life Charm','Attack','Moves deal 1.3x damage; the holder loses 1/10 max HP per attack.'),
+ ("Champion's Band",'Attack','Attack x1.5, but locked into the first move chosen.'),
+ ("Scholar's Specs",'Attack','Sp. Atk x1.5, but locked into the first move chosen.'),
+ ("Racer's Scarf",'Speed','Speed x1.5, but locked into the first move chosen.'),
+ ("Coach's Belt",'Attack','Super-effective moves deal 1.2x damage.'),
+ ("Hunter's Lens",'Attack','Raises the critical-hit stage by 1.'),
+ ('Type charms (16)','Attack','One per type (e.g. Ember Coal, Tide Pearl): moves of that type deal 1.2x damage.'),
+ ('Trail Rations','Recovery','Heals 1/16 max HP each turn.'),
+ ('Venom Sac','Recovery','Venom types heal 1/16 each turn; others lose 1/8.'),
+ ('Calder Fig','Berry','Heals 25% max HP at half HP or less.'),
+ ('Clearfruit','Berry','Cures any status condition once.'),
+ ('Resist berries (16)','Berry','One per type: halves one super-effective hit of that type.'),
+ ('Last Thread','Defense','Survives one hit from full HP with 1 HP. Single use.'),
+ ('Padded Vest','Defense','Sp. Def x1.5; the holder can only use damaging moves.'),
+ ('Growth Ring','Defense','Defense and Sp. Def x1.5 if the holder can still evolve.'),
+ ('Spiked Helmet','Defense','Contact attackers lose 1/6 of their max HP.'),
+ ('Trail Boots','Defense','The holder ignores entry hazards.'),
+ ('Float Bladder','Defense','The holder floats (immune to ground moves) until hit.'),
+ ('Counterplan','Reaction','When hit super-effectively: Attack and Sp. Atk +2. Single use.'),
+ ('Recall Whistle','Reaction','When hit, the holder switches out. Single use.'),
+ ('Lucky Spur','Speed','20% chance to move first in its priority bracket.'),
+ ('Ward Clay','Field','Screens set by the holder last 8 turns.'),
+ ('Weather stones (5)','Field','Sun, Rain, Dust, Snow and Ash stones: that weather lasts 8 turns when set by the holder.'),
+ ('Ember Vial / Toxin Vial','Status','Burns or badly poisons the holder at the end of its first turn (for Grit and Toxic Thrive).'),
+ ('Oath Charm','Bond','Oathbound only: when Initiative triggers, the holder also heals 10% max HP.'),
+ ('Trust Ribbon','Bond','Doubles Trust gained while held. No battle effect.'),
+ ('Calm Stone','Breeding','Passes the holder\'s nature to its offspring.'),
+ ('Heirloom Knot','Breeding','Offspring inherit 5 Potentials from the parents instead of 3.'),
+]

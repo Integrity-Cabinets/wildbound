@@ -1,0 +1,127 @@
+[
+ {
+  "name": "Even",
+  "up": "atk",
+  "down": "atk"
+ },
+ {
+  "name": "Brash",
+  "up": "atk",
+  "down": "def"
+ },
+ {
+  "name": "Gritty",
+  "up": "atk",
+  "down": "spa"
+ },
+ {
+  "name": "Reckless",
+  "up": "atk",
+  "down": "spd"
+ },
+ {
+  "name": "Stubborn",
+  "up": "atk",
+  "down": "spe"
+ },
+ {
+  "name": "Guarded",
+  "up": "def",
+  "down": "atk"
+ },
+ {
+  "name": "Mellow",
+  "up": "def",
+  "down": "def"
+ },
+ {
+  "name": "Stoic",
+  "up": "def",
+  "down": "spa"
+ },
+ {
+  "name": "Thickset",
+  "up": "def",
+  "down": "spd"
+ },
+ {
+  "name": "Steadfast",
+  "up": "def",
+  "down": "spe"
+ },
+ {
+  "name": "Studious",
+  "up": "spa",
+  "down": "atk"
+ },
+ {
+  "name": "Bright",
+  "up": "spa",
+  "down": "def"
+ },
+ {
+  "name": "Plain",
+  "up": "spa",
+  "down": "spa"
+ },
+ {
+  "name": "Fiery",
+  "up": "spa",
+  "down": "spd"
+ },
+ {
+  "name": "Pensive",
+  "up": "spa",
+  "down": "spe"
+ },
+ {
+  "name": "Serene",
+  "up": "spd",
+  "down": "atk"
+ },
+ {
+  "name": "Earnest",
+  "up": "spd",
+  "down": "def"
+ },
+ {
+  "name": "Prudent",
+  "up": "spd",
+  "down": "spa"
+ },
+ {
+  "name": "Easy",
+  "up": "spd",
+  "down": "spd"
+ },
+ {
+  "name": "Patient",
+  "up": "spd",
+  "down": "spe"
+ },
+ {
+  "name": "Skittish",
+  "up": "spe",
+  "down": "atk"
+ },
+ {
+  "name": "Restless",
+  "up": "spe",
+  "down": "def"
+ },
+ {
+  "name": "Brisk",
+  "up": "spe",
+  "down": "spa"
+ },
+ {
+  "name": "Impulsive",
+  "up": "spe",
+  "down": "spd"
+ },
+ {
+  "name": "Wry",
+  "up": "spe",
+  "down": "spe"
+ }
+]

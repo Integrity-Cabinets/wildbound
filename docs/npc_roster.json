@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "scope": "24 reusable generic NPC designs for Hearthmoss and Route 1",
+  "status": "approved",
+  "npc_count": 24,
+  "native_walk_sheets": 24,
+  "walk_frame_slots": 288,
+  "concept_plates": 4,
+  "npcs": [
+    {
+      "id": "npc_resident_m",
+      "label": "Resident M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_resident_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_resident_m_walk@8x.png"
+      },
+      "sha256": "20d529eb4b1ac1420b90137447ac7aeb32686533b361c60415a9edc24e34d210",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Adult man, soft round build, short brown hair, friendly medium complexion, moss-green sweater with ochre collar, ochre trousers, brown walking shoes. No bag or hat.",
+      "master_sha256": "c36c548c836da16bf71deaa4f216d2853ecf204c9f48b6e8bdf8016ea4385db9",
+      "revision_id": "batch_02_original_eyes_01",
+      "selection_event": "metadata/phase_two/batch_02/original_eyes_01/selection.json",
+      "selection_status": "user_preferred_original",
+      "do_not_reapply_unselected_eye_polish": true,
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_resident_f",
+      "label": "Resident F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_resident_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_resident_f_walk@8x.png"
+      },
+      "sha256": "6c212df8bb41ed405131f2736a439b273074c1495d7684401d1c390e18c0c244",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Adult woman with light warm skin, neat auburn bob, warm-red cardigan with small ochre buttons over cream blouse, brown straight-leg trousers, simple brown ankle shoes. No bag or hat.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_parent_m",
+      "label": "Parent M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_parent_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_parent_m_walk@8x.png"
+      },
+      "sha256": "dbaa3d70626d29cdb2e7c2e651cd4ca4436a8cbbeeccd9b5470bea5fe0db4211",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Broad-built adult father, dark brown skin, short cropped dark hair, navy workshirt with rolled sleeves, tan trousers, brown boots. Brown leather crossbody satchel at his anatomical LEFT hip. Preserve the side in every view: DOWN front bag on image-right; UP rear bag on image-left; LEFT-facing side bag on near visible hip; RIGHT-facing side bag is mostly occluded on far hip. Do not move the bag to the other hip.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_parent_f",
+      "label": "Parent F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_parent_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_parent_f_walk@8x.png"
+      },
+      "sha256": "ff00b35934646f83984fbd5e404b7b98d926ee2450b0183c6e610a4a3ad5a00e",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Adult mother with medium warm brown skin and long brown braid over her anatomical LEFT shoulder, teal tunic, modest calf-length cream skirt, brown flats. Braid on image-right in front, image-left in rear, near side in left-facing view and far side in right-facing view. No bag, no hat.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_elder_m",
+      "label": "Elder M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "older_adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_elder_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_elder_m_walk@8x.png"
+      },
+      "sha256": "41ece3e979e4316149a4e4bf979aee574b9774e02f2f67526017866d56f7b4af",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Older man with light warm skin, balding crown, silver side hair and silver mustache, plum sweater vest over cream long-sleeve shirt, gray trousers and brown shoes. Gently rounded friendly build. No hat, cap, walking cane or bag.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_elder_f",
+      "label": "Elder F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "older_adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_elder_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_elder_f_walk@8x.png"
+      },
+      "sha256": "99c761eb840f628b40617da9b82fd3903deb9d294d274746d887a5d491c1f205",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_adults_v1.png",
+      "design_brief": "Older woman with warm medium skin, short gray curls, mustard cardigan over cream blouse, modest blue calf-length skirt and practical brown shoes. Gently rounded build. No glasses, hat or bag.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_teen_m",
+      "label": "Teen M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "teen",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_teen_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_teen_m_walk@8x.png"
+      },
+      "sha256": "6c5136a4d3934ccf09e261188b0caadcc05b2a4e0cfa8a85418dbd5b13e1d18c",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Teenage boy with light warm skin, short tousled brown hair, orange hoodie, dark charcoal trousers, brown-and-cream sneakers, simple brown backpack with two straps. The backpack is centered on his back and visible correctly in rear/side views. No hat.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_teen_f",
+      "label": "Teen F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "teen",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_teen_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_teen_f_walk@8x.png"
+      },
+      "sha256": "91e7e32230628815bda3fd42bf87b9db64c26414d1e3929bf42f9aec7f15a858",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Teenage girl with medium-brown skin, high black ponytail held by a blue band, cobalt-blue vest over a cream short-sleeve shirt, navy trousers, simple dark-and-cream shoes. Ordinary straight athletic silhouette, modest and age-appropriate. No bag or hat.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_child_m",
+      "label": "Child M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "child",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_child_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_child_m_walk@8x.png"
+      },
+      "sha256": "11e94ea23bf6a96eac6f02237f611893968c96d2547eef238bb7f5178c449a7b",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Young child boy, distinctly shorter/smaller than an adult, deep warm brown skin, dark curly hair, yellow shirt under blue overalls with a simple front bib pocket, small brown shoes. No bag, hat or held objects. Cute ordinary child proportions.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_child_f",
+      "label": "Child F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "child",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_child_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_child_f_walk@8x.png"
+      },
+      "sha256": "a75a5d17142077e7cea7057656795d8d0c9f0e12d2af68d6545f46b2d6851353",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Young child girl, distinctly shorter/smaller than an adult, warm tan skin, two rounded brown hair puffs, red buttoned coat with ochre toggles, dark leggings, brown boots. Cute ordinary child proportions, fully dressed. No bag or hat.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_student_m",
+      "label": "Student M",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "teen",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_student_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_student_m_walk@8x.png"
+      },
+      "sha256": "bd6295e0f360d8048bbdfbfc9484f478ca54e3b8bb19d7812440f4b537e0e93d",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Teenage student boy with medium warm skin, dark wavy hair, tan-and-olive jacket over cream shirt, brown trousers and shoes. Brown book satchel at his anatomical LEFT hip: DOWN front bag on image-right; UP rear bag on image-left; LEFT-facing side bag clearly on near hip; RIGHT-facing side bag mostly occluded on far hip. No held book, no hat. Keep same bag side.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_student_f",
+      "label": "Student F",
+      "classification": "generic_npc",
+      "production_group": "npc_residents",
+      "age_band": "teen",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_student_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_student_f_walk@8x.png"
+      },
+      "sha256": "ac8f55c4adf84fba69338c3d609a185a973e2868440017964cba2470e58e5e31",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_residents/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_residents/concept_npc_residents_youth_v1.png",
+      "design_brief": "Teenage student girl with light olive complexion, chin-length dark bob and round glasses, modest lavender jumper dress over cream long-sleeve shirt, dark leggings and brown shoes. Brown book satchel at her anatomical RIGHT hip: DOWN front bag on image-left; UP rear bag on image-right; LEFT-facing side bag mostly occluded on far hip; RIGHT-facing side bag clearly visible on near hip. No held books or hat. Fully dressed age-appropriate straight silhouette.",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_farmer_m",
+      "label": "Farmer M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_farmer_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_farmer_m_walk@8x.png"
+      },
+      "sha256": "6f22fe95fc60066e68b75684bc4f6e01fcf8804bce14578636f6b990296b285f",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_farmer_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_farmer_f",
+      "label": "Farmer F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_farmer_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_farmer_f_walk@8x.png"
+      },
+      "sha256": "ff572e1df27ad14f66891fa09ebac828e315ed04a89e1f70a04ee63fe2e0063d",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_farmer_f.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_shop_assistant_m",
+      "label": "Shop Assistant M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_shop_assistant_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_shop_assistant_m_walk@8x.png"
+      },
+      "sha256": "8ffed619a8e19fd0f5ffaaca3823a710be4b2d79eb952c328d646226a8383750",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_shop_assistant_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_shop_assistant_f",
+      "label": "Shop Assistant F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_shop_assistant_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_shop_assistant_f_walk@8x.png"
+      },
+      "sha256": "38bf4d4d9b1a008e0e074743e8c1aab6041b26ceae8727fbe76c1880269ba443",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_shop_assistant_f.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_lodge_attendant_m",
+      "label": "Lodge Attendant M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_lodge_attendant_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_lodge_attendant_m_walk@8x.png"
+      },
+      "sha256": "572ae5f78eb96f319992d93899398b9877ae6fb3693c8e68b5466614b03dda8f",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_lodge_attendant_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_lodge_attendant_f",
+      "label": "Lodge Attendant F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_lodge_attendant_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_lodge_attendant_f_walk@8x.png"
+      },
+      "sha256": "3b7243bec534dea84266bcd025cc7853c092c94a5de9b62ca8ba2ce494c6dcc0",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_village_staff_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_lodge_attendant_f.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_crafter_m",
+      "label": "Crafter M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_crafter_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_crafter_m_walk@8x.png"
+      },
+      "sha256": "979c9f17beed20029cd86a91e561727a2bf7df3c69449223aaf215db174557e0",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_crafter_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_crafter_f",
+      "label": "Crafter F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_crafter_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_crafter_f_walk@8x.png"
+      },
+      "sha256": "8dfd72e7c74ea7a5d3da58634181b7ea54fa508301cf0120448330b900d557e8",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_crafter_f.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_traveler_m",
+      "label": "Traveler M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_traveler_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_traveler_m_walk@8x.png"
+      },
+      "sha256": "48321d880537e5c84acbc12c00c6479f5bea8aad41c0241d898979a0eb31871f",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_traveler_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_traveler_f",
+      "label": "Traveler F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_traveler_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_traveler_f_walk@8x.png"
+      },
+      "sha256": "0f11ae712bb6eb63357acc17af6cc845dab8495185b923435657f629a61cb0b9",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_traveler_f.json",
+      "master_sha256": "06be8382b0d2fb1ad6ef6d78c91571ea8bfb7d8e1d1766a65aaa4293f2649dbf",
+      "revision_id": "batch_02_original_eyes_01",
+      "selection_event": "metadata/phase_two/batch_02/original_eyes_01/selection.json",
+      "selection_status": "user_preferred_original",
+      "do_not_reapply_unselected_eye_polish": true,
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_office_worker_m",
+      "label": "Office Worker M",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_office_worker_m_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_office_worker_m_walk@8x.png"
+      },
+      "sha256": "3045530ea8e5600a35e50bab63e29bfe9b3df31d99fe1b58be2d7f4fd241b425",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_office_worker_m.json",
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    },
+    {
+      "id": "npc_office_worker_f",
+      "label": "Office Worker F",
+      "classification": "generic_npc",
+      "production_group": "npc_specialists",
+      "age_band": "adult",
+      "approval_status": "approved",
+      "assets": {
+        "walk": "assets/characters/char_npc_office_worker_f_walk.png"
+      },
+      "master_assets": {
+        "walk": "assets/characters/char_npc_office_worker_f_walk@8x.png"
+      },
+      "sha256": "08ef68dd6703ffb2c04ea9c53e5b57bc3fc644165075340f26774768074337ff",
+      "layout_id": "character_walk",
+      "frame_count": 12,
+      "named_character": false,
+      "trainer_class_asset": false,
+      "source_record": "metadata/phase_two/batch_02/npc_specialists/production/asset_manifest.json",
+      "concept": "concepts/phase_two/batch_02/npc_specialists/concept_trade_travel_v1.png",
+      "frame_registration_record": "metadata/phase_two/batch_02/npc_specialists/production/exports/npc_office_worker_f.json",
+      "master_sha256": "5988d363997ddc67ba4852d79704d57bf92f205521422f162ee61f6ab3868b66",
+      "revision_id": "batch_02_original_eyes_01",
+      "selection_event": "metadata/phase_two/batch_02/original_eyes_01/selection.json",
+      "selection_status": "user_preferred_original",
+      "do_not_reapply_unselected_eye_polish": true,
+      "approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+    }
+  ],
+  "not_included": [
+    "Named NPCs beyond the preserved core cast",
+    "Trainer class assets",
+    "Battle sprites and portraits for these generic NPCs"
+  ],
+  "selection_basis": "Project-specific reusable population foundation authorized in the batch 2 user extension; not a claim of an industry-standard count.",
+  "source": "metadata/phase_two/batch_02/production_brief.json",
+  "engine_import_tested": false,
+  "latest_revision": "batch_02_original_eyes_01",
+  "latest_selection_event": "metadata/phase_two/batch_02/original_eyes_01/selection.json",
+  "latest_approval_event": "metadata/approval_events/phase_two_batch_02_user_approval_2026_11_23.json"
+}

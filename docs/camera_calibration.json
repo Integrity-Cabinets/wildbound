@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "project": "Wildbound",
+  "status": "measured_from_working_renderer",
+  "renderer": "Wildbound Chapter One web build (src/ow_core.js: resize(), project(), render())",
+  "recorded_date": "2026-11-23",
+  "answers_checklist": "docs/HD2D_ENVIRONMENT_CHECKLIST.json -> camera_calibration, hd2d_camera_scale_slice",
+  "projection": "Perspective. The ground is one top-down texture drawn as a tilted plane, scanline by scanline. Standing art is upright billboards that always face the camera and scale with distance. No rotation, no orthographic or isometric view.",
+  "world_units": { "tile_size_world_px": 16, "map_tiles": [60, 80] },
+  "camera": {
+    "follows": "player, centred horizontally",
+    "distance_behind_player_world_px": 300,
+    "landscape": { "height_world_px": 186, "pitch_degrees_below_horizontal": 31.8, "focal_length_internal_px": 375, "player_screen_row_fraction": 0.68 },
+    "portrait":  { "height_world_px": 280, "pitch_degrees_below_horizontal": 43.0, "focal_length_internal_px": 300, "player_screen_row_fraction": 0.62 },
+    "far_clip_world_px": 1150,
+    "scale_at_distance": "screen_px_per_world_px = focal_length / distance_from_camera"
+  },
+  "target_viewport": { "internal_height_px_landscape": 270, "internal_width_px_portrait": 240, "note": "480x270 internal at 16:9, integer-upscaled with nearest-neighbour; depth blur and vignette are applied on top." },
+  "billboard_behavior": "Bottom-centre pivot on the ground at the object's tile. Drawn back to front by distance. Objects nearer the camera than the player fade out; buildings fade completely so they never cover the player.",
+  "native_pixel_to_world_scale": {
+    "humans_32x48": 0.68, "buildings": 0.68, "fences": 0.68, "signs_mailbox_crate_barrel_bench": 0.7, "lamp_post": 0.72,
+    "well": 0.8, "fountain": 0.85, "bushes": 0.9, "trees_round": 0.98, "trees_pine": 1.02, "tall_grass": 1.0, "kith_followers_32x32": 0.9,
+    "note": "A human is about 27 world px tall, so a door opening of 39 native px (26.5 world px) reads as person-height."
+  },
+  "what_the_camera_shows_of_a_building": "Front face only. Roof tops, side walls and rear faces are never visible, so no extra roof/side/depth surfaces are needed for this camera.",
+  "lighting": "Engine-side: time-of-day colour grade, soft blob shadows, night emissive pass for window glass and lamp glass, additive light pools, particles, depth-of-field bands, vignette. Source art must stay flat and evenly lit.",
+  "colour_grade_applied_to_pack_art": "tools/build_data.py grade(): foliage greens pulled toward hue 118 with +22% saturation and +16% value; other colours +12% saturation, +6% value; outlines untouched.",
+  "ground": "Painted procedurally by the engine (noise-shaded grass, curved dirt paths, cobble plaza, pond). The pack's 16x16 ground atlas is not used in this build."
+}

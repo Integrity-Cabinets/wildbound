@@ -1,0 +1,1909 @@
+[
+ {
+  "no": 1,
+  "name": "Foxfern",
+  "types": [
+   "Bloom"
+  ],
+  "stats": {
+   "hp": 45,
+   "atk": 49,
+   "def": 45,
+   "spa": 60,
+   "spd": 55,
+   "spe": 62
+  },
+  "traits": [
+   "Overgrowth"
+  ],
+  "latent": "Sapling",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 64,
+  "cond_yield": "1 Sp. Atk",
+  "evolution": "Vixthorn at level 16",
+  "egg_groups": "Field, Flora",
+  "height_m": 0.5,
+  "weight_kg": 7.4,
+  "habitat": "Gift from Professor Wren",
+  "concept": "Fox kit with one oversized leaf for a tail.",
+  "dex": "The leaf on its tail turns toward sunlight even while it sleeps. It sulks visibly when ignored.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Disarming Look"
+   ],
+   [
+    4,
+    "Leaf Flick"
+   ],
+   [
+    7,
+    "Sap Drain"
+   ],
+   [
+    10,
+    "Quick Pounce"
+   ],
+   [
+    13,
+    "Lash Vine"
+   ],
+   [
+    17,
+    "Sapling Seed"
+   ],
+   [
+    20,
+    "Pollen Haze"
+   ],
+   [
+    24,
+    "Leaf Blades"
+   ],
+   [
+    28,
+    "Sun Bask"
+   ],
+   [
+    32,
+    "Petal Squall"
+   ],
+   [
+    36,
+    "Overgrow Field"
+   ],
+   [
+    40,
+    "Solar Lance"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 2,
+  "name": "Vixthorn",
+  "types": [
+   "Bloom"
+  ],
+  "stats": {
+   "hp": 60,
+   "atk": 64,
+   "def": 60,
+   "spa": 80,
+   "spd": 70,
+   "spe": 86
+  },
+  "traits": [
+   "Overgrowth"
+  ],
+  "latent": "Sapling",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 142,
+  "cond_yield": "1 Sp. Atk, 1 Speed",
+  "evolution": "Sylvarix at level 34",
+  "egg_groups": "Field, Flora",
+  "height_m": 1.0,
+  "weight_kg": 19.0,
+  "habitat": "Evolves from Foxfern",
+  "concept": "Lean, long-legged fox wearing a mane of thorned vines.",
+  "dex": "Hunts at dusk and leaves a ring of thorns around its den. It only lowers that ring for a partner it trusts.",
+  "learnset": [
+   [
+    0,
+    "Grasping Roots"
+   ],
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Leaf Flick"
+   ],
+   [
+    1,
+    "Sap Drain"
+   ],
+   [
+    13,
+    "Lash Vine"
+   ],
+   [
+    17,
+    "Sapling Seed"
+   ],
+   [
+    20,
+    "Pollen Haze"
+   ],
+   [
+    25,
+    "Leaf Blades"
+   ],
+   [
+    29,
+    "Sun Bask"
+   ],
+   [
+    33,
+    "Petal Squall"
+   ],
+   [
+    38,
+    "Bramble Bed"
+   ],
+   [
+    42,
+    "Overgrow Field"
+   ],
+   [
+    46,
+    "Solar Lance"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 3,
+  "name": "Sylvarix",
+  "types": [
+   "Bloom",
+   "Fae"
+  ],
+  "stats": {
+   "hp": 76,
+   "atk": 80,
+   "def": 72,
+   "spa": 108,
+   "spd": 90,
+   "spe": 104
+  },
+  "traits": [
+   "Overgrowth"
+  ],
+  "latent": "Sapling",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 236,
+  "cond_yield": "3 Sp. Atk",
+  "evolution": "Final stage",
+  "egg_groups": "Field, Flora",
+  "height_m": 1.7,
+  "weight_kg": 48.0,
+  "habitat": "Evolves from Vixthorn",
+  "concept": "Stag-like fox whose tail has become a small canopy of leaves.",
+  "dex": "Groves grow greener wherever it rests for a season. The Greenwardens consider meeting one a good omen.",
+  "learnset": [
+   [
+    0,
+    "Canopy Crown"
+   ],
+   [
+    1,
+    "Glimmer"
+   ],
+   [
+    1,
+    "Leaf Flick"
+   ],
+   [
+    1,
+    "Sap Drain"
+   ],
+   [
+    1,
+    "Grasping Roots"
+   ],
+   [
+    17,
+    "Sapling Seed"
+   ],
+   [
+    20,
+    "Pollen Haze"
+   ],
+   [
+    25,
+    "Leaf Blades"
+   ],
+   [
+    29,
+    "Sun Bask"
+   ],
+   [
+    33,
+    "Petal Squall"
+   ],
+   [
+    39,
+    "Lunar Burst"
+   ],
+   [
+    44,
+    "Overgrow Field"
+   ],
+   [
+    49,
+    "Solar Lance"
+   ],
+   [
+    55,
+    "Starbloom"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 4,
+  "name": "Kindlit",
+  "types": [
+   "Ember"
+  ],
+  "stats": {
+   "hp": 50,
+   "atk": 60,
+   "def": 58,
+   "spa": 52,
+   "spd": 50,
+   "spe": 42
+  },
+  "traits": [
+   "Kindling"
+  ],
+  "latent": "Insulated",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 62,
+  "cond_yield": "1 Attack",
+  "evolution": "Cinderlisk at level 16",
+  "egg_groups": "Monster, Field",
+  "height_m": 0.4,
+  "weight_kg": 8.5,
+  "habitat": "Gift from Professor Wren",
+  "concept": "Round salamander with a glowing ember on its tail and soft rock plates on its back.",
+  "dex": "The ember on its tail dims when it's sad and flares when it's showing off, which is most of the time.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Disarming Look"
+   ],
+   [
+    4,
+    "Cinder"
+   ],
+   [
+    8,
+    "Pebble Toss"
+   ],
+   [
+    11,
+    "Searing Bite"
+   ],
+   [
+    14,
+    "Firewheel"
+   ],
+   [
+    18,
+    "Smolder"
+   ],
+   [
+    21,
+    "Granite Fist"
+   ],
+   [
+    25,
+    "Ember Heel"
+   ],
+   [
+    29,
+    "Fortify"
+   ],
+   [
+    33,
+    "Magma Slam"
+   ],
+   [
+    37,
+    "Sunfall"
+   ],
+   [
+    42,
+    "Flare Charge"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 5,
+  "name": "Cinderlisk",
+  "types": [
+   "Ember"
+  ],
+  "stats": {
+   "hp": 66,
+   "atk": 82,
+   "def": 80,
+   "spa": 68,
+   "spd": 64,
+   "spe": 58
+  },
+  "traits": [
+   "Kindling"
+  ],
+  "latent": "Insulated",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 142,
+  "cond_yield": "2 Attack",
+  "evolution": "Pyrevault at level 36",
+  "egg_groups": "Monster, Field",
+  "height_m": 1.1,
+  "weight_kg": 41.0,
+  "habitat": "Evolves from Kindlit",
+  "concept": "Long-necked basilisk with glowing cracks between darker back plates.",
+  "dex": "Basks on the walls of Cindervale's mines. Miners leave it scraps; it keeps the tunnels warm in winter.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Cinder"
+   ],
+   [
+    1,
+    "Pebble Toss"
+   ],
+   [
+    1,
+    "Searing Bite"
+   ],
+   [
+    14,
+    "Firewheel"
+   ],
+   [
+    18,
+    "Smolder"
+   ],
+   [
+    22,
+    "Granite Fist"
+   ],
+   [
+    26,
+    "Ember Heel"
+   ],
+   [
+    30,
+    "Fortify"
+   ],
+   [
+    35,
+    "Magma Slam"
+   ],
+   [
+    40,
+    "Sunfall"
+   ],
+   [
+    45,
+    "Flare Charge"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 6,
+  "name": "Pyrevault",
+  "types": [
+   "Ember",
+   "Stone"
+  ],
+  "stats": {
+   "hp": 88,
+   "atk": 118,
+   "def": 110,
+   "spa": 85,
+   "spd": 80,
+   "spe": 49
+  },
+  "traits": [
+   "Kindling"
+  ],
+  "latent": "Ashcaller",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 240,
+  "cond_yield": "3 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Monster, Field",
+  "height_m": 2.0,
+  "weight_kg": 190.0,
+  "habitat": "Evolves from Cinderlisk",
+  "concept": "Armored lava lizard; its back plates vent flame when it charges.",
+  "dex": "Its plates hold heat for days. In old Cindervale, a sleeping Pyrevault was a family's furnace for the winter.",
+  "learnset": [
+   [
+    0,
+    "Vent Eruption"
+   ],
+   [
+    1,
+    "Groundswell"
+   ],
+   [
+    1,
+    "Cinder"
+   ],
+   [
+    1,
+    "Searing Bite"
+   ],
+   [
+    1,
+    "Firewheel"
+   ],
+   [
+    18,
+    "Smolder"
+   ],
+   [
+    22,
+    "Granite Fist"
+   ],
+   [
+    26,
+    "Ember Heel"
+   ],
+   [
+    30,
+    "Fortify"
+   ],
+   [
+    36,
+    "Magma Slam"
+   ],
+   [
+    42,
+    "Crag Spike"
+   ],
+   [
+    47,
+    "Ashfall"
+   ],
+   [
+    52,
+    "Flare Charge"
+   ],
+   [
+    58,
+    "Ramming Crag"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 7,
+  "name": "Ottide",
+  "types": [
+   "Tide"
+  ],
+  "stats": {
+   "hp": 52,
+   "atk": 55,
+   "def": 50,
+   "spa": 48,
+   "spd": 52,
+   "spe": 55
+  },
+  "traits": [
+   "Undercurrent"
+  ],
+  "latent": "Momentum",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 63,
+  "cond_yield": "1 Speed",
+  "evolution": "Wavecoat at level 16",
+  "egg_groups": "Aquatic, Field",
+  "height_m": 0.5,
+  "weight_kg": 9.0,
+  "habitat": "Gift from Professor Wren",
+  "concept": "Chubby otter pup with a tail like a paddle.",
+  "dex": "Juggles pebbles when it's bored. If you watch, it will keep going until it drops one, then pretend it meant to.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Disarming Look"
+   ],
+   [
+    4,
+    "Spritz"
+   ],
+   [
+    7,
+    "Riptide Jab"
+   ],
+   [
+    10,
+    "Gnaw"
+   ],
+   [
+    13,
+    "Rapid Current"
+   ],
+   [
+    17,
+    "Torrent Fang"
+   ],
+   [
+    21,
+    "Soak In"
+   ],
+   [
+    25,
+    "Aqua Lance"
+   ],
+   [
+    29,
+    "Train Hard"
+   ],
+   [
+    33,
+    "Brine Lash"
+   ],
+   [
+    37,
+    "Rain Call"
+   ],
+   [
+    42,
+    "Breaker"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 8,
+  "name": "Wavecoat",
+  "types": [
+   "Tide"
+  ],
+  "stats": {
+   "hp": 68,
+   "atk": 76,
+   "def": 66,
+   "spa": 62,
+   "spd": 66,
+   "spe": 80
+  },
+  "traits": [
+   "Undercurrent"
+  ],
+  "latent": "Momentum",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 142,
+  "cond_yield": "2 Speed",
+  "evolution": "Torrentide at level 35",
+  "egg_groups": "Aquatic, Field",
+  "height_m": 1.2,
+  "weight_kg": 32.0,
+  "habitat": "Evolves from Ottide",
+  "concept": "Sleek otter whose fur flows off its back like a cape of water.",
+  "dex": "Strong enough to swim upstream through rapids. It chooses to, often, apparently for fun.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Spritz"
+   ],
+   [
+    1,
+    "Riptide Jab"
+   ],
+   [
+    1,
+    "Gnaw"
+   ],
+   [
+    13,
+    "Rapid Current"
+   ],
+   [
+    17,
+    "Torrent Fang"
+   ],
+   [
+    22,
+    "Soak In"
+   ],
+   [
+    26,
+    "Aqua Lance"
+   ],
+   [
+    30,
+    "Train Hard"
+   ],
+   [
+    34,
+    "Brine Lash"
+   ],
+   [
+    39,
+    "Rain Call"
+   ],
+   [
+    44,
+    "Breaker"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 9,
+  "name": "Torrentide",
+  "types": [
+   "Tide",
+   "Brawl"
+  ],
+  "stats": {
+   "hp": 90,
+   "atk": 112,
+   "def": 84,
+   "spa": 70,
+   "spd": 80,
+   "spe": 94
+  },
+  "traits": [
+   "Undercurrent"
+  ],
+  "latent": "Momentum",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 239,
+  "cond_yield": "3 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Aquatic, Field",
+  "height_m": 1.9,
+  "weight_kg": 120.0,
+  "habitat": "Evolves from Wavecoat",
+  "concept": "Broad-shouldered sea otter with a mane shaped like a breaking wave.",
+  "dex": "Fishing crews in Marrowind say a storm won't sink a boat that a Torrentide has chosen to guard.",
+  "learnset": [
+   [
+    0,
+    "Crashing Mane"
+   ],
+   [
+    1,
+    "Quick Jab"
+   ],
+   [
+    1,
+    "Spritz"
+   ],
+   [
+    1,
+    "Riptide Jab"
+   ],
+   [
+    1,
+    "Rapid Current"
+   ],
+   [
+    17,
+    "Torrent Fang"
+   ],
+   [
+    22,
+    "Soak In"
+   ],
+   [
+    26,
+    "Aqua Lance"
+   ],
+   [
+    30,
+    "Train Hard"
+   ],
+   [
+    35,
+    "Siphon Fist"
+   ],
+   [
+    41,
+    "Brine Lash"
+   ],
+   [
+    46,
+    "Rain Call"
+   ],
+   [
+    51,
+    "Breaker"
+   ],
+   [
+    57,
+    "All-Out Assault"
+   ]
+  ],
+  "art": null,
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 10,
+  "name": "Sparkit",
+  "types": [
+   "Volt"
+  ],
+  "stats": {
+   "hp": 40,
+   "atk": 45,
+   "def": 38,
+   "spa": 60,
+   "spd": 42,
+   "spe": 80
+  },
+  "traits": [
+   "Static Fur",
+   "Accelerate"
+  ],
+  "latent": "Grounding",
+  "growth": "Medium",
+  "catch": 190,
+  "base_xp": 56,
+  "cond_yield": "1 Speed",
+  "evolution": "Voltail with a Volt Shard",
+  "egg_groups": "Field",
+  "height_m": 0.4,
+  "weight_kg": 5.2,
+  "habitat": "Route 1 tall grass (morning and day); Lumen outskirts",
+  "concept": "Blue jerboa-like Kith with huge crackling ears and a lightning-bolt tail.",
+  "dex": "Its ears spark when it hears its name. Lumen City's tram workers keep one on every line to warn of shorts.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Static Snap"
+   ],
+   [
+    5,
+    "Quick Pounce"
+   ],
+   [
+    9,
+    "Arc Fang"
+   ],
+   [
+    13,
+    "Jolt Wave"
+   ],
+   [
+    17,
+    "Shock Jab"
+   ],
+   [
+    21,
+    "Charge Up"
+   ],
+   [
+    25,
+    "Volt Arc"
+   ],
+   [
+    30,
+    "Static Coat"
+   ],
+   [
+    35,
+    "Storm Strike"
+   ]
+  ],
+  "art": "Small, springy jerboa-like Kith in blue (#5078DC) with a pale blue belly (#C8E6FF), long hind legs, huge ears with crackling yellow tips, and a tail shaped like a yellow lightning bolt (#F6CE46). Alert, mischievous expression. Must read clearly differently from Foxfern: rounder body, bigger ears, hopping stance.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 11,
+  "name": "Voltail",
+  "types": [
+   "Volt"
+  ],
+  "stats": {
+   "hp": 65,
+   "atk": 72,
+   "def": 60,
+   "spa": 102,
+   "spd": 70,
+   "spe": 115
+  },
+  "traits": [
+   "Static Fur",
+   "Accelerate"
+  ],
+  "latent": "Static Surge",
+  "growth": "Medium",
+  "catch": 75,
+  "base_xp": 165,
+  "cond_yield": "2 Speed",
+  "evolution": "Final stage",
+  "egg_groups": "Field",
+  "height_m": 1.3,
+  "weight_kg": 26.0,
+  "habitat": "Evolves from Sparkit",
+  "concept": "Long, sleek storm ferret whose tail splits into two crackling bolts.",
+  "dex": "Moves in short bursts that leave the smell of rain behind. It sleeps through thunderstorms like they're lullabies.",
+  "learnset": [
+   [
+    1,
+    "Static Snap"
+   ],
+   [
+    1,
+    "Quick Pounce"
+   ],
+   [
+    1,
+    "Arc Fang"
+   ],
+   [
+    1,
+    "Jolt Wave"
+   ],
+   [
+    17,
+    "Shock Jab"
+   ],
+   [
+    21,
+    "Charge Up"
+   ],
+   [
+    25,
+    "Volt Arc"
+   ],
+   [
+    30,
+    "Static Coat"
+   ],
+   [
+    36,
+    "Ion Pulse"
+   ],
+   [
+    42,
+    "Storm Strike"
+   ],
+   [
+    48,
+    "Overload"
+   ]
+  ],
+  "art": "Elegant, long-bodied storm ferret in deep blue (#3E5CC0) with yellow lightning markings (#F6CE46) along its spine; its tail splits into two bolt-shaped prongs that crackle. Narrow eyes, confident stance, mid-stride. Clearly the grown-up Sparkit.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 12,
+  "name": "Peeplet",
+  "types": [
+   "Beast",
+   "Gale"
+  ],
+  "stats": {
+   "hp": 40,
+   "atk": 45,
+   "def": 40,
+   "spa": 35,
+   "spd": 35,
+   "spe": 56
+  },
+  "traits": [
+   "Opening Gambit",
+   "Sharp Eyes"
+  ],
+  "latent": "Momentum",
+  "growth": "Medium-Slow",
+  "catch": 255,
+  "base_xp": 50,
+  "cond_yield": "1 Speed",
+  "evolution": "Peeplark at level 14",
+  "egg_groups": "Avian",
+  "height_m": 0.3,
+  "weight_kg": 1.8,
+  "habitat": "Routes 1, 2 and 3; very common",
+  "concept": "Plump brown chick with a three-feather tuft and a loud opinion about everything.",
+  "dex": "Wakes before dawn and makes sure everyone else does too. Farmers consider it a free alarm clock and a nuisance in equal measure.",
+  "learnset": [
+   [
+    1,
+    "Beak Jab"
+   ],
+   [
+    1,
+    "Disarming Look"
+   ],
+   [
+    5,
+    "Quick Pounce"
+   ],
+   [
+    9,
+    "Wing Cut"
+   ],
+   [
+    13,
+    "Focus Gaze"
+   ],
+   [
+    17,
+    "Swift Talon"
+   ],
+   [
+    21,
+    "Talon Snatch"
+   ],
+   [
+    25,
+    "Air Blade"
+   ],
+   [
+    29,
+    "Tailgust"
+   ],
+   [
+    33,
+    "Dive Bomb"
+   ]
+  ],
+  "art": "Round, plump chick (#B07C52) with a cream belly (#F6E2BE), orange beak and feet (#F0A032), and a three-feather tuft on its head. Puffed chest, beak open mid-chirp. Keep the prototype's round silhouette.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 13,
+  "name": "Peeplark",
+  "types": [
+   "Beast",
+   "Gale"
+  ],
+  "stats": {
+   "hp": 60,
+   "atk": 68,
+   "def": 58,
+   "spa": 50,
+   "spd": 50,
+   "spe": 76
+  },
+  "traits": [
+   "Opening Gambit",
+   "Sharp Eyes"
+  ],
+  "latent": "Momentum",
+  "growth": "Medium-Slow",
+  "catch": 120,
+  "base_xp": 122,
+  "cond_yield": "2 Speed",
+  "evolution": "Skyrook at level 32",
+  "egg_groups": "Avian",
+  "height_m": 0.8,
+  "weight_kg": 9.5,
+  "habitat": "Route 3 and Highcrest slopes",
+  "concept": "Lean lark with a swept-back crest and sharp wing edges.",
+  "dex": "Patrols a fixed territory every morning and duels any bird that crosses it, then sings about winning.",
+  "learnset": [
+   [
+    1,
+    "Beak Jab"
+   ],
+   [
+    1,
+    "Quick Pounce"
+   ],
+   [
+    1,
+    "Wing Cut"
+   ],
+   [
+    13,
+    "Focus Gaze"
+   ],
+   [
+    18,
+    "Swift Talon"
+   ],
+   [
+    22,
+    "Talon Snatch"
+   ],
+   [
+    27,
+    "Air Blade"
+   ],
+   [
+    31,
+    "Tailgust"
+   ],
+   [
+    36,
+    "Stampede"
+   ],
+   [
+    41,
+    "Dive Bomb"
+   ]
+  ],
+  "art": "Lean, fast lark in warm brown (#9A6A44) with a cream chest and a long, swept-back crest; sharp wing edges, focused eyes. Mid-flight or perched in a ready-to-launch pose. The teenage version of Peeplet.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 14,
+  "name": "Skyrook",
+  "types": [
+   "Beast",
+   "Gale"
+  ],
+  "stats": {
+   "hp": 85,
+   "atk": 105,
+   "def": 80,
+   "spa": 65,
+   "spd": 72,
+   "spe": 100
+  },
+  "traits": [
+   "Imposing",
+   "Composed"
+  ],
+  "latent": "Tailwind Born",
+  "growth": "Medium-Slow",
+  "catch": 45,
+  "base_xp": 214,
+  "cond_yield": "3 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Avian",
+  "height_m": 1.6,
+  "weight_kg": 38.0,
+  "habitat": "Evolves from Peeplark; Cole's ace",
+  "concept": "Large hawk-like bird with a white crown of feathers and a powerful build.",
+  "dex": "Its crown feathers stand up before a dive. Highcrest's glider pilots learned to read the wind by watching them.",
+  "learnset": [
+   [
+    1,
+    "Beak Jab"
+   ],
+   [
+    1,
+    "Wing Cut"
+   ],
+   [
+    1,
+    "Swift Talon"
+   ],
+   [
+    1,
+    "Molting Flurry"
+   ],
+   [
+    18,
+    "Focus Gaze"
+   ],
+   [
+    22,
+    "Talon Snatch"
+   ],
+   [
+    27,
+    "Air Blade"
+   ],
+   [
+    31,
+    "Tailgust"
+   ],
+   [
+    32,
+    "Feral Fury"
+   ],
+   [
+    38,
+    "Stampede"
+   ],
+   [
+    44,
+    "Dive Bomb"
+   ],
+   [
+    50,
+    "Perch"
+   ],
+   [
+    56,
+    "Last Stand"
+   ]
+  ],
+  "art": "Powerful hawk-like raptor, chestnut brown (#7A4A2E) with a bright white crown of feathers (#F5F2EB) that fans out like a crest, golden eyes, hooked beak. Broad wings, muscular build; reads as a proud, competitive bird. Rival Cole's partner.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 15,
+  "name": "Burrowbit",
+  "types": [
+   "Beast"
+  ],
+  "stats": {
+   "hp": 50,
+   "atk": 52,
+   "def": 45,
+   "spa": 30,
+   "spd": 40,
+   "spe": 66
+  },
+  "traits": [
+   "Hard Claws",
+   "Gatherer"
+  ],
+  "latent": "Pack Bond",
+  "growth": "Medium",
+  "catch": 255,
+  "base_xp": 51,
+  "cond_yield": "1 Speed",
+  "evolution": "Thumpwarren at level 20",
+  "egg_groups": "Field",
+  "height_m": 0.4,
+  "weight_kg": 3.6,
+  "habitat": "Routes 1 and 2; meadows and field edges",
+  "concept": "Stocky rabbit with digging claws and one ear that never stands up.",
+  "dex": "Digs shallow tunnels everywhere and forgets most of them. Half the potholes on Route 1 are its fault.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Disarming Look"
+   ],
+   [
+    4,
+    "Quick Pounce"
+   ],
+   [
+    8,
+    "Gnaw"
+   ],
+   [
+    12,
+    "Mud Fling"
+   ],
+   [
+    16,
+    "Hunker Down"
+   ],
+   [
+    20,
+    "Burrow"
+   ],
+   [
+    24,
+    "Echo Strike"
+   ],
+   [
+    28,
+    "Rest Up"
+   ],
+   [
+    33,
+    "Stampede"
+   ]
+  ],
+  "art": "Stocky, round rabbit in sandy brown (#B8A48C) with a cream muzzle, big digging claws on its front paws, and one ear permanently flopped over. Dirt on its nose. Friendly, a little dopey.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 16,
+  "name": "Thumpwarren",
+  "types": [
+   "Beast",
+   "Stone"
+  ],
+  "stats": {
+   "hp": 80,
+   "atk": 95,
+   "def": 80,
+   "spa": 45,
+   "spd": 65,
+   "spe": 75
+  },
+  "traits": [
+   "Hard Claws",
+   "Gatherer"
+  ],
+  "latent": "Pack Bond",
+  "growth": "Medium",
+  "catch": 90,
+  "base_xp": 148,
+  "cond_yield": "2 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Field",
+  "height_m": 1.0,
+  "weight_kg": 32.0,
+  "habitat": "Evolves from Burrowbit; rocky fields near Cindervale",
+  "concept": "Heavyset hare with stone-hard foot pads that shake the ground when it stamps.",
+  "dex": "Warns its warren of danger by stamping. The thump can be felt from a quarter mile away.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Quick Pounce"
+   ],
+   [
+    1,
+    "Gnaw"
+   ],
+   [
+    1,
+    "Mud Fling"
+   ],
+   [
+    16,
+    "Hunker Down"
+   ],
+   [
+    20,
+    "Burrow"
+   ],
+   [
+    25,
+    "Granite Fist"
+   ],
+   [
+    29,
+    "Echo Strike"
+   ],
+   [
+    33,
+    "Rest Up"
+   ],
+   [
+    38,
+    "Groundswell"
+   ],
+   [
+    44,
+    "Feral Fury"
+   ]
+  ],
+  "art": "Big, muscular hare in sandy brown with stone-gray foot pads and forearm plating (#A8865A); one ear still flopped like Burrowbit's. Mid-stamp pose with small rocks bouncing. Tough but good-natured.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 17,
+  "name": "Silkling",
+  "types": [
+   "Swarm"
+  ],
+  "stats": {
+   "hp": 45,
+   "atk": 30,
+   "def": 40,
+   "spa": 35,
+   "spd": 40,
+   "spe": 40
+  },
+  "traits": [
+   "Molting",
+   "Even Keel"
+  ],
+  "latent": "Lucky Star",
+  "growth": "Fast",
+  "catch": 255,
+  "base_xp": 39,
+  "cond_yield": "1 Sp. Def",
+  "evolution": "Female: Lumoth at level 10. Male: Threadwraith at level 10",
+  "egg_groups": "Swarm",
+  "height_m": 0.3,
+  "weight_kg": 2.0,
+  "habitat": "Routes 1 and 2 tall grass; Bramblewood edges",
+  "concept": "Soft, pale caterpillar wrapped in a scarf of its own silk.",
+  "dex": "Spins silk scarves for itself when it's cold. Children in Bramblewood try to collect the scarves; it does not appreciate this.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Silk Bind"
+   ],
+   [
+    5,
+    "Nibble"
+   ],
+   [
+    9,
+    "Pester"
+   ]
+  ],
+  "art": "Small, soft caterpillar, cream and pale green (#DDE8B8) with big gentle eyes, wrapped in a wispy silk scarf. Tiny stubby legs. Shy, cozy look.",
+  "gender_female_pct": 50,
+  "gender_note": "Gender decides evolution: females become Lumoth, males become Threadwraith."
+ },
+ {
+  "no": 18,
+  "name": "Lumoth",
+  "types": [
+   "Swarm",
+   "Fae"
+  ],
+  "stats": {
+   "hp": 70,
+   "atk": 45,
+   "def": 60,
+   "spa": 90,
+   "spd": 80,
+   "spe": 85
+  },
+  "traits": [
+   "Sharp Eyes",
+   "Even Keel"
+  ],
+  "latent": "Reflective Hide",
+  "growth": "Fast",
+  "catch": 45,
+  "base_xp": 168,
+  "cond_yield": "2 Sp. Atk, 1 Speed",
+  "evolution": "Final stage",
+  "egg_groups": "Swarm, Fae",
+  "height_m": 1.1,
+  "weight_kg": 9.0,
+  "habitat": "Evolves from female Silkling; Bramblewood at night",
+  "concept": "Moth with softly glowing wings patterned like stained glass.",
+  "dex": "Its wings glow brighter near people it trusts. Night travelers in Bramblewood follow Lumoth light home.",
+  "learnset": [
+   [
+    0,
+    "Scale Dust"
+   ],
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Silk Bind"
+   ],
+   [
+    1,
+    "Nibble"
+   ],
+   [
+    1,
+    "Pester"
+   ],
+   [
+    12,
+    "Glimmer"
+   ],
+   [
+    15,
+    "Mind Prick"
+   ],
+   [
+    19,
+    "Lull"
+   ],
+   [
+    23,
+    "Wing Drone"
+   ],
+   [
+    27,
+    "Gentle Drain"
+   ],
+   [
+    32,
+    "Dazzling Light"
+   ],
+   [
+    37,
+    "Swarm Dance"
+   ],
+   [
+    43,
+    "Lunar Burst"
+   ]
+  ],
+  "art": "Elegant moth with large wings patterned like stained glass in soft violet, teal and gold, with a faint glow along the wing edges; fluffy white collar, feathery antennae. Gentle, luminous. Glow should be suggested by lighter pixels, not blur.",
+  "gender_female_pct": 100,
+  "gender_note": "Female only (female Silkling line)."
+ },
+ {
+  "no": 19,
+  "name": "Cobblit",
+  "types": [
+   "Stone"
+  ],
+  "stats": {
+   "hp": 45,
+   "atk": 62,
+   "def": 75,
+   "spa": 30,
+   "spd": 40,
+   "spe": 28
+  },
+  "traits": [
+   "Sturdy Frame",
+   "Jagged Hide"
+  ],
+  "latent": "Unshakable",
+  "growth": "Medium",
+  "catch": 190,
+  "base_xp": 58,
+  "cond_yield": "1 Defense",
+  "evolution": "Cragmaw at level 30",
+  "egg_groups": "Mineral",
+  "height_m": 0.4,
+  "weight_kg": 22.0,
+  "habitat": "Cindervale mines and rocky routes",
+  "concept": "Small rock creature with a big lower jaw and gravel-studded back.",
+  "dex": "Chews through loose rock to find iron, which it treats like candy. Miners follow it to new seams.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Hunker Down"
+   ],
+   [
+    5,
+    "Pebble Toss"
+   ],
+   [
+    9,
+    "Gnaw"
+   ],
+   [
+    13,
+    "Sand Spray"
+   ],
+   [
+    17,
+    "Granite Fist"
+   ],
+   [
+    21,
+    "Shard Field"
+   ],
+   [
+    25,
+    "Landslide"
+   ],
+   [
+    30,
+    "Fortify"
+   ],
+   [
+    35,
+    "Crag Spike"
+   ]
+  ],
+  "art": "Squat, round rock creature in warm stone gray-brown (#A8865A) with an oversized underbite jaw, small tough legs, and a back studded with gravel and a few iron flecks. Determined little face.",
+  "gender_female_pct": null,
+  "gender_note": "Genderless mineral Kith."
+ },
+ {
+  "no": 20,
+  "name": "Cragmaw",
+  "types": [
+   "Stone",
+   "Metal"
+  ],
+  "stats": {
+   "hp": 75,
+   "atk": 105,
+   "def": 120,
+   "spa": 45,
+   "spd": 65,
+   "spe": 40
+  },
+  "traits": [
+   "Sturdy Frame",
+   "Jagged Hide"
+  ],
+  "latent": "Unshakable",
+  "growth": "Medium",
+  "catch": 75,
+  "base_xp": 165,
+  "cond_yield": "2 Defense",
+  "evolution": "Final stage",
+  "egg_groups": "Mineral",
+  "height_m": 1.2,
+  "weight_kg": 210.0,
+  "habitat": "Evolves from Cobblit; Dara Flint's ace",
+  "concept": "Boulder-bodied creature whose jaw has hardened into iron.",
+  "dex": "Can bite through a mine cart's axle. Dara Flint's Cragmaw once held up a collapsing tunnel long enough for a crew to get out.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Pebble Toss"
+   ],
+   [
+    1,
+    "Gnaw"
+   ],
+   [
+    1,
+    "Iron Ram"
+   ],
+   [
+    13,
+    "Sand Spray"
+   ],
+   [
+    17,
+    "Granite Fist"
+   ],
+   [
+    21,
+    "Shard Field"
+   ],
+   [
+    25,
+    "Landslide"
+   ],
+   [
+    30,
+    "Steel Claw"
+   ],
+   [
+    33,
+    "Plate Up"
+   ],
+   [
+    38,
+    "Crag Spike"
+   ],
+   [
+    44,
+    "Dead Weight"
+   ],
+   [
+    50,
+    "Ramming Crag"
+   ]
+  ],
+  "art": "Heavy boulder-bodied creature (#8C7A5C stone with #8C98A8 metal) whose huge lower jaw has turned to riveted iron; metal plates on its shoulders, glowing ore veins. Low, immovable stance. Reads as a mine guardian.",
+  "gender_female_pct": null,
+  "gender_note": "Genderless mineral Kith."
+ },
+ {
+  "no": 21,
+  "name": "Barnacub",
+  "types": [
+   "Tide",
+   "Stone"
+  ],
+  "stats": {
+   "hp": 45,
+   "atk": 62,
+   "def": 78,
+   "spa": 38,
+   "spd": 45,
+   "spe": 40
+  },
+  "traits": [
+   "Hard Claws",
+   "Sturdy Frame"
+  ],
+  "latent": "Rain Runner",
+  "growth": "Medium",
+  "catch": 190,
+  "base_xp": 60,
+  "cond_yield": "1 Defense",
+  "evolution": "Barnaclaw at level 20",
+  "egg_groups": "Aquatic, Mineral",
+  "height_m": 0.4,
+  "weight_kg": 12.0,
+  "habitat": "Marrowind shoreline and Route 3 tide pools",
+  "concept": "Hermit-crab-like Kith living in a barnacle-covered stone shell.",
+  "dex": "Collects shiny junk for its shell. Marrowind kids trade sea glass with it, and it always drives a hard bargain.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Hunker Down"
+   ],
+   [
+    5,
+    "Spritz"
+   ],
+   [
+    9,
+    "Pebble Toss"
+   ],
+   [
+    13,
+    "Torrent Fang"
+   ],
+   [
+    17,
+    "Sand Spray"
+   ],
+   [
+    21,
+    "Granite Fist"
+   ],
+   [
+    25,
+    "Brine Lash"
+   ],
+   [
+    30,
+    "Fortify"
+   ],
+   [
+    35,
+    "Crag Spike"
+   ]
+  ],
+  "art": "Small hermit-crab-like creature with blue-gray body (#5A86C8) and one oversized claw, living in a round stone shell crusted with barnacles and bits of sea glass. Curious eyes on short stalks.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 22,
+  "name": "Barnaclaw",
+  "types": [
+   "Tide",
+   "Stone"
+  ],
+  "stats": {
+   "hp": 72,
+   "atk": 108,
+   "def": 118,
+   "spa": 58,
+   "spd": 68,
+   "spe": 56
+  },
+  "traits": [
+   "Hard Claws",
+   "Sturdy Frame"
+  ],
+  "latent": "Rain Runner",
+  "growth": "Medium",
+  "catch": 75,
+  "base_xp": 170,
+  "cond_yield": "2 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Aquatic, Mineral",
+  "height_m": 1.3,
+  "weight_kg": 95.0,
+  "habitat": "Evolves from Barnacub; Captain Isla Marlowe's ace",
+  "concept": "Armored crab with a fortress-like barnacle shell and one crushing claw.",
+  "dex": "Marrowind's harbor has a Barnaclaw living under every pier. They keep the pilings free of rot in exchange for scraps.",
+  "learnset": [
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Spritz"
+   ],
+   [
+    1,
+    "Pebble Toss"
+   ],
+   [
+    1,
+    "Torrent Fang"
+   ],
+   [
+    17,
+    "Sand Spray"
+   ],
+   [
+    20,
+    "Breaker"
+   ],
+   [
+    22,
+    "Granite Fist"
+   ],
+   [
+    26,
+    "Brine Lash"
+   ],
+   [
+    31,
+    "Fortify"
+   ],
+   [
+    36,
+    "Crag Spike"
+   ],
+   [
+    42,
+    "Aqua Lance"
+   ],
+   [
+    48,
+    "Ramming Crag"
+   ]
+  ],
+  "art": "Large armored crab, deep blue (#3E6EA8) with a tall stone shell like a small sea fortress, crusted with barnacles; one claw much larger than the other, scarred and heavy. Sturdy, veteran look.",
+  "gender_female_pct": 50,
+  "gender_note": ""
+ },
+ {
+  "no": 23,
+  "name": "Threadwraith",
+  "types": [
+   "Swarm",
+   "Shade"
+  ],
+  "stats": {
+   "hp": 61,
+   "atk": 92,
+   "def": 55,
+   "spa": 45,
+   "spd": 55,
+   "spe": 122
+  },
+  "traits": [
+   "Lucky Eye",
+   "Opening Gambit"
+  ],
+  "latent": "Marksman",
+  "growth": "Fast",
+  "catch": 45,
+  "base_xp": 168,
+  "cond_yield": "2 Speed, 1 Attack",
+  "evolution": "Final stage",
+  "egg_groups": "Swarm",
+  "height_m": 1.0,
+  "weight_kg": 6.5,
+  "habitat": "Evolves from male Silkling; rarely seen at the Bramblewood edge after dark",
+  "concept": "Lean, silk-wrapped ninja moth whose scarf has grown into long trailing streamers.",
+  "dex": "Moves so quietly that Bramblewood rangers only know one passed by the cut threads it leaves on branches. It is fiercely loyal to one partner and ignores everyone else.",
+  "learnset": [
+   [
+    0,
+    "Creep"
+   ],
+   [
+    1,
+    "Shove"
+   ],
+   [
+    1,
+    "Silk Bind"
+   ],
+   [
+    1,
+    "Nibble"
+   ],
+   [
+    1,
+    "Pester"
+   ],
+   [
+    12,
+    "Quick Pounce"
+   ],
+   [
+    15,
+    "Mandible Slash"
+   ],
+   [
+    19,
+    "Silk Snare"
+   ],
+   [
+    23,
+    "Ambush"
+   ],
+   [
+    27,
+    "Scissor Strike"
+   ],
+   [
+    32,
+    "Night Jaw"
+   ],
+   [
+    37,
+    "Scheme"
+   ],
+   [
+    41,
+    "Fade Strike"
+   ],
+   [
+    46,
+    "Ambush Strike"
+   ]
+  ],
+  "art": "Male-line evolution of Silkling. Slim, upright moth-ninja in charcoal and deep indigo (#2E2A44) with pale cream silk wrappings (#DDE8B8) binding its forearms and face like a mask; Silkling's scarf has become two long trailing streamers. Narrow, swept-back wings folded close like a cloak, sharp silver eyes. Crouched, ready-to-strike stance. Should read as Silkling's sibling to Lumoth: same cream silk, opposite mood (quiet and sharp, not soft and glowing).",
+  "gender_female_pct": 0,
+  "gender_note": "Male only (male Silkling line)."
+ }
+]
