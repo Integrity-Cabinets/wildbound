@@ -1,3 +1,10 @@
+/* Phones: stop pinch and double-tap from zooming the page, and snap back if the browser zooms anyway. */
+for(const ev of['gesturestart','gesturechange','gestureend'])document.addEventListener(ev,e=>e.preventDefault(),{passive:false});
+document.addEventListener('touchmove',e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
+document.addEventListener('dblclick',e=>e.preventDefault());
+if(window.visualViewport){const mv=document.querySelector('meta[name=viewport]'),base=mv.content;let rt=0;
+  const unzoom=()=>{if(visualViewport.scale>1.02||visualViewport.offsetTop>1||visualViewport.offsetLeft>1){clearTimeout(rt);rt=setTimeout(()=>{mv.content=base+',minimum-scale=1';setTimeout(()=>{mv.content=base},60);scrollTo(0,0)},180)}};
+  visualViewport.addEventListener('resize',unzoom);visualViewport.addEventListener('scroll',unzoom)}
 const UI=(()=>{const q=id=>document.getElementById(id),el=q('ch'),ti=q('chT'),hd=q('chH'),li=q('chL');let cur=null,sel=0,evoOpen=false;
   const btns=()=>[...li.querySelectorAll('button')];
   function hi(){btns().forEach((b,i)=>b.classList.toggle('sel',i===sel));const b=btns()[sel];if(b&&b.scrollIntoView)b.scrollIntoView({block:'nearest'})}

@@ -167,7 +167,7 @@ async function throwOrb(){const me=B.me,foe=B.foe;B.bag.orb--;await say('You off
 
 /* ---------- turn flow ---------- */
 function setBusy(v){busy=v;$('app').classList.toggle('busy',v)}
-async function finish(result,extra={}){over=true;setBusy(true);await wait(350);const app=$('app');app.classList.add('fade');await new Promise(r=>setTimeout(r,450));
+async function finish(result,extra={}){over=true;setBusy(true);musicStop(.6);await wait(350);const app=$('app');app.classList.add('fade');await new Promise(r=>setTimeout(r,450));
   for(const k of B.party)delete k._og;isOpen=false;app.classList.remove('open','fade');$('tr').classList.remove('in');
   timers.length=0;tweens.length=0;fxs.length=0;parts.length=0;lights.length=0;tscale=1;const res=B.resolve;B=null;res(Object.assign({result},extra))}
 /* returns true when the battle has ended */
@@ -176,7 +176,7 @@ async function settle(){const me=B.me,foe=B.foe;let foeDown=false,meDown=false;
   if(me.hp<=0&&!me.gone){me.gone=true;meDown=true;await faint(me)}
   if(!foeDown&&!meDown)return false;
   const next=B.foes.find(k=>k.hp>0),alive=B.party.some(k=>k.hp>0);
-  if(foe.gone&&!next){if(B.kind==='trainer'){S.win();await say(`You defeated <b>${B.trainer.name}</b>!`,1300)}await finish('win');return true}
+  if(foe.gone&&!next){if(B.kind==='trainer'){musicStop(.2);S.win();await say(`You defeated <b>${B.trainer.name}</b>!`,1300)}await finish('win');return true}
   if(me.gone&&!alive){await say('You have no Kith left that can battle…',1400);await finish('lose');return true}
   if(me.gone){const i=await pickSwitch(true);await sendOut(1,B.party[i])}
   if(foe.gone){await sendOut(0,next)}
@@ -203,6 +203,7 @@ async function act(pa){if(busy||over||!B)return;setBusy(true);const fa=aiPick(B.
   setBusy(false);menu()}
 
 function start(o){return new Promise(async resolve=>{audio();
+  musicStart(o.trainer?'trainer':'wild');
   B={kind:o.kind,party:o.party,foes:o.foes,trainer:o.trainer||null,bag:o.bag,dex:o.dex,skill:o.trainer?o.trainer.skill??1:.75,resOn:!!o.resonance,resMe:!!o.resonance,resFoe:!!(o.resonance&&o.trainer&&o.trainer.resonance),part:new Set(),resolve,me:null,foe:null};
   over=false;resArmed=false;isOpen=true;tint=o.tint||null;const app=$('app');app.classList.add('open');setBusy(true);
   $('bars').classList.remove('on');$('resCard').classList.remove('on');$('pFoe').classList.add('hide');$('pMe').classList.add('hide');$('moves').innerHTML='';$('msg').innerHTML='';
@@ -222,3 +223,33 @@ addEventListener('keydown',e=>{if(!isOpen||busy||over||UI.isOpen())return;const 
 let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(isOpen)resize()},120)});
 
 const frameAnim=now=>{for(const m of mons)if(m&&m.sp2)m.sp=Math.floor(now/250)%2?m.sp2:m.sp1;frame(now)};
+
+/* ================= battle music (synthesized, no audio files) ================= */
+const SEMI={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
+const hz=(n,tr=0)=>{const m=/^([A-G])(#?)(\d)$/.exec(n);return 440*Math.pow(2,(SEMI[m[1]]+(m[2]?1:0)+(+m[3]+1)*12-69+tr)/12)};
+const CH={Am:['A','C','E'],F:['F','A','C'],C:['C','E','G'],G:['G','B','D'],E:['E','G#','B']};
+/* 16 bars: [chord, lead]. Lead is sixteen 16th-note steps; "." holds or rests. */
+const SONG=[
+ ['Am','A4 . C5 . E5 . A5 . G5 . E5 . C5 . E5 .'],['F','F5 . . E5 . . C5 . A4 . . C5 . . F5 .'],
+ ['C','E5 . G5 . C6 . G5 . E5 . G5 . E5 . C5 .'],['G','D5 . . G5 . . B5 . D6 . . B5 . G5 . .'],
+ ['Am','A5 . . . E5 . A5 . C6 . . . B5 . A5 .'],['F','F5 . A5 . C6 . A5 . F5 . . . G5 . A5 .'],
+ ['E','G#5 . . . B5 . . . E6 . . . D6 . B5 .'],['E','E5 . G#5 . B5 . E6 . D6 . B5 . G#5 . B5 .'],
+ ['F','C6 . . . A5 . F5 . A5 . . . C6 . . .'],['G','B5 . . . G5 . D5 . G5 . . . B5 . D6 .'],
+ ['Am','C6 . B5 . A5 . E5 . A5 . . . E5 . A5 .'],['Am','C6 . . B5 . . A5 . E6 . . . . . . .'],
+ ['F','F5 . A5 . C6 . F6 . E6 . C6 . A5 . C6 .'],['G','G5 . B5 . D6 . G6 . F6 . D6 . B5 . D6 .'],
+ ['E','E6 . . . D6 . . . B5 . . . G#5 . . .'],['E','E5 . E5 E5 . E5 . E5 G#5 . B5 . E6 . . .']
+].map(([c,l])=>{const t=l.split(' '),lead=[];t.forEach((n,i)=>{if(n==='.')return;let d=1;while(i+d<16&&t[i+d]==='.')d++;lead[i]=[n,Math.min(d,4)]});return{c,lead}});
+let mus=null;
+function mVoice(t,f,dur,vol,type){const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+.006);g.gain.setValueAtTime(vol*.8,t+dur*.55);g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g).connect(mus.g);o.start(t);o.stop(t+dur+.03)}
+function mDrum(t,k){if(k==='k'){const o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(.55,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g).connect(mus.g);o.start(t);o.stop(t+.18);return}
+  const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),d=k==='s'?.13:.035;s.buffer=noiseB;f.type=k==='s'?'bandpass':'highpass';f.frequency.value=k==='s'?1900:7500;g.gain.setValueAtTime(k==='s'?.28:.08,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f).connect(g).connect(mus.g);s.start(t,R()*.5);s.stop(t+d+.02)}
+function mStep(i,t){const bar=Math.floor(i/16)%SONG.length,s=i%16,B=SONG[bar],ch=CH[B.c],tr=mus.tr,st=mus.step,fill=(bar%8===7)&&s>=12;
+  const L=B.lead[s];if(L)mVoice(t,hz(L[0],tr),st*L[1]*.95,.085,'square');
+  if(s%2===0)mVoice(t,hz(ch[0]+(s%4===0?'2':'3'),tr),st*1.7,.2,'triangle');
+  mVoice(t,hz(ch[[0,1,2,1][s%4]]+'4',tr),st*.9,.028,'square');
+  if(s===0||s===8||s===10&&bar%2)mDrum(t,'k');if(s===4||s===12||fill)mDrum(t,'s');if(s%2===0)mDrum(t,'h')}
+function mSched(){if(!mus||!AC)return;if(mus.next<AC.currentTime-.3)mus.next=AC.currentTime+.05;while(mus.next<AC.currentTime+.25){mStep(mus.i++,mus.next);mus.next+=mus.step}}
+function musicStop(fade=.5){if(!mus)return;const m=mus;mus=null;clearInterval(m.iv);try{m.g.gain.cancelScheduledValues(AC.currentTime);m.g.gain.setValueAtTime(m.g.gain.value,AC.currentTime);m.g.gain.linearRampToValueAtTime(0,AC.currentTime+fade);setTimeout(()=>m.g.disconnect(),fade*1000+400)}catch(e){}}
+function musicStart(kind){musicStop(0);audio();if(!AC||!sndOn)return;try{if(AC.state==='suspended')AC.resume();const g=AC.createGain();g.gain.setValueAtTime(0,AC.currentTime);g.gain.linearRampToValueAtTime(.42,AC.currentTime+.5);g.connect(AC.destination);
+    const bpm=kind==='trainer'?164:148;mus={g,step:60/bpm/4,tr:kind==='trainer'?2:0,next:AC.currentTime+.1,i:0,iv:setInterval(mSched,60)};mSched()}catch(e){mus=null}}
+addEventListener('pointerdown',()=>{if(AC&&AC.state==='suspended')AC.resume()});

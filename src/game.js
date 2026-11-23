@@ -239,7 +239,7 @@ function arrive(a){a.steps++;if(a!==player)return;setArea();stepsSince++;const f
       await walk(player,[0])});return}
   const tr=npcs.find(seenBy);if(tr){cutscene(()=>trainerBattle(tr));return}
   if(f.starter&&!f.sensor&&player.tx>=25&&player.tx<=27&&player.ty>=17&&player.ty<=21){const w=npc('wren');if(w.tx===24){cutscene(async()=>{face(player,w);await bubbleAt(w,500);await sensorScene()});return}}
-  if(f.starter&&!f.dad&&player.ty>=59&&player.ty<=66&&player.tx>=26&&player.tx<=34){cutscene(dadCall);return}
+  if(f.juneMet&&!f.dad&&player.ty>=50&&player.ty<=55&&player.tx>=25&&player.tx<=35){cutscene(dadCall);return}
   if(getT(player.tx,player.ty)===3){spawnLeaves();if(G.party.some(k=>k.hp>0)&&stepsSince>3&&Math.random()<.14){stepsSince=0;wildBattle()}}}
 function spawnLeaves(){const p=project(apos(player).x,tc(player.ty)+7);if(!p)return;for(let i=0;i<6;i++)leaves.push({x:p.sx+(Math.random()-.5)*14,y:p.sy-4,vx:(Math.random()-.5)*40,vy:-30-Math.random()*30,life:.6,c:Math.random()<.5?'#4f9a44':'#8cc864'})}
 function step(a,dt){if(!a.moving)return;a.t+=dt*a.speed;if(a.t>=1){a.t=1;a.moving=false;arrive(a)}}
