@@ -120,7 +120,8 @@ def collect():
     errors, files = [], []
     for d, _, fs in os.walk(ASSETS):
         for f in sorted(fs):
-            rel = os.path.relpath(os.path.join(d, f), ASSETS)
+            # forward slashes on every OS, so the manifest is identical on Windows
+            rel = os.path.relpath(os.path.join(d, f), ASSETS).replace(os.sep, '/')
             if f.endswith('.png'):
                 e = inspect(rel, errors)
                 if e: files.append(e)
