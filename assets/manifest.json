@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 230,
+ "count": 256,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -249,6 +249,175 @@
    ]
   },
   {
+   "path": "assets/characters/char_corvin_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "5dcb1c40dc15a14be567490bef879202356f62d4aa4f201aacec287ba1ed0d51",
+   "kind": "character",
+   "id": "corvin",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_corvin_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "f25fc10361c76c19a93e64269e0700d7bf17e727f6695d5d587f78bb7440ce75",
+   "kind": "character",
+   "id": "corvin",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_corvin_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "054955582afc07bcbc4f61708f1f47c45ba51ad0cee6254f860a97182550d440",
+   "kind": "character",
+   "id": "corvin",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_dara_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "6ae4d0f495f7de989dec27f009e9301bd59f61c542ad6b7d599b732b4d571bec",
+   "kind": "character",
+   "id": "dara",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_dara_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "086ae95853339edd9d177265944516b325a98dc2d892b1d1cd15a89cfec00868",
+   "kind": "character",
+   "id": "dara",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_dara_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "9d0c334c554663830878e1ca7baeea5213ec4e1aa8593d2486d08d558ceef0c0",
+   "kind": "character",
+   "id": "dara",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_grunt_f_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "507e82a85f40b6a8d56ebf0032aee0b90ba003fa063c1c5b9848d660c3b4d212",
+   "kind": "character",
+   "id": "grunt_f",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_grunt_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "6b60ca63c4a95f9a17931b0abeec20c08933bec091261042efde451a84a2c681",
+   "kind": "character",
+   "id": "grunt_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_grunt_m_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "a8637698f5ada2a2a1a61333e1ef491e98ba414f1a9d7e6691705de5fae20d01",
+   "kind": "character",
+   "id": "grunt_m",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_grunt_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "239a608fab65acc7dd16d4538eea3d1121f5d14623fa61bab8da3fa3916af01a",
+   "kind": "character",
+   "id": "grunt_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_isla_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "a82a3201998a60926583f7943938ad5f070729755ad481eb353b584f4f41507a",
+   "kind": "character",
+   "id": "isla",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_isla_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "08bf922b450210b35c7b665d627d7c7dcba7e9fb7ac794a0a9a5b7b8be56bdc4",
+   "kind": "character",
+   "id": "isla",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_isla_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "433aa0391e5045c060cc8ff7e8d261bb5612883588eca61081c7114d1d26aee5",
+   "kind": "character",
+   "id": "isla",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
    "path": "assets/characters/char_ivy_back.png",
    "width": 384,
    "height": 96,
@@ -320,6 +489,71 @@
    "sha256": "1e51a0f40ac637b90a328f637e209c1c08dc2321a954339af61e1bc24eb95c33",
    "kind": "character",
    "id": "june",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_kragg_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "f7f852413089f388c38de0bc3f063634755394b0f94a3bfdde41aa478d179744",
+   "kind": "character",
+   "id": "kragg",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_kragg_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "977f6cac61917896d93da31a762d82b0d59c7509d6407c0ba3bde13c50a02380",
+   "kind": "character",
+   "id": "kragg",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_kragg_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "aa21f762e25a043d7ca5dae970964e7f32216239c4fb3d370fdeb6ff378b91eb",
+   "kind": "character",
+   "id": "kragg",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_marcus_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "66456cf0a2fec5685a6d5da545911b877f14dcee9e2e7a8a1bad294dcb95e116",
+   "kind": "character",
+   "id": "marcus",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_marcus_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "2f52ca7ff2ca4f7ae62930d5f8b2832101f70423b250f73e9401c860e538b123",
+   "kind": "character",
+   "id": "marcus",
    "view": "walk",
    "frame": [
     32,
@@ -684,6 +918,84 @@
    "sha256": "b096b2548ca4e17c8438ea3ab136f1620efbd684665f75a9805e1efaf6df6bff",
    "kind": "character",
    "id": "rowan",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_tobias_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "2b41d6201981ff1e99ba43bfd4b0eb04f54301445e88903dce3caac602864e7d",
+   "kind": "character",
+   "id": "tobias",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_tobias_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "af96593c4f9f0e8dc7dcfefdbb94d09901a2b53a66f1215d8334c4708af15043",
+   "kind": "character",
+   "id": "tobias",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_tobias_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "7074ab97de83f44b4671e96b36f2adafcd6c3d222c5e431446339569c9981b04",
+   "kind": "character",
+   "id": "tobias",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_vesper_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "95a0bda95f06769ede4fc4c10d0cc606dc7280dcf4a6414ce12ca7e646c0aee7",
+   "kind": "character",
+   "id": "vesper",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_vesper_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "7211be837f96bb6753cb1f97796bbb62c46f12c86fe848a44e95a70106cc874c",
+   "kind": "character",
+   "id": "vesper",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_vesper_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "30e9a5d5604d9657d10426fe03772a8b691a4d2475822610a292f6e64ddbb137",
+   "kind": "character",
+   "id": "vesper",
    "view": "walk",
    "frame": [
     32,
@@ -2148,6 +2460,22 @@
    "sha256": "831b902b556746ed53122c4d4c39db2651536dd55c820739d21756104dbd9482",
    "kind": "tiles",
    "id": "tiles_tallgrass"
+  },
+  {
+   "path": "assets/ui/badge_slate.png",
+   "width": 32,
+   "height": 32,
+   "sha256": "ebb5a857c2264f72eafe20af6d9e5b79dc1097585f3f5b893b11905dd7197149",
+   "kind": "ui",
+   "id": "badge_slate"
+  },
+  {
+   "path": "assets/ui/badge_tidemark.png",
+   "width": 32,
+   "height": 32,
+   "sha256": "610d43580391cf1325d44c0d008d100daef175805368bd0c53e7ab9804e91078",
+   "kind": "ui",
+   "id": "badge_tidemark"
   },
   {
    "path": "assets/ui/icon_type_beast.png",
