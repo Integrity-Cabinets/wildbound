@@ -214,7 +214,19 @@ Key functions: `talk`/`tell`/`note` (dialog), `cutscene(fn)`, `walk(actor, dirs)
 
 ## 6. Chapter One as built
 
-### The map
+### The areas (added 24 November)
+
+The world is now three areas, defined in `src/maps.js` and loaded one at a time. Walking off an edge fades to the next one.
+
+| Area | Size | What is there |
+| --- | --- | --- |
+| `hearthmoss` | 60×80 | The village and Route 1, unchanged in layout, with more people, Kith and props. North edge leads to Route 2 once the sensor is placed |
+| `route2` | 60×100 | The Cinder Road. A farm (Farmer Dell heals), a pond, a prospectors' camp, a lookout, a mine-line crossing, nine grass patches, four satchels to find, trainers Nell, Bram and Odell |
+| `cindervale` | 64×76 | Cindervale City with ChatGPT's Batch 1 art: Rest Lodge (the attendant heals and sets the place you return to after a loss), Archive field station (the curator takes the second sensor and gives a field kit; this now shows the End of Chapter One card), Stone Gym (locked, Cole waiting outside), Provisioner (closed), eight houses, the square, the mine yard and the closed north road |
+
+Invented in this session and awaiting Derek's yes: every Route 2 and Cindervale name and line of dialog, the name "the Cinder Road", Cole's lines outside the Gym, and the in-story reasons the Gym, shop and mines are closed.
+
+### The Hearthmoss map
 
 One 60×80 grid of 16-px tiles holds both the village (south) and Route 1 (north). Rows with `ty < 47` are Route 1; the rest is Hearthmoss. Coordinates are `(tx, ty)`.
 

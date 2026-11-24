@@ -82,12 +82,28 @@ C={}
 for n in ['rowan','ivy']: C[n]={'walk':uri(A+f'characters/char_{n}_walk.png'),'run':uri(A+f'characters/char_{n}_run.png'),'port':uri(A+f'characters/char_{n}_portrait.png')}
 for n in ['cole','wren','june']: C[n]={'walk':uri(A+f'characters/char_{n}_walk.png'),'port':uri(A+f'characters/char_{n}_portrait.png')}
 C['cole']['battle']=uri(A+'characters/char_cole_battle.png',True)
-for n in ['teen_m','traveler_f','resident_f','elder_m']: C['npc_'+n]={'walk':uri(A+f'characters/char_npc_{n}_walk.png')}
+for f in sorted(os.listdir(A+'characters')):
+    m=re.match(r'char_(npc_\w+)_walk\.png$',f)
+    if m: C[m.group(1)]={'walk':uri(A+'characters/'+f)}
 W={'trees':cells(A+'props/props_hearthmoss_trees.png',64,80,5),'plants':cells(A+'props/props_hearthmoss_plants.png',32,24,6),
    'grass':cells(A+'tiles/tiles_tallgrass.png',20,18,3,2),'small':cells(A+'props/props_hearthmoss_small.png',64,64,4,2),
    'large':cells(A+'props/props_hearthmoss_large.png',64,64,4),'fence':cells(A+'props/props_hearthmoss_fences.png',32,32,8),'bld':{}}
 for n in ['player_house','wren_lab','hearthmoss_house_a','hearthmoss_house_b']:
     im=grade(Image.open(A+f'props/bld_{n}.png'));em,wins=glass(im);W['bld'][n]={'img':enc(im),'emis':em,'wins':wins,'w':im.width,'h':im.height}
+# Cindervale City: buildings, and prop sheets kept apart from the Hearthmoss ones
+for n in ['gym','archive_station','rest_lodge','shop','house_a','house_b']:
+    im=grade(Image.open(A+f'props/bld_cindervale_{n}.png'));em,wins=glass(im);W['bld']['cindervale_'+n]={'img':enc(im),'emis':em,'wins':wins,'w':im.width,'h':im.height}
+W['cv']={'small':cells(A+'props/props_cindervale_small.png',64,64,4,2),'large':cells(A+'props/props_cindervale_large.png',96,96,3,2)[:5],
+         'fence':cells(A+'props/props_cindervale_fences.png',32,32,4,2)}
+def warm(cell):
+    e=Image.new('RGBA',cell.size,(0,0,0,0));cp=cell.load();ep=e.load()
+    for y in range(cell.height):
+        for x in range(cell.width):
+            r,g,b,a=cp[x,y]
+            if a and r>215 and g>170 and b<205: ep[x,y]=(255,226,150,255)
+    return enc(e)
+cvs=Image.open(A+'props/props_cindervale_small.png').convert('RGBA')
+W['cv']['lanternEmis']=warm(cvs.crop((0,0,64,64)))
 lamp=Image.open(A+'props/props_hearthmoss_small.png').convert('RGBA').crop((128,0,192,64))
 le=Image.new('RGBA',(64,64),(0,0,0,0));lp=lamp.load();lq=le.load()
 for y in range(64):

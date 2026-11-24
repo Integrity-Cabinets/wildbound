@@ -7,7 +7,7 @@ ROOT=os.path.dirname(os.path.abspath(__file__));S=ROOT+'/src/'
 if '--data' in sys.argv or not os.path.exists(S+'data.json'):
     subprocess.run([sys.executable,ROOT+'/tools/build_data.py'],check=True)
 h=open(S+'shell.html',encoding='utf-8').read()
-for tag,f in [('/*UI*/','ui.js'),('/*BATTLE_CORE*/','battle_core.js'),('/*BATTLE_GAME*/','battle_game.js'),('/*OW_CORE*/','ow_core.js'),('/*GAME*/','game.js'),('/*DATA*/','data.json')]:
+for tag,f in [('/*UI*/','ui.js'),('/*BATTLE_CORE*/','battle_core.js'),('/*BATTLE_GAME*/','battle_game.js'),('/*OW_CORE*/','ow_core.js'),('/*MAPS*/','maps.js'),('/*GAME*/','game.js'),('/*DATA*/','data.json')]:
     assert h.count(tag)==1,tag
     h=h.replace(tag,open(S+f,encoding='utf-8').read())
 os.makedirs(ROOT+'/dist',exist_ok=True)

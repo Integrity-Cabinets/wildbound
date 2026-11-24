@@ -1,6 +1,6 @@
 # Wildbound
 
-An original creature-collecting RPG in the classic Pokémon mold, presented in an HD-2D pixel style. Creatures are called **Kith**. The owner is Derek. This repo holds the playable Chapter One build (Hearthmoss Village and Route 1) and everything needed to keep building.
+An original creature-collecting RPG in the classic Pokémon mold, presented in an HD-2D pixel style. Creatures are called **Kith**. The owner is Derek. This repo holds the playable Chapter One build (Hearthmoss Village, Route 1, Route 2 and a first pass of Cindervale City) and everything needed to keep building.
 
 **New to the project? Read `docs/HANDOFF.md` next.** It covers the current state, what is verified and what is not, Derek's decisions, open questions, the story canon digest and the gotchas. `docs/KITH_ROSTER.md` is the creature plan.
 
@@ -11,7 +11,7 @@ python3 build.py            # assemble dist/index.html from src/
 python3 build.py --data     # also rebuild src/data.json from assets/ and data/ (needs Pillow)
 node --check dist/game.check.js   # syntax check of the assembled script
 python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scripted playthrough (needs Playwright + Chromium)
-python3 tests/playthrough.py desk    # plays all of Chapter One with real input, about five minutes
+python3 tests/playthrough.py desk    # plays all of Chapter One with real input, about eight minutes
 python3 tests/playthrough.py phone   # the same at 390×844 with the touch controls
 ```
 
@@ -27,7 +27,8 @@ Run both `playthrough.py` modes after any change to gameplay, layout or input. T
 | `src/ui.js` | `UI`: the chooser overlay used by every menu, screen fades, the evolution scene. |
 | `src/battle_core.js` | Battle presentation: canvas, particles, tweens, lights, the procedural arenas, move animations (`ANIM`), the move table (`MV`), synthesized sound (`S`). |
 | `src/battle_game.js` | Battle rules: Kith instances, stats, XP, turn flow, AI, catching, traits, items. Exports the `Battle` object. |
-| `src/ow_core.js` | Overworld engine: world generation, painted ground, perspective ground plane, billboards, lighting, time of day. |
+| `src/ow_core.js` | Overworld engine: the tile grid, placing helpers (`placeHouse`, `prop`, `scatter`, `wallIn`), painted ground (paths, paving, rails, gravel, pond), perspective ground plane, billboards, lighting, chimney smoke, time of day. |
+| `src/maps.js` | The areas: `MAPS.hearthmoss` (village and Route 1), `MAPS.route2`, `MAPS.cindervale`. Each has a size, a seed, ground features, exits, pick-up items and a `build()` that places everything standing. |
 | `src/game.js` | The game itself: save data, input, dialog, NPCs, story scenes, encounters, menus, title screen, main loop. |
 | `src/data.json` | Generated. Species, natures, traits, type chart and every image as a data URI. Do not edit by hand. |
 | `tools/build_data.py` | Builds `src/data.json`. Colour-grades world art toward the engine palette and derives night window masks. |
@@ -52,9 +53,12 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 
 - Two scopes share one page: `Battle` (an IIFE) and the overworld/game IIFE. They talk only through `Battle.start(...)`, which returns a promise with `{result: 'win'|'lose'|'run'|'caught'}`, and a few helpers (`Battle.newKith`, `calcStats`, `healKith`, `evolve`).
 - Battle DOM ids are prefixed `b_`. Inside `Battle`, `$('x')` means `#b_x`.
-- Story progress is `G.flags` (`begun`, `intro`, `starter`, `cole1`, `dad`, `sensor`, `t_<trainer id>`, `done`, `resonance`). Scenes are `async` functions wrapped in `cutscene()`. Never nest `cutscene()` calls; call the inner scene function directly.
+- Story progress is `G.flags` (`begun`, `intro`, `starter`, `cole1`, `dad`, `sensor`, `sensor2`, `t_<trainer id>`, `i_<item id>`, `done`, `resonance`). Scenes are `async` functions wrapped in `cutscene()`. Never nest `cutscene()` calls; call the inner scene function directly.
 - A Kith instance is a plain object: `{sp, L, xp, nat, pot, cond, gender, trait, st, hp, moves:[{n, pp}]}`. Stats come from `calcStats`. Saves are `JSON.stringify(G)` in `localStorage`, always inside try/catch.
-- The world is a 60×80 grid of 16-px tiles. Tile values: 0 walkable, 1 blocked, 2 water, 3 tall grass. Positions in scenes are tile coordinates. World generation is seeded, so changing what is reserved or placed shifts the random scatter of trees and rocks.
+- One area is loaded at a time (`G.map`). `enterMap(id)` builds it and paints its ground, which takes about a second, so it always runs behind a fade; `travel(id, x, y, dir)` is the walk between areas. An area's `exits` say which edge leads where. Hearthmoss and Route 1 share one 60×80 area (rows above 47 are Route 1); Route 2 is 60×100; Cindervale is 64×76.
+- Tiles are 16 px. Tile values: 0 walkable, 1 blocked, 2 water, 3 tall grass. Positions in scenes are tile coordinates. World generation is seeded per area, so placing or reserving anything before a `scatter()` call shifts the trees and rocks after it. Add decoration at the end of `build()`.
+- People are built per area in `buildNpcs()` (`npcsHearthmoss`, `npcsRoute2`, `npcsCindervale`). `amb({...})` adds a background person, snapped to the nearest open tile; `wander: n` lets them stroll n tiles from home. `addKith({sp, ...})` adds a Kith going about its day. Trainers use `addNpc` with fixed tiles so their line of sight stays where it was designed.
+- Losing a battle returns the player to `G.heal` (the last place they rested: Farmer Dell's on Route 2 or the Cindervale Rest Lodge), or home to June if they have not used one.
 - The main loop draws either the overworld or the battle, never both.
 
 ## Rules that must hold
@@ -71,7 +75,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 
 1. Interiors: the player's house and Wren's lab (move the starter scene and June's healing indoors). Needs interior art from the artist pipeline.
 2. Resonance introduction event (proposed: the second Cole battle on Route 3).
-3. Route 2, Cindervale City, the mines, Gym 1 (Dara Flint), the Archive field station.
+3. Cindervale: the Stone Gym battle with Dara Flint (her art is merged, not wired), the mines (needs art: a mine entrance and cave set), the Provisioner as a working shop. Hearthmoss and Route 1 have not been enlarged yet; that means splitting them into two areas and re-seating every Chapter One scene.
 4. Money, shops and a healing station.
 5. More of the 279 moves in `MV`, and more working traits (currently: Overgrowth, Kindling, Undercurrent, Hard Claws, Sharp Eyes, Static Fur, Accelerate, Opening Gambit, Molting, Gatherer).
 6. Trust, Oathbonds and organization Standing (designed, not built).
@@ -80,7 +84,9 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 
 ## Known shortcuts
 
-- No interiors yet; the starter scene happens at a table outside the lab.
+- No interiors yet; the starter scene happens at a table outside the lab, and in Cindervale the Rest Lodge attendant and the Archive curator work outside their buildings.
+- Cindervale's Gym, Provisioner and mine road are closed in the story (Dara is on shift, a stocktake, a foreman at a rope fence). There is no money or shop yet.
+- Route 2 and Cindervale reuse the `route` and `town` music.
 - The pack's 16×16 ground atlas, UI nine-slices, type labels and painted battle scenes are in `assets/` but not used.
 - Ember types cannot be burned and Volt types cannot be paralyzed; no other statuses exist yet.
 - Much of `battle_core.js` and `ow_core.js` is dense, minified-style code carried over from prototypes. Refactor freely, but check desktop and a 390×844 phone viewport after any change.

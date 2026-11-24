@@ -3,13 +3,13 @@
     python3 tests/playthrough.py desk  [foxfern|kindlit|ottide]    # 1280x720, keyboard
     python3 tests/playthrough.py phone [foxfern|kindlit|ottide]    # 390x844, touch controls
 
-Plays from the title screen to the End of Chapter One card, opens every menu, saves, reloads and
-continues. It reads state through window.WB only to decide what to press; it never warps or edits
+Plays from the title screen through Hearthmoss, Route 1 and Route 2 to Cindervale City and the
+End of Chapter One card, opens every menu, saves, reloads and continues. It reads state through window.WB only to decide what to press; it never warps or edits
 state. Battles are random, so turn counts differ between runs.
 
 Writes a log, a JSON report and screenshots to tests/shots/playthrough/ (git-ignored).
 Exits 1 if the run stops early, the page logs an error, or suspicious text ("undefined", "NaN") appears.
-Needs: pip install playwright, then playwright install chromium. Takes about five minutes.
+Needs: pip install playwright, then playwright install chromium. Takes about eight minutes.
 """
 import asyncio, json, sys, time, heapq, re
 from pathlib import Path
@@ -36,8 +36,8 @@ return {kind:B.kind,me:m(B.me),foe:m(B.foe),bag:Object.assign({},B.bag),party:B.
 caught:Object.keys(B.dex.caught),msg:document.getElementById('b_msg').innerText,
 moves:[...document.querySelectorAll('#b_moves button')].map(b=>{const n=b.childNodes[0].textContent,M=Battle.MV[n]||{};return {n,p:M.p||0,c:M.c,cls:b.className,dis:b.disabled,txt:b.innerText.replace(/\\n+/g,' | ')}})}})()"""
 PARTY = """(()=>{const G=WB.G;return {party:G.party.map(k=>({sp:k.sp,L:k.L,hp:k.hp,max:Battle.calcStats(k).hp,st:k.st,moves:k.moves.map(m=>m.n+' '+m.pp),trait:k.trait,nat:Battle.NAT[k.nat].name})),
-box:G.box.length,bag:G.bag,flags:G.flags,wins:G.wins,seen:Object.keys(G.dex.seen),caught:Object.keys(G.dex.caught),pos:[WB.player.tx,WB.player.ty],music:Battle.music()}})()"""
-GRID = """(()=>{const g=[];for(let y=0;y<80;y++){const r=[];for(let x=0;x<60;x++)r.push(WB.getT(x,y));g.push(r)}
+box:G.box.length,bag:G.bag,flags:G.flags,wins:G.wins,seen:Object.keys(G.dex.seen),caught:Object.keys(G.dex.caught),pos:[WB.player.tx,WB.player.ty],map:WB.map,heal:G.heal||null,music:Battle.music()}})()"""
+GRID = """(()=>{const g=[],[w,h]=WB.size();for(let y=0;y<h;y++){const r=[];for(let x=0;x<w;x++)r.push(WB.getT(x,y));g.push(r)}
 return {g,npcs:WB.npcs.filter(n=>!n.hidden).map(n=>[n.tx,n.ty,n.id])}})()"""
 DV = [(0, 1), (0, -1), (-1, 0), (1, 0)]            # down, up, left, right  (matches the game's dir numbering)
 KEY = ['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight']
@@ -201,7 +201,7 @@ class Bot:
             if d > dist[(x, y)]: continue
             for i, (dx, dy) in enumerate(DV):
                 nx, ny = x + dx, y + dy
-                if not (0 <= nx < 60 and 0 <= ny < 80) or g[ny][nx] not in (0, 3) or (nx, ny) in blocked: continue
+                if not (0 <= nx < len(g[0]) and 0 <= ny < len(g)) or g[ny][nx] not in (0, 3) or (nx, ny) in blocked: continue
                 nd = d + (grass_cost if g[ny][nx] == 3 else 1)
                 if nd < dist.get((nx, ny), 1e9): dist[(nx, ny)] = nd; prev[(nx, ny)] = ((x, y), i); heapq.heappush(pq, (nd, nx, ny))
         return None, None
@@ -345,9 +345,42 @@ async def play(b: Bot):
     if await b.flag('t_mira'): await b.interact(*await b.npc_pos('mira'))
 
     b.begin('north_exit')
-    grid = (await b.js(GRID))['g']
-    await b.goto([(x, 5) for x in range(60) if grid[5][x] in (0, 3)], until=lambda: b.flag('done'), grass_cost=3); await b.pump()
-    b.note('done flag', await b.flag('done'))
+    b.note('reached Route 2:', await go_north(b, 'route2')); await b.shot('route2_arrive')
+
+    b.begin('route2')
+    await b.interact(32, 93)                       # the route sign
+    hp0 = (await b.js(PARTY))['party'][0]['hp']; await b.interact(*await b.npc_pos('dell'))
+    b.note('farmer heal: lead hp', hp0, '->', (await b.js(PARTY))['party'][0]['hp'])
+    for tid, lane in (('nell', [(24, 76), (23, 76)]), ('bram', [(34, 56), (35, 56)]), ('odell', [(26, 36), (25, 36)])):
+        for attempt in range(3):
+            if await b.flag('t_' + tid): break
+            if await b.js("WB.map") != 'route2': b.note('lost a battle; walking back to Route 2'); await go_north(b, 'route2')
+            await overworld_heal(b)
+            await b.goto(lane, until=lambda tid=tid: b.flag('t_' + tid), grass_cost=4); await b.pump()
+        b.note(tid, 'beaten', await b.flag('t_' + tid))
+        if await b.flag('t_' + tid) and await b.js("WB.map") == 'route2': await b.interact(*await b.npc_pos(tid))
+    if await b.js("WB.map") != 'route2': await go_north(b, 'route2')
+    await b.shot('route2_road')
+    bag0 = (await b.js(PARTY))['bag']; items = [tuple(int(v) for v in k.split(',')) for k in await b.js("WB.items()")]
+    sn = await b.pump(); it = min(items, key=lambda t: abs(t[0] - 50) + abs(t[1] - 53))
+    try: await b.interact(*it); b.note('satchel at', it, 'bag', bag0, '->', (await b.js(PARTY))['bag'], 'left', len(await b.js("WB.items()")))
+    except Stuck as e: b.note('satchel skipped', e)
+    b.note('reached Cindervale:', await go_north(b, 'cindervale'))
+    b.note('route 2 trainers beaten:', [t for t in ('nell', 'bram', 'odell') if await b.flag('t_' + t)], json.dumps((await b.js(PARTY))['party']))
+
+    b.begin('cindervale')
+    await b.wait(500); await b.shot('cindervale_arrive')
+    await b.interact(*await b.npc_pos('attendant')); b.note('rest point', (await b.js(PARTY))['heal'])
+    await b.interact(15, 40)                       # Rest Lodge door
+    await b.interact(*await b.npc_pos('cole')); await b.shot('cindervale_gym')
+    await b.interact(50, 40)                       # Gym door
+    await b.interact(38, 45)                       # notice board
+    await b.interact(*await b.npc_pos('curator'))
+    b.note('sensor delivered', await b.flag('sensor2'), 'done flag', await b.flag('done')); await b.shot('cindervale_square')
+    await b.interact(*await b.npc_pos('curator'))
+    await b.interact(*await b.npc_pos('foreman')); await b.shot('cindervale_mine_yard')
+    await (pg.locator('#timeBtn').click() if MOB else pg.keyboard.press('t')); await b.wait(500)
+    await b.goto([(32, 50)]); await b.shot('cindervale_time_2')
 
     b.begin('menus')
     async def openmenu():
@@ -366,9 +399,24 @@ async def play(b: Bot):
     await pg.wait_for_function("getComputedStyle(document.getElementById('loading')).display==='none'", timeout=30000); await b.wait(800)
     b.note('continue label:', (await pg.locator('#tCont').inner_text()).replace('\n', ' ')); await b.shot('title_continue')
     await pg.locator('#tCont').click(); await pg.wait_for_function("!!WB.G&&!!WB.player&&!WB.busy()", timeout=15000); await b.wait(600); await b.pump()
-    after = await b.js(PARTY); same = all(before[k] == after[k] for k in ('party', 'bag', 'flags', 'wins', 'caught', 'pos', 'box'))
+    after = await b.js(PARTY); same = all(before[k] == after[k] for k in ('party', 'bag', 'flags', 'wins', 'caught', 'pos', 'box', 'map', 'heal'))
     b.note('save survived reload:', same, '' if same else json.dumps([before, after])); await b.shot('after_continue')
     b.begin('end')
+
+
+async def go_north(b: Bot, target, tries=6):
+    """Walk out of the north edge of each area until we are in `target`. Trainers and wild Kith on the way are fought.
+    A lost battle sends the player back to where they last rested, so this simply sets off north again."""
+    for _ in range(tries):
+        m = await b.js("WB.map")
+        if m == target: return True
+        await overworld_heal(b)
+        grid = (await b.js(GRID))['g']
+        async def moved(m=m): return await b.js("WB.map") != m
+        try: await b.goto([(x, 5) for x in range(len(grid[0])) if grid[5][x] in (0, 3)], until=moved, grass_cost=4)
+        except Stuck as e: b.note('go_north retry', e)
+        await b.pump(); b.note('now in', await b.js("WB.map"), 'at', (await b.js(PARTY))['pos'])
+    return await b.js("WB.map") == target
 
 
 async def overworld_heal(b: Bot):
