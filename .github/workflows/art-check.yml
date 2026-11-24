@@ -1,0 +1,31 @@
+name: Asset check and build
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Validate assets
+        if: github.event_name != 'pull_request' || github.head_ref != 'art-production'
+        run: python3 tools/check_assets.py
+      - name: Validate art pull request
+        if: github.event_name == 'pull_request' && github.head_ref == 'art-production'
+        env:
+          ALLOW_REVISIONS: ${{ contains(github.event.pull_request.labels.*.name, 'art-revision') && '1' || '0' }}
+        run: python3 tools/check_assets.py --base origin/${{ github.base_ref }} --art-only
+      - name: Rebuild the game with these assets
+        run: |
+          python3 build.py --data
+          node --check dist/game.check.js

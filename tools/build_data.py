@@ -63,7 +63,7 @@ def pair(path):
     im=Image.open(path).convert('RGBA');a=im.crop((0,0,96,96));b=im.crop((96,0,192,96))
     u=Image.alpha_composite(a,b).getchannel('A').getbbox();return enc(a.crop(u)),enc(b.crop(u))
 for s in sp:
-    k=s['name'].lower();fid='23' if k=='threadwraith' else k;c=A+f'creatures/mon_{fid}_'
+    k=s['name'].lower();fid=k if os.path.exists(A+f'creatures/mon_{k}_front.png') else {'threadwraith':'23'}.get(k,k);c=A+f'creatures/mon_{fid}_'
     e={'fo':uri(c+'follow.png'),'ic':uri(c+'icon.png')}
     if k in IDLE: e['f'],e['f2']=pair(c+'idle.png');e['b'],e['b2']=pair(c+'back_idle.png')
     else: e['f']=uri(c+'front.png',True);e['b']=uri(c+'back.png',True)

@@ -1,0 +1,2577 @@
+{
+ "schema": 1,
+ "generated_by": "tools/check_assets.py --write",
+ "count": 230,
+ "files": [
+  {
+   "path": "assets/battle/bg_cave.png",
+   "width": 240,
+   "height": 160,
+   "sha256": "465be74034555cb62397b45a0ab956d7d0d4e3f5f7b787174ef2d7a5e7a8cbbd",
+   "kind": "battle",
+   "id": "bg_cave"
+  },
+  {
+   "path": "assets/battle/bg_meadow.png",
+   "width": 240,
+   "height": 160,
+   "sha256": "aa1b99192bf21f0b9d909dad09cf682951ab8176564d306b06022e860af9789d",
+   "kind": "battle",
+   "id": "bg_meadow"
+  },
+  {
+   "path": "assets/battle/bg_night_forest.png",
+   "width": 240,
+   "height": 160,
+   "sha256": "efdf8a532a43b3c04366d31c63d4ba9d1b10720d629104f3d02ba13ae38008b1",
+   "kind": "battle",
+   "id": "bg_night_forest"
+  },
+  {
+   "path": "assets/battle/bg_shore.png",
+   "width": 240,
+   "height": 160,
+   "sha256": "0354f3fb34b15760a30687a3fa0f815e338094d5707f01396d578d8e788cd463",
+   "kind": "battle",
+   "id": "bg_shore"
+  },
+  {
+   "path": "assets/battle/hd2d/arena_cave.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "e82c3aaa28fa554e0d520da246586afdcce29fd9814fe9aab8562df12a3bd399",
+   "kind": "battle_hd2d",
+   "id": "arena_cave"
+  },
+  {
+   "path": "assets/battle/hd2d/arena_meadow.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "6ff750564bd2fc4f1387a5428ea17b22bbe6249b13b3f9495cd0b29ddd8dfd23",
+   "kind": "battle_hd2d",
+   "id": "arena_meadow"
+  },
+  {
+   "path": "assets/battle/hd2d/arena_night_forest.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "a85a98e0cc39c3d6a9d84659da634ebc6a2eae30ee94d44352f10f384c16eac3",
+   "kind": "battle_hd2d",
+   "id": "arena_night_forest"
+  },
+  {
+   "path": "assets/battle/hd2d/arena_shore.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "6161541b150d9eaa9a4a5f446b65b883a0d1f46d697477fa1df345518e36c111",
+   "kind": "battle_hd2d",
+   "id": "arena_shore"
+  },
+  {
+   "path": "assets/battle/hd2d/foreground_cave.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "4d84864e9b478fc73a9ed0a4f586bcd544cf2837fd54827b0c2518959a90819b",
+   "kind": "battle_hd2d",
+   "id": "foreground_cave"
+  },
+  {
+   "path": "assets/battle/hd2d/foreground_meadow.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "5eb9386777d6dbcb75ca8be106a8108b6fa1518c2ac0052f80523f80ce797af5",
+   "kind": "battle_hd2d",
+   "id": "foreground_meadow"
+  },
+  {
+   "path": "assets/battle/hd2d/foreground_night_forest.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "e7113151726beeedb776506ac96fcaca26c741d271a1b607dae6a13f3f0fea1f",
+   "kind": "battle_hd2d",
+   "id": "foreground_night_forest"
+  },
+  {
+   "path": "assets/battle/hd2d/foreground_shore.png",
+   "width": 1280,
+   "height": 720,
+   "sha256": "41a8f219eead575f853d6177aca9857d5db1f397f1396e92211748b5f471493c",
+   "kind": "battle_hd2d",
+   "id": "foreground_shore"
+  },
+  {
+   "path": "assets/battle/plat_cave.png",
+   "width": 128,
+   "height": 32,
+   "sha256": "c704f8036fe59777050f5391f048f1b58494d6c3496b0c580d558a18b32140b5",
+   "kind": "battle",
+   "id": "plat_cave"
+  },
+  {
+   "path": "assets/battle/plat_meadow.png",
+   "width": 128,
+   "height": 32,
+   "sha256": "1a5ac80ded0af0622cdf07046c142ef23e37583fb38d03cb9a68f1e90b5240af",
+   "kind": "battle",
+   "id": "plat_meadow"
+  },
+  {
+   "path": "assets/battle/plat_night_forest.png",
+   "width": 128,
+   "height": 32,
+   "sha256": "ff9131e936fc25ece5d65e3255a38689ad5caef2b0b4faeef2cfc9ce13053e95",
+   "kind": "battle",
+   "id": "plat_night_forest"
+  },
+  {
+   "path": "assets/battle/plat_shore.png",
+   "width": 128,
+   "height": 32,
+   "sha256": "806894ddee49f381d84d8cdcd4751a4829c64669c7c45cafe9aac38ca1c25f75",
+   "kind": "battle",
+   "id": "plat_shore"
+  },
+  {
+   "path": "assets/characters/char_cole_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "7a081711b68725b31998441c74863e0b6ef6a14f7e95bbd183311c7c9c6fb36f",
+   "kind": "character",
+   "id": "cole",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_champion_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "0e202ee5743fc2eed742b73581344197aad1acd214522dce9af168dc77fc8722",
+   "kind": "character",
+   "id": "cole_champion",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_champion_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "6d9e263e1d9223d88ede786e4825f93560c6d858a0202a8424d6f5d3a2eda781",
+   "kind": "character",
+   "id": "cole_champion",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_champion_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "955f718bd05d4030568fed939987fc74bd1e96e8ff60a826301d3320ca8d334a",
+   "kind": "character",
+   "id": "cole_champion",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "3b7a2476a8c7e394dc51e1867c362edd79c9ac02b34964fbc50de169e5fb0b45",
+   "kind": "character",
+   "id": "cole",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_vanguard_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "262ef2d923db07d713d39ac88ba4ef624f061f3e150c897ad63419909e37fe2f",
+   "kind": "character",
+   "id": "cole_vanguard",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_vanguard_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "bccd7d21b3640f736c69417e23c12264b1e8a5fb90e78cc5a5dabed9abd84ac2",
+   "kind": "character",
+   "id": "cole_vanguard",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_vanguard_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "2e82517843057026ff733cb6674e1ec269c69402ee8fa4333822f8f3b6fc0f3f",
+   "kind": "character",
+   "id": "cole_vanguard",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_cole_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "96abe41c5ebe7e7aa18ecaba7311dd590c86fbbea13bead7c14d1e6f71921d0a",
+   "kind": "character",
+   "id": "cole",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_ivy_back.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "b6c8ef7cc4731ae05c7a22779c2b5eb925e1105f36929d3c5cf9d1d1e39c5418",
+   "kind": "character",
+   "id": "ivy",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_ivy_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "8b62ca4147d3d72f47f8b3c5c7b0bb91cc1a324df5c0643bb7a507acca7a4f85",
+   "kind": "character",
+   "id": "ivy",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_ivy_run.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "31cfaa3ffc2e8771008c9399293fa18344a6654cd354e89be2b6c04ed2923939",
+   "kind": "character",
+   "id": "ivy",
+   "view": "run",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_ivy_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "aa7d58c0f9cacb4ec510d3e568d9beafb210422e187a9c7c45044b69519446a1",
+   "kind": "character",
+   "id": "ivy",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_june_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "527bfa327816b2a614752191967a3e48d72473e7d0bd4d8c5a627eefc92d840b",
+   "kind": "character",
+   "id": "june",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_june_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "1e51a0f40ac637b90a328f637e209c1c08dc2321a954339af61e1bc24eb95c33",
+   "kind": "character",
+   "id": "june",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_child_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "a75a5d17142077e7cea7057656795d8d0c9f0e12d2af68d6545f46b2d6851353",
+   "kind": "character",
+   "id": "npc_child_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_child_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "11e94ea23bf6a96eac6f02237f611893968c96d2547eef238bb7f5178c449a7b",
+   "kind": "character",
+   "id": "npc_child_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_crafter_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "8dfd72e7c74ea7a5d3da58634181b7ea54fa508301cf0120448330b900d557e8",
+   "kind": "character",
+   "id": "npc_crafter_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_crafter_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "979c9f17beed20029cd86a91e561727a2bf7df3c69449223aaf215db174557e0",
+   "kind": "character",
+   "id": "npc_crafter_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_elder_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "99c761eb840f628b40617da9b82fd3903deb9d294d274746d887a5d491c1f205",
+   "kind": "character",
+   "id": "npc_elder_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_elder_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "41ece3e979e4316149a4e4bf979aee574b9774e02f2f67526017866d56f7b4af",
+   "kind": "character",
+   "id": "npc_elder_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_farmer_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "ff572e1df27ad14f66891fa09ebac828e315ed04a89e1f70a04ee63fe2e0063d",
+   "kind": "character",
+   "id": "npc_farmer_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_farmer_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "6f22fe95fc60066e68b75684bc4f6e01fcf8804bce14578636f6b990296b285f",
+   "kind": "character",
+   "id": "npc_farmer_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_lodge_attendant_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "3b7243bec534dea84266bcd025cc7853c092c94a5de9b62ca8ba2ce494c6dcc0",
+   "kind": "character",
+   "id": "npc_lodge_attendant_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_lodge_attendant_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "572ae5f78eb96f319992d93899398b9877ae6fb3693c8e68b5466614b03dda8f",
+   "kind": "character",
+   "id": "npc_lodge_attendant_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_office_worker_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "08ef68dd6703ffb2c04ea9c53e5b57bc3fc644165075340f26774768074337ff",
+   "kind": "character",
+   "id": "npc_office_worker_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_office_worker_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "3045530ea8e5600a35e50bab63e29bfe9b3df31d99fe1b58be2d7f4fd241b425",
+   "kind": "character",
+   "id": "npc_office_worker_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_parent_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "ff00b35934646f83984fbd5e404b7b98d926ee2450b0183c6e610a4a3ad5a00e",
+   "kind": "character",
+   "id": "npc_parent_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_parent_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "dbaa3d70626d29cdb2e7c2e651cd4ca4436a8cbbeeccd9b5470bea5fe0db4211",
+   "kind": "character",
+   "id": "npc_parent_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_resident_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "6c212df8bb41ed405131f2736a439b273074c1495d7684401d1c390e18c0c244",
+   "kind": "character",
+   "id": "npc_resident_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_resident_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "20d529eb4b1ac1420b90137447ac7aeb32686533b361c60415a9edc24e34d210",
+   "kind": "character",
+   "id": "npc_resident_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_shop_assistant_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "38bf4d4d9b1a008e0e074743e8c1aab6041b26ceae8727fbe76c1880269ba443",
+   "kind": "character",
+   "id": "npc_shop_assistant_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_shop_assistant_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "8ffed619a8e19fd0f5ffaaca3823a710be4b2d79eb952c328d646226a8383750",
+   "kind": "character",
+   "id": "npc_shop_assistant_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_student_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "ac8f55c4adf84fba69338c3d609a185a973e2868440017964cba2470e58e5e31",
+   "kind": "character",
+   "id": "npc_student_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_student_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "bd6295e0f360d8048bbdfbfc9484f478ca54e3b8bb19d7812440f4b537e0e93d",
+   "kind": "character",
+   "id": "npc_student_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_teen_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "91e7e32230628815bda3fd42bf87b9db64c26414d1e3929bf42f9aec7f15a858",
+   "kind": "character",
+   "id": "npc_teen_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_teen_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "6c5136a4d3934ccf09e261188b0caadcc05b2a4e0cfa8a85418dbd5b13e1d18c",
+   "kind": "character",
+   "id": "npc_teen_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_traveler_f_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "0f11ae712bb6eb63357acc17af6cc845dab8495185b923435657f629a61cb0b9",
+   "kind": "character",
+   "id": "npc_traveler_f",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_npc_traveler_m_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "48321d880537e5c84acbc12c00c6479f5bea8aad41c0241d898979a0eb31871f",
+   "kind": "character",
+   "id": "npc_traveler_m",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_rowan_back.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "62014e38eeb27bdcdec01c8d2f782be9b681c75f5abb119087cb762ae792754f",
+   "kind": "character",
+   "id": "rowan",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_rowan_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "1933c83d9becd45ff88dd200536ad1ce1a6197294bc6127b286bbc6812be6e03",
+   "kind": "character",
+   "id": "rowan",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_rowan_run.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "a7bd0f7363c10396c32b4a353efd252027be823419647c868c1123711afecdcf",
+   "kind": "character",
+   "id": "rowan",
+   "view": "run",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_rowan_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "b096b2548ca4e17c8438ea3ab136f1620efbd684665f75a9805e1efaf6df6bff",
+   "kind": "character",
+   "id": "rowan",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/characters/char_wren_battle.png",
+   "width": 96,
+   "height": 128,
+   "sha256": "3625ea4b8009b22b1b0b766cfa1582f15f95572c23515dd800ebd31ca176118e",
+   "kind": "character",
+   "id": "wren",
+   "view": "battle",
+   "frame": [
+    96,
+    128
+   ]
+  },
+  {
+   "path": "assets/characters/char_wren_portrait.png",
+   "width": 384,
+   "height": 96,
+   "sha256": "f74325ad22468d06369863c409da0a717439bea0e24b0022f0c2666b10bf0e3e",
+   "kind": "character",
+   "id": "wren",
+   "view": "portrait",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/characters/char_wren_walk.png",
+   "width": 96,
+   "height": 192,
+   "sha256": "3685e5eedce71ae30f96d668f5885551e880c6ca183bcd817ba6bdd75b22d6f4",
+   "kind": "character",
+   "id": "wren",
+   "view": "walk",
+   "frame": [
+    32,
+    48
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "4c5b415c016fca599a8dfc0d9c075be530d03f8c219b0b4832de147ea03db3fb",
+   "kind": "kith",
+   "id": "23",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_back_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "592fe4e7c1ac43b861788cb3a6e5d00b4dc6d614b950f238b7e787992595f0b9",
+   "kind": "kith",
+   "id": "23",
+   "view": "back_idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "b0e34fa4dcc9f6fcac7d987d48d156d06a025796c72c6c00c2c2a3e7cbea1534",
+   "kind": "kith",
+   "id": "23",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "4db97c0c64188285a4b7c7539458399db58eac523741b98aa3eba112383046d5",
+   "kind": "kith",
+   "id": "23",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "4ee72ecc84b42c5ce37bbee42ad56ad3b37b951f8881dc3f21b51c6c90a42a3f",
+   "kind": "kith",
+   "id": "23",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_23_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "6f91a17df10c497e340c308bcb082ec4caa4ab008b01d5b56d9fdc5a94437b9c",
+   "kind": "kith",
+   "id": "23",
+   "view": "idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnaclaw_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "2ac3d55973366c0287363f3d97806d32fe84f549e6a82b4c67360d3bbcf08f64",
+   "kind": "kith",
+   "id": "barnaclaw",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnaclaw_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "3b2b56718cdc0cfce2ea06bb9062ce0ca4f24817d4414b1983cbbb5232339f42",
+   "kind": "kith",
+   "id": "barnaclaw",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnaclaw_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "f53c81c52fd7403649339b1507bcaa10b9b2a0aae530ed5bb41e8398f5bf583f",
+   "kind": "kith",
+   "id": "barnaclaw",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnaclaw_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "e825da0fe9f9ee1d92e5dfe62c5c8a07e5db9efa0c0e0ad3376fb1929db1322d",
+   "kind": "kith",
+   "id": "barnaclaw",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnacub_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "0c8becf026e34ce6ca798515113d029e07fae0ddb3d55340d8a207f85a74e05d",
+   "kind": "kith",
+   "id": "barnacub",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnacub_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "d75d2266005ca04f5c8a374d791eaa64d2d15feb9b7d75941b5d36282d75c776",
+   "kind": "kith",
+   "id": "barnacub",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnacub_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "3cba9afee83361e82bb6cff37ddd666e0de5c73b49618a1ee8b7f3f9c73b529f",
+   "kind": "kith",
+   "id": "barnacub",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_barnacub_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "9d1f77aaac3090d9984752ade49e39139f212c82feb52f6a005d9ceba06e891c",
+   "kind": "kith",
+   "id": "barnacub",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_burrowbit_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "30528107efddaa207ad301f4566b2f0f6e90b4f4e5a5e1a5992a502ec297ff5f",
+   "kind": "kith",
+   "id": "burrowbit",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_burrowbit_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "0e53b1edd7d0a285e8b38f2e204bc457a904186e7be6e914c38c3fd1f5ff4585",
+   "kind": "kith",
+   "id": "burrowbit",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_burrowbit_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "efaf582cf5a298230a32182a61deb509828ea2b8a7a54266af427c54a0ef7cd5",
+   "kind": "kith",
+   "id": "burrowbit",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_burrowbit_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "b96840d838504773300247d8e40c49d31c7efb735dfd05a6288076a6c3ccbddc",
+   "kind": "kith",
+   "id": "burrowbit",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cinderlisk_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "8058a946adae7a07a36865fd4fe19230d06330fe5aa98e9abf31d7279afd4bc3",
+   "kind": "kith",
+   "id": "cinderlisk",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cinderlisk_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "019d425e2651bff29075e1d1cba64149844734bdd17476ff83090de33a733bd4",
+   "kind": "kith",
+   "id": "cinderlisk",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cinderlisk_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "284390c074e7c8c4cbd0a49adcf2c7ead85dfe4f496216972ccfddc672287ba7",
+   "kind": "kith",
+   "id": "cinderlisk",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cinderlisk_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "942e9fd785c5d7d2ada81f3b361ca7232b28dc46bfb6fc913deee54f373a86b3",
+   "kind": "kith",
+   "id": "cinderlisk",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cobblit_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "4325dc355cfcc3d051c735f36ded14274af8b5a16217d3893781f6b6cdc8ae46",
+   "kind": "kith",
+   "id": "cobblit",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cobblit_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "d766fe3d03ce37dae3ab358c289d275e95bfe48dbb17380cfcbe0f7b7a7542e6",
+   "kind": "kith",
+   "id": "cobblit",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cobblit_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "28f19f2a8e16465af781750fd1bad8e6252759b940060e74fe3acf039d9a9821",
+   "kind": "kith",
+   "id": "cobblit",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cobblit_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "c512817daa46c56185d0c8a230c2460d180754bf169db0aff17c783bf45b856a",
+   "kind": "kith",
+   "id": "cobblit",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cragmaw_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "8e3ce0c328bada2cbe0fd0fea3ec649c273b0a74736dbe63c40f6e0ea8fe3743",
+   "kind": "kith",
+   "id": "cragmaw",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cragmaw_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "d0e7cb435fcc75238c93e88443faa124f583cd86121084db5aa5e87d71e18de4",
+   "kind": "kith",
+   "id": "cragmaw",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cragmaw_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "97883fddd0a81f7fb5dd8e1654333825345b06bf2059374e5377bfa25155917e",
+   "kind": "kith",
+   "id": "cragmaw",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_cragmaw_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "052d19f84c1ef872bdec335261d9f52e3945599bff29f9db88e85a61801b61d8",
+   "kind": "kith",
+   "id": "cragmaw",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_foxfern_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "8b72115992e4b7ee76044542e44c055547143a6e0209f7290a57aca8b17f5791",
+   "kind": "kith",
+   "id": "foxfern",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_foxfern_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "7fca2ea3dc8dcb9b0abaf2a81020a6134b2a24c2377bddbb55404ebcfe272815",
+   "kind": "kith",
+   "id": "foxfern",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_foxfern_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "ae94026b45ddbbda6f3ad6434f267f689b75ec204d4cde9fd153bd3bcd88fa32",
+   "kind": "kith",
+   "id": "foxfern",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_foxfern_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "406c88876e98de413e377ea6a160270e0e5939dcae653961d1c1e6ce62dc9965",
+   "kind": "kith",
+   "id": "foxfern",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_kindlit_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "ace7ab490282698141b18bb54509137c41a82bd08ce03e1e84c4449b84da6925",
+   "kind": "kith",
+   "id": "kindlit",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_kindlit_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "0c509475c99de22666178e9da5ec3b098d5e8fcecfc4692b49c7c07d7dce0fc3",
+   "kind": "kith",
+   "id": "kindlit",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_kindlit_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "7a807a94bed0a54683766334ee9bc1f9dec148fa4d061eb9835928e69028732a",
+   "kind": "kith",
+   "id": "kindlit",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_kindlit_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "3da68885cb2cb1f4ac116c2598bde4f1e87d9f9dd38d6a5ba3b7a5be09ded22f",
+   "kind": "kith",
+   "id": "kindlit",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "a405176efb9690f12f1d46056e21799d7dd9011448520be62c1c73d19f61fd00",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_back_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "f1143264b256ad2208d6179502d8d82036a94039053773c281106ef448855497",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "back_idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "45bc06055ab9b63b48198be81c89c152d569f512488eea1ca45271fba3ecae9e",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "3d73e671c4e79849f3408f458d07fee0e7772d64ddea798e7a86f61302dcbfa3",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "d6cca6607fcd652b2c0bad0baaeed05e5691fcbb8863b17621f21f9fd6b0778e",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_lumoth_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "e853f1e2762b959b263356ea9f88c00d61cf8bd719508c788f751969af1e3db0",
+   "kind": "kith",
+   "id": "lumoth",
+   "view": "idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_ottide_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "333dbbfbcb2ef240a9132c56232ae7f5e3d7ab3d82338249aecc2648cdf09687",
+   "kind": "kith",
+   "id": "ottide",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_ottide_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "5710633f65b0c090aae3761e9af77560a2c33c177ad30ec9a21bb08d7e0195de",
+   "kind": "kith",
+   "id": "ottide",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_ottide_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "9cbe7f7367a38252d3fc740bf8323ef76b5d81d83a3202adbd9e9a0d1b6723b9",
+   "kind": "kith",
+   "id": "ottide",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_ottide_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "238d177c50eaa38ba3e703b27b9742f85c1620e43278aebdc2302fe13c1d2f7b",
+   "kind": "kith",
+   "id": "ottide",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "41ce5acf300a373250cbf068858f9b4875e13e2378e2c5ba288d9343d889df96",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_back_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "04368f3658ed1b025a4926cae22c19f57e1a26c54227da0314750113f3a933ae",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "back_idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "bba780f199d2a0184dbaa306a3f6acdbdc29fe30a726749ec81bd8f5e5debf9b",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "9a6827ab536ba8658de97e927ab7c3094fb3181b07ce46805d29317bf48ac4c3",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "3aa471fedcf7dac542fa3058907657dcef6e0a350a0b5167fdeda969e48ad8cd",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplark_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "e0f90c2b719afa3adf970f7314d7842fd710de791e04e9e3a4166fbac7a0d83e",
+   "kind": "kith",
+   "id": "peeplark",
+   "view": "idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplet_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "eccee35a44c94549db1b6380a3b92ec148d91bfa8b33ad38f9c0a3caca2912a0",
+   "kind": "kith",
+   "id": "peeplet",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplet_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "f9e32cd4bed5f0646c32c38d042c11321de27c55c8bd5045b142c49f626fe4ee",
+   "kind": "kith",
+   "id": "peeplet",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplet_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "b316583b4e15b046baba23d10bcc2e136e8640a5786d161f74182f6056f9ba77",
+   "kind": "kith",
+   "id": "peeplet",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_peeplet_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "405f7c96cddef3f688a56f6b445a3f2df85547d1a5f5d0c1c3620f771c200cbd",
+   "kind": "kith",
+   "id": "peeplet",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_pyrevault_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "e1fc059c3624ecf147bb6f268ad6b37a2e9fd213aad732cc061150338f2bced1",
+   "kind": "kith",
+   "id": "pyrevault",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_pyrevault_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "d76f0036af76b13371e82edd403f7e45125fa205ffa32f588ec85f2fc4179b2d",
+   "kind": "kith",
+   "id": "pyrevault",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_pyrevault_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "c1f972f8d5fb0cff6b20a9c045697e6d524bba8ea54821fd070915b9c77673e7",
+   "kind": "kith",
+   "id": "pyrevault",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_pyrevault_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "f98b9433a6771654a524a888a6628204e537602377fd87f25e0beea2b0dfa98d",
+   "kind": "kith",
+   "id": "pyrevault",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_silkling_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "964e5a8b953d87e0c6ca02892452db0d7c7c9dd15359826c76c8937a14b0a9b5",
+   "kind": "kith",
+   "id": "silkling",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_silkling_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "2818ad166a1e59c34026e5ab71c2f3e1888bd393967da78a3f3b51dcd1e7aeb9",
+   "kind": "kith",
+   "id": "silkling",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_silkling_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "d36c3ecfe61c8282b120d8b888134851b8e3f0843ce2af72ed13174c56a4578e",
+   "kind": "kith",
+   "id": "silkling",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_silkling_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "28189ead550079341500066457900beea72093e83bbf2909342a6b3dea8d5d26",
+   "kind": "kith",
+   "id": "silkling",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "470c14a9d32b638d0a4c3b773234d58a0f55750fdd3b23d263237618149108e9",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_back_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "3e90387b98c7d1c79e55a230da08f4adc4db1eb5552b80b89c3abab2a94872db",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "back_idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "a73aa5a59737c6f2fc99152f6dbc4b1e00381ac31ef004f6a00cdc4130afb9a7",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "8e133d2bb405aa9d5134678b37d36dd0446e696e9364024bda8909e144b05c80",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "5e4c073a7431766705dce2c33ee240c399c87e3e3efb64991d9bd64d82569656",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_skyrook_idle.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "bb046c1eb819cc894e62f69ac9615823a9a560ee0fd944245fa25c1035cecc8c",
+   "kind": "kith",
+   "id": "skyrook",
+   "view": "idle",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sparkit_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "086826124608e090d8f283afb094ea9eb27a67fad35e90c35eed76917f21f3a7",
+   "kind": "kith",
+   "id": "sparkit",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sparkit_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "2293772d755eb51e115c011841e875e4b17b0c21a0e2df585861ff5d4d32f2af",
+   "kind": "kith",
+   "id": "sparkit",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sparkit_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "ff9958fa4ea573ca2ae4ee06a0e170005f5a4283391cbc1ddecf7e6e61519252",
+   "kind": "kith",
+   "id": "sparkit",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sparkit_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "61aa7d526067e13964e19d92da7d4d087f0dc9385c8901ea22b0f494cd6c6be1",
+   "kind": "kith",
+   "id": "sparkit",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sylvarix_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "0d517587b5eab4161757a82e4ba633bd46806faa6f4f0d28b178a8c674fd2dd6",
+   "kind": "kith",
+   "id": "sylvarix",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sylvarix_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "19a23537c07be7ab03c49593fa39c7db7d3edd9be6a4eba0110edac99ca62806",
+   "kind": "kith",
+   "id": "sylvarix",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sylvarix_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "81466ca595d6ff2e45880e58a1208751afd2488e3acc411a4f2b9120cbe84c57",
+   "kind": "kith",
+   "id": "sylvarix",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_sylvarix_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "ca27d2e6194c4f51ba02eb84b40f981cea9fc7eedd2d476898bc262e2107679c",
+   "kind": "kith",
+   "id": "sylvarix",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_thumpwarren_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "ef14ac089714247a622a218be1a9f0e902e0d10aba93aa9729bd10690d72cce1",
+   "kind": "kith",
+   "id": "thumpwarren",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_thumpwarren_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "91f82b08774acd629fa36efa4fa226659241c75392d6b6f171e061aa2071d95d",
+   "kind": "kith",
+   "id": "thumpwarren",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_thumpwarren_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "183b59254d9e13bc3dd61fbb56db55c58d5cb9da12356df652f5c32c3e026279",
+   "kind": "kith",
+   "id": "thumpwarren",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_thumpwarren_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "d2852745d5e317ec6adf1b23d1a002a9fd8a3d860cf4dd51523544744589b0be",
+   "kind": "kith",
+   "id": "thumpwarren",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_torrentide_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "89230ffe17cdbd556284cc018de2a8207239d36e58772ebf41d32b3aee3c1d0d",
+   "kind": "kith",
+   "id": "torrentide",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_torrentide_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "09aebb1552220d3039950273b69b563c0060247f0ed637f53eb6788a5951bda4",
+   "kind": "kith",
+   "id": "torrentide",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_torrentide_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "8f2e4022350d1295c8eb00d92ee34421ae507bc3cdd1231dc4300ca5416a74d1",
+   "kind": "kith",
+   "id": "torrentide",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_torrentide_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "cf7d889f109d5b5f1e9f1f157e536944fd54c1553da675677ebd929e33679f26",
+   "kind": "kith",
+   "id": "torrentide",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_vixthorn_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "42af2d98d0deaef20673fb767128ccbaf9aff5eb3923812abea79636514f6ba4",
+   "kind": "kith",
+   "id": "vixthorn",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_vixthorn_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "be114fdf401de24006058e0d4ded99aa323979cf6fc08c2a3152f576071a35de",
+   "kind": "kith",
+   "id": "vixthorn",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_vixthorn_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "a41b4e6ad0cd581a84d7367188af87737c5c7ee5e3c640f384dafcb396981874",
+   "kind": "kith",
+   "id": "vixthorn",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_vixthorn_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "2d84d69f2c15aab7aa7185ee4cabf87dffe4149f6cfee17b9f8f186a672380f7",
+   "kind": "kith",
+   "id": "vixthorn",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_voltail_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "14a1612ec7889a86b0c9bcdca1d2198827b2db54cf9f847cca52646cb0d46dee",
+   "kind": "kith",
+   "id": "voltail",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_voltail_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "6ee7664711a9b16414bc5654247310ab19381df65aff87b57ce6b674bf9cb11c",
+   "kind": "kith",
+   "id": "voltail",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_voltail_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "c4d59d6990542baba38d2f33fb83a024400950aba2f84b4f59df99223526af58",
+   "kind": "kith",
+   "id": "voltail",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_voltail_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "4e2af2477443f3303350fd2ba8b59bf1a16cca90422bf2988ddfadf6ff9002cd",
+   "kind": "kith",
+   "id": "voltail",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_wavecoat_back.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "e949649a157a68f4a6c3217a71cdd03eec7bf87c6fe63ecc4f382bfbb9e7d136",
+   "kind": "kith",
+   "id": "wavecoat",
+   "view": "back",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_wavecoat_follow.png",
+   "width": 64,
+   "height": 128,
+   "sha256": "3178423dd966f15f3ff4972741bc097e469411f10d7de3982105ec0d3feb17ce",
+   "kind": "kith",
+   "id": "wavecoat",
+   "view": "follow",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_wavecoat_front.png",
+   "width": 96,
+   "height": 96,
+   "sha256": "ce8fcad89727b144803da164db49430a8e94acec24f08c31130423aaaebd69b0",
+   "kind": "kith",
+   "id": "wavecoat",
+   "view": "front",
+   "frame": [
+    96,
+    96
+   ]
+  },
+  {
+   "path": "assets/creatures/mon_wavecoat_icon.png",
+   "width": 64,
+   "height": 32,
+   "sha256": "817d73717b12cd809fb85639dcfe5747466bc9034f999ee54c0a497a078ab6ee",
+   "kind": "kith",
+   "id": "wavecoat",
+   "view": "icon",
+   "frame": [
+    32,
+    32
+   ]
+  },
+  {
+   "path": "assets/props/bld_hearthmoss_house_a.png",
+   "width": 96,
+   "height": 112,
+   "sha256": "71d52e1cc0e98c457eac1426d13fe543d73d2bc99cb180028836fb1956d0965d",
+   "kind": "props",
+   "id": "bld_hearthmoss_house_a"
+  },
+  {
+   "path": "assets/props/bld_hearthmoss_house_b.png",
+   "width": 128,
+   "height": 128,
+   "sha256": "7985d36a3163a99ce668162b405f68744c744a1f8e17b630a6f569eaaba865e2",
+   "kind": "props",
+   "id": "bld_hearthmoss_house_b"
+  },
+  {
+   "path": "assets/props/bld_player_house.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "a1878d6912b8058cdfc2cade5a8955bb25b4c90751d27d93ca47589bc0f69f31",
+   "kind": "props",
+   "id": "bld_player_house"
+  },
+  {
+   "path": "assets/props/bld_wren_lab.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "87cd8a936e4900e6614b970c2736837026540cfd7c9ffa0d50698bf7ddb83518",
+   "kind": "props",
+   "id": "bld_wren_lab"
+  },
+  {
+   "path": "assets/props/prop_door_hearthmoss_house_a.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "ab6888e3221c7ca7a1a5879c2bd250add31f9a56c20545fb519e789fa39b4044",
+   "kind": "props",
+   "id": "prop_door_hearthmoss_house_a"
+  },
+  {
+   "path": "assets/props/prop_door_hearthmoss_house_b.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "33ec50b7bdc80f7d0c4b6102c515759414751d180549ce5bb13296e9be6c9a5c",
+   "kind": "props",
+   "id": "prop_door_hearthmoss_house_b"
+  },
+  {
+   "path": "assets/props/prop_door_player_house.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "4ab56f4aa4c8e40be2552446e29a587702b4f6a9294ec26c73e293757a99e2d2",
+   "kind": "props",
+   "id": "prop_door_player_house"
+  },
+  {
+   "path": "assets/props/prop_door_wren_lab.png",
+   "width": 64,
+   "height": 56,
+   "sha256": "d1d5b5768caa4eb63f97f6c9faeed66aa6b6587906784409352b4f153fe07dc8",
+   "kind": "props",
+   "id": "prop_door_wren_lab"
+  },
+  {
+   "path": "assets/props/props_hearthmoss_fences.png",
+   "width": 256,
+   "height": 32,
+   "sha256": "7a58bab5e6fdb1aa5cdbf2ad704f55078ec08f085e986e647d66ffb705df5eb4",
+   "kind": "props",
+   "id": "props_hearthmoss_fences"
+  },
+  {
+   "path": "assets/props/props_hearthmoss_large.png",
+   "width": 256,
+   "height": 64,
+   "sha256": "193a3755b0b09098ef66056408df9a08696dcffdeec7b5010a8fa23b625aaa36",
+   "kind": "props",
+   "id": "props_hearthmoss_large"
+  },
+  {
+   "path": "assets/props/props_hearthmoss_plants.png",
+   "width": 192,
+   "height": 24,
+   "sha256": "8cd57771b9e408cbe018031d0fa8a8c5d4bc35dc2887f9b6ab67e997946bcc69",
+   "kind": "props",
+   "id": "props_hearthmoss_plants"
+  },
+  {
+   "path": "assets/props/props_hearthmoss_small.png",
+   "width": 256,
+   "height": 128,
+   "sha256": "adae71e21a5f77854b662a0bca2d5a3af2f504a784e29d02fd2504ae232c169c",
+   "kind": "props",
+   "id": "props_hearthmoss_small"
+  },
+  {
+   "path": "assets/props/props_hearthmoss_trees.png",
+   "width": 320,
+   "height": 80,
+   "sha256": "5c6a5278c760b82dc8c6c4dc6d642403ce0b5b48fbd77447182df8b02514b4a2",
+   "kind": "props",
+   "id": "props_hearthmoss_trees"
+  },
+  {
+   "path": "assets/tiles/tiles_hearthmoss_ground.png",
+   "width": 256,
+   "height": 256,
+   "sha256": "3e67848725c09adbd5449553035baa6942522a6f0e36a624e692605c2be5f71b",
+   "kind": "tiles",
+   "id": "tiles_hearthmoss_ground"
+  },
+  {
+   "path": "assets/tiles/tiles_tallgrass.png",
+   "width": 60,
+   "height": 36,
+   "sha256": "831b902b556746ed53122c4d4c39db2651536dd55c820739d21756104dbd9482",
+   "kind": "tiles",
+   "id": "tiles_tallgrass"
+  },
+  {
+   "path": "assets/ui/icon_type_beast.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "7bf2aa7e524ef5b05e0cda48fc151369f9a303fdd962efc0f5dd6ea5a8e52a9f",
+   "kind": "ui",
+   "id": "icon_type_beast"
+  },
+  {
+   "path": "assets/ui/icon_type_bloom.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "ee888b8915f845f04566b3e070d3e5b2963bb2c69c495ce9ce60baab595dc3d8",
+   "kind": "ui",
+   "id": "icon_type_bloom"
+  },
+  {
+   "path": "assets/ui/icon_type_brawl.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "f72ea30965330747c870f4768b880677315ad4e72f270e63fe68225e35275d63",
+   "kind": "ui",
+   "id": "icon_type_brawl"
+  },
+  {
+   "path": "assets/ui/icon_type_ember.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "89e12543ef56da50825afa5425c4a7712dc9afc8a615a9e89c02245011db9ed6",
+   "kind": "ui",
+   "id": "icon_type_ember"
+  },
+  {
+   "path": "assets/ui/icon_type_fae.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "688df23679021b098f2b348286c1a1c10d72cb8bb3e738735f1d6b2d10c4dd99",
+   "kind": "ui",
+   "id": "icon_type_fae"
+  },
+  {
+   "path": "assets/ui/icon_type_frost.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "5ed942697387f7e40d48142613f7804c53a1ba3fd66522ca5c6e8d777f0def1f",
+   "kind": "ui",
+   "id": "icon_type_frost"
+  },
+  {
+   "path": "assets/ui/icon_type_gale.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "f9e0c6f43eddd214276b077347482bbd2764872b980753570b3b00ffe15ce564",
+   "kind": "ui",
+   "id": "icon_type_gale"
+  },
+  {
+   "path": "assets/ui/icon_type_metal.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "e55e090d97d537bfa5b6654f325568d1bcce9cdd12d1ae54e10da744c6fd90fc",
+   "kind": "ui",
+   "id": "icon_type_metal"
+  },
+  {
+   "path": "assets/ui/icon_type_mind.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "ce5ae85655b7086d13a1ef82e9240b55a0944ce891edcb37f45cb19fe0a6b91b",
+   "kind": "ui",
+   "id": "icon_type_mind"
+  },
+  {
+   "path": "assets/ui/icon_type_shade.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "98ec1e50b06a10326fa3a46e1403c712389596ac7cdb1cedfc1a95926c775c26",
+   "kind": "ui",
+   "id": "icon_type_shade"
+  },
+  {
+   "path": "assets/ui/icon_type_stone.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "740449d6a084c8b6263673fc5fa1d93dbad3a05af53a792768d0450c638e8c32",
+   "kind": "ui",
+   "id": "icon_type_stone"
+  },
+  {
+   "path": "assets/ui/icon_type_swarm.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "88575d145ead41d047d426aefc3f0ddad01ba7eda1d97bfae6bfdd55574ca629",
+   "kind": "ui",
+   "id": "icon_type_swarm"
+  },
+  {
+   "path": "assets/ui/icon_type_tide.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "c9af5e8d5b3f3414391ee769f513d372908396145ae285dd29e815f7fb09f59e",
+   "kind": "ui",
+   "id": "icon_type_tide"
+  },
+  {
+   "path": "assets/ui/icon_type_venom.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "db9d09918f99ea60adb360490f00c018f9f80cebc9a7e6ee6e399e5257d02cb9",
+   "kind": "ui",
+   "id": "icon_type_venom"
+  },
+  {
+   "path": "assets/ui/icon_type_volt.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "86e9d69919861b393d2e3c60372d8e7bd0ed5b962c9efdd4a6df063e05ca5e8b",
+   "kind": "ui",
+   "id": "icon_type_volt"
+  },
+  {
+   "path": "assets/ui/icon_type_wyrm.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "e1db8c76e90475867df0f9e57161feba470688099014281bc14f67d220e67e30",
+   "kind": "ui",
+   "id": "icon_type_wyrm"
+  },
+  {
+   "path": "assets/ui/item_field_notebook.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "eae255e78223b2d4b810558f5a90577be0f4add14ab461d3db13b7be73e4bad3",
+   "kind": "ui",
+   "id": "item_field_notebook"
+  },
+  {
+   "path": "assets/ui/item_potion.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "27330fd56f616edcbf2fcdf5f815427f5ff2bb735d1975d1746aa715f6fbe54d",
+   "kind": "ui",
+   "id": "item_potion"
+  },
+  {
+   "path": "assets/ui/item_running_shoes.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "8c7667980058dbcd224aabb1a345dfd60019b1864fd4132bf709a6016b7e5a97",
+   "kind": "ui",
+   "id": "item_running_shoes"
+  },
+  {
+   "path": "assets/ui/item_tether_orb.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "09b9637913aeda07cd5f59aed1876696d30226e9cae03c2199f73d7bd3f69052",
+   "kind": "ui",
+   "id": "item_tether_orb"
+  },
+  {
+   "path": "assets/ui/item_tether_orb_great.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "7bba1777fe800af44814ba19734cd7a27ecf06b654de088409bdc329608b57ef",
+   "kind": "ui",
+   "id": "item_tether_orb_great"
+  },
+  {
+   "path": "assets/ui/item_tether_orb_ultra.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "de89cec4162b550042ee5bfae3dcf53ef9a502642b9d65eb65d1346d9bc21606",
+   "kind": "ui",
+   "id": "item_tether_orb_ultra"
+  },
+  {
+   "path": "assets/ui/label_type_beast.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "9cb1a63a2a37e9480762ff5ec22b9dcf49876f6258072f445b82345b6341a3fc",
+   "kind": "ui",
+   "id": "label_type_beast"
+  },
+  {
+   "path": "assets/ui/label_type_bloom.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "9a57756b7056791e67f4029d75c0cdc55309fa2c9921396ca0a3b008db6f0411",
+   "kind": "ui",
+   "id": "label_type_bloom"
+  },
+  {
+   "path": "assets/ui/label_type_brawl.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "1440563cb2d4103e78567d60332d9988029a9c76c20ff08569d4f5e5a18df524",
+   "kind": "ui",
+   "id": "label_type_brawl"
+  },
+  {
+   "path": "assets/ui/label_type_ember.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "43c0ca79c2a1e099bc8debc9abc14251980d7016bb7d37e78057f0812662cfaf",
+   "kind": "ui",
+   "id": "label_type_ember"
+  },
+  {
+   "path": "assets/ui/label_type_fae.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "0aea63af00d351684c0d4970d34ca85bfc065eda28948c3152c8d5f352377303",
+   "kind": "ui",
+   "id": "label_type_fae"
+  },
+  {
+   "path": "assets/ui/label_type_frost.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "f7e7a61f4280a9f3cc7844ce59fde092afd09877e12d5357ec7deebd06fecfc0",
+   "kind": "ui",
+   "id": "label_type_frost"
+  },
+  {
+   "path": "assets/ui/label_type_gale.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "822bbb481ae5dcb08e963ccde6756f436b0dfdd90208b4a47663b2955401c5cc",
+   "kind": "ui",
+   "id": "label_type_gale"
+  },
+  {
+   "path": "assets/ui/label_type_metal.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "1a31167a0c2aab7ebe951c36bce8a9e4b21ccf74776198171cff3868e74ba838",
+   "kind": "ui",
+   "id": "label_type_metal"
+  },
+  {
+   "path": "assets/ui/label_type_mind.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "1878f6e2fb525a45a9a6c9e54badfa2a9c80fd0e44011ce8977201f6966b5b8c",
+   "kind": "ui",
+   "id": "label_type_mind"
+  },
+  {
+   "path": "assets/ui/label_type_shade.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "8a8a2b5c8023a1efaa2afff77a3c45a96028aa5247c2f665ab26ccc024223512",
+   "kind": "ui",
+   "id": "label_type_shade"
+  },
+  {
+   "path": "assets/ui/label_type_stone.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "3e29454d6fa2b5cb27fbee34cb96fb21a796020cb7a5bd968ed53ba4aa53cd21",
+   "kind": "ui",
+   "id": "label_type_stone"
+  },
+  {
+   "path": "assets/ui/label_type_swarm.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "15e26b088e6e11e60730080fd4df3720b25c2971707df9388e99dffa52b2d3d4",
+   "kind": "ui",
+   "id": "label_type_swarm"
+  },
+  {
+   "path": "assets/ui/label_type_tide.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "cfc0b7291029464fb0bf59956503ea4acd55b131b9d165318f9cb4196603fd93",
+   "kind": "ui",
+   "id": "label_type_tide"
+  },
+  {
+   "path": "assets/ui/label_type_venom.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "d7d53b3db58e18b1070133eab98b34cbe157140766d748e719f075edd311b379",
+   "kind": "ui",
+   "id": "label_type_venom"
+  },
+  {
+   "path": "assets/ui/label_type_volt.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "24442b49ca5de7570946348c6ea426caf26edd18bb0ab08c06128d45aa933f57",
+   "kind": "ui",
+   "id": "label_type_volt"
+  },
+  {
+   "path": "assets/ui/label_type_wyrm.png",
+   "width": 32,
+   "height": 14,
+   "sha256": "2889fa7a49a7c4cf51affbb7694b01889ef7a86aa6c3e943370f8cd43ac2ee10",
+   "kind": "ui",
+   "id": "label_type_wyrm"
+  },
+  {
+   "path": "assets/ui/ui_cursor.png",
+   "width": 12,
+   "height": 12,
+   "sha256": "d40dae2633f0bb4999ba08be109298a971f98a884572354fb21625463563e583",
+   "kind": "ui",
+   "id": "ui_cursor"
+  },
+  {
+   "path": "assets/ui/ui_dialog.png",
+   "width": 32,
+   "height": 32,
+   "sha256": "02b43fb3158830050a3f679118e3c0098006e59a810ad290046bbf6d514ee31a",
+   "kind": "ui",
+   "id": "ui_dialog"
+  },
+  {
+   "path": "assets/ui/ui_hp_fill.png",
+   "width": 32,
+   "height": 6,
+   "sha256": "e9b36f322105878acfd08fab3a87c2b68bd6c9552d8cbf190e25d93ed7c6bc96",
+   "kind": "ui",
+   "id": "ui_hp_fill"
+  },
+  {
+   "path": "assets/ui/ui_hp_fill_low.png",
+   "width": 32,
+   "height": 6,
+   "sha256": "1c05a049fcbf06bbf0d8819b7198af0aa2edbcbab1cbb33120e9009b1f2f6864",
+   "kind": "ui",
+   "id": "ui_hp_fill_low"
+  },
+  {
+   "path": "assets/ui/ui_hp_fill_mid.png",
+   "width": 32,
+   "height": 6,
+   "sha256": "bec286f487327d0c4794d195ceade2cf3983629e3e6ad789e00382e0df0d10c9",
+   "kind": "ui",
+   "id": "ui_hp_fill_mid"
+  },
+  {
+   "path": "assets/ui/ui_hp_frame.png",
+   "width": 64,
+   "height": 24,
+   "sha256": "5cf328b85e20f0d8c2424eeea8b81539bf0af4f1aedb2e5c6c848555a53cc005",
+   "kind": "ui",
+   "id": "ui_hp_frame"
+  },
+  {
+   "path": "assets/ui/ui_menu.png",
+   "width": 32,
+   "height": 32,
+   "sha256": "9cb42ccc26975b8852239dc99cdb2f0ef2ec89167029f10595f8fb8175ad7a11",
+   "kind": "ui",
+   "id": "ui_menu"
+  },
+  {
+   "path": "assets/ui/ui_name_tag.png",
+   "width": 64,
+   "height": 24,
+   "sha256": "61d57415cc16ca5117998a2f29ae2c1d0b8b808e6f1ce73623cbdd280f9fc587",
+   "kind": "ui",
+   "id": "ui_name_tag"
+  },
+  {
+   "path": "assets/ui/ui_prompt.png",
+   "width": 12,
+   "height": 8,
+   "sha256": "5c1a8ff40be7045b05fbd8ea4753f23657f666dcaedd1bbfc4beecafc490baa9",
+   "kind": "ui",
+   "id": "ui_prompt"
+  },
+  {
+   "path": "assets/ui/ui_tether_orb_states.png",
+   "width": 96,
+   "height": 24,
+   "sha256": "4f6c07dc4386cab3091cad31a4bde8f5806d5c4697b077a19d80b3ce9fd1752c",
+   "kind": "ui",
+   "id": "ui_tether_orb_states"
+  },
+  {
+   "path": "assets/ui/ui_title_background.png",
+   "width": 480,
+   "height": 270,
+   "sha256": "0644ddf617d0fa7341d1422e6c690bdb9e829127106788add3dace875df6e9b4",
+   "kind": "ui",
+   "id": "ui_title_background"
+  },
+  {
+   "path": "assets/ui/ui_title_logo.png",
+   "width": 256,
+   "height": 96,
+   "sha256": "897c3846da3dc3c9c7a8c0ce23fc809abead244afa726c30c0374df547371e27",
+   "kind": "ui",
+   "id": "ui_title_logo"
+  },
+  {
+   "path": "assets/ui/ui_title_screen.png",
+   "width": 480,
+   "height": 270,
+   "sha256": "8ee09cb610c94cc01a97eabdbca784db94240bd26a57d311aa5b5ef351818886",
+   "kind": "ui",
+   "id": "ui_title_screen"
+  },
+  {
+   "path": "assets/ui/ui_xp_bar.png",
+   "width": 64,
+   "height": 24,
+   "sha256": "02d3865e9d5ea15b3c2c9436c7b3a4db616852a4fe36f39fcb45897fa4bfced8",
+   "kind": "ui",
+   "id": "ui_xp_bar"
+  },
+  {
+   "path": "assets/ui/ui_xp_fill.png",
+   "width": 32,
+   "height": 6,
+   "sha256": "3b7408094efbfcd2218bf20ce9872502fc36d60125c9b10e39f0c3a35a58acdf",
+   "kind": "ui",
+   "id": "ui_xp_fill"
+  }
+ ]
+}

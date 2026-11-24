@@ -27,9 +27,19 @@ python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scr
 | `tools/build_data.py` | Builds `src/data.json`. Colour-grades world art toward the engine palette and derives night window masks. |
 | `data/*.json` | Canonical game data exported from `data/src/`. |
 | `data/src/*.py` | Source of truth for moves (279), traits (95), natures, the type chart and the 23-species roster. Run `export.py` and `export_roster.py` from `data/src/` to regenerate `data/*.json`. |
-| `assets/` | Native-resolution art from the artist pipeline (ChatGPT). Read-only inputs. |
+| `assets/` | Native-resolution art from the artist pipeline (ChatGPT). Read-only inputs; `assets/manifest.json` is generated. |
+| `art/` | Concept lineups and review sheets. Not loaded by the game. |
 | `docs/` | Art pack handoff and layout indexes, HD-2D direction, and `camera_calibration.json` (the measured camera for artists). |
 | `tests/drive.py` | Playwright driver. `window.WB` exposes debug hooks (state, warp, start a wild battle). |
+
+## Art workflow
+
+ChatGPT is the lead asset artist and publishes approved art on the `art-production` branch, then opens a pull request into `main`. The contract (folders, names, sprite sizes, manifest, revisions) is `docs/ART_PIPELINE.md`, enforced by `tools/check_assets.py` and the `Asset check and build` GitHub Action.
+
+- Do not redesign, redraw, recolour at source, or replace approved art. Colour-matching happens only at build time in `grade()`.
+- Art pull requests change `assets/` and `art/` only. Wiring new art into the game is a separate change on the development side: add the file to `tools/build_data.py`, run `python3 build.py --data`, then use it.
+- After merging art, run `python3 tools/check_assets.py --write` if the manifest is stale.
+- New art is inert until it is wired in, so merging an art pull request cannot change the running game.
 
 ## How the game is put together
 
