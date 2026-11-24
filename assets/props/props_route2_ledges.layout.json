@@ -1,0 +1,41 @@
+{
+  "cell": [
+    112,
+    96
+  ],
+  "cells": [
+    {
+      "id": "rocky_ledge_a",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        8,
+        27,
+        96,
+        69
+      ]
+    },
+    {
+      "id": "reinforced_ledge",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        4,
+        32,
+        103,
+        64
+      ]
+    },
+    {
+      "id": "rocky_ledge_b",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        9,
+        20,
+        94,
+        76
+      ]
+    }
+  ]
+}

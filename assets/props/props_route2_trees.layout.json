@@ -1,0 +1,63 @@
+{
+  "cell": [
+    64,
+    80
+  ],
+  "cells": [
+    {
+      "id": "upland_tree_a",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        0,
+        4,
+        64,
+        76
+      ]
+    },
+    {
+      "id": "upland_tree_b",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        2,
+        4,
+        60,
+        76
+      ]
+    },
+    {
+      "id": "upland_pine",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        9,
+        2,
+        46,
+        78
+      ]
+    },
+    {
+      "id": "dead_tree_a",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        4,
+        8,
+        56,
+        72
+      ]
+    },
+    {
+      "id": "dead_tree_b",
+      "col": 4,
+      "row": 0,
+      "bounds": [
+        14,
+        8,
+        36,
+        72
+      ]
+    }
+  ]
+}

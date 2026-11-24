@@ -1,0 +1,107 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "support_beam",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        2,
+        12,
+        60,
+        52
+      ]
+    },
+    {
+      "id": "standing_lantern",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        18,
+        12,
+        28,
+        52
+      ]
+    },
+    {
+      "id": "hanging_lantern",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        22,
+        22,
+        19,
+        42
+      ]
+    },
+    {
+      "id": "ore_vein",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        7,
+        29,
+        49,
+        35
+      ]
+    },
+    {
+      "id": "ore_cart",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        4,
+        15,
+        55,
+        49
+      ]
+    },
+    {
+      "id": "shovel",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        24,
+        24,
+        16,
+        40
+      ]
+    },
+    {
+      "id": "pickaxe",
+      "col": 0,
+      "row": 2,
+      "bounds": [
+        13,
+        26,
+        38,
+        38
+      ]
+    },
+    {
+      "id": "toolbox",
+      "col": 1,
+      "row": 2,
+      "bounds": [
+        10,
+        26,
+        44,
+        38
+      ]
+    },
+    {
+      "id": "stalagmites",
+      "col": 2,
+      "row": 2,
+      "bounds": [
+        9,
+        23,
+        45,
+        41
+      ]
+    }
+  ]
+}

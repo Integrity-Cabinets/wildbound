@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 271,
+ "count": 279,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -2374,6 +2374,14 @@
    "id": "bld_cindervale_house_b"
   },
   {
+   "path": "assets/props/bld_cindervale_mine_entrance.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "fc388013a1f61b233a005b9582d30bb739f72965530f4d514ca00c366f803900",
+   "kind": "props",
+   "id": "bld_cindervale_mine_entrance"
+  },
+  {
    "path": "assets/props/bld_cindervale_rest_lodge.png",
    "width": 160,
    "height": 144,
@@ -2579,6 +2587,97 @@
    "sha256": "5c6a5278c760b82dc8c6c4dc6d642403ce0b5b48fbd77447182df8b02514b4a2",
    "kind": "props",
    "id": "props_hearthmoss_trees"
+  },
+  {
+   "path": "assets/props/props_mine_large.png",
+   "width": 256,
+   "height": 256,
+   "sha256": "84956f0b4c53b0419f23b508a9456878ad36b051794e0534d2a2e585c8920d4d",
+   "kind": "props",
+   "id": "props_mine_large",
+   "frame": [
+    128,
+    128
+   ],
+   "layout": "assets/props/props_mine_large.layout.json"
+  },
+  {
+   "path": "assets/props/props_mine_small.png",
+   "width": 192,
+   "height": 192,
+   "sha256": "3927886b6d7156de66b37e1cc15e6bf90dec341ee3168951d799b8ccc99f97ae",
+   "kind": "props",
+   "id": "props_mine_small",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_mine_small.layout.json"
+  },
+  {
+   "path": "assets/props/props_route2_debris.png",
+   "width": 288,
+   "height": 160,
+   "sha256": "d8d1bb02095a1272df087064ad51becc0f283902b90ac1cedb339f21a8978f27",
+   "kind": "props",
+   "id": "props_route2_debris",
+   "frame": [
+    96,
+    80
+   ],
+   "layout": "assets/props/props_route2_debris.layout.json"
+  },
+  {
+   "path": "assets/props/props_route2_ledges.png",
+   "width": 336,
+   "height": 96,
+   "sha256": "6f02584fbc5bce7645f04e7e24c70f05165bb583c8f74df623e7109c3434cb46",
+   "kind": "props",
+   "id": "props_route2_ledges",
+   "frame": [
+    112,
+    96
+   ],
+   "layout": "assets/props/props_route2_ledges.layout.json"
+  },
+  {
+   "path": "assets/props/props_route2_rocks.png",
+   "width": 256,
+   "height": 128,
+   "sha256": "c25a976f8272b0e8f9d47470c7f5d020d31c8c97007abd19d1bf9e59dddaadae",
+   "kind": "props",
+   "id": "props_route2_rocks",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_route2_rocks.layout.json"
+  },
+  {
+   "path": "assets/props/props_route2_trees.png",
+   "width": 320,
+   "height": 80,
+   "sha256": "9708778aef7951b9681cf9b1424ed7364befa12dd4f1cacc8c01a426bed0fb34",
+   "kind": "props",
+   "id": "props_route2_trees",
+   "frame": [
+    64,
+    80
+   ],
+   "layout": "assets/props/props_route2_trees.layout.json"
+  },
+  {
+   "path": "assets/props/props_route2_vegetation.png",
+   "width": 256,
+   "height": 96,
+   "sha256": "591655ff5a48c09b8c0957fd299d0c23aa43d951cdc480934c7ee62a73ea0c27",
+   "kind": "props",
+   "id": "props_route2_vegetation",
+   "frame": [
+    64,
+    48
+   ],
+   "layout": "assets/props/props_route2_vegetation.layout.json"
   },
   {
    "path": "assets/tiles/tiles_hearthmoss_ground.png",

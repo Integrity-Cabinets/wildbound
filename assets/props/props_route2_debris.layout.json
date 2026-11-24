@@ -1,0 +1,63 @@
+{
+  "cell": [
+    96,
+    80
+  ],
+  "cells": [
+    {
+      "id": "fallen_log",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        14,
+        45,
+        68,
+        35
+      ]
+    },
+    {
+      "id": "tree_stump",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        26,
+        50,
+        44,
+        30
+      ]
+    },
+    {
+      "id": "broken_stump",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        26,
+        39,
+        44,
+        41
+      ]
+    },
+    {
+      "id": "abandoned_ore_cart",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        10,
+        35,
+        75,
+        45
+      ]
+    },
+    {
+      "id": "abandoned_mine_sign",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        13,
+        34,
+        70,
+        46
+      ]
+    }
+  ]
+}
