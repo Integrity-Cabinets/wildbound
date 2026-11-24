@@ -25,7 +25,7 @@ M(T,'Overwhelming Howl','S',110,100,10,flags='sound',eff='stat:self:spe:-1:100',
 M(T,'Howl at Dawn','X',None,None,20,tgt='self',flags='sound',eff='stat:self:atk:+1;stat:self:spa:+1',desc="Raises the user's Attack and Special Attack by 1.",res='Also raises Speed by 1.')
 M(T,'Hunker Down','X',None,None,20,tgt='self',eff='stat:self:def:+2',desc="Sharply raises the user's Defense.",res='Also heals 25% of max HP.')
 M(T,'Rest Up','X',None,None,10,tgt='self',eff='heal:50',desc='Heals 50% of max HP.',res='Also cures status conditions.')
-M(T,'Disarming Look','X',None,100,30,eff='stat:foe:atk:-2',desc="Sharply lowers the target's Attack.",res="Also lowers the target's Special Attack by 1.")
+M(T,'Disarming Look','X',None,100,30,eff='stat:foe:atk:-1',desc="Lowers the target's Attack.",res="Also lowers the target's Special Attack by 1.")
 M(T,'Brace','X',None,None,10,prio=4,tgt='self',eff='endure',desc='The user survives any hit this turn with at least 1 HP. Fails if used twice in a row.',res="Also raises the user's Defense by 1.")
 M(T,'Focus Gaze','X',None,None,30,tgt='self',eff='crit_stage:+2',desc='Raises the critical-hit stage by 2.',res='Also raises Speed by 1.')
 

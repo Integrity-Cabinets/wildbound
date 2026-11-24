@@ -265,8 +265,8 @@
   "target": "foe",
   "contact": false,
   "flags": "",
-  "effect": "stat:foe:atk:-2",
-  "desc": "Sharply lowers the target's Attack.",
+  "effect": "stat:foe:atk:-1",
+  "desc": "Lowers the target's Attack.",
   "resonance": "Also lowers the target's Special Attack by 1.",
   "id": "disarming_look",
   "signature": false

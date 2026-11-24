@@ -271,7 +271,7 @@ Wild encounters: 14% per step in tall grass, never within three steps of the las
 | Trainer | Team | AI skill | Reward |
 | --- | --- | ---: | --- |
 | Cole (battle 1) | The starter that beats yours, level 5, knowing only Shove and Disarming Look | 0.55 | none |
-| Scout Theo | Burrowbit 3, Peeplet 3 | 0.6 | 1 Mending Salve |
+| Scout Theo | Burrowbit 3, Peeplet 2 | 0.6 | 1 Mending Salve |
 | Wanderer Mira | Silkling 4, Sparkit 4 | 0.75 | 2 Tether Orbs |
 
 Cole's cut-down move list is deliberate. With his type advantage and a full move set the first fight was close to unwinnable. Theo and Mira, their dialog, and the two villagers' lines were invented in the chat session; Derek has not objected, but he has not explicitly approved them either.

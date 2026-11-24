@@ -5,7 +5,7 @@ const PAL={Beast:['#fff','#e8dcc6','#b8a48c'],Ember:['#fff3c4','#ffb347','#e8472
 const MV={
  'Quick Pounce':{t:'Beast',c:'P',p:40,a:100,pp:30,pr:1,k:'dash',res:'Also raises your Speed.',rs:[['self','spe',1,100]]},
  'Gnaw':{t:'Beast',c:'P',p:60,a:100,pp:25,k:'bite',st:[['foe','def',-1,20]],res:'Always lowers Defense.'},
- 'Disarming Look':{t:'Beast',c:'X',a:100,pp:30,k:'debuff',st:[['foe','atk',-2,100]],res:'Also lowers Sp. Atk.',rs:[['foe','spa',-1,100]]},
+ 'Disarming Look':{t:'Beast',c:'X',a:100,pp:30,k:'debuff',st:[['foe','atk',-1,100]],res:'Also lowers Sp. Atk.',rs:[['foe','spa',-1,100]]},
  'Leaf Flick':{t:'Bloom',c:'P',p:40,a:100,pp:25,k:'slash',res:'High critical-hit ratio.',rc:1},
  'Sap Drain':{t:'Bloom',c:'S',p:50,a:100,pp:15,k:'drain',dr:.5,res:'Drains all damage dealt.'},
  'Lash Vine':{t:'Bloom',c:'P',p:55,a:100,pp:25,k:'slash',res:"Lowers the target's Speed.",rs:[['foe','spe',-1,100]]},

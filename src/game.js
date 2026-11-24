@@ -124,7 +124,7 @@ function buildNpcs(){npcs.length=0;const f=G.flags;
   const c=addNpc({id:'cole',ch:'cole',tx:48,ty:61,dir:2,talk:talkCole});
   if(f.starter){c.hidden=true;for(const k in PROPS.orbs)PROPS.orbs[k].dead=true;if(!f.sensor)warp(w,24,19,2)}
   if(f.sensor)PROPS.sensor.dead=false;
-  addNpc({id:'theo',ch:'npc_teen_m',tx:33,ty:32,dir:3,name:'SCOUT THEO',trainer:{name:'Scout Theo',skill:.6,team:[['burrowbit',3],['peeplet',3]],
+  addNpc({id:'theo',ch:'npc_teen_m',tx:33,ty:32,dir:3,name:'SCOUT THEO',trainer:{name:'Scout Theo',skill:.6,team:[['burrowbit',3],['peeplet',2]],
     intro:["Hold it! You've got the look of somebody on their first day.","So have I. Let's find out which of us it shows on more!"],win:["Huh. It shows on me more.","Take this. You'll get more use out of it than I will."],lose:["Ha! Second day's going to be even better!"],gift:['salve',1],
     after:["I'm staying on Route 1 until Burrowbit stops digging up my lunch."]}});
   addNpc({id:'mira',ch:'npc_traveler_f',tx:29,ty:15,dir:2,name:'WANDERER MIRA',trainer:{name:'Wanderer Mira',skill:.75,team:[['silkling',4],['sparkit',4]],

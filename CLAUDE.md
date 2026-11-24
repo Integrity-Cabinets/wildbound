@@ -11,7 +11,11 @@ python3 build.py            # assemble dist/index.html from src/
 python3 build.py --data     # also rebuild src/data.json from assets/ and data/ (needs Pillow)
 node --check dist/game.check.js   # syntax check of the assembled script
 python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scripted playthrough (needs Playwright + Chromium)
+python3 tests/playthrough.py desk    # plays all of Chapter One with real input, about five minutes
+python3 tests/playthrough.py phone   # the same at 390×844 with the touch controls
 ```
+
+Run both `playthrough.py` modes after any change to gameplay, layout or input. They exit 1 on a page error, a stall or broken text, and write a log and screenshots to `tests/shots/playthrough/`.
 
 `dist/index.html` is the whole game in one file: no server, no dependencies. Open it in a browser. It must keep working as a single self-contained file on both desktop and phones, because it is published as a web artifact.
 
@@ -33,6 +37,7 @@ python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scr
 | `art/` | Concept lineups and review sheets. Not loaded by the game. |
 | `docs/` | `HANDOFF.md` (development handoff), `ART_PIPELINE.md` (art contract), `KITH_ROSTER.md` (creature plan), art pack handoff and layout indexes, HD-2D direction, and `camera_calibration.json` (the measured camera for artists). |
 | `tests/drive.py` | Playwright driver. `window.WB` exposes debug hooks (state, warp, start a wild battle). |
+| `tests/playthrough.py` | Start-to-finish Chapter One playthrough with real key, touch and click input. |
 
 ## Art workflow
 
