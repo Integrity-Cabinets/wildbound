@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 256,
+ "count": 271,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -2342,6 +2342,54 @@
    ]
   },
   {
+   "path": "assets/props/bld_cindervale_archive_station.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "10eff0f3cc7b0f8c03df8a05402065cd86bea1a76bf4f12064a17101f64e1abb",
+   "kind": "props",
+   "id": "bld_cindervale_archive_station"
+  },
+  {
+   "path": "assets/props/bld_cindervale_gym.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "7aa21be72b61b53c045023eeb407373cc655c1e0718ac0cad38091e68dedc5f7",
+   "kind": "props",
+   "id": "bld_cindervale_gym"
+  },
+  {
+   "path": "assets/props/bld_cindervale_house_a.png",
+   "width": 96,
+   "height": 112,
+   "sha256": "876f241cd3cc95a3251daeae549dc0dd91cc40f1ef0e4bba46a45e6f43aa0caa",
+   "kind": "props",
+   "id": "bld_cindervale_house_a"
+  },
+  {
+   "path": "assets/props/bld_cindervale_house_b.png",
+   "width": 144,
+   "height": 128,
+   "sha256": "b6504671eb175b9073f203fb298ac4619b8f73a7e3d9736457b2cc77c372f420",
+   "kind": "props",
+   "id": "bld_cindervale_house_b"
+  },
+  {
+   "path": "assets/props/bld_cindervale_rest_lodge.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "08d4fe75715f8677841a147d32c3391dffe1fd92bc050d537a283511803fb1a6",
+   "kind": "props",
+   "id": "bld_cindervale_rest_lodge"
+  },
+  {
+   "path": "assets/props/bld_cindervale_shop.png",
+   "width": 144,
+   "height": 128,
+   "sha256": "0cde65eafbbf7ec5783e23694ef209c18394cb43c2e233f70fbeb0de5dc07fcf",
+   "kind": "props",
+   "id": "bld_cindervale_shop"
+  },
+  {
    "path": "assets/props/bld_hearthmoss_house_a.png",
    "width": 96,
    "height": 112,
@@ -2374,6 +2422,54 @@
    "id": "bld_wren_lab"
   },
   {
+   "path": "assets/props/prop_door_cindervale_archive_station.png",
+   "width": 64,
+   "height": 56,
+   "sha256": "08d96f9d65cc19099a893bf097db90e0d86b513264fefd5e7133a87316f87ca3",
+   "kind": "props",
+   "id": "prop_door_cindervale_archive_station"
+  },
+  {
+   "path": "assets/props/prop_door_cindervale_gym.png",
+   "width": 64,
+   "height": 56,
+   "sha256": "f0a34e7c08ee4b9cc38229e2d48ab24db092dcf0464346112ece57479c531b1a",
+   "kind": "props",
+   "id": "prop_door_cindervale_gym"
+  },
+  {
+   "path": "assets/props/prop_door_cindervale_house_a.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "ff9006532f084f74623c0f8905b5ea976fdd0aed076a8af5d0224d2393fcfeff",
+   "kind": "props",
+   "id": "prop_door_cindervale_house_a"
+  },
+  {
+   "path": "assets/props/prop_door_cindervale_house_b.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "84c721311f72390c97e955312f36a6a4c050549c9f74795e148d998fc6d8a480",
+   "kind": "props",
+   "id": "prop_door_cindervale_house_b"
+  },
+  {
+   "path": "assets/props/prop_door_cindervale_rest_lodge.png",
+   "width": 64,
+   "height": 56,
+   "sha256": "1de7baae6d1b0713e8197c0f17aee9cec55f0dc6685da191fd2eae30826e29d1",
+   "kind": "props",
+   "id": "prop_door_cindervale_rest_lodge"
+  },
+  {
+   "path": "assets/props/prop_door_cindervale_shop.png",
+   "width": 64,
+   "height": 48,
+   "sha256": "49d46eea3d4760b52886dacf951beef513e6c6323ad1a1643f9a987be4be4350",
+   "kind": "props",
+   "id": "prop_door_cindervale_shop"
+  },
+  {
    "path": "assets/props/prop_door_hearthmoss_house_a.png",
    "width": 64,
    "height": 48,
@@ -2404,6 +2500,45 @@
    "sha256": "d1d5b5768caa4eb63f97f6c9faeed66aa6b6587906784409352b4f153fe07dc8",
    "kind": "props",
    "id": "prop_door_wren_lab"
+  },
+  {
+   "path": "assets/props/props_cindervale_fences.png",
+   "width": 128,
+   "height": 64,
+   "sha256": "59595f48d138f70cfa0683d9648933dbf3fe1f1d7a37fcb9c79471482817f95b",
+   "kind": "props",
+   "id": "props_cindervale_fences",
+   "frame": [
+    32,
+    32
+   ],
+   "layout": "assets/props/props_cindervale_fences.layout.json"
+  },
+  {
+   "path": "assets/props/props_cindervale_large.png",
+   "width": 288,
+   "height": 192,
+   "sha256": "8aa3541bcb3f3e420108c54c3b0d74d132d1ea9757e79784cee27bdd9b271037",
+   "kind": "props",
+   "id": "props_cindervale_large",
+   "frame": [
+    96,
+    96
+   ],
+   "layout": "assets/props/props_cindervale_large.layout.json"
+  },
+  {
+   "path": "assets/props/props_cindervale_small.png",
+   "width": 256,
+   "height": 128,
+   "sha256": "38b17e94360d763e8500df39a70be78c7002a89ac60b327da2c0c67a9f34e5dd",
+   "kind": "props",
+   "id": "props_cindervale_small",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_cindervale_small.layout.json"
   },
   {
    "path": "assets/props/props_hearthmoss_fences.png",
