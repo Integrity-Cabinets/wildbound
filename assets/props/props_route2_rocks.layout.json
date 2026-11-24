@@ -1,0 +1,85 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "boulder_a",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        15,
+        38,
+        33,
+        26
+      ]
+    },
+    {
+      "id": "boulder_b",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        15,
+        35,
+        33,
+        29
+      ]
+    },
+    {
+      "id": "boulder_c",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        14,
+        42,
+        36,
+        22
+      ]
+    },
+    {
+      "id": "rock_outcrop_a",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        3,
+        36,
+        57,
+        28
+      ]
+    },
+    {
+      "id": "rock_outcrop_b",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        3,
+        22,
+        57,
+        42
+      ]
+    },
+    {
+      "id": "scree_a",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        11,
+        47,
+        42,
+        17
+      ]
+    },
+    {
+      "id": "scree_b",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        8,
+        35,
+        48,
+        29
+      ]
+    }
+  ]
+}
