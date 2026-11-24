@@ -1,0 +1,132 @@
+{
+  "cell": [
+    32,
+    32
+  ],
+  "cells": [
+    {
+      "id": "rail_straight",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        0,
+        3,
+        32,
+        29
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "rail_left_end",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        2,
+        3,
+        30,
+        29
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "rail_right_end",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        0,
+        3,
+        30,
+        29
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "rope_straight",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        0,
+        4,
+        32,
+        28
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "rope_left_end",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        1,
+        4,
+        31,
+        28
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "rope_right_end",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        0,
+        4,
+        31,
+        28
+      ],
+      "collision": [
+        0,
+        26,
+        32,
+        6
+      ]
+    },
+    {
+      "id": "track_straight",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        0,
+        19,
+        32,
+        11
+      ]
+    },
+    {
+      "id": "track_buffer",
+      "col": 3,
+      "row": 1,
+      "bounds": [
+        0,
+        7,
+        32,
+        25
+      ]
+    }
+  ]
+}
