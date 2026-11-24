@@ -2,6 +2,8 @@
 
 An original creature-collecting RPG in the classic Pokémon mold, presented in an HD-2D pixel style. Creatures are called **Kith**. The owner is Derek. This repo holds the playable Chapter One build (Hearthmoss Village and Route 1) and everything needed to keep building.
 
+**New to the project? Read `docs/HANDOFF.md` next.** It covers the current state, what is verified and what is not, Derek's decisions, open questions, the story canon digest and the gotchas. `docs/KITH_ROSTER.md` is the creature plan.
+
 ## Commands
 
 ```
@@ -29,7 +31,7 @@ python3 tests/drive.py <name> <width> <height> <mobile 0|1> < script.txt   # scr
 | `data/src/*.py` | Source of truth for moves (279), traits (95), natures, the type chart and the 23-species roster. Run `export.py` and `export_roster.py` from `data/src/` to regenerate `data/*.json`. |
 | `assets/` | Native-resolution art from the artist pipeline (ChatGPT). Read-only inputs; `assets/manifest.json` is generated. |
 | `art/` | Concept lineups and review sheets. Not loaded by the game. |
-| `docs/` | Art pack handoff and layout indexes, HD-2D direction, and `camera_calibration.json` (the measured camera for artists). |
+| `docs/` | `HANDOFF.md` (development handoff), `ART_PIPELINE.md` (art contract), `KITH_ROSTER.md` (creature plan), art pack handoff and layout indexes, HD-2D direction, and `camera_calibration.json` (the measured camera for artists). |
 | `tests/drive.py` | Playwright driver. `window.WB` exposes debug hooks (state, warp, start a wild battle). |
 
 ## Art workflow
