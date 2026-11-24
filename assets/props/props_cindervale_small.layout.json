@@ -1,0 +1,138 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "lantern_post",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        26,
+        7,
+        28,
+        57
+      ],
+      "collision": [
+        26,
+        55,
+        12,
+        9
+      ]
+    },
+    {
+      "id": "hanging_lantern",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        23,
+        26,
+        18,
+        38
+      ]
+    },
+    {
+      "id": "crate",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        16,
+        33,
+        32,
+        31
+      ],
+      "collision": [
+        16,
+        55,
+        32,
+        9
+      ]
+    },
+    {
+      "id": "barrel",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        19,
+        29,
+        26,
+        35
+      ],
+      "collision": [
+        19,
+        55,
+        26,
+        9
+      ]
+    },
+    {
+      "id": "signpost",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        13,
+        12,
+        40,
+        52
+      ],
+      "collision": [
+        27,
+        57,
+        10,
+        7
+      ]
+    },
+    {
+      "id": "ore_sacks",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        14,
+        34,
+        41,
+        30
+      ],
+      "collision": [
+        14,
+        55,
+        41,
+        9
+      ]
+    },
+    {
+      "id": "pickaxe_rack",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        8,
+        9,
+        48,
+        55
+      ],
+      "collision": [
+        9,
+        55,
+        46,
+        9
+      ]
+    },
+    {
+      "id": "bench",
+      "col": 3,
+      "row": 1,
+      "bounds": [
+        5,
+        34,
+        54,
+        30
+      ],
+      "collision": [
+        9,
+        55,
+        46,
+        9
+      ]
+    }
+  ]
+}
