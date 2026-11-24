@@ -1,6 +1,6 @@
 # Wildbound — development handoff
 
-Written 24 November 2026 for Claude Code, which takes over development from here. Everything before this point was built in a claude.ai chat session; this file carries what that session knew that is not obvious from the code.
+Written 24 November 2026 for Claude Code, which takes over development from here. Nothing is left half-done: the art is merged, the build is current and the checks pass. Everything before this point was built in a claude.ai chat session; this file carries what that session knew that is not obvious from the code.
 
 **Reading order:** `CLAUDE.md` (rules and layout, short) → this file (state, history, decisions, gotchas) → `docs/ART_PIPELINE.md` (the art contract) → `docs/KITH_ROSTER.md` (creature plan).
 
@@ -53,10 +53,10 @@ What exists today is **Chapter One**: a playable prologue from the player's fron
 | --- | --- |
 | Every scene above | Driven by script (Playwright) on a 1280×720 desktop viewport and a 390×844 phone viewport, with no page errors. Scenes were jumped to, not played in one sitting. |
 | A full human playthrough | **Not done by the developer.** Derek has played some of it on his phone. Pacing and difficulty are untuned. |
-| The iPhone zoom bug (section 9) | Fix shipped, **not confirmed** on a real device. |
-| Music and sound | Confirmed to start and stop at the right times. **Nobody on the development side has heard it.** Derek has not yet commented on how it sounds. |
-| GitHub Action (`Asset check and build`) | Pushed. **Not confirmed to have run**; check the Actions tab. |
-| Art on `art-production` | Passes the validator. **Not merged and not wired in** (section 8). |
+| The iPhone zoom bug | Fixed. Derek confirmed on his phone (24 November). |
+| Music and sound | Working. Derek confirmed he hears it. He has not asked for changes to how it sounds. |
+| GitHub Action (`Asset check and build`) | Confirmed running. It passed on `main` and on the art pull request. |
+| Art from `art-production` | Merged into `main` on 24 November with Derek's approval. **Not yet wired into the game** (section 8). |
 
 ---
 
@@ -328,8 +328,9 @@ Battle HP is not doubled. The showcase prototype doubled HP to lengthen level-50
 
 ### What is where
 
-- **On `main`:** 230 files. All 23 Kith with full sprite sets, Rowan, Ivy, Cole (three outfits), Wren, June, 24 generic NPCs, the Hearthmoss world set, UI pieces, battle backdrops.
-- **On `art-production`, not merged** (commit `04d00ec`, 24 November): 26 new files and 19 review images. Characters: `corvin`, `dara`, `isla`, `kragg`, `tobias`, `vesper` (walk, battle, portrait), `marcus` (walk, portrait), `grunt_m` and `grunt_f` (walk, battle). Badges: `badge_slate.png`, `badge_tidemark.png` (32×32). It passes `tools/check_assets.py --base main --art-only` with 256 files and no problems. **Derek merges; do not merge it for him unless he asks.**
+- **On `main`:** 256 files. All 23 Kith with full sprite sets, Rowan, Ivy, Cole (three outfits), Wren, June, 24 generic NPCs, the Hearthmoss world set, UI pieces, battle backdrops, and the batch below.
+- **Merged 24 November, not yet used by the game:** 26 files from ChatGPT's first pull request. Characters: `corvin`, `dara`, `isla`, `kragg`, `tobias`, `vesper` (walk, battle, portrait), `marcus` (walk, portrait), `grunt_m` and `grunt_f` (walk, battle). Badges: `badge_slate.png`, `badge_tidemark.png` (32×32). The merge changed no game output: `src/data.json` and `dist/index.html` rebuilt byte-identical.
+- **`art-production` is level with `main`.** Future art arrives as new pull requests from that branch. Derek approves each merge.
 - The review images in `art/` total about 17 MB. That is over the "keep each under 2 MB" guideline in spirit; watch repository growth and raise it with Derek if art review sheets keep arriving at that size.
 
 ### What the game uses
@@ -355,12 +356,11 @@ In `assets/` but **not used**, by Derek's choice of style: the 16×16 ground atl
 
 ---
 
-## 9. Known issues and unverified work
+## 9. Known issues
 
 | Issue | Detail |
 | --- | --- |
-| iPhone zoom | Derek reported the page "zoomed in and stuck on a portion of the screen" on his phone. Guards were added in `ui.js` (block pinch and double-tap, lock the page, reset the viewport if it zooms). Not reproduced and not confirmed fixed. Ask him whether it still happens |
-| Music quality | Unheard by the developer. Expect requests to change tempo, tone or melody; each theme is a short block in `SONGS` |
+| Music | Cannot be heard by the developer, only by Derek. Each theme is a short block in `SONGS`; describe changes to him in words and let him judge |
 | Boxed Kith | Caught Kith beyond six go to `G.box` and cannot be reached |
 | `cole1` unused | Win or lose is recorded but nothing reads it later |
 | Rival plate text | Long Kith names can crowd the level label on narrow phones |
@@ -404,7 +404,7 @@ Ask before building on any of these.
 1. **Where Resonance is introduced.** Proposed: the second Cole battle on Route 3, where your Kith is about to lose and syncs with you for the first time, which gives Cole a reason to chase it. The alternative was the Old Grove with the Greenwardens, alongside the Oathbond, which is much later. No answer yet.
 2. **Wave 2 Kith.** Twelve new Kith (#24–#35) were designed in the chat and given to Derek for ChatGPT; the same document is now `docs/KITH_ROSTER.md`. Derek has not confirmed the names or designs.
 3. **Playtester feedback.** He wants his friend and his brother to play and send feedback from inside the game, reviewable by him. The proposal: a Feedback item in the menu with a short form (type, note, name) that also attaches context (location, team, device, build), posting to a Google Form that fills a Google Sheet. It needs him to create the form and send its pre-filled link. He said to revisit this as the assets build out. Any text field must use a 16 px font or iOS zooms the page.
-4. **Recorded music.** Whether to keep synthesized music or bring in recorded tracks for a fuller sound. He has not heard enough yet to decide.
+4. **Recorded music.** Whether to keep synthesized music or bring in recorded tracks for a fuller sound. He can hear the current music and has not asked for a change.
 5. **The single-file build.** Whether it still matters now that GitHub Pages hosts the game.
 6. **The repository lives in his company's GitHub organization and is public.** He chose both. All unreleased art and design is publicly visible.
 7. **Invented content** awaiting an explicit yes: Theo and Mira, Mending Salve and Clearfruit, all Chapter One dialog.
@@ -453,9 +453,9 @@ The player earns **Standing** with each. In the finale, every organization where
 | 6 | Frostfall: snowbound mountain village | Frost | Old Hagen | Rime |
 | 7 | Duskmoor: foggy moor with old ruins | Shade | Mirela Vos | Veil |
 | 8 | Ironspire: fortress city of foundries | Metal | Gideon Kade | Bastion |
-| 9 | Summit Hall: Elite Four and Champion, at the volcano's rim | | Nyx Callow, Brutus Odu…, Seraphine …, Ardent Kae…, Champion Liora | |
+| 9 | Summit Hall: Elite Four and Champion, at the volcano's rim | | See below | |
 
-The Elite Four surnames above are truncated in my notes; take the full names from the Character & Asset Bible.
+Elite Four, in order: Nyx Calloway (Venom), Brutus Oduya (Brawl), Seraphine Lark (Mind), Ardent Kael (Wyrm). Champion: Liora Vance. Each fights the player for real and each has a stake in the Council vote. In the story's last stretch Cole becomes Champion and is the final battle.
 
 Postgame: the Severed Isles (Vesper's splinter cell; Marivane, the sea Primal) and the Deepwood beyond Bramblewood (Hollowroot; the deepest greying).
 
@@ -466,9 +466,16 @@ Postgame: the Severed Isles (Vesper's splinter cell; Marivane, the sea Primal) a
 - **Professor Elias Wren:** director of the Calder Archive, the player's mentor. Co-founded the Wildvein program with Corvin Ash.
 - **June:** the player's mom, in Hearthmoss.
 - **Marcus:** the player's dad, at the Ironspire Foundry, working on "the biggest thing the company's ever built".
-- **Tobias:** has approved art; his story role is in the bible.
-- **The Hollow Order:** Magister Corvin Ash, Admins Vesper and Kragg, grunts.
-- **Organization leaders named in the plan:** Aldric (Vance), Okafor, Adair, Sela, Rhosyn, Tate, the Booker, Rook. Which leads which is in the bible.
+- **Tobias Hartley:** Cole's older brother. He left home two years ago to join the Hollow Order and is now its Admin for recruitment. Cole carries that, along with his parents' expectation that he be the one who turns out right. Tobias is glimpsed in an Order hood at Marrowind, tries to recruit Cole at Frostfall, and fights beside Vesper at Duskmoor. Optional "Two Brothers" scenes shape his ending.
+- **The Hollow Order:** Magister Corvin Ash (brilliant, wounded by the Archive's rejection) leads three Admins: Vesper (operations, zealous), Kragg (protection, loyal but doubtful; he quietly defects at Duskmoor) and Tobias (recruitment). Ranks are Initiate, Severant, Admin.
+- **The Calder League:** High Steward Maren Okafor, Ranger Captain Bryn Adair, Champion Liora Vance.
+- **Vance-Calder Works:** CEO Aldric Vance. Sela Moreau coaches the Vanguard, the company's sponsored team of young trainers, which Cole joins. Marcus works at the Foundry division.
+- **The Calder Archive:** Wren, and his assistant Pip.
+- **The Greenwardens:** Elder Rhosyn, and Juniper Vale (also Gym 3).
+- **The Tidewright Guild:** Harbor Master Orrin Tate, and Isla Marlowe (also Gym 2).
+- **The Undercard:** the Booker, and Rook.
+
+Cole's nine battles: Hearthmoss; Route 3; Marrowind (a double battle as partners); the Lumen tryout (the story continues if you lose); Highcrest, where his ace refuses him; the Pit; Frostfall (scenes, where he turns Tobias down); Duskmoor (a double battle as partners against Vesper and Tobias, where his ace accepts an Oath before yours does); and Champion Cole at Summit.
 
 ### The opening, as written in the bible
 
@@ -493,14 +500,13 @@ Sixteen types: Beast, Ember, Tide, Bloom, Volt, Gale, Stone, Frost, Brawl, Venom
 
 1. Read `CLAUDE.md` and this file. Run the build and open the game.
 2. Play Chapter One start to finish in a real browser if you can. It has never had a continuous developer playthrough.
-3. Look at the Actions tab and confirm `Asset check and build` runs.
-4. Ask Derek about the open questions in section 11 that block what you plan to build.
+3. Ask Derek about the open questions in section 11 that block what you plan to build.
 
 ### Recommended order of work
 
 1. **Stabilise before growing.** Split `ow_core.js` and `battle_core.js` into readable modules with real names. Move the map (houses, props, NPC positions, encounter tables, trainers) and scene scripts out of code into data files, so new areas are data, not edits to `buildWorld()`. Add playthrough tests. Keep behaviour identical and prove it with before-and-after screenshots.
 2. **Multiple maps.** The world is one hard-coded grid. Cindervale needs map loading, transitions between maps, and interiors. Design this once, with interiors in mind.
-3. **Wire in the merged art** once Derek merges `art-production`: Dara, Isla, Marcus (his phone call could show his portrait), Tobias, the Order, badges.
+3. **Wire in the merged art**: Dara, Isla, Marcus (his phone call could show his portrait), Tobias, the Order, badges.
 4. **Route 2, Cindervale, the mines, Gym 1.** Needs environment art from ChatGPT; ask for it through Derek with a specific list. Encounter tables and Dara's team are already in `data/encounters.json`.
 5. **Money, a shop, a healing station, storage access.**
 6. **The Resonance event**, once Derek picks where.
