@@ -1,0 +1,74 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "flat_slab",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        4,
+        41,
+        55,
+        23
+      ]
+    },
+    {
+      "id": "slag_heap",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        3,
+        32,
+        57,
+        32
+      ]
+    },
+    {
+      "id": "scree_pile",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        5,
+        34,
+        54,
+        30
+      ]
+    },
+    {
+      "id": "stone_wall_segment",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        0,
+        32,
+        64,
+        32
+      ]
+    },
+    {
+      "id": "stone_wall_end",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        23,
+        32,
+        18,
+        32
+      ]
+    },
+    {
+      "id": "stone_wall_corner",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        14,
+        28,
+        36,
+        36
+      ]
+    }
+  ]
+}

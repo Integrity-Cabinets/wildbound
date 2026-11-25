@@ -1,0 +1,30 @@
+{
+  "cell": [
+    96,
+    96
+  ],
+  "cells": [
+    {
+      "id": "rock_spire",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        19,
+        26,
+        58,
+        70
+      ]
+    },
+    {
+      "id": "low_cliff_face",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        0,
+        53,
+        96,
+        43
+      ]
+    }
+  ]
+}

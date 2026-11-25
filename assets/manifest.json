@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 284,
+ "count": 295,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -2398,6 +2398,14 @@
    "id": "bld_cindervale_shop"
   },
   {
+   "path": "assets/props/bld_common_mine_entrance.png",
+   "width": 160,
+   "height": 144,
+   "sha256": "6770854dd5ffc54af74364a80fd99b148a1ec10d1d510a0c893eef069ea4fc89",
+   "kind": "props",
+   "id": "bld_common_mine_entrance"
+  },
+  {
    "path": "assets/props/bld_hearthmoss_house_a.png",
    "width": 96,
    "height": 112,
@@ -2547,6 +2555,136 @@
     64
    ],
    "layout": "assets/props/props_cindervale_small.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_cliffs.png",
+   "width": 192,
+   "height": 96,
+   "sha256": "1689a4bc7887cc8f3eba324c065a31b1f8f274810749a9358a557dd49d7af231",
+   "kind": "props",
+   "id": "props_common_cliffs",
+   "frame": [
+    96,
+    96
+   ],
+   "layout": "assets/props/props_common_cliffs.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_farm.png",
+   "width": 256,
+   "height": 128,
+   "sha256": "c1bee2663e4d39888c189c6fc6e135ffc795ae8ebca9ac5f76f91a730a83a0b0",
+   "kind": "props",
+   "id": "props_common_farm",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_common_farm.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_flowers.png",
+   "width": 128,
+   "height": 24,
+   "sha256": "b3e2db4fd3c9ff1667948a39718e85f78be2cb490fca314b7dce110832cd6b28",
+   "kind": "props",
+   "id": "props_common_flowers",
+   "frame": [
+    32,
+    24
+   ],
+   "layout": "assets/props/props_common_flowers.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_plants.png",
+   "width": 128,
+   "height": 48,
+   "sha256": "901d77cdde225f60db7bc9aebc4128c0b27e6eecb22a3bf80b3be9b3e6312645",
+   "kind": "props",
+   "id": "props_common_plants",
+   "frame": [
+    32,
+    24
+   ],
+   "layout": "assets/props/props_common_plants.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_roadside.png",
+   "width": 192,
+   "height": 128,
+   "sha256": "6126e22858673ad548142776583176787a1264606955a1a66a21da58fd0c5c2f",
+   "kind": "props",
+   "id": "props_common_roadside",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_common_roadside.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_rocks.png",
+   "width": 192,
+   "height": 128,
+   "sha256": "47967d8c89c6e24118bc73622d4f1fb707cdd1346de9966862fbbe545052b616",
+   "kind": "props",
+   "id": "props_common_rocks",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_common_rocks.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_trees.png",
+   "width": 192,
+   "height": 160,
+   "sha256": "03082efc142c735e71183b29d386d5445efa322a96d3e6ceac3124c4cc2a1add",
+   "kind": "props",
+   "id": "props_common_trees",
+   "frame": [
+    64,
+    80
+   ],
+   "layout": "assets/props/props_common_trees.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_water_edge.png",
+   "width": 96,
+   "height": 24,
+   "sha256": "2aa64d3ecb42cf9f678904f5ea3f343ea74a8c329a6893ebb6857853379a2949",
+   "kind": "props",
+   "id": "props_common_water_edge",
+   "frame": [
+    32,
+    24
+   ],
+   "layout": "assets/props/props_common_water_edge.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_water_large.png",
+   "width": 64,
+   "height": 64,
+   "sha256": "fa5f773b45e2cdf524e8e22c18f98ca0e7c4af0599a49ec7dd8f8834aef1eefe",
+   "kind": "props",
+   "id": "props_common_water_large",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_common_water_large.layout.json"
+  },
+  {
+   "path": "assets/props/props_common_woodland.png",
+   "width": 256,
+   "height": 128,
+   "sha256": "5c671097490e60b7fa1dc68ae48068b06bcb7b3eceebedbe9b697318c7f96e85",
+   "kind": "props",
+   "id": "props_common_woodland",
+   "frame": [
+    64,
+    64
+   ],
+   "layout": "assets/props/props_common_woodland.layout.json"
   },
   {
    "path": "assets/props/props_hearthmoss_fences.png",

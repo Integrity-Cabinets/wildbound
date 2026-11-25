@@ -1,0 +1,96 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "tree_stump",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        15,
+        43,
+        34,
+        21
+      ]
+    },
+    {
+      "id": "fallen_log",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        6,
+        39,
+        52,
+        25
+      ]
+    },
+    {
+      "id": "mossy_log",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        5,
+        35,
+        54,
+        29
+      ]
+    },
+    {
+      "id": "sapling",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        20,
+        26,
+        23,
+        38
+      ]
+    },
+    {
+      "id": "dead_bare_tree",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        11,
+        4,
+        41,
+        60
+      ]
+    },
+    {
+      "id": "woodpile",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        9,
+        32,
+        46,
+        32
+      ]
+    },
+    {
+      "id": "hollow_log",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        8,
+        33,
+        48,
+        31
+      ]
+    },
+    {
+      "id": "bird_nest_post",
+      "col": 3,
+      "row": 1,
+      "bounds": [
+        18,
+        18,
+        28,
+        46
+      ]
+    }
+  ]
+}
