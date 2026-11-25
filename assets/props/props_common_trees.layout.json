@@ -1,0 +1,74 @@
+{
+  "cell": [
+    64,
+    80
+  ],
+  "cells": [
+    {
+      "id": "tree_autumn_orange",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        7,
+        4,
+        49,
+        76
+      ]
+    },
+    {
+      "id": "tree_autumn_gold",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        10,
+        5,
+        44,
+        75
+      ]
+    },
+    {
+      "id": "tree_birch",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        11,
+        3,
+        41,
+        77
+      ]
+    },
+    {
+      "id": "tree_apple",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        7,
+        8,
+        50,
+        72
+      ]
+    },
+    {
+      "id": "tree_dark_pine",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        13,
+        1,
+        38,
+        79
+      ]
+    },
+    {
+      "id": "tree_dry_scrub",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        10,
+        22,
+        44,
+        58
+      ]
+    }
+  ]
+}

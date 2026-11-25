@@ -1,0 +1,74 @@
+{
+  "cell": [
+    64,
+    64
+  ],
+  "cells": [
+    {
+      "id": "picnic_blanket",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        9,
+        31,
+        46,
+        33
+      ]
+    },
+    {
+      "id": "campfire_unlit",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        10,
+        28,
+        44,
+        36
+      ]
+    },
+    {
+      "id": "campfire_lit",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        10,
+        10,
+        44,
+        54
+      ]
+    },
+    {
+      "id": "small_tent",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        4,
+        13,
+        55,
+        51
+      ]
+    },
+    {
+      "id": "milestone",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        19,
+        33,
+        25,
+        31
+      ]
+    },
+    {
+      "id": "wayside_shrine",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        15,
+        5,
+        34,
+        59
+      ]
+    }
+  ]
+}

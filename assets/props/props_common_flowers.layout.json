@@ -1,0 +1,52 @@
+{
+  "cell": [
+    32,
+    24
+  ],
+  "cells": [
+    {
+      "id": "flower_yellow",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        3,
+        2,
+        25,
+        22
+      ]
+    },
+    {
+      "id": "flower_violet",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        3,
+        2,
+        25,
+        22
+      ]
+    },
+    {
+      "id": "flower_red",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        4,
+        2,
+        24,
+        22
+      ]
+    },
+    {
+      "id": "flower_white",
+      "col": 3,
+      "row": 0,
+      "bounds": [
+        3,
+        2,
+        26,
+        22
+      ]
+    }
+  ]
+}

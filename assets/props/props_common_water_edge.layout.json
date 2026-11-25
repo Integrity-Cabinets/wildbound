@@ -1,0 +1,41 @@
+{
+  "cell": [
+    32,
+    24
+  ],
+  "cells": [
+    {
+      "id": "lily_pads",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        0,
+        7,
+        32,
+        17
+      ]
+    },
+    {
+      "id": "stepping_stone",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        2,
+        8,
+        28,
+        16
+      ]
+    },
+    {
+      "id": "jetty_segment",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        0,
+        5,
+        32,
+        19
+      ]
+    }
+  ]
+}
