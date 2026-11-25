@@ -221,7 +221,10 @@ button{font-family:inherit}
 #b_app.busy #b_moves,#b_app.busy #b_resRow,#b_app.busy #b_resTxt{opacity:.3;pointer-events:none}
 @media (orientation:landscape) and (min-width:760px){
   #b_app.open{display:block}#b_stage{position:absolute;inset:0}
-  #b_panel{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;width:min(520px,40vw);border:1px solid #d6b46a;border-radius:6px;background:linear-gradient(180deg,rgba(18,19,28,.9),rgba(10,11,18,.9));padding:12px 14px 14px}
+  /* wide screens: a low, wide panel in the bottom right, clear of both Kith. Message and moves on the left, actions stacked on the right. */
+  #b_panel{position:absolute;right:14px;bottom:12px;width:min(720px,56vw);display:grid;grid-template-columns:1fr 128px;grid-template-areas:"msg act" "mv act" "txt txt";gap:0 10px;border:1px solid #d6b46a;border-radius:6px;background:linear-gradient(180deg,rgba(18,19,28,.9),rgba(10,11,18,.9));padding:11px 13px 13px}
+  #b_msg{grid-area:msg;min-height:36px}#b_moves{grid-area:mv}#b_resTxt{grid-area:txt}
+  #b_resRow{grid-area:act;flex-direction:column;margin-top:0}#b_resRow>*{flex:1 1 0}
 }
 #b_resCard{position:absolute;z-index:7;left:0;right:0;top:38%;text-align:center;pointer-events:none;opacity:0;transform:scaleX(1.25);transition:opacity .25s,transform .5s cubic-bezier(.1,.8,.2,1)}
 #b_resCard.on{opacity:1;transform:none}
