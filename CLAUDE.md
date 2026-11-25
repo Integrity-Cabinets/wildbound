@@ -61,6 +61,8 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 - Items are `ITEMS` in `src/battle_game.js`. Ones marked `held` are carried by a Kith (`inst.held`) and act by themselves in battle (`calc`, `heldTick`, the Last Thread check in `useMove`). Money is `G.money`; the currency name is the constant `COIN` in `src/game.js`. Trainers pay on a win; `shop(title, stock)` sells at `ITEMS[id].price`. Always add to the bag with `give(id, n)`, because older saves lack the newer bag keys.
 - Losing a battle returns the player to `G.heal` (the last place they rested: Farmer Dell's on Route 2 or the Cindervale Rest Lodge), or home to June if they have not used one.
 - The main loop draws either the overworld or the battle, never both.
+- The title has three states, a class on `#title`: `gate` (waits for a first tap or key, which also lets the browser play sound), `intro` (the opening, about nine seconds, timed to the `title` theme; any press skips it) and `ready` (logo and buttons). Tests and scripts must press twice to get past it. Quitting to the title goes straight to `ready`.
+- Menus, dialog and battle panels are sized in CSS in `src/shell.html` and scale up on large monitors with `zoom` (two media queries near the end of the stylesheet). Kith icons are two-frame sheets and animate everywhere through the `.ic` class.
 
 ## Rules that must hold
 
@@ -80,7 +82,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 4. Selling to shops, more shops, storage access, and the rest of the held items in `data/items.json`.
 5. More of the 279 moves in `MV`, and more working traits (currently: Overgrowth, Kindling, Undercurrent, Hard Claws, Sharp Eyes, Static Fur, Accelerate, Opening Gambit, Molting, Gatherer).
 6. Trust, Oathbonds and organization Standing (designed, not built).
-7. More music. `SONGS` in `src/battle_game.js` holds the synthesized themes (`town`, `route`, `battle`); `Battle.playMusic(name)` plays one. Add a theme per new area. Recorded tracks may replace these later.
+7. More music. `SONGS` in `src/battle_game.js` holds the synthesized themes (`title`, `town`, `route`, `battle`); `Battle.playMusic(name)` plays one. Add a theme per new area. Recorded tracks may replace these later.
 8. Engineering: split the big single-line functions into readable modules, move map layout and scene scripts into data files, add automated playthrough tests.
 
 ## Known shortcuts

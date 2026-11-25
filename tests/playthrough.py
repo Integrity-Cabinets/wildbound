@@ -262,6 +262,7 @@ async def play(b: Bot):
     b.begin('title')
     await pg.wait_for_function("getComputedStyle(document.getElementById('loading')).display==='none'", timeout=30000)
     await b.wait(800); await b.shot('title')
+    await pg.evaluate("document.getElementById('title').classList.contains('gate')") and await pg.mouse.click(8, 8); await pg.wait_for_timeout(250); await pg.evaluate("document.getElementById('title').classList.contains('intro')") and await pg.mouse.click(8, 8); await pg.wait_for_function("document.getElementById('title').classList.contains('ready')", timeout=15000); await pg.wait_for_timeout(700)
     b.note('continue button visible on a fresh device:', await pg.locator('#tCont').is_visible())
     await pg.locator('#tNew').click(); await b.wait(400)
     async def who(i): await b.shot('who_are_you'); return 0
@@ -400,6 +401,7 @@ async def play(b: Bot):
     b.begin('reload_continue')
     before = await b.js(PARTY); await pg.reload()
     await pg.wait_for_function("getComputedStyle(document.getElementById('loading')).display==='none'", timeout=30000); await b.wait(800)
+    await pg.evaluate("document.getElementById('title').classList.contains('gate')") and await pg.mouse.click(8, 8); await pg.wait_for_timeout(250); await pg.evaluate("document.getElementById('title').classList.contains('intro')") and await pg.mouse.click(8, 8); await pg.wait_for_function("document.getElementById('title').classList.contains('ready')", timeout=15000); await pg.wait_for_timeout(700)
     b.note('continue label:', (await pg.locator('#tCont').inner_text()).replace('\n', ' ')); await b.shot('title_continue')
     await pg.locator('#tCont').click(); await pg.wait_for_function("!!WB.G&&!!WB.player&&!WB.busy()", timeout=15000); await b.wait(600); await b.pump()
     after = await b.js(PARTY); same = all(before[k] == after[k] for k in ('party', 'bag', 'flags', 'wins', 'caught', 'pos', 'box', 'map', 'heal'))

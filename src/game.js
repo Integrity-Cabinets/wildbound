@@ -55,11 +55,11 @@ function cycleTime(){tod=tod==='am'?'pm':tod==='pm'?'night':'am';buildSky();init
 let dlgOpen=false,dlgQ=[],dlgCb=null,dlgTxt='',dlgI=0,dlgWho='',lastA=0;
 const dlg=$('dlg'),dtx=dlg.querySelector('.tx'),dmore=dlg.querySelector('.more'),dnm=dlg.querySelector('.nm'),dpo=$('port'),dpx=dpo.getContext('2d');
 const SPK={cole:'COLE',wren:'PROF. WREN',june:'JUNE'},EXP={happy:1,serious:2,surprised:3};
-function talk(lines,who,cb){dlgQ=lines.slice();dlgCb=cb||null;dlgWho=who||'';dlgOpen=true;dlg.style.display='block';$('ctrl').classList.add('hide');nextLine()}
+function talk(lines,who,cb){dlgQ=lines.slice();dlgCb=cb||null;dlgWho=who||'';dlgOpen=true;dlg.classList.remove('pop');dlg.style.display='block';dlg.offsetWidth;dlg.classList.add('pop');$('ctrl').classList.add('hide');nextLine()}
 function nextLine(){if(!dlgQ.length){dlgOpen=false;dlg.style.display='none';$('ctrl').classList.remove('hide');const cb=dlgCb;dlgCb=null;cb&&cb();return}
   let t=dlgQ.shift(),ex=0;const m=/^\{(\w+)\}\s*/.exec(t);if(m){ex=EXP[m[1]]||0;t=t.slice(m[0].length)}
   dlgTxt=t;dlgI=0;dnm.textContent=SPK[dlgWho]||dlgWho;dtx.textContent='';dmore.style.display='none';
-  if(PORT[dlgWho]){dlg.classList.add('hasPort');dpx.clearRect(0,0,96,96);dpx.drawImage(PORT[dlgWho],ex*96,0,96,96,0,0,96,96)}else dlg.classList.remove('hasPort')}
+  if(PORT[dlgWho]){dlg.classList.add('hasPort');dpx.clearRect(0,0,96,96);dpx.drawImage(PORT[dlgWho],ex*96,0,96,96,0,0,96,96);dpo.classList.remove('nod');dpo.offsetWidth;dpo.classList.add('nod')}else dlg.classList.remove('hasPort')}
 function pressA(){const n=performance.now();if(n-lastA<120)return;lastA=n;
   if(dlgOpen){if(dlgI<dlgTxt.length){dlgI=dlgTxt.length;dtx.textContent=dlgTxt;dmore.style.display='block'}else{Battle.sfx('sel');nextLine()}return}
   if(busy())return;interact()}
@@ -245,7 +245,7 @@ async function wrenIntro(){G.flags.intro=1;const c=npc('cole');
   await tell('wren',["{happy} Walk up to the table and meet them. There's no wrong choice, only a different journey."])}
 const STARTERS={foxfern:{beats:'ottide',loses:'kindlit'},kindlit:{beats:'foxfern',loses:'ottide'},ottide:{beats:'kindlit',loses:'foxfern'}};
 async function orbLook(sp){if(!G.flags.intro){await talkWren();return}if(G.flags.starter)return;const K=KITH[sp];
-  const i=await UI.choose({title:`${K.name} · the ${K.types[0]} Kith`,html:`<div class="card"><img src="${DATA.spr[sp].f}"><div><p>${K.concept}</p><p class="dim">${K.dex}</p></div></div>`,opts:[{label:`Choose ${K.name}`,sub:'This Kith will be your partner.'},{label:'Keep looking'}]});
+  const i=await UI.choose({title:`${K.name} · the ${K.types[0]} Kith`,html:`<div class="card"><div class="pf" style="--c:${Battle.TC[K.types[0]]}66"><img src="${DATA.spr[sp].f}"></div><div><p>${K.concept}</p><p class="dim">${K.dex}</p></div></div>`,opts:[{label:`Choose ${K.name}`,sub:'This Kith will be your partner.'},{label:'Keep looking'}]});
   if(i!==0)return;await starterScene(sp)}
 async function starterScene(sp){const K=KITH[sp],c=npc('cole'),w=npc('wren'),rival=STARTERS[sp].loses;
   const mine=Battle.newKith(sp,5);G.party=[mine];G.dex.seen[sp]=G.dex.caught[sp]=1;PROPS.orbs[sp].dead=true;await refreshFollower();warp(follower,player.tx,player.ty+1,1);Battle.sfx('win');
@@ -301,9 +301,10 @@ const hpCol=f=>f>.5?'#5bd06a':f>.2?'#e0b040':'#e0503a';
 function kithOpts(dis){return G.party.map(k=>{const s=Battle.calcStats(k);return{label:`${KITH[k.sp].name}${Battle.gsym(k)}  Lv ${k.L}`,sub:k.hp<=0?'Fainted':`HP ${k.hp} / ${s.hp}${k.st?' · '+(k.st==='brn'?'Burned':'Paralyzed'):''}`,icon:DATA.spr[k.sp].ic,hp:k.hp/s.hp,dis:dis?dis(k):false}})}
 function kithCard(k){const K=KITH[k.sp],s=Battle.calcStats(k),n=Battle.NAT[k.nat],SN={hp:'HP',atk:'Attack',def:'Defense',spa:'Sp. Atk',spd:'Sp. Def',spe:'Speed'};
   const pot=Object.values(k.pot).reduce((a,b)=>a+b,0),pg=pot>150?'Outstanding':pot>120?'Great':pot>90?'Good':'Decent',a=Battle.xpAt(k.sp,k.L),b=Battle.xpAt(k.sp,k.L+1);
-  return `<div class="card"><img src="${DATA.spr[k.sp].f}"><div><p><b>${K.name}${Battle.gsym(k)}</b> · Lv ${k.L}<br>${K.types.map(t=>`<span class="chip" style="background:${Battle.TC[t]}">${t}</span>`).join(' ')}</p>
+  const top=Math.max(...Object.keys(SN).map(x=>s[x]));
+  return `<div class="card"><div class="pf" style="--c:${Battle.TC[K.types[0]]}66"><img src="${DATA.spr[k.sp].f}"></div><div style="flex:1 1 auto;min-width:0"><p><b>${K.name}${Battle.gsym(k)}</b> · Lv ${k.L}<span class="xp"><u style="width:${Math.max(0,Math.min(1,(k.xp-a)/Math.max(1,b-a)))*100}%"></u></span>${K.types.map(t=>`<span class="chip" style="background:${Battle.TC[t]}">${t}</span>`).join(' ')}</p>
    <p>${n.name} nature${n.up!==n.down?` <span class="dim">(+${SN[n.up]}, −${SN[n.down]})</span>`:' <span class="dim">(balanced)</span>'}<br>Potential: ${pg}<br>${b-k.xp} XP to next level</p></div></div>
-   <div class="stats">${Object.keys(SN).map(x=>`<span>${SN[x]}<b>${x==='hp'?k.hp+' / '+s.hp:s[x]}</b></span>`).join('')}</div>
+   <div class="stats">${Object.keys(SN).map(x=>`<span>${SN[x]}<b>${x==='hp'?k.hp+' / '+s.hp:s[x]}</b><em><u style="width:${s[x]/top*100}%"></u></em></span>`).join('')}</div>
    <div class="note"><b>${k.trait}</b> · ${DATA.traits[k.trait]||''}</div>
    <div class="note">${k.held?`Holding <b>${Battle.ITEMS[k.held].name}</b> · ${Battle.ITEMS[k.held].desc.replace('Held. ','')}`:'<span class="dim">Holding nothing</span>'}</div>
    <div class="note">${k.moves.map(m=>{const M=Battle.MV[m.n];return `<b>${m.n}</b> <span class="dim">${Battle.moveSub(M)} · PP ${m.pp}/${M.pp}</span>`}).join('<br>')}</div>`}
@@ -339,7 +340,7 @@ async function openMenu(){if(busy()||player.moving)return;Battle.sfx('sel');
   for(;;){const i=await UI.choose({title:pcName()+' · Archive Field Assistant',opts:[{label:'Kith',sub:G.party.length?`${G.party.length} with you`+(G.box.length?` · ${G.box.length} at the lab`:''):'None yet'},{label:'Bag',sub:`${G.money} ${COIN} · Tether Orbs and supplies`},{label:'Survey',sub:'Every Kith you have met'},{label:'Save',sub:'Your progress also saves after battles'},{label:G.snd?'Sound: on':'Sound: off'},{label:'Quit to title'}]});
     if(i<0)return;if(i===0)await partyMenu();else if(i===1)await bagMenu();else if(i===2)await surveyMenu();
     else if(i===3){const ok=save();await UI.choose({title:ok?'Saved':'Could not save',html:`<div class="note">${ok?'Your progress is saved on this device.':'This browser is blocking storage, so progress will be lost when you close the page.'}</div>`,opts:[{label:'OK'}],cancel:false})}
-    else if(i===4){G.snd=!G.snd;Battle.setSound(G.snd);playArea()}else if(i===5){save();Battle.stopMusic(.6);showTitle();return}}}
+    else if(i===4){G.snd=!G.snd;Battle.setSound(G.snd);playArea()}else if(i===5){save();showTitle(true);return}}}
 
 /* ================= world logic ================= */
 let area='',stepsSince=5;
@@ -384,7 +385,32 @@ function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;
 
 /* ================= title & boot ================= */
 let titleOpen=true;
-function showTitle(){titleOpen=true;const s=loadSave();$('title').style.display='flex';$('tCont').style.display=s?'block':'none';
+/* The title has three states, set as a class on #title: gate (waiting for a first press, which also lets the browser
+   play sound), intro (the opening, about nine seconds, any press skips it) and ready (logo and buttons). */
+const tfx=$('tFx'),tfc=tfx.getContext('2d');let motes=[],sparks=[],tRaf=0,tTimer=0,tSpark=0,tSel=0;
+const titleIs=c=>$('title').classList.contains(c);
+function titleState(st){const c=$('title').classList;c.remove('gate','intro','ready','skip');c.add(...st.split(' '));if(titleIs('ready')){tSel=0;titleHi()}}
+const titleBtns=()=>[$('tCont'),$('tNew')].filter(b=>b.style.display!=='none');
+function titleHi(){const bs=titleBtns();[$('tCont'),$('tNew')].forEach(b=>b.classList.toggle('sel',b===bs[tSel]&&!matchMedia('(pointer:coarse)').matches))}
+function titleMusic(){const s=loadSave();Battle.setSound(s?s.snd!==false:true);Battle.playMusic('title',{fade:.4,fadeIn:.12})}
+function titleFx(now){if(!titleOpen){tRaf=0;return}const w=tfx.clientWidth,h=tfx.clientHeight,u=w>700?2:1;if(tfx.width!==w||tfx.height!==h){tfx.width=w;tfx.height=h}
+  while(motes.length<60)motes.push({x:Math.random(),y:Math.random()*1.1,s:1+Math.floor(Math.random()*3),v:.0002+Math.random()*.0005,p:Math.random()*6.3});
+  tfc.clearRect(0,0,w,h);
+  for(const m of motes){m.y-=m.v;if(m.y<-.05){m.y=1.05;m.x=Math.random()}tfc.fillStyle=`rgba(246,220,147,${.22+.3*Math.sin(now/600+m.p)})`;tfc.fillRect(Math.round((m.x+Math.sin(now/1900+m.p)*.012)*w),Math.round(m.y*h),m.s*u,m.s*u)}
+  sparks=sparks.filter(p=>p.l>0);for(const p of sparks){p.x+=p.vx;p.y+=p.vy;p.vy+=.12;p.vx*=.985;p.l-=.016;tfc.fillStyle=`rgba(${p.c},${Math.max(0,p.l)})`;tfc.fillRect(Math.round(p.x),Math.round(p.y),p.s*u,p.s*u)}
+  tRaf=requestAnimationFrame(titleFx)}
+function titleBurst(){const w=tfx.clientWidth,h=tfx.clientHeight;for(let i=0;i<90;i++){const a=Math.random()*6.3,v=2+Math.random()*9;sparks.push({x:w/2,y:h*.36,vx:Math.cos(a)*v*(w>700?1.6:1),vy:Math.sin(a)*v-2,l:.7+Math.random()*.7,s:1+Math.floor(Math.random()*3),c:Math.random()<.4?'255,255,255':'246,220,147'})}}
+function startIntro(){titleState('intro');titleMusic();clearTimeout(tTimer);clearTimeout(tSpark);tSpark=setTimeout(titleBurst,7350);tTimer=setTimeout(()=>titleState('ready'),9300)}
+function skipIntro(){clearTimeout(tTimer);clearTimeout(tSpark);titleState('ready skip')}
+function titlePress(e){if(!titleOpen||UI.isOpen()||$('title').style.display==='none'||$('loading').style.display!=='none')return;
+  if(titleIs('gate')){e.preventDefault();startIntro();return}
+  if(titleIs('intro')){e.preventDefault();skipIntro();return}
+  if(e.type!=='keydown')return;const bs=titleBtns(),k=e.key;
+  if(k==='ArrowDown'||k==='s'||k==='S'||k==='ArrowUp'||k==='w'||k==='W'){tSel=(tSel+1)%bs.length;bs[tSel].classList.add('sel');[$('tCont'),$('tNew')].forEach(b=>b.classList.toggle('sel',b===bs[tSel]));Battle.sfx('sel');e.preventDefault()}
+  else if(k==='z'||k==='Z'||k==='Enter'||k===' '){e.preventDefault();bs[tSel]&&bs[tSel].click()}}
+$('title').addEventListener('pointerdown',titlePress);addEventListener('keydown',e=>{if(!e.repeat)titlePress(e)});
+function showTitle(again){titleOpen=true;const s=loadSave();$('title').style.display='flex';$('tCont').style.display=s?'block':'none';
+  if(again){titleState('ready skip');titleMusic()}else titleState('gate');if(!tRaf)tRaf=requestAnimationFrame(titleFx);
   if(s){const k=s.party[0];$('tCont').innerHTML=`CONTINUE<small>${s.pc==='ivy'?'Ivy':'Rowan'}${k?' · '+KITH[k.sp].name+' Lv '+k.L:''}</small>`}}
 async function begin(state){G=state;if(G.money==null)G.money=100;Battle.setSound(G.snd);$('title').style.display='none';tod=G.tod||'am';buildSky();initParticles();
   enterMap(MAPS[G.map]?G.map:'hearthmoss');
@@ -395,7 +421,11 @@ async function begin(state){G=state;if(G.money==null)G.money=100;Battle.setSound
       await note(["Hearthmoss Village, at the southern edge of the Calder Reach.","The morning of your sixteenth birthday."]);
       await walk(j,[1]);await tell('june',["{happy} There you are, birthday kid. Sixteen. I'm not ready, but nobody asked me.","Professor Wren sent word at dawn. He wants you at the lab, the big timbered hall across the plaza.","{serious} Cole's been pacing out front since sunrise, so don't keep either of them waiting.","{happy} Come back whenever you need a rest. I'll be in the garden, pretending not to worry."]);
       await walk(j,[2,0]);j.dir=3;await note([matchMedia('(pointer:coarse)').matches?"Move with the pad. Press A to talk and read. Hold B to run.":"Move with the arrow keys or WASD. Z or Space to talk and read. Hold X or Shift to run. M opens the menu."]);save()})}}
-async function boot(){await Promise.all([Battle.load(),loadChars(),loadWorld()]);$('title').style.backgroundImage=`url(${DATA.ui.titleBg})`;$('tLogo').src=DATA.ui.logo;
+async function boot(){await Promise.all([Battle.load(),loadChars(),loadWorld()]);$('tBg').style.backgroundImage=`url(${DATA.ui.titleBg})`;$('tLogo').src=DATA.ui.logo;
+  /* the three starters: large in the opening, small and hopping under the buttons afterwards. Never mirrored. */
+  ['foxfern','kindlit','ottide'].forEach((k,i)=>{const c=Battle.TC[KITH[k].types[0]];
+    $('tCast').insertAdjacentHTML('beforeend',`<i style="left:${[20,50,80][i]}%;--c:${c};--d:${(2.73+i*.91).toFixed(2)}s"><b></b><img src="${DATA.spr[k].f}" alt=""></i>`);
+    $('tRow').insertAdjacentHTML('beforeend',`<i class="ic" style="background-image:url(${DATA.spr[k].ic});animation-delay:${-i*.27}s"></i>`)});
   resize();initParticles();addEventListener('resize',resize);$('loading').style.display='none';showTitle();
   $('tNew').onclick=async()=>{Battle.sfx('sel');if(loadSave()){const c=await UI.choose({title:'Start a new game?',html:'<div class="note">This replaces your saved game on this device.</div>',opts:[{label:'Start over'},{label:'Keep my save'}],cancel:false});if(c!==0)return}
     const pic=n=>CH[n].face;

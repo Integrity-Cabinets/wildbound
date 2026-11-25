@@ -152,7 +152,7 @@ async function award(foe){const K=KITH[foe.key],list=[...B.part].filter(k=>k.hp>
 
 /* the stat card shown beside a level-up: each stat's new value and how much it rose */
 const STL={hp:'HP',atk:'Attack',def:'Defense',spa:'Sp. Atk',spd:'Sp. Def',spe:'Speed'};
-function lvlCard(k,ev,on){const el=$('lvl');if(on)el.innerHTML=`<b>${kname(k)} · Lv ${ev.L}</b>`+STN.map(s=>`<span>${STL[s]}</span><i>${ev.after[s]}</i><u>+${ev.after[s]-ev.before[s]}</u>`).join('');el.classList.toggle('on',on)}
+function lvlCard(k,ev,on){const el=$('lvl');if(on)el.innerHTML=`<b><i class="ic" style="background-image:url(${SPR[k.sp].ic})"></i><span><small>LEVEL UP</small>${kname(k)}</span><em>Lv ${ev.L}</em></b>`+STN.map((s,r)=>`<span style="--r:${r}">${STL[s]}</span><i style="--r:${r}">${ev.after[s]}</i><u style="--r:${r}">+${ev.after[s]-ev.before[s]}</u>`).join('');el.classList.toggle('on',on)}
 /* held items that act by themselves: the Calder Fig at half HP, Trail Rations at the end of a turn */
 async function heldTick(m,end){if(!m||m.hp<=0||!m.held)return;const heal=async(n,msg)=>{const was=m.hp;m.hp=Math.min(m.max,m.hp+Math.max(1,n));upd(m);dmgText(ctr(m).x,ctr(m).y-PX*24,'+'+(m.hp-was),'#9fe0a0');S.heal();await say(msg,850)};
   if(m.held==='fig'&&m.hp<=m.max/2){m.held=m.inst.held=null;await heal(Math.floor(m.max/4),`${m.name} ate its <b>Calder Fig</b>!`)}
@@ -260,6 +260,7 @@ const SEMI={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
 const hz=(n,tr=0)=>{const m=/^([A-G])(#?)(\d)$/.exec(n);return 440*Math.pow(2,(SEMI[m[1]]+(m[2]?1:0)+(+m[3]+1)*12-69+tr)/12)};
 const CHD={Am:['A','C','E'],F:['F','A','C'],C:['C','E','G'],G:['G','B','D'],E:['E','G#','B'],Em:['E','G','B'],Dm:['D','F','A'],D:['D','F#','A']};
 /* A song is a list of bars: [chord, lead]. Lead is sixteen 16th-note steps; "." holds or rests. */
+/* style 'jam' is the title theme: the first `intro` bars play once, then the rest loops */
 const bars=(cap,list)=>list.map(([c,l])=>{const t=l.split(' '),lead=[];t.forEach((n,i)=>{if(n==='.')return;let d=1;while(i+d<16&&t[i+d]==='.')d++;lead[i]=[n,Math.min(d,cap)]});return{c,lead}});
 const SONGS={
  battle:{bpm:148,style:'battle',vol:.42,bars:bars(4,[
@@ -271,6 +272,18 @@ const SONGS={
   ['Am','C6 . B5 . A5 . E5 . A5 . . . E5 . A5 .'],['Am','C6 . . B5 . . A5 . E6 . . . . . . .'],
   ['F','F5 . A5 . C6 . F6 . E6 . C6 . A5 . C6 .'],['G','G5 . B5 . D6 . G6 . F6 . D6 . B5 . D6 .'],
   ['E','E6 . . . D6 . . . B5 . . . G#5 . . .'],['E','E5 . E5 E5 . E5 . E5 G#5 . B5 . E6 . . .']])},
+ /* Title: an upbeat anthem. Four bars of build, then the tune. The opening animation lands the logo on bar five. */
+ title:{bpm:132,style:'jam',intro:4,vol:.4,bars:bars(6,[
+  ['Em','E5 . G5 . B5 . E5 . G5 . B5 . E6 . B5 .'],['C','E5 . G5 . C6 . E5 . G5 . C6 . E6 . C6 .'],
+  ['G','G5 . B5 . D6 . G5 . B5 . D6 . G6 . D6 .'],['D','A5 . D6 . F#6 . A5 . D6 . F#6 . A6 . . .'],
+  ['G','G5 . . D5 G5 . B5 . D6 . . . B5 . G5 .'],['D','A5 . . F#5 A5 . D6 . F#6 . . . E6 . D6 .'],
+  ['Em','E6 . . D6 . . B5 . G5 . B5 . E6 . . .'],['C','E6 . D6 . C6 . G5 . E5 . G5 . C6 . D6 .'],
+  ['G','D6 . . B5 D6 . G6 . . . F#6 . G6 . . .'],['D','A6 . . G6 F#6 . D6 . A5 . D6 . F#6 . . .'],
+  ['C','G6 . E6 . C6 . E6 . G6 . . E6 . . C6 .'],['D','D6 . . . F#6 . . . A6 . . . . . F#6 A6'],
+  ['Em','B6 . . A6 G6 . E6 . B5 . E6 . G6 . . .'],['C','G6 . . E6 C6 . G5 . C6 . E6 . G6 . . .'],
+  ['G','D6 . B5 . G5 . B5 . D6 . G6 . B6 . . .'],['D','A6 . . . F#6 . D6 . A5 . . . D6 . F#6 .'],
+  ['Em','G6 . F#6 . E6 . B5 . E6 . . . B5 . E6 .'],['C','E6 . D6 . C6 . G5 . C6 . . . E6 . G6 .'],
+  ['D','F#6 . . . A6 . . . D6 . F#6 . A6 . . .'],['D','D6 . D6 D6 . D6 . F#6 A6 . . . A6 . . .']])},
  /* Hearthmoss: slow, warm, no drums */
  town:{bpm:84,style:'calm',vol:.36,bars:bars(8,[
   ['C','E5 . . . G5 . . . C6 . . . G5 . . .'],['G','D5 . . . G5 . . . B5 . . . A5 . G5 .'],
@@ -296,7 +309,13 @@ let mus=null;
 function mVoice(t,f,dur,vol,type,soft){const o=AC.createOscillator(),g=AC.createGain(),a=soft?.03:.006;o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol,t+a);g.gain.setValueAtTime(vol*(soft?.7:.8),t+Math.max(a,dur*.5));g.gain.linearRampToValueAtTime(0,t+dur);o.connect(g).connect(mus.g);o.start(t);o.stop(t+dur+.03)}
 function mDrum(t,k,v=1){if(k==='k'){const o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(45,t+.12);g.gain.setValueAtTime(.55*v,t);g.gain.exponentialRampToValueAtTime(.001,t+.16);o.connect(g).connect(mus.g);o.start(t);o.stop(t+.18);return}
   const s=AC.createBufferSource(),f=AC.createBiquadFilter(),g=AC.createGain(),d=k==='s'?.13:.035;s.buffer=noiseB;f.type=k==='s'?'bandpass':'highpass';f.frequency.value=k==='s'?1900:7500;g.gain.setValueAtTime((k==='s'?.28:.08)*v,t);g.gain.exponentialRampToValueAtTime(.001,t+d);s.connect(f).connect(g).connect(mus.g);s.start(t,R()*.5);s.stop(t+d+.02)}
-function mStep(i,t){const S0=mus.song,bar=Math.floor(i/16)%S0.bars.length,s=i%16,Bq=S0.bars[bar],ch=CHD[Bq.c],tr=mus.tr,st=mus.step,L=Bq.lead[s];
+function mStep(i,t){const S0=mus.song,nI=S0.intro||0,bi=Math.floor(i/16),bar=bi<nI?bi:nI+(bi-nI)%(S0.bars.length-nI),s=i%16,Bq=S0.bars[bar],ch=CHD[Bq.c],tr=mus.tr,st=mus.step,L=Bq.lead[s];
+  if(S0.style==='jam'){const mb=bi-nI,fill=mb>=0&&mb%8===7&&s>=12;
+    if(L){mVoice(t,hz(L[0],tr-12),st*L[1]*.92,.075,'square');mVoice(t,hz(L[0],tr),st*L[1]*.8,.03,'triangle')}
+    if(s%2===0)mVoice(t,hz(ch[0]+(s%8===6?'3':'2'),tr),st*1.6,.21,'triangle');
+    if(bi>=2&&s%4===2)for(const n of ch)mVoice(t,hz(n+'4',tr),st*.8,.02,'square');
+    if(mb<0){if(s%2===0)mDrum(t,'h',.7);if(bi>=2&&s%4===0)mDrum(t,'k',.8);if(bi===3&&s>=8)mDrum(t,'s',.3+(s-8)*.1);return}
+    if(s%4===0||s===10&&mb%2)mDrum(t,'k');if(s===4||s===12||fill)mDrum(t,'s');mDrum(t,'h',s%2?.45:s%4===2?1.1:.8);return}
   if(S0.style==='battle'){const fill=(bar%8===7)&&s>=12;
     if(L)mVoice(t,hz(L[0],tr),st*L[1]*.95,.085,'square');
     if(s%2===0)mVoice(t,hz(ch[0]+(s%4===0?'2':'3'),tr),st*1.7,.2,'triangle');

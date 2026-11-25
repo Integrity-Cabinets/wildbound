@@ -7,14 +7,14 @@ if(window.visualViewport){const mv=document.querySelector('meta[name=viewport]')
   visualViewport.addEventListener('resize',unzoom);visualViewport.addEventListener('scroll',unzoom)}
 const UI=(()=>{const q=id=>document.getElementById(id),el=q('ch'),ti=q('chT'),hd=q('chH'),li=q('chL');let cur=null,sel=0,evoOpen=false;
   const btns=()=>[...li.querySelectorAll('button')];
-  function hi(){btns().forEach((b,i)=>b.classList.toggle('sel',i===sel));const b=btns()[sel];if(b&&b.scrollIntoView)b.scrollIntoView({block:'nearest'})}
+  function hi(still){btns().forEach((b,i)=>b.classList.toggle('sel',i===sel));const b=btns()[sel];if(!still&&b&&b.scrollIntoView)b.scrollIntoView({block:'nearest'})}
   function close(v){const c=cur;cur=null;el.style.display='none';c.res(v)}
   function choose({title='',html='',opts=[],cancel=true}){return new Promise(res=>{cur={res,cancel};ti.textContent=title;hd.innerHTML=html;hd.style.display=html?'block':'none';li.innerHTML='';
     opts.forEach((o,i)=>{const b=document.createElement('button');b.className='chO';b.disabled=!!o.dis;
       b.innerHTML=(o.icon?`<i class="ic" style="background-image:url(${o.icon})"></i>`:o.pic?`<img class="pic" src="${o.pic}">`:o.ico?`<img class="ico" src="${o.ico}">`:'')+`<span><b>${o.label}</b>${o.sub?`<small>${o.sub}</small>`:''}${o.hp!=null?`<em><u style="width:${Math.max(0,Math.min(1,o.hp))*100}%;background:${o.hp>.5?'#5bd06a':o.hp>.2?'#e0b040':'#e0503a'}"></u></em>`:''}</span>`;
-      b.onclick=()=>close(i);li.appendChild(b)});
-    if(cancel){const b=document.createElement('button');b.className='chO back';b.innerHTML='<span><b>Back</b></span>';b.onclick=()=>close(-1);li.appendChild(b)}
-    const bs=btns();sel=Math.max(0,bs.findIndex(b=>!b.disabled));hi();el.style.display='flex';el.scrollTop=0;q('chB').scrollTop=0})}
+      b.style.setProperty('--i',Math.min(i,9));b.onmouseenter=()=>{if(!b.disabled){sel=btns().indexOf(b);hi(1)}};b.onclick=()=>close(i);li.appendChild(b)});
+    if(cancel){const b=document.createElement('button');b.className='chO back';b.innerHTML='<span><b>Back</b></span>';b.style.setProperty('--i',Math.min(opts.length,9));b.onmouseenter=()=>{sel=btns().indexOf(b);hi(1)};b.onclick=()=>close(-1);li.appendChild(b)}
+    const bs=btns();sel=Math.max(0,bs.findIndex(b=>!b.disabled));hi();const bx=q('chB');bx.style.animation='none';el.style.display='flex';bx.offsetWidth;bx.style.animation='';el.scrollTop=0;bx.scrollTop=0})}
   addEventListener('keydown',e=>{if(!cur)return;e.stopImmediatePropagation();const bs=btns(),k=e.key;
     const mv=d=>{for(let i=0;i<bs.length;i++){sel=(sel+d+bs.length)%bs.length;if(!bs[sel].disabled)break}hi()};
     if(k==='ArrowDown'||k==='s'||k==='S'){mv(1);e.preventDefault()}else if(k==='ArrowUp'||k==='w'||k==='W'){mv(-1);e.preventDefault()}

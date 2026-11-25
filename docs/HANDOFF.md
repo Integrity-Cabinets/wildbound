@@ -36,7 +36,7 @@ What exists today is **Chapter One**: a playable prologue from the player's fron
 
 ### Playable now
 
-1. Title screen, new game or continue, choose Rowan or Ivy.
+1. A tap-to-begin screen, then an animated opening (one line of text, the three starters, the logo landing on the music) that any press skips. Title screen, new game or continue, choose Rowan or Ivy. The opening, its line ("In the Calder Reach, nobody walks alone.") and the title theme are placeholders Derek wants to revisit.
 2. June (mom) greets you outside your house on your sixteenth birthday.
 3. Walk to Professor Wren's table outside the lab. Choose Foxfern, Kindlit or Ottide.
 4. Cole (rival) takes the starter that beats yours and battles you immediately. The story continues whether you win or lose.
@@ -323,7 +323,7 @@ The complete rules design is in the Combat & Creature Systems document and in `d
 | Moves | 70 of 279 | A Kith only learns moves present in `MV`; learnsets are filtered at run time, so some learnset entries are silently skipped |
 | Resonance | Built, locked | Once per battle: ×1.2 power and a per-move bonus. Hidden until `G.flags.resonance` is set |
 | AI | Basic | Scores moves by expected damage, heals when low, values priority for a knockout |
-| Music | Three themes | `town`, `route`, `battle` (the trainer version is faster and two semitones up). Synthesized |
+| Music | Four themes | `title` (an upbeat placeholder anthem, four bars of build then a loop), `town`, `route`, `battle` (the trainer version is faster and two semitones up). Synthesized |
 | Trust (0–255) | **No** | Designed |
 | Oathbonds, Oathbond Initiative | **No** | Designed |
 | Organization Standing | **No** | Designed |
