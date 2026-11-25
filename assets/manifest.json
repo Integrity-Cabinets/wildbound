@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 279,
+ "count": 281,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -2587,6 +2587,32 @@
    "sha256": "5c6a5278c760b82dc8c6c4dc6d642403ce0b5b48fbd77447182df8b02514b4a2",
    "kind": "props",
    "id": "props_hearthmoss_trees"
+  },
+  {
+   "path": "assets/props/props_interior_home.png",
+   "width": 384,
+   "height": 240,
+   "sha256": "f0062d381c4c3c919a7a4781436b85947f1b96715b270312c0fff3d96f7b127a",
+   "kind": "props",
+   "id": "props_interior_home",
+   "frame": [
+    96,
+    80
+   ],
+   "layout": "assets/props/props_interior_home.layout.json"
+  },
+  {
+   "path": "assets/props/props_interior_lab.png",
+   "width": 384,
+   "height": 288,
+   "sha256": "5d4a818018d2c809fe4fc5c63312d1b6cc8afab2f1d514e858bcc642f904c824",
+   "kind": "props",
+   "id": "props_interior_lab",
+   "frame": [
+    128,
+    96
+   ],
+   "layout": "assets/props/props_interior_lab.layout.json"
   },
   {
    "path": "assets/props/props_mine_large.png",
