@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "generated_by": "tools/check_assets.py --write",
- "count": 281,
+ "count": 284,
  "files": [
   {
    "path": "assets/battle/bg_cave.png",
@@ -2866,12 +2866,28 @@
    "id": "icon_type_wyrm"
   },
   {
+   "path": "assets/ui/item_clearfruit.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "389ba0e28e739c254f1c8de4d62dafb89217af207269e4fb2bb81846fd48b6b3",
+   "kind": "ui",
+   "id": "item_clearfruit"
+  },
+  {
    "path": "assets/ui/item_field_notebook.png",
    "width": 24,
    "height": 24,
    "sha256": "eae255e78223b2d4b810558f5a90577be0f4add14ab461d3db13b7be73e4bad3",
    "kind": "ui",
    "id": "item_field_notebook"
+  },
+  {
+   "path": "assets/ui/item_mending_salve.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "684618e175c4068525d5cc4a60f3016b01f73208f6c3530291bd8de645a8d2ff",
+   "kind": "ui",
+   "id": "item_mending_salve"
   },
   {
    "path": "assets/ui/item_potion.png",
@@ -2912,6 +2928,14 @@
    "sha256": "de89cec4162b550042ee5bfae3dcf53ef9a502642b9d65eb65d1346d9bc21606",
    "kind": "ui",
    "id": "item_tether_orb_ultra"
+  },
+  {
+   "path": "assets/ui/item_wildvein_sensor.png",
+   "width": 24,
+   "height": 24,
+   "sha256": "bdde8fc3b5e3b988c5b6eedb061768c779cd2477c704815bedf15ad539ce998f",
+   "kind": "ui",
+   "id": "item_wildvein_sensor"
   },
   {
    "path": "assets/ui/label_type_beast.png",
