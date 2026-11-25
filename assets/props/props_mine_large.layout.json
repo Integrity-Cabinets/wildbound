@@ -1,0 +1,52 @@
+{
+  "cell": [
+    128,
+    128
+  ],
+  "cells": [
+    {
+      "id": "rock_pillar_cluster",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        15,
+        34,
+        97,
+        94
+      ]
+    },
+    {
+      "id": "rail_junction",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        4,
+        51,
+        120,
+        77
+      ]
+    },
+    {
+      "id": "lift_cage",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        17,
+        26,
+        93,
+        102
+      ]
+    },
+    {
+      "id": "reinforced_support_brace",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        4,
+        44,
+        120,
+        84
+      ]
+    }
+  ]
+}
