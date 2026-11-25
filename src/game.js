@@ -14,11 +14,15 @@ async function followFrames(sp){if(!FOL[sp])FOL[sp]=sheetFrames(await loadImg(DA
 /* ================= state ================= */
 const KITH=DATA.kith,SAVE_KEY='wildbound_ch1_v1';
 let G=null;
-const newGame=pc=>({pc,party:[],box:[],bag:{orb:0,salve:0,clear:0},dex:{seen:{},caught:{}},flags:{},map:'hearthmoss',pos:{x:18,y:58,dir:0},tod:'am',snd:true,wins:0});
+const newGame=pc=>({pc,party:[],box:[],bag:{orb:0,salve:0,clear:0},dex:{seen:{},caught:{}},flags:{},money:100,map:'hearthmoss',pos:{x:18,y:58,dir:0},tod:'am',snd:true,wins:0});
 function save(){if(!G||!player)return false;G.pos={x:player.tx,y:player.ty,dir:player.dir};G.tod=tod;try{localStorage.setItem(SAVE_KEY,JSON.stringify(G));return true}catch(e){return false}}
 function loadSave(){try{const s=localStorage.getItem(SAVE_KEY);return s?JSON.parse(s):null}catch(e){return null}}
 const lead=()=>G.party.find(k=>k.hp>0)||G.party[0];
 const pcName=()=>G.pc==='ivy'?'Ivy':'Rowan';
+/* Money. COIN is the name of the currency everywhere it is shown; change it here. */
+const COIN='marks';
+const give=(id,n=1)=>{G.bag[id]=(G.bag[id]||0)+n};
+const qty=(id,n)=>{if(id==='money')return n+' '+COIN;const I=Battle.ITEMS[id];return n>1?n+' '+(I.pl||I.name+'s'):(I.art||(/^[AEIOU]/.test(I.name)?'an':'a'))+' '+I.name};
 
 /* ================= input ================= */
 const keys={};let touchDir=-1,bDown=false;
@@ -85,8 +89,9 @@ function satchelSprite(){const b=new Buf(11,11),c=[176,120,70],d=[128,82,48];b.e
 // Things lying on the ground to pick up, once each. Listed per area as `items` in src/maps.js.
 function placeItems(){PROPS.items={};for(const it of MAP.items||[]){if(G.flags['i_'+it.id])continue;const p=freeNear(it.x,it.y,4);if(!p)continue;
     block(p[0],p[1],p[0],p[1]);PROPS.items[p[0]+','+p[1]]={it,x:p[0],y:p[1],e:addB({x:tc(p[0]),y:(p[1]+1)*T-3,img:satchelSprite(),sh:.35,sc:1})}}}
-async function pickUp(k){const P=PROPS.items[k],it=P.it,nm=Battle.ITEMS[it.item].name;delete PROPS.items[k];removeEnt(P.e);block(P.x,P.y,P.x,P.y,0);G.flags['i_'+it.id]=1;G.bag[it.item]+=it.n;Battle.sfx('win');
-  await note(["Someone left a satchel here. Nobody's coming back for it.",`You found ${it.n>1?it.n+' '+nm+'s':/^[AEIOU]/.test(nm)?'an '+nm:'a '+nm}.`]);save()}
+async function pickUp(k){const P=PROPS.items[k],it=P.it,I=Battle.ITEMS[it.item];delete PROPS.items[k];removeEnt(P.e);block(P.x,P.y,P.x,P.y,0);G.flags['i_'+it.id]=1;if(it.item==='money')G.money+=it.n;else give(it.item,it.n);Battle.sfx('win');
+  await note(["Someone left a satchel here. Nobody's coming back for it.",`You found ${qty(it.item,it.n)}.`]);
+  if(I&&I.held&&!G.flags.heldNote){G.flags.heldNote=1;await note(["A Kith can carry this into battle, where it works by itself.","Open the menu, choose a Kith, and give it something to hold."])}save()}
 /* Build an area: everything standing, then the painted ground. Takes about a second, so call it behind a fade. */
 function enterMap(id){G.map=id;buildMap(MAPS[id]);if(id==='hearthmoss')placeProps();paintGround();placeItems()}
 async function travel(id,x,y,dir){await UI.fade(true);enterMap(id);warp(player,x,y,dir);const[dx,dy]=DV[OPP[dir]];warp(follower,x+dx,y+dy,dir);await buildNpcs();area='';setArea();save();await pause(120);await UI.fade(false)}
@@ -169,10 +174,10 @@ function npcsRoute2(){
   T_({id:'nell',ch:'npc_student_f',tx:26,ty:76,dir:2,name:'STUDENT NELL'},{name:'Student Nell',skill:.65,team:[['sparkit',5],['silkling',5]],
     intro:["Wait! I'm writing a paper on first-year trainers.","You're my sample. Battle me!"],win:["That's going in the paper. Under 'limitations'.","Take this. Field supplies."],lose:["Fascinating. I'll make a note of that."],gift:['salve',1],
     after:["A Silkling becomes one of two things when it grows up, and it never gets a say in which. I think about that a lot."]});
-  T_({id:'bram',ch:'npc_crafter_m',tx:32,ty:56,dir:3,name:'PROSPECTOR BRAM'},{name:'Prospector Bram',skill:.7,team:[['burrowbit',5],['cobblit',5]],
+  T_({id:'bram',ch:'npc_crafter_m',tx:32,ty:56,dir:3,name:'PROSPECTOR BRAM'},{name:'Prospector Bram',skill:.7,team:[['cobblit',6],['burrowbit',6]],
     intro:["Road toll! …No, I'm joking. There's no toll.","There is a battle, though."],win:["Solid. You'd do all right underground.","Here. These turned up in the long grass."],lose:["Stone doesn't hurry, friend. Come back when you've stopped hurrying."],gift:['orb',2],
     after:["Dara Flint taught half this road to battle. Her Cobblit doesn't go down. It just gets around to it, eventually."]});
-  T_({id:'odell',ch:'npc_traveler_m',tx:28,ty:36,dir:2,name:'WANDERER ODELL'},{name:'Wanderer Odell',skill:.75,team:[['peeplet',5],['cobblit',6]],
+  T_({id:'odell',ch:'npc_traveler_m',tx:28,ty:36,dir:2,name:'WANDERER ODELL'},{name:'Wanderer Odell',skill:.75,team:[['peeplet',6],['burrowbit',6],['cobblit',7,'fig']],
     intro:["Last stretch before town, and you still look fresh.","Let's fix that."],win:["Ha! All right. Cindervale's earned you.","For the road."],lose:["The Rest Lodge is free, you know. Just saying."],gift:['clear',1],
     after:["The Rest Lodge is on the west street, past the square. Free to every trainer. The League gets that much right."]});
   amb({id:'dell',ch:'npc_farmer_m',tx:43,ty:87,dir:0,name:'FARMER DELL',talk:async()=>{await tell('FARMER DELL',["You've the look of someone who's been in the long grass. It wears a team down faster than any trainer on this road.","Sit. The water's from our own well. Wake up here if it goes badly, too. I'd sooner carry you back than read about you."]);
@@ -191,8 +196,8 @@ function npcsCindervale(){
   amb({id:'curator',ch:'npc_office_worker_f',tx:39,ty:37,name:'ARCHIVE CURATOR',talk:talkCurator});
   addNpc({id:'cole',ch:'cole',tx:52,ty:41,dir:2,talk:async()=>{await tell('cole',G.flags.cole1==='win'?["{serious} Locked. The Leader's down the mines until the shift ends.","Don't look so pleased with yourself. Hearthmoss was one battle.","{happy} I've got all afternoon to train. You should try it."]:["{serious} Locked. The Leader's down the mines until the shift ends.","{happy} Which gives me all afternoon to train. You should try it sometime.","…What? I'm not waiting for you. I'm waiting for the Gym."])}});
   amb({id:'hopeful',ch:'npc_student_m',tx:47,ty:42,dir:3,name:'GYM HOPEFUL',lines:()=>["Eight Gyms in the Calder League, and nearly everybody starts with this one. I've challenged Dara twice.","Fast doesn't matter against Stone. Beast and Ember moves barely mark it. Third time, I'm bringing Bloom."]});
-  amb({id:'stall',ch:'npc_shop_assistant_f',tx:28,ty:44,name:'STALLKEEPER',lines:()=>["Apples from the Cinder Road farm, fish up from Marrowind on the Guild carts. Cindervale digs, and everybody else feeds it.","Nothing for Kith on my stall, sorry. That's the Provisioner, once he's finished counting."]});
-  amb({id:'clerk',ch:'npc_shop_assistant_m',tx:26,ty:37,name:'PROVISIONER',lines:()=>["Stocktake. Tether Orbs come up from the Vance-Calder works in Lumen City, every one stamped and numbered, and I count them twice.","Give me a little while. The shutters will be up before you've earned that first badge."]});
+  amb({id:'stall',ch:'npc_shop_assistant_f',tx:28,ty:44,name:'STALLKEEPER',lines:()=>["Apples from the Cinder Road farm, fish up from Marrowind on the Guild carts. Cindervale digs, and everybody else feeds it.","Nothing for Kith on my stall, sorry. That's the Provisioner, up the street. He'll have counted it twice."]});
+  amb({id:'clerk',ch:'npc_shop_assistant_m',tx:26,ty:37,name:'PROVISIONER',talk:talkShop});
   amb({id:'foreman',ch:'npc_crafter_m',tx:32,ty:9,name:'MINE FOREMAN',lines:()=>["North road's closed while a shift's under. That rule's older than I am.","Dara's down there with them. Leader or not, she works her seam like everybody else."]});
   amb({id:'miner',ch:'npc_crafter_f',tx:27,ty:13,name:'MINER',wander:2,lines:()=>["Cobblit find the good seams before we do. We just follow the crunching.","Mine has ridden in the same orb for ten years. She could walk off any shift she liked. She clocks in before I do."]});
   addKith({id:'k_cvcob',sp:'cobblit',tx:25,ty:14,wander:2,lines:["A Cobblit is sorting pebbles into two piles.","The system is not obvious. It is clearly a system."]});
@@ -255,7 +260,7 @@ async function starterScene(sp){const K=KITH[sp],c=npc('cole'),w=npc('wren'),riv
   const foe=Battle.newKith(rival,5,{pot:15,nat:0,moves:['Shove','Disarming Look']});
   const res=await runBattle({kind:'trainer',foes:[foe],trainer:{name:'Cole',img:DATA.chars.cole.battle,skill:.55,resonance:false}});
   G.flags.cole1=res.result==='win'?'win':'lose';
-  if(res.result==='win'){G.wins++;await tell('cole',["{surprised} …Huh.","{serious} Fine. That one's yours. Enjoy it, because I'm not losing the next one."])}
+  if(res.result==='win'){G.wins++;G.money+=80;await tell('cole',["{surprised} …Huh.","{serious} Fine. That one's yours. Enjoy it, because I'm not losing the next one."]);await note([`Cole slapped 80 ${COIN} into your hand without looking at you.`])}
   else await tell('cole',["{happy} That's one for me.","{serious} Keep up, would you? It's no fun winning alone."]);
   await tell('wren',["{happy} Well fought, both of you. Let me see to them."]);healAll();Battle.sfx('heal');
   await note(["Professor Wren tended to both teams."]);
@@ -274,9 +279,9 @@ async function sensorScene(){const w=npc('wren');face(w,player);
   await tell('wren',["Your team looks tired. There. Off you go, Field Assistant."]);save()}
 async function trainerBattle(n){const t=n.trainer;await bubbleAt(n);const d=n.dir,dist=Math.abs(player.tx-n.tx)+Math.abs(player.ty-n.ty);
   if(dist>1)await walk(n,Array(dist-1).fill(d));player.dir=OPP[n.dir];
-  await tell(n.name,t.intro);const foes=t.team.map(([sp,L])=>Battle.newKith(sp,L,{pot:12}));
+  await tell(n.name,t.intro);const foes=t.team.map(([sp,L,held])=>{const k=Battle.newKith(sp,L,{pot:12});if(held)k.held=held;return k});
   const res=await runBattle({kind:'trainer',foes,trainer:{name:t.name,skill:t.skill}});
-  if(res.result==='win'){G.wins++;G.flags['t_'+n.id]=1;await tell(n.name,t.win);if(t.gift){G.bag[t.gift[0]]+=t.gift[1];await note([`You received ${t.gift[1]>1?t.gift[1]+' ':'a '}${Battle.ITEMS[t.gift[0]].name}${t.gift[1]>1?'s':''}.`])}await checkEvos();save()}
+  if(res.result==='win'){G.wins++;G.flags['t_'+n.id]=1;await tell(n.name,t.win);const pay=t.pay||16*Math.max(...t.team.map(x=>x[1]));G.money+=pay;const got=[`${t.name} handed over ${pay} ${COIN}.`];if(t.gift){give(t.gift[0],t.gift[1]);got.push(`You received ${qty(t.gift[0],t.gift[1])}.`)}await note(got);await checkEvos();save()}
   else{await tell(n.name,t.lose);await whiteout()}}
 
 /* ================= interaction ================= */
@@ -299,23 +304,38 @@ function kithCard(k){const K=KITH[k.sp],s=Battle.calcStats(k),n=Battle.NAT[k.nat
    <p>${n.name} nature${n.up!==n.down?` <span class="dim">(+${SN[n.up]}, −${SN[n.down]})</span>`:' <span class="dim">(balanced)</span>'}<br>Potential: ${pg}<br>${b-k.xp} XP to next level</p></div></div>
    <div class="stats">${Object.keys(SN).map(x=>`<span>${SN[x]}<b>${x==='hp'?k.hp+' / '+s.hp:s[x]}</b></span>`).join('')}</div>
    <div class="note"><b>${k.trait}</b> · ${DATA.traits[k.trait]||''}</div>
+   <div class="note">${k.held?`Holding <b>${Battle.ITEMS[k.held].name}</b> · ${Battle.ITEMS[k.held].desc.replace('Held. ','')}`:'<span class="dim">Holding nothing</span>'}</div>
    <div class="note">${k.moves.map(m=>{const M=Battle.MV[m.n];return `<b>${m.n}</b> <span class="dim">${Battle.moveSub(M)} · PP ${m.pp}/${M.pp}</span>`}).join('<br>')}</div>`}
 async function partyMenu(){for(;;){if(!G.party.length){await UI.choose({title:'Your Kith',html:'<div class="note">You don\'t have a Kith yet.</div>',opts:[{label:'Back'}],cancel:false});return}
     const i=await UI.choose({title:'Your Kith',opts:kithOpts()});if(i<0)return;const k=G.party[i];
-    const j=await UI.choose({title:KITH[k.sp].name,html:kithCard(k),opts:i>0?[{label:'Move to the front',sub:'The first Kith walks with you and enters battle first.'}]:[]});
-    if(j===0&&i>0){G.party.splice(i,1);G.party.unshift(k);await refreshFollower()}}}
-async function bagMenu(){for(;;){const ids=Object.keys(Battle.ITEMS).filter(id=>G.bag[id]>0);
-    const key=G.flags.sensor&&!G.flags.sensor2?'<div class="note"><b>Wildvein Sensor</b> · For the Archive field station in Cindervale.</div>':'';
+    const IT=Battle.ITEMS,can=Object.keys(IT).filter(id=>IT[id].held&&G.bag[id]>0),acts=[];
+    if(i>0)acts.push(['front',{label:'Move to the front',sub:'The first Kith walks with you and enters battle first.'}]);
+    if(can.length)acts.push(['give',{label:k.held?'Swap what it holds':'Give it something to hold',sub:'A held item works by itself in battle.'}]);
+    if(k.held)acts.push(['take',{label:'Take back its '+IT[k.held].name,sub:'It goes back in your bag.'}]);
+    const j=await UI.choose({title:KITH[k.sp].name,html:kithCard(k),opts:acts.map(a=>a[1])});if(j<0)continue;const a=acts[j][0];
+    if(a==='front'){G.party.splice(i,1);G.party.unshift(k);await refreshFollower()}
+    else if(a==='take'){give(k.held);k.held=null;Battle.sfx('sel')}
+    else{const h=await UI.choose({title:'Hold which item?',opts:can.map(id=>({label:`${IT[id].name}  ×${G.bag[id]}`,sub:IT[id].desc,ico:DATA.ui[id]}))});
+      if(h>=0){if(k.held)give(k.held);k.held=can[h];G.bag[can[h]]--;Battle.sfx('heal')}}}}
+async function bagMenu(){const IT=Battle.ITEMS;for(;;){const ids=Object.keys(IT).filter(id=>G.bag[id]>0);
+    const key=`<div class="note"><b>${G.money} ${COIN}</b></div>`+(G.flags.sensor&&!G.flags.sensor2?'<div class="note"><b>Wildvein Sensor</b> · For the Archive field station in Cindervale.</div>':'');
     if(!ids.length){await UI.choose({title:'Bag',html:'<div class="note">Nothing here yet.</div>'+key,opts:[]});return}
     const i=await UI.choose({title:'Bag',html:key,opts:ids.map(id=>({label:`${Battle.ITEMS[id].name}  ×${G.bag[id]}`,sub:Battle.ITEMS[id].desc,dis:id==='orb',ico:DATA.ui[id]}))});if(i<0)return;const id=ids[i];
-    const ok=id==='salve'?k=>k.hp>0&&k.hp<Battle.calcStats(k).hp:k=>!!k.st&&k.hp>0;
-    const j=await UI.choose({title:`Use ${Battle.ITEMS[id].name} on…`,opts:kithOpts(k=>!ok(k))});if(j<0)continue;const k=G.party[j];G.bag[id]--;
-    if(id==='salve')k.hp=Math.min(Battle.calcStats(k).hp,k.hp+20);else k.st=null;Battle.sfx('heal')}}
+    const I=IT[id],j=await UI.choose({title:I.held?`Give the ${I.name} to…`:`Use ${I.name} on…`,opts:kithOpts(I.held?null:k=>!Battle.canUse(id,k))});if(j<0)continue;const k=G.party[j];G.bag[id]--;
+    if(I.held){if(k.held)give(k.held);k.held=id}else Battle.applyItem(id,k);Battle.sfx('heal')}}
+/* A shop: buy one at a time from a list of item ids. Prices are ITEMS[id].price. */
+async function shop(title,stock){const IT=Battle.ITEMS;for(;;){
+    const i=await UI.choose({title,html:`<div class="note">You have <b>${G.money} ${COIN}</b>.</div>`,opts:stock.map(id=>({label:`${IT[id].name}  ·  ${IT[id].price}`,sub:`${IT[id].desc} You have ${G.bag[id]||0}.`,dis:G.money<IT[id].price,ico:DATA.ui[id]})).concat([{label:'That\'s everything',sub:'Leave the counter'}])});
+    if(i<0||i>=stock.length)return;G.money-=IT[stock[i]].price;give(stock[i]);Battle.sfx('heal')}}
+async function talkShop(){const N='PROVISIONER',f=G.flags;
+  await tell(N,f.shopMet?["Back again. What do you need?"]:["Shutters are up. Tether Orbs from the Vance-Calder works in Lumen City, every one stamped and numbered, and I've counted them twice.","The rest is local. Salve from the Lodge kitchens, figs off the Cinder Road, and a few things a Kith can carry into a fight.","What do you need?"]);f.shopMet=1;
+  const had=G.money;await shop('Provisioner',['orb','salve','balm','clear','tea','tonic','fig','thread','coal','pearl','bud']);
+  await tell(N,had>G.money?["Good choices. Mind the long grass."]:["No hurry. The shelves aren't going anywhere."]);save()}
 async function surveyMenu(){const all=Object.keys(KITH).sort((a,b)=>KITH[a].no-KITH[b].no),seen=all.filter(k=>G.dex.seen[k]).length,got=all.filter(k=>G.dex.caught[k]).length;
   const rows=all.map(k=>{const K=KITH[k],s=G.dex.seen[k],c=G.dex.caught[k];return `<span class="${s?'':'dim'}">${String(K.no).padStart(2,'0')} ${s&&DATA.spr[k]?`<i class="ic" style="background-image:url(${DATA.spr[k].ic})"></i>`:'<i class="ic"></i>'}${s?K.name:'———'}${c?' <b>◆</b>':''}</span>`}).join('');
   await UI.choose({title:'The Survey',html:`<div class="note">Seen ${seen} · Bonded ${got} · of ${all.length} known in the southern Reach</div><div class="dex">${rows}</div>`,opts:[]})}
 async function openMenu(){if(busy()||player.moving)return;Battle.sfx('sel');
-  for(;;){const i=await UI.choose({title:pcName()+' · Archive Field Assistant',opts:[{label:'Kith',sub:G.party.length?`${G.party.length} with you`+(G.box.length?` · ${G.box.length} at the lab`:''):'None yet'},{label:'Bag',sub:'Tether Orbs and supplies'},{label:'Survey',sub:'Every Kith you have met'},{label:'Save',sub:'Your progress also saves after battles'},{label:G.snd?'Sound: on':'Sound: off'},{label:'Quit to title'}]});
+  for(;;){const i=await UI.choose({title:pcName()+' · Archive Field Assistant',opts:[{label:'Kith',sub:G.party.length?`${G.party.length} with you`+(G.box.length?` · ${G.box.length} at the lab`:''):'None yet'},{label:'Bag',sub:`${G.money} ${COIN} · Tether Orbs and supplies`},{label:'Survey',sub:'Every Kith you have met'},{label:'Save',sub:'Your progress also saves after battles'},{label:G.snd?'Sound: on':'Sound: off'},{label:'Quit to title'}]});
     if(i<0)return;if(i===0)await partyMenu();else if(i===1)await bagMenu();else if(i===2)await surveyMenu();
     else if(i===3){const ok=save();await UI.choose({title:ok?'Saved':'Could not save',html:`<div class="note">${ok?'Your progress is saved on this device.':'This browser is blocking storage, so progress will be lost when you close the page.'}</div>`,opts:[{label:'OK'}],cancel:false})}
     else if(i===4){G.snd=!G.snd;Battle.setSound(G.snd);playArea()}else if(i===5){save();Battle.stopMusic(.6);showTitle();return}}}
@@ -365,7 +385,7 @@ function loop(now){const dt=Math.min(.05,(now-last)/1000);last=now;
 let titleOpen=true;
 function showTitle(){titleOpen=true;const s=loadSave();$('title').style.display='flex';$('tCont').style.display=s?'block':'none';
   if(s){const k=s.party[0];$('tCont').innerHTML=`CONTINUE<small>${s.pc==='ivy'?'Ivy':'Rowan'}${k?' · '+KITH[k.sp].name+' Lv '+k.L:''}</small>`}}
-async function begin(state){G=state;Battle.setSound(G.snd);$('title').style.display='none';tod=G.tod||'am';buildSky();initParticles();
+async function begin(state){G=state;if(G.money==null)G.money=100;Battle.setSound(G.snd);$('title').style.display='none';tod=G.tod||'am';buildSky();initParticles();
   enterMap(MAPS[G.map]?G.map:'hearthmoss');
   player=actor({tx:G.pos.x,ty:G.pos.y,dir:G.pos.dir,frames:CH[G.pc].walk,sc:.68,sh:.42});follower=actor({tx:G.pos.x,ty:G.pos.y+(G.pos.dir===0?-1:1),dir:1,sc:1});
   if(getT(follower.tx,follower.ty)!==0&&getT(follower.tx,follower.ty)!==3)warp(follower,player.tx,player.ty);
@@ -384,4 +404,4 @@ async function boot(){await Promise.all([Battle.load(),loadChars(),loadWorld()])
   requestAnimationFrame(t=>{last=t;loop(t)})}
 /* entities flagged dead are skipped by the renderer */
 setTimeout(boot,30);
-window.WB={wild:wildBattle,evos:checkEvos,menu:openMenu,get G(){return G},get player(){return player},get follower(){return follower},get npcs(){return npcs},get map(){return G?G.map:null},size:()=>[MW,MH],travel:(id,x,y,d)=>cutscene(()=>travel(id,x,y,d)),exits:()=>MAP?MAP.exits||[]:[],items:()=>Object.keys(PROPS.items||{}),warp,busy,getT,pressA,get dlg(){return dlgOpen?dlgTxt:null},get scripting(){return scripting},setTod:t=>{tod=t;buildSky();initParticles()}};
+window.WB={wild:wildBattle,evos:checkEvos,menu:openMenu,get G(){return G},get player(){return player},get follower(){return follower},get npcs(){return npcs},get map(){return G?G.map:null},size:()=>[MW,MH],travel:(id,x,y,d)=>cutscene(()=>travel(id,x,y,d)),exits:()=>MAP?MAP.exits||[]:[],items:()=>Object.keys(PROPS.items||{}),shop:()=>cutscene(talkShop),warp,busy,getT,pressA,get dlg(){return dlgOpen?dlgTxt:null},get scripting(){return scripting},setTod:t=>{tod=t;buildSky();initParticles()}};

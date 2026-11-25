@@ -378,6 +378,9 @@ async def play(b: Bot):
     await b.interact(*await b.npc_pos('curator'))
     b.note('sensor delivered', await b.flag('sensor2'), 'done flag', await b.flag('done')); await b.shot('cindervale_square')
     await b.interact(*await b.npc_pos('curator'))
+    money0 = await b.js("WB.G.money")      # the Provisioner: buy one Mending Salve, then leave the counter
+    b.plan('Provisioner', lambda i: 1); b.plan('Provisioner', lambda i: next(k for k, o in enumerate(i['opts']) if 'everything' in o['t']))
+    await b.interact(*await b.npc_pos('clerk')); b.note('shop: money', money0, '->', await b.js("WB.G.money"), 'bag', (await b.js(PARTY))['bag'])
     await b.interact(*await b.npc_pos('foreman')); await b.shot('cindervale_mine_yard')
     await (pg.locator('#timeBtn').click() if MOB else pg.keyboard.press('t')); await b.wait(500)
     await b.goto([(32, 50)]); await b.shot('cindervale_time_2')

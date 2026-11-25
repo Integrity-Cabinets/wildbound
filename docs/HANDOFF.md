@@ -290,7 +290,9 @@ Cole's cut-down move list is deliberate. With his type advantage and a full move
 
 ### Items and saving
 
-Items: Tether Orb (`orb`), Mending Salve (`salve`, heals 20 HP), Clearfruit (`clear`, cures burn or paralysis). Mending Salve and Clearfruit are placeholder names invented during the build. There is no money and no shop.
+Items live in `ITEMS` in `src/battle_game.js`. Bag items: Tether Orb (`orb`), Mending Salve (`salve`, 20 HP), Deep Balm (`balm`, 50 HP), Clearfruit (`clear`, cures burn or paralysis), Pinebark Tea (`tea`, restores PP), Rousing Tonic (`tonic`, revives at half HP). Held items (a Kith carries one as `inst.held`; given and taken from the Kith menu): Calder Fig, Last Thread, Ember Coal, Tide Pearl, Bloom Bud, Trail Rations, Hunter's Lens, Coach's Belt, Growth Ring. The held effects follow `data/items.json`. Names invented during the build and awaiting Derek's approval: Mending Salve, Deep Balm, Pinebark Tea, Rousing Tonic, Bloom Bud, and the currency name.
+
+Money is `G.money`; the currency name is the single constant `COIN` in `src/game.js` (currently "marks", a placeholder). A new game starts with 100. Trainers pay 16 × their highest level on a win (`pay` on a trainer overrides it); Cole pays 80. Nothing is lost on a defeat. The Provisioner in Cindervale is a working shop (`talkShop`, `shop(title, stock)`), buy only; prices are `ITEMS[id].price`, and an item with no price is not sold (Trail Rations, Hunter's Lens, Coach's Belt and Growth Ring are found, not bought). Pick-ups are per-area `items` lists in `src/maps.js`; `item:'money'` is a pouch of marks. After a level-up the battle shows a stat card (`lvlCard`) with each new value and its gain.
 
 A caught Kith joins the party, or goes to `G.box` when the party has six. Nothing can retrieve a boxed Kith yet.
 
@@ -326,10 +328,11 @@ The complete rules design is in the Combat & Creature Systems document and in `d
 | Oathbonds, Oathbond Initiative | **No** | Designed |
 | Organization Standing | **No** | Designed |
 | Weather, terrain, hazards, screens | **No** | Designed, data in `data/field.json` |
-| Held items | **No** | Data in `data/items.json` |
+| Held items | **Partly** | Nine of the designed items work; the rest are data in `data/items.json` |
 | Other statuses, confusion, sleep | **No** | Designed |
 | Double battles | **No** | The story calls for some |
-| Money, shops, healing stations, storage access | **No** | |
+| Money and a shop | **Yes** | Buy only; no selling yet |
+| Storage access | **No** | |
 | Interiors | **No** | Required; see the backlog |
 
 Battle HP is not doubled. The showcase prototype doubled HP to lengthen level-50 fights; the game removed that because low-level fights already take four or five hits.

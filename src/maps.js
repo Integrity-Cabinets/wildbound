@@ -22,7 +22,7 @@ MAPS.hearthmoss={id:'hearthmoss',w:60,h:80,seed:20261122,bedRow:73,
   grey:{cx:tc(22.4),cy:tc(18.6),rx:2.7*T,ry:2.1*T},plaza:{cx:tc(30),cy:tc(62),rx:6.2*T,ry:4.6*T},pond:{cx:tc(9),cy:tc(64),rx:4.6*T,ry:4.1*T},
   grass:[[19,36,6,5],[44,24,6,5],[38,10,5,3.5],[15,17,5,6],[24,44,3.5,1.8],[48,40,4,3]],
   beds:[{x0:38*T,x1:51*T-2,y0:74*T,y1:76*T+12,n:1600}],
-  items:[{id:'r1_salve',x:49,y:9,item:'salve',n:1},{id:'r1_orb',x:8,y:30,item:'orb',n:1}],
+  items:[{id:'r1_salve',x:49,y:9,item:'salve',n:1},{id:'r1_orb',x:8,y:30,item:'orb',n:1},{id:'r1_fig',x:52,y:27,item:'fig',n:1},{id:'hm_marks',x:8,y:72,item:'money',n:60}],
   build(){
     // borders
     block(0,0,3,MH-1);block(56,0,MW-1,MH-1);block(0,0,MW-1,3);block(0,77,MW-1,MH-1);
@@ -74,7 +74,8 @@ MAPS.route2={id:'route2',w:60,h:100,seed:20261207,bedRow:90,
   rails:[[[4,17],[55,17]]],gravel:[{cx:tc(30),cy:tc(17),rx:28*T,ry:1.5*T},{cx:tc(48),cy:tc(54),rx:4.5*T,ry:3*T,c:[150,138,116]}],
   gpN:[[98,128,58],[116,146,64],[136,162,72],[156,176,84]],
   beds:[{x0:38*T,x1:51*T-2,y0:91*T,y1:93*T+12,n:1300}],
-  items:[{id:'r2_salve',x:11,y:34,item:'salve',n:1},{id:'r2_orb',x:50,y:53,item:'orb',n:2},{id:'r2_clear',x:49,y:22,item:'clear',n:1},{id:'r2_salve2',x:9,y:14,item:'salve',n:1}],
+  items:[{id:'r2_salve',x:11,y:34,item:'salve',n:1},{id:'r2_orb',x:50,y:53,item:'orb',n:2},{id:'r2_clear',x:49,y:22,item:'clear',n:1},{id:'r2_salve2',x:9,y:14,item:'salve',n:1},
+    {id:'r2_lens',x:53,y:41,item:'lens',n:1},{id:'r2_rations',x:6,y:62,item:'rations',n:1},{id:'r2_tonic',x:52,y:80,item:'tonic',n:1},{id:'r2_marks',x:7,y:90,item:'money',n:90}],
   build(){
     wallIn({n:[27,33],s:[27,33]},(tx,ty)=>ty<30&&R()<.5);groundRules();
     inter.water=say(["A farm pond, stocked and tidy.","Something silver turns over just under the surface."]);
@@ -105,6 +106,7 @@ MAPS.route2={id:'route2',w:60,h:100,seed:20261207,bedRow:90,
 /* ---------- Cindervale City ---------- */
 MAPS.cindervale={id:'cindervale',w:64,h:76,seed:20261208,
   exits:[{edge:'s',to:'route2',tx:30,ty:7,dir:0}],
+  items:[{id:'cv_thread',x:55,y:62,item:'thread',n:1},{id:'cv_balm',x:9,y:22,item:'balm',n:1},{id:'cv_marks',x:54,y:14,item:'money',n:120}],
   paths:[{p:[[12,58],[30,58]],hw:10},{p:[[34,58],[52,58]],hw:10},{p:[[32,21],[32,9]],hw:15}],
   pave:[[30,46,34,75],[23,37,41,46],[8,41,22,43],[42,41,56,43],[31,22,33,36],[14,30,50,32]],
   rails:[[[30,-4],[30,18]],[[30,16],[47,16]]],
@@ -116,7 +118,7 @@ MAPS.cindervale={id:'cindervale',w:64,h:76,seed:20261208,
     const B=(spr,tx,ty,half,dx,lines)=>placeHouse({tx,ty,spr:'cindervale_'+spr,half,dx,smoke:1,lines:say(lines)});
     B('rest_lodge',15,40,3,0,["LEAGUE REST LODGE · CINDERVALE","Rest for any trainer and their Kith, free of charge.","The attendant is working out front today."]);
     B('gym',50,40,3,0,["CINDERVALE GYM · STONE","Leader: Dara Flint.","A slate hangs on the door: \"On shift at the mines. Challenges when I'm back up. — D.F.\""]);
-    B('shop',28,36,3,24,["PROVISIONER","A card in the window: \"Stocktaking. Open again shortly.\""]);
+    B('shop',28,36,3,24,["PROVISIONER","A card in the window: \"Open. Ask at the counter outside.\""]);
     B('archive_station',37,36,3,0,["CALDER ARCHIVE · CINDERVALE FIELD STATION","Through the window: shelves of sample jars, and a desk buried in survey forms."]);
     B('house_a',18,29,2,18,["Somebody is practising a fiddle. They have a way to go."]);
     B('house_b',25,29,3,0,["A brass plate: \"FLINT\". The step is swept clean."]);

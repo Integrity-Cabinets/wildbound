@@ -27,15 +27,35 @@ function evolve(k,to){const before=calcStats(k);k.sp=to;const after=calcStats(k)
 
 /* ================= battle engine ================= */
 let B=null,busy=false,over=false,resArmed=false,tint=null,isOpen=false;
-const ITEMS={orb:{name:'Tether Orb',desc:'Offers a wild Kith a bond. Works best on a tired Kith.'},
-  salve:{name:'Mending Salve',desc:'Restores 20 HP to one Kith.'},
-  clear:{name:'Clearfruit',desc:'Cures a burn or paralysis.'}};
+/* Items. `held` ones do nothing from the bag: a Kith carries one (inst.held) and it works by itself in battle.
+   `price` is what the Provisioner charges; no price means it is not sold. */
+const ITEMS={orb:{name:'Tether Orb',desc:'Offers a wild Kith a bond. Works best on a tired Kith.',price:40},
+  salve:{name:'Mending Salve',desc:'Restores 20 HP to one Kith.',heal:20,price:30},
+  balm:{name:'Deep Balm',desc:'Restores 50 HP to one Kith.',heal:50,price:90},
+  clear:{name:'Clearfruit',pl:'Clearfruit',desc:'Cures a burn or paralysis.',cure:1,price:25},
+  tea:{name:'Pinebark Tea',art:'some',pl:'flasks of Pinebark Tea',desc:"Restores the PP of all one Kith's moves.",pp:1,price:70},
+  tonic:{name:'Rousing Tonic',desc:'Brings a fainted Kith round with half its HP.',revive:1,price:160},
+  fig:{name:'Calder Fig',held:1,desc:'Held. Eaten at half HP or less to restore a quarter of its HP. Used up.',price:60},
+  thread:{name:'Last Thread',held:1,desc:'Held. At full HP, the holder survives a knockout blow with 1 HP. Used up.',price:220},
+  coal:{name:'Ember Coal',held:1,boost:'Ember',desc:'Held. Ember moves hit 20% harder.',price:260},
+  pearl:{name:'Tide Pearl',held:1,boost:'Tide',desc:'Held. Tide moves hit 20% harder.',price:260},
+  bud:{name:'Bloom Bud',held:1,boost:'Bloom',desc:'Held. Bloom moves hit 20% harder.',price:260},
+  rations:{name:'Trail Rations',art:'some',pl:'packs of Trail Rations',held:1,desc:'Held. Restores a little HP at the end of every turn.'},
+  lens:{name:"Hunter's Lens",pl:"Hunter's Lenses",held:1,desc:'Held. Critical hits come more often.'},
+  belt:{name:"Coach's Belt",held:1,desc:'Held. Super-effective moves hit 20% harder.'},
+  ring:{name:'Growth Ring',held:1,desc:'Held. Raises Defense and Sp. Def by half while the holder can still evolve.'}};
+const canUse=(id,k)=>{const I=ITEMS[id];if(I.revive)return k.hp<=0;if(k.hp<=0)return false;
+  return I.heal?k.hp<calcStats(k).hp:I.cure?!!k.st:I.pp?k.moves.some(m=>m.pp<MV[m.n].pp):false};
+/* use a bag item on a Kith; returns the HP it gained */
+function applyItem(id,k){const I=ITEMS[id],mx=calcStats(k).hp,was=k.hp;
+  if(I.revive)k.hp=Math.floor(mx/2);else if(I.heal)k.hp=Math.min(mx,k.hp+I.heal);else if(I.cure)k.st=null;else if(I.pp)for(const m of k.moves)m.pp=MV[m.n].pp;
+  return k.hp-was}
 const say=async(html,ms=900)=>{$('msg').innerHTML=html;await wait(ms)};
 const contact=mv=>mv.c==='P'&&mv.k!=='shot'&&mv.k!=='spike';
 const effOf=(mv,types)=>mv.typeless?1:eff(mv.t,types);
 function makeMon(inst,side){const K=KITH[inst.sp],s=calcStats(inst),p=anchor(side);
   return{inst,key:inst.sp,side,name:K.name,types:K.types,L:inst.L,max:s.hp,hp:inst.hp,stat:s,stg:{atk:0,def:0,spa:0,spd:0,spe:0},
-    brn:inst.st==='brn',par:inst.st==='par',moves:inst.moves,res:side?B.resMe:B.resFoe,trait:inst.trait,
+    brn:inst.st==='brn',par:inst.st==='par',moves:inst.moves,res:side?B.resMe:B.resFoe,trait:inst.trait,held:inst.held||null,
     sp:side?sprites[inst.sp].b:sprites[inst.sp].f,sp1:side?sprites[inst.sp].b:sprites[inst.sp].f,sp2:side?sprites[inst.sp].b2:sprites[inst.sp].f2,x:p.x,y:p.y,ox:0,oy:0,sy:1,sx:1,rot:0,alpha:0,flash:0,flashCol:'#fff',aura:0,ph:R()*9,sink:0}}
 function plate(m){const el=$(m.side?'pMe':'pFoe');el.querySelector('.n').textContent=m.name+gsym(m.inst);
   el.querySelector('.lv').textContent=(!m.side&&B.kind==='wild'&&B.dex.caught[m.key]?'◆ ':'')+'Lv '+m.L;
@@ -47,9 +67,11 @@ function upd(m){const el=$(m.side?'pMe':'pFoe'),f=clamp(m.hp/m.max,0,1),bar=el.q
   el.querySelector('.stg').innerHTML=Object.entries(m.stg).filter(e=>e[1]).map(([s,v])=>`<span style="color:${v>0?'#9fe0a0':'#ff9a8a'}">${SN[s]} ${v>0?'+':''}${v}</span>`).join(' · ');
   m.inst.hp=Math.max(0,Math.ceil(m.hp));m.inst.st=m.brn?'brn':m.par?'par':null;
   if(m.side){const a=xpAt(m.key,m.L),b=xpAt(m.key,m.L+1);el.querySelector('.xpb i').style.width=clamp((m.inst.xp-a)/(b-a),0,1)*100+'%'}}
-function calc(a,d,mv,res,forceCrit){const phys=mv.c==='P',as=phys?'atk':'spa',ds=phys?'def':'spd',cs=(mv.cr||0)+(res&&mv.rc||0),crit=forceCrit||R()<[1/24,1/8,1/2,1][Math.min(3,cs)],e=effOf(mv,d.types),stab=!mv.typeless&&a.types.includes(mv.t)?1.5:1;
-  const A=crit&&a.stg[as]<0?a.stat[as]:stg(a,as),D=crit&&d.stg[ds]>0?d.stat[ds]:stg(d,ds);
-  let tm=1;const tr=a.trait;
+function calc(a,d,mv,res,forceCrit){const phys=mv.c==='P',as=phys?'atk':'spa',ds=phys?'def':'spd',cs=(mv.cr||0)+(res&&mv.rc||0)+(a.held==='lens'?1:0),crit=forceCrit||R()<[1/24,1/8,1/2,1][Math.min(3,cs)],e=effOf(mv,d.types),stab=!mv.typeless&&a.types.includes(mv.t)?1.5:1;
+  const A=crit&&a.stg[as]<0?a.stat[as]:stg(a,as),D=(crit&&d.stg[ds]>0?d.stat[ds]:stg(d,ds))*(d.held==='ring'&&KITH[d.key].evo?1.5:1);
+  let tm=1;const tr=a.trait,hi=a.held&&ITEMS[a.held];
+  if(hi&&hi.boost&&hi.boost===mv.t&&!mv.typeless)tm*=1.2;
+  if(a.held==='belt'&&e>1)tm*=1.2;
   if((tr==='Overgrowth'&&mv.t==='Bloom'||tr==='Kindling'&&mv.t==='Ember'||tr==='Undercurrent'&&mv.t==='Tide')&&a.hp<=a.max/3)tm*=1.5;
   if(tr==='Hard Claws'&&contact(mv))tm*=1.3;
   let dmg=Math.floor(Math.floor((2*a.L/5+2)*mv.p*A/D)/50)+2;
@@ -90,8 +112,9 @@ async function useMove(a,d,slot,res){const mv=MV[slot.n];
       for(const[w,st,n] of (mv.st||[]).concat(res&&mv.rs||[]))await applyStat(w==='self'?a:d,st,n,true)}}
   else if(miss){await lunge(a,d,.3,140);d.ox=(d.side?-1:1)*PX*10;tween(d,{ox:0},400);await back(a);await say(`${a.name}'s attack missed!`,700)}
   else{let hits=mv.multi?(res?5:[2,2,2,3,3,3,4,5][ri(0,7)]):1;const rs=[];let total=0,any=null;for(let i=0;i<hits;i++)rs.push(calc(a,d,mv,res,res&&mv.rc===9));
-    let done=0;await ANIM[mv.k](a,d,mv,hits,i=>{if(d.hp<=0)return;const r=rs[i];any=r;total+=r.dmg;done++;damage(d,r.dmg,{crit:r.crit,e:r.e,big:mv.p>=100||res})});
+    let done=0;await ANIM[mv.k](a,d,mv,hits,i=>{if(d.hp<=0)return;const r=rs[i];if(d.held==='thread'&&d.hp>=d.max&&r.dmg>=d.hp&&d.max>1){r.dmg=d.hp-1;d.held=d.inst.held=null;d.hung=1}any=r;total+=r.dmg;done++;damage(d,r.dmg,{crit:r.crit,e:r.e,big:mv.p>=100||res})});
     const r=any||rs[0];if(r.e===0)await say(`It doesn't affect ${d.name}…`,800);else{if(rs.some(x=>x.crit))await say('A critical hit!',600);if(r.e>1)await say("It's super effective!",650);else if(r.e<1)await say("It's not very effective…",650);if(hits>1)await say(`Hit ${done} times!`,600)}
+    if(d.hung){d.hung=0;S.buff();await say(`${d.name} hung on by its <b>Last Thread</b>!`,1000)}
     if(d.hp>0&&r.e){if(mv.brn&&(res||R()*100<mv.brn))await inflict(d,'brn',true);if(mv.par&&(res||R()*100<mv.par))await inflict(d,'par',true);
       for(const[w,st,n,ch] of mv.st||[])if(w==='foe'&&(res||R()*100<ch))await applyStat(d,st,n)}
     if(r.e&&a.hp>0&&d.trait==='Static Fur'&&contact(mv)&&!a.par&&!a.brn&&R()<.3){await say(`${d.name}'s Static Fur crackles!`,500);await inflict(a,'par',true)}
@@ -123,9 +146,17 @@ async function award(foe){const K=KITH[foe.key],list=[...B.part].filter(k=>k.hp>
     const evs=addXp(k,each);if(act){upd(act)}
     for(const ev of evs){if(act){act.L=ev.L;act.stat=ev.after;const up=ev.after.hp-ev.before.hp;act.max=ev.after.hp;act.hp=Math.min(act.max,act.hp+up);plate(act);
         const c=ctr(act);ring(act.x,act.y,'#f6dc93',{flat:.3,r1:PX*70});burst(c.x,c.y,16,['#fff','#f6dc93'],{sp:.5,up:.1});act.flash=.6;act.flashCol='#f6dc93';tween(act,{flash:0},500)}
-      S.win();await say(`<b>${kname(k)}</b> grew to Lv ${ev.L}!`,1300);
+      S.win();lvlCard(k,ev,true);await say(`<b>${kname(k)}</b> grew to Lv ${ev.L}!`,2600);lvlCard(k,ev,false);
       for(const mv of ev.learn)await teach(k,mv,act)}
     if(act)upd(act)}}
+
+/* the stat card shown beside a level-up: each stat's new value and how much it rose */
+const STL={hp:'HP',atk:'Attack',def:'Defense',spa:'Sp. Atk',spd:'Sp. Def',spe:'Speed'};
+function lvlCard(k,ev,on){const el=$('lvl');if(on)el.innerHTML=`<b>${kname(k)} · Lv ${ev.L}</b>`+STN.map(s=>`<span>${STL[s]}</span><i>${ev.after[s]}</i><u>+${ev.after[s]-ev.before[s]}</u>`).join('');el.classList.toggle('on',on)}
+/* held items that act by themselves: the Calder Fig at half HP, Trail Rations at the end of a turn */
+async function heldTick(m,end){if(!m||m.hp<=0||!m.held)return;const heal=async(n,msg)=>{const was=m.hp;m.hp=Math.min(m.max,m.hp+Math.max(1,n));upd(m);dmgText(ctr(m).x,ctr(m).y-PX*24,'+'+(m.hp-was),'#9fe0a0');S.heal();await say(msg,850)};
+  if(m.held==='fig'&&m.hp<=m.max/2){m.held=m.inst.held=null;await heal(Math.floor(m.max/4),`${m.name} ate its <b>Calder Fig</b>!`)}
+  else if(end&&m.held==='rations'&&m.hp<m.max)await heal(Math.floor(m.max/16),`${m.name} ate some Trail Rations.`)}
 
 /* ---------- menus ---------- */
 function menu(){const me=B.me,foe=B.foe,el=$('moves');el.innerHTML='';const usable=me.moves.some(s=>s.pp>0);
@@ -138,11 +169,10 @@ function menu(){const me=B.me,foe=B.foe,el=$('moves');el.innerHTML='';const usab
   $('aRun').disabled=B.kind!=='wild';$('msg').innerHTML=`What will <b>${me.name}</b> do?`}
 function partyOpts(filter){return B.party.map(k=>{const s=calcStats(k);return{label:`${kname(k)}${gsym(k)}  Lv ${k.L}`,sub:k.hp<=0?'Fainted':`HP ${k.hp} / ${s.hp}${k.st?' · '+(k.st==='brn'?'Burned':'Paralyzed'):''}${B.me&&B.me.inst===k&&B.me.hp>0?' · In battle':''}`,icon:DATA.spr[k.sp].ic,hp:k.hp/s.hp,dis:!filter(k)}})}
 async function pickSwitch(forced){const i=await UI.choose({title:forced?'Choose your next Kith':'Switch to which Kith?',opts:partyOpts(k=>k.hp>0&&!(B.me&&B.me.inst===k&&B.me.hp>0)),cancel:!forced});return i}
-async function bagMenu(){const ids=Object.keys(ITEMS).filter(id=>B.bag[id]>0);if(!ids.length){await UI.choose({title:'Bag',html:'<div class="note">Your bag is empty.</div>',opts:[{label:'Back'}]});return null}
+async function bagMenu(){const ids=Object.keys(ITEMS).filter(id=>B.bag[id]>0&&!ITEMS[id].held);if(!ids.length){await UI.choose({title:'Bag',html:'<div class="note">Your bag is empty.</div>',opts:[{label:'Back'}]});return null}
   const i=await UI.choose({title:'Bag',opts:ids.map(id=>({ico:DATA.ui[id],label:`${ITEMS[id].name}  ×${B.bag[id]}`,sub:id==='orb'&&B.kind!=='wild'?"You can't bond with another trainer's Kith.":ITEMS[id].desc,dis:id==='orb'&&B.kind!=='wild'}))});
   if(i<0)return null;const id=ids[i];if(id==='orb')return{t:'orb'};
-  const ok=id==='salve'?k=>k.hp>0&&k.hp<calcStats(k).hp:k=>!!k.st&&k.hp>0;
-  const j=await UI.choose({title:`Use ${ITEMS[id].name} on…`,opts:partyOpts(ok)});if(j<0)return null;return{t:'item',id,k:B.party[j]}}
+  const j=await UI.choose({title:`Use ${ITEMS[id].name} on…`,opts:partyOpts(k=>canUse(id,k))});if(j<0)return null;return{t:'item',id,k:B.party[j]}}
 
 /* ---------- the catch ---------- */
 function orbFx(o){fxs.push({t0:clk,ms:1e9,front:true,get dead(){return o.dead},draw(c){if(o.dead||o.a<=0)return;const r=PX*5.5*o.s;c.save();c.translate(o.x,o.y);c.rotate(o.rot);c.globalAlpha=o.a;
@@ -188,15 +218,16 @@ async function act(pa){if(busy||over||!B)return;setBusy(true);const fa=aiPick(B.
     acts.sort((x,y)=>pr(y)-pr(x)||spd(y.side?B.me:B.foe)-spd(x.side?B.me:B.foe)||R()-.5)}
   else{acts=[{side:0,o:fa.o,res:fa.res}];
     if(pa.t==='switch'){await recall(B.me);await sendOut(1,pa.k)}
-    else if(pa.t==='item'){const k=pa.k,m=B.me.inst===k?B.me:null;B.bag[pa.id]--;
-      if(pa.id==='salve'){const mx=calcStats(k).hp,was=k.hp;k.hp=Math.min(mx,k.hp+20);if(m){m.hp=k.hp;upd(m);dmgText(ctr(m).x,ctr(m).y-PX*24,'+'+(k.hp-was),'#9fe0a0')}S.heal();await say(`${kname(k)} recovered ${k.hp-was} HP.`,1000)}
-      else{k.st=null;if(m){m.brn=m.par=false;upd(m)}S.heal();await say(`${kname(k)} was cured.`,1000)}}
+    else if(pa.t==='item'){const k=pa.k,m=B.me.inst===k?B.me:null,I=ITEMS[pa.id];B.bag[pa.id]--;const got=applyItem(pa.id,k);
+      if(m){m.hp=k.hp;if(I.cure)m.brn=m.par=false;upd(m);if(got>0)dmgText(ctr(m).x,ctr(m).y-PX*24,'+'+got,'#9fe0a0')}S.heal();
+      await say(I.revive?`${kname(k)} came round!`:I.heal?`${kname(k)} recovered ${got} HP.`:I.cure?`${kname(k)} was cured.`:`${kname(k)}'s moves are ready again.`,1000)}
     else if(pa.t==='orb'){if(await throwOrb()){upd(B.foe);B.dex.caught[B.foe.key]=1;await finish('caught',{caught:B.foe.inst});return}}
     else if(pa.t==='run'){const p=clamp(.55+(spd(B.me)-spd(B.foe))/Math.max(1,spd(B.foe))*.6,.35,1);if(R()<p){S.whoosh();await say('You got away safely.',900);await finish('run');return}await say("Couldn't get away!",900)}}
   let swapped=false;
-  for(const x of acts){const a=x.side?B.me:B.foe,d=x.side?B.foe:B.me;if(a.hp<=0||d.hp<=0)continue;await useMove(a,d,x.o,x.res);const r=await settle();if(r===true)return;if(r){swapped=true;break}}
+  for(const x of acts){const a=x.side?B.me:B.foe,d=x.side?B.foe:B.me;if(a.hp<=0||d.hp<=0)continue;await useMove(a,d,x.o,x.res);const r=await settle();if(r===true)return;if(r){swapped=true;break}await heldTick(B.me);await heldTick(B.foe)}
   if(!swapped){for(const m of[B.me,B.foe]){if(m.hp<=0)continue;
       if(m.brn){const c=ctr(m);burst(c.x,c.y,10,PAL.Ember,{sp:.3,up:.2});S.fire();await damage(m,Math.max(1,Math.floor(m.max/16)),{});await say(`${m.name} is hurt by its burn!`,700)}
+      await heldTick(m,true);
       if(m.hp>0&&m.trait==='Molting'&&(m.brn||m.par)&&R()<.3){m.brn=m.par=false;upd(m);S.heal();await say(`${m.name} shed its ailment by Molting!`,900)}
       if(m.hp>0&&m.trait==='Accelerate'&&m.stg.spe<6){m.stg.spe++;upd(m);await say(`${m.name}'s Accelerate raised its Speed!`,700)}}
     if(await settle()===true)return}

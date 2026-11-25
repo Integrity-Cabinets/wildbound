@@ -53,11 +53,12 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 
 - Two scopes share one page: `Battle` (an IIFE) and the overworld/game IIFE. They talk only through `Battle.start(...)`, which returns a promise with `{result: 'win'|'lose'|'run'|'caught'}`, and a few helpers (`Battle.newKith`, `calcStats`, `healKith`, `evolve`).
 - Battle DOM ids are prefixed `b_`. Inside `Battle`, `$('x')` means `#b_x`.
-- Story progress is `G.flags` (`begun`, `intro`, `starter`, `cole1`, `dad`, `sensor`, `sensor2`, `t_<trainer id>`, `i_<item id>`, `done`, `resonance`). Scenes are `async` functions wrapped in `cutscene()`. Never nest `cutscene()` calls; call the inner scene function directly.
+- Story progress is `G.flags` (`begun`, `intro`, `starter`, `cole1`, `dad`, `sensor`, `sensor2`, `t_<trainer id>`, `i_<item id>`, `shopMet`, `heldNote`, `done`, `resonance`). Scenes are `async` functions wrapped in `cutscene()`. Never nest `cutscene()` calls; call the inner scene function directly.
 - A Kith instance is a plain object: `{sp, L, xp, nat, pot, cond, gender, trait, st, hp, moves:[{n, pp}]}`. Stats come from `calcStats`. Saves are `JSON.stringify(G)` in `localStorage`, always inside try/catch.
 - One area is loaded at a time (`G.map`). `enterMap(id)` builds it and paints its ground, which takes about a second, so it always runs behind a fade; `travel(id, x, y, dir)` is the walk between areas. An area's `exits` say which edge leads where. Hearthmoss and Route 1 share one 60×80 area (rows above 47 are Route 1); Route 2 is 60×100; Cindervale is 64×76.
 - Tiles are 16 px. Tile values: 0 walkable, 1 blocked, 2 water, 3 tall grass. Positions in scenes are tile coordinates. World generation is seeded per area, so placing or reserving anything before a `scatter()` call shifts the trees and rocks after it. Add decoration at the end of `build()`.
 - People are built per area in `buildNpcs()` (`npcsHearthmoss`, `npcsRoute2`, `npcsCindervale`). `amb({...})` adds a background person, snapped to the nearest open tile; `wander: n` lets them stroll n tiles from home. `addKith({sp, ...})` adds a Kith going about its day. Trainers use `addNpc` with fixed tiles so their line of sight stays where it was designed.
+- Items are `ITEMS` in `src/battle_game.js`. Ones marked `held` are carried by a Kith (`inst.held`) and act by themselves in battle (`calc`, `heldTick`, the Last Thread check in `useMove`). Money is `G.money`; the currency name is the constant `COIN` in `src/game.js`. Trainers pay on a win; `shop(title, stock)` sells at `ITEMS[id].price`. Always add to the bag with `give(id, n)`, because older saves lack the newer bag keys.
 - Losing a battle returns the player to `G.heal` (the last place they rested: Farmer Dell's on Route 2 or the Cindervale Rest Lodge), or home to June if they have not used one.
 - The main loop draws either the overworld or the battle, never both.
 
@@ -76,7 +77,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 1. Interiors: the player's house and Wren's lab (move the starter scene and June's healing indoors). Needs interior art from the artist pipeline.
 2. Resonance introduction event (proposed: the second Cole battle on Route 3).
 3. Cindervale: the Stone Gym battle with Dara Flint (her art is merged, not wired), the mines (needs art: a mine entrance and cave set), the Provisioner as a working shop. Hearthmoss and Route 1 have not been enlarged yet; that means splitting them into two areas and re-seating every Chapter One scene.
-4. Money, shops and a healing station.
+4. Selling to shops, more shops, storage access, and the rest of the held items in `data/items.json`.
 5. More of the 279 moves in `MV`, and more working traits (currently: Overgrowth, Kindling, Undercurrent, Hard Claws, Sharp Eyes, Static Fur, Accelerate, Opening Gambit, Molting, Gatherer).
 6. Trust, Oathbonds and organization Standing (designed, not built).
 7. More music. `SONGS` in `src/battle_game.js` holds the synthesized themes (`town`, `route`, `battle`); `Battle.playMusic(name)` plays one. Add a theme per new area. Recorded tracks may replace these later.
@@ -85,7 +86,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 ## Known shortcuts
 
 - No interiors yet; the starter scene happens at a table outside the lab, and in Cindervale the Rest Lodge attendant and the Archive curator work outside their buildings.
-- Cindervale's Gym, Provisioner and mine road are closed in the story (Dara is on shift, a stocktake, a foreman at a rope fence). There is no money or shop yet.
+- Cindervale's Gym and mine road are closed in the story (Dara is on shift, a foreman at a rope fence). The Provisioner sells from a counter outside his building; shops are buy only.
 - Route 2 and Cindervale reuse the `route` and `town` music.
 - The pack's 16×16 ground atlas, UI nine-slices, type labels and painted battle scenes are in `assets/` but not used.
 - Ember types cannot be burned and Volt types cannot be paralyzed; no other statuses exist yet.

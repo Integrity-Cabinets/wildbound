@@ -155,6 +155,11 @@ button{font-family:inherit}
 }
 #b_resCard{position:absolute;z-index:7;left:0;right:0;top:38%;text-align:center;pointer-events:none;opacity:0;transform:scaleX(1.25);transition:opacity .25s,transform .5s cubic-bezier(.1,.8,.2,1)}
 #b_resCard.on{opacity:1;transform:none}
+#b_lvl{position:absolute;z-index:7;left:50%;top:30%;min-width:176px;margin-left:-100px;padding:10px 14px 11px;display:grid;grid-template-columns:1fr auto auto;gap:3px 14px;background:rgba(22,21,27,.94);border:1px solid #d6b46a;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.5);color:#efe6d2;font-size:14px;line-height:1.25;pointer-events:none;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}
+#b_lvl.on{opacity:1;transform:none}
+#b_lvl b{grid-column:1/-1;margin-bottom:4px;padding-bottom:5px;border-bottom:1px solid rgba(214,180,106,.4);font-weight:400;letter-spacing:.06em;color:#f6dc93}
+#b_lvl i{font-style:normal;text-align:right;color:#fff}
+#b_lvl u{text-decoration:none;text-align:right;color:#9fe0a0}
 #b_resCard span{display:block;font-size:13px;letter-spacing:.6em;text-indent:.6em;color:#f6dc93}
 #b_resCard b{display:block;font-weight:400;font-size:38px;letter-spacing:.2em;text-indent:.2em;color:#fff;text-shadow:0 0 24px rgba(246,220,147,.9),0 2px 0 rgba(0,0,0,.5)}
 </style>
@@ -184,6 +189,7 @@ button{font-family:inherit}
     <div class="plate hide" id="b_pFoe"><div class="nm"><span class="n"></span><span class="st">BRN</span><span class="lv"></span></div><div class="ty"></div><div class="hpb"><i></i></div><div class="stg"></div></div>
     <div class="plate hide" id="b_pMe"><div class="nm"><span class="n"></span><span class="st">BRN</span><span class="lv"></span></div><div class="ty"></div><div class="hpb"><i></i></div><div class="xpb"><i></i></div><div class="hpn"></div><div class="stg"></div></div>
     <div id="b_resCard"><span>RESONANCE</span><b></b></div>
+    <div id="b_lvl"></div>
   </div>
   <div id="b_panel">
     <div id="b_msg"></div>
@@ -210,7 +216,7 @@ const Battle=(()=>{
 const SPR=DATA.spr,KITH=DATA.kith,CHART=DATA.chart;
 /*BATTLE_CORE*/
 /*BATTLE_GAME*/
-return{dbg:()=>B,music:()=>mus&&{name:mus.name,i:mus.i,state:AC.state},playMusic:musicPlay,stopMusic:musicStop,start,newKith,healKith,calcStats,evoTarget,evolve,xpAt,NAT,MV,TC,ITEMS,moveSub,gsym,isOpen:()=>isOpen,frame:frameAnim,load:loadSprites,sfx:n=>{audio();S[n]&&S[n]()},setSound:v=>{sndOn=v;if(v)audio();else musicStop(.1)}};
+return{dbg:()=>B,music:()=>mus&&{name:mus.name,i:mus.i,state:AC.state},playMusic:musicPlay,stopMusic:musicStop,start,newKith,healKith,calcStats,evoTarget,evolve,xpAt,NAT,MV,TC,ITEMS,canUse,applyItem,moveSub,gsym,isOpen:()=>isOpen,frame:frameAnim,load:loadSprites,sfx:n=>{audio();S[n]&&S[n]()},setSound:v=>{sndOn=v;if(v)audio();else musicStop(.1)}};
 })();
 (()=>{
 const $=id=>document.getElementById(id);
