@@ -162,13 +162,28 @@ function growGrass(){for(const[cx,cy,rx,ry]of GRASS)for(let y=Math.floor(cy-ry);
     const dx=(x-cx)/rx,dy=(y-cy)/ry;if(dx*dx+dy*dy<=1&&getT(x,y)===0&&pathAtTile(x,y)>10&&!isRes(x,y)){setT(x,y,3);reserved[y*MW+x]=1}}
   for(let y=0;y<MH;y++)for(let x=0;x<MW;x++)if(tiles[y*MW+x]===3){const X=x*T,Y=y*T;
     addB({x:X+4,y:Y+8,img:SP.tuft[ri(0,4)],sh:0});addB({x:X+12,y:Y+8,img:SP.tuft[ri(0,4)],sh:0});addB({x:X+8,y:Y+16,img:SP.tuft[ri(0,4)],sh:0,grass:1})}}
-function tree(x,y){const pin=R()<.3;addB({x,y,img:pin?SP.pine[ri(0,2)]:SP.round[ri(0,6)],sh:pin?.6:.85,sc:pin?1.02:.98})}
-function boulder(x,y){addB({x,y,img:WA.large[0],sh:.7,sc:rf(.8,1.05)})}
+// A steady 0..1 number for a spot, used to vary art without drawing on the area's seeded random stream.
+const spot=(a,b)=>{const s=Math.sin(a*12.9898+b*78.233)*43758.5453;return s-Math.floor(s)};
+// MAP.upland=[y0,y1]: at row y0 and above everything is upland (gold trees, pale rock); it fades out by row y1.
+const upland=y=>{const u=MAP.upland;return u&&WA.r2?(u[1]-y/T)/(u[1]-u[0]):0};
+function tree(x,y){const pin=R()<.3;let img=pin?SP.pine[ri(0,2)]:SP.round[ri(0,6)];
+  if(spot(x,y)<upland(y)){const h=spot(y,x),t=WA.r2.trees;img=h<.07?t[3]:h<.12?t[4]:pin?t[2]:t[h<.56?0:1]}
+  addB({x,y,img,sh:pin?.6:.85,sc:pin?1.02:.98})}
+function boulder(x,y){const sc=rf(.8,1.05);if(MAP.upland&&WA.r2){const h=spot(x,y),r=WA.r2.rocks;addB({x,y,img:h<.3?r[3]:h<.5?r[4]:r[Math.floor(h*30)%3],sh:.7,sc:h<.5?sc*1.05:sc*1.5})}else addB({x,y,img:WA.large[0],sh:.7,sc})}
 function scatter(n,x0,x1,y0,y1,kind){let k=0;for(let t=0;t<n*30&&k<n;t++){const x=ri(x0,x1),y=ri(y0,y1);
     if(kind==='tree'||kind==='boulder'){let ok=true;for(let yy=y-2;yy<=y+1;yy++)for(let xx=x-2;xx<=x+2;xx++)if(getT(xx,yy)!==0||isRes(xx,yy))ok=false;if(!ok||pathAtTile(x,y)<16)continue;
       block(x-1,y,x+1,y);res(x-2,y-2,x+2,y+1);if(kind==='tree')tree(tc(x)+rf(-3,3),(y+1)*T-3);else boulder(tc(x)+rf(-3,3),(y+1)*T-3);k++}
     else{if(getT(x,y)!==0||isRes(x,y)||pathAtTile(x,y)<6)continue;block(x,y,x,y);res(x-1,y-1,x+1,y+1);
-      if(kind==='bush')addB({x:tc(x),y:(y+1)*T-2,img:SP.bush[ri(0,3)],sh:.75,sc:.9});else addB({x:tc(x),y:(y+1)*T-3,img:R()<.5?SP.rock:WA.small[3],sh:.3,sc:.8});k++}}}
+      const up=spot(x,y)<upland((y+1)*T),h=spot(y,x);
+      if(kind==='bush'){const img=SP.bush[ri(0,3)];addB({x:tc(x),y:(y+1)*T-2,img:up?WA.r2.veg[Math.floor(h*3)]:img,sh:.75,sc:.9})}
+      else{const img=R()<.5?SP.rock:WA.small[3];addB({x:tc(x),y:(y+1)*T-3,img:up?WA.r2.rocks[h<.5?5:h<.75?6:2]:img,sh:.3,sc:up?.9:.8})}k++}}}
+// Small plants you can walk through (dry grass, wildflowers), sprinkled where nothing else stands. Uses no seeded random.
+function sprinkle(n,x0,x1,y0,y1,imgs,sc=.8){for(let i=0,k=0;i<n*8&&k<n;i++){const x=x0+Math.floor(spot(i,n)*(x1-x0+1)),y=y0+Math.floor(spot(n,i)*(y1-y0+1));
+    if(getT(x,y)!==0||pathAtTile(x,y)<12||inPave(tc(x),tc(y)))continue;addB({x:tc(x)+spot(i,3)*8-4,y:(y+1)*T-2-spot(3,i)*6,img:imgs[Math.floor(spot(i,i)*imgs.length)],sh:0,sc});k++}}
+// A wide object placed on the nearest clear run of tiles (2*half+1 wide) to (x,y); false if there is no room.
+function bigNear(x,y,img,sc,half,l,sh=.7){for(let d=0;d<=4;d++)for(let yy=y-d;yy<=y+d;yy++)for(let xx=x-d;xx<=x+d;xx++){if(Math.max(Math.abs(xx-x),Math.abs(yy-y))!==d)continue;
+    let ok=true;for(let j=yy-1;j<=yy+1;j++)for(let i=xx-half-1;i<=xx+half+1;i++)if(getT(i,j)!==0||pathAtTile(i,j)<12||inPave(tc(i),tc(j)))ok=false;
+    if(ok){block(xx-half,yy,xx+half,yy);addB({x:tc(xx),y:(yy+1)*T-2,img,sh,sc});if(l)for(let i=-half;i<=half;i++)inter[(xx+i)+','+yy]=l;return true}}return false}
 // Solid border four tiles thick, planted with trees (or boulders where rock(tx,ty) says so).
 // `gaps` are the columns left open at the north and south edges, where a road runs out of the area.
 function wallIn(gaps,rock){const g=gaps||{},open=(s,tx)=>g[s]&&tx>=g[s][0]&&tx<=g[s][1],put=(tx,ty)=>{const x=tc(tx)+rf(-5,5),y=tc(ty)+rf(-4,4);if(rock&&rock(tx,ty))boulder(x,y);else tree(x,y)};

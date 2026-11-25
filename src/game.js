@@ -5,6 +5,7 @@ function sheetFrames(im,fw,fh,cols){const out=[];for(let d=0;d<4;d++){out[d]=[];
 const CH={},FOL={},PORT={};let WA=null;
 async function loadWorld(){const W=DATA.world,L=a=>Promise.all(a.map(loadImg));WA={trees:await L(W.trees),plants:await L(W.plants),grass:await L(W.grass),small:await L(W.small),large:await L(W.large),fence:await L(W.fence),lampEmis:await loadImg(W.lampEmis),bld:{}};
   WA.cv={small:await L(W.cv.small),large:await L(W.cv.large),fence:await L(W.cv.fence),lanternEmis:await loadImg(W.cv.lanternEmis)};
+  WA.r2={};for(const k in W.r2)WA.r2[k]=await L(W.r2[k]);WA.mine={small:await L(W.mine.small),large:await L(W.mine.large)};
   for(const k in W.bld)WA.bld[k]={img:await loadImg(W.bld[k].img),emis:await loadImg(W.bld[k].emis),wins:W.bld[k].wins,w:W.bld[k].w,h:W.bld[k].h}}
 async function loadChars(){for(const n of['rowan','ivy']){CH[n]={walk:sheetFrames(await loadImg(DATA.chars[n].walk),32,48,3),run:sheetFrames(await loadImg(DATA.chars[n].run),32,48,3),face:cut(await loadImg(DATA.chars[n].port),0,0,96,96).toDataURL()}}
   for(const n in DATA.chars)if(n.startsWith('npc_'))CH[n]={walk:sheetFrames(await loadImg(DATA.chars[n].walk),32,48,3)};

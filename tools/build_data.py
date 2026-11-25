@@ -91,10 +91,15 @@ W={'trees':cells(A+'props/props_hearthmoss_trees.png',64,80,5),'plants':cells(A+
 for n in ['player_house','wren_lab','hearthmoss_house_a','hearthmoss_house_b']:
     im=grade(Image.open(A+f'props/bld_{n}.png'));em,wins=glass(im);W['bld'][n]={'img':enc(im),'emis':em,'wins':wins,'w':im.width,'h':im.height}
 # Cindervale City: buildings, and prop sheets kept apart from the Hearthmoss ones
-for n in ['gym','archive_station','rest_lodge','shop','house_a','house_b']:
+for n in ['gym','archive_station','rest_lodge','shop','house_a','house_b','mine_entrance']:
     im=grade(Image.open(A+f'props/bld_cindervale_{n}.png'));em,wins=glass(im);W['bld']['cindervale_'+n]={'img':enc(im),'emis':em,'wins':wins,'w':im.width,'h':im.height}
 W['cv']={'small':cells(A+'props/props_cindervale_small.png',64,64,4,2),'large':cells(A+'props/props_cindervale_large.png',96,96,3,2)[:5],
          'fence':cells(A+'props/props_cindervale_fences.png',32,32,4,2)}
+# Route 2 uplands and the Cindervale mines (Batch 2). Cell sizes are in the .layout.json beside each sheet.
+P=A+'props/props_'
+W['r2']={'trees':cells(P+'route2_trees.png',64,80,5),'rocks':cells(P+'route2_rocks.png',64,64,4,2)[:7],'veg':cells(P+'route2_vegetation.png',64,48,4,2),
+         'debris':cells(P+'route2_debris.png',96,80,3,2)[:5],'ledges':cells(P+'route2_ledges.png',112,96,3)}
+W['mine']={'small':cells(P+'mine_small.png',64,64,3,3),'large':cells(P+'mine_large.png',128,128,2,2)}
 def warm(cell):
     e=Image.new('RGBA',cell.size,(0,0,0,0));cp=cell.load();ep=e.load()
     for y in range(cell.height):

@@ -6,7 +6,7 @@ What development needs from the art pipeline next, in priority order. Written 24
 
 | Asset | Why | Suggested size |
 | --- | --- | --- |
-| Mine entrance: a timbered mouth in a rock face | Cindervale's north road is closed off with a rope fence because there is nothing to walk into | about 160×144, like the Gym |
+| ~~Mine entrance~~ **Delivered in Batch 2 and placed.** Still needed to open the mines: cave floor and wall art for the inside | The entrance stands behind the rope fence; there is nowhere to walk into yet | to be agreed |
 | Cave set for the mines: floor and wall pieces, support beams, lamp, ore seam, cart, rubble | The mines are the dungeon before Gym 1 | to be agreed; the engine paints floors, so standing pieces matter most |
 | Interiors: Rest Lodge counter, Provisioner counter and shelves, Gym arena dressing | The attendant and curator currently work outside their buildings | objects only; hold walls and floors until the interior system is designed |
 

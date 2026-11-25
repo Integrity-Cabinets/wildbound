@@ -65,7 +65,7 @@ MAPS.hearthmoss={id:'hearthmoss',w:60,h:80,seed:20261122,bedRow:73,
   }};
 
 /* ---------- Route 2: the Cinder Road ---------- */
-MAPS.route2={id:'route2',w:60,h:100,seed:20261207,bedRow:90,
+MAPS.route2={id:'route2',w:60,h:100,seed:20261207,bedRow:90,upland:[30,62],
   exits:[{edge:'s',to:'hearthmoss',tx:30,ty:7,dir:0},{edge:'n',to:'cindervale',tx:32,ty:69,dir:1}],
   paths:[{p:[[30,106],[30,89],[23,81],[23,70],[35,62],[35,50],[25,42],[25,30],[34,22],[34,12],[30,6],[30,-6]],hw:17},
     {p:[[30,89],[45,87]],hw:10},{p:[[35,56],[47,54]],hw:9},{p:[[25,36],[13,34]],hw:9},{p:[[23,75],[17,74]],hw:8}],
@@ -101,10 +101,21 @@ MAPS.route2={id:'route2',w:60,h:100,seed:20261207,bedRow:90,
     res(21,75,28,77);res(31,55,37,57);res(23,35,30,37);res(27,85,32,88);res(15,71,20,76);res(44,51,52,57);res(11,31,16,35);res(37,84,53,88);
     growGrass();
     scatter(30,5,54,48,94,'tree');scatter(14,5,54,6,47,'tree');scatter(12,5,54,6,40,'boulder');scatter(16,5,54,6,94,'bush');scatter(8,5,54,48,94,'rock');scatter(22,5,54,6,47,'rock');
+    // ---- upland decoration (Batch 2 art). Everything below is placed after the seeded scatter, so it moves nothing. ----
+    const U=WA.r2,D=U.debris,M=WA.mine;
+    bigNear(9,21,D[3],.72,1,say(["An ore cart, off the rails and rusted where it stopped.","Grass has come up through the floor. Something small has nested in it."]));
+    bigNear(50,14,D[4],.72,1,say(["An old claim marker. The paint is long gone.","Somebody has re-cut the crossed picks with a knife, and recently."]));
+    bigNear(10,51,D[0],.75,1,say(["A fallen tree, soft with moss and shelf mushrooms.","Silkling thread is strung between the roots."]));
+    bigNear(51,36,U.ledges[0],.75,2,say(["A shelf of pale slate, pushed up through the hillside.","This is the same rock they cut in Cindervale."]));
+    bigNear(8,40,U.ledges[2],.75,2,say(["Weathered slate, stacked like a dropped deck of cards."]));
+    bigNear(52,24,U.ledges[1],.75,2,say(["An old trial cut, shored with timber and then left.","The seam must have run out. Or run pale."]));
+    for(const[x,y,i]of[[44,71,1],[8,85,2],[53,62,1],[15,57,2],[46,45,1],[7,29,2]])propNear(x,y,D[i],.75,.4,say(i===1?["A stump, cut clean. Mine timber, probably."]:["A stump, split by frost or lightning. Hard to say which."]));
+    propNear(41,20,M.small[4],.75,.5,say(["A small ore cart on a siding, half full of slate chips."]));
+    sprinkle(46,5,54,6,60,[U.veg[3],U.veg[4],U.veg[5],U.veg[3],U.veg[4]],.85);sprinkle(18,5,54,20,94,[U.veg[6],U.veg[7]],.85);
   }};
 
 /* ---------- Cindervale City ---------- */
-MAPS.cindervale={id:'cindervale',w:64,h:76,seed:20261208,
+MAPS.cindervale={id:'cindervale',w:64,h:76,seed:20261208,upland:[40,75],
   exits:[{edge:'s',to:'route2',tx:30,ty:7,dir:0}],
   items:[{id:'cv_thread',x:55,y:62,item:'thread',n:1},{id:'cv_balm',x:9,y:22,item:'balm',n:1},{id:'cv_marks',x:54,y:14,item:'money',n:120}],
   paths:[{p:[[12,58],[30,58]],hw:10},{p:[[34,58],[52,58]],hw:10},{p:[[32,21],[32,9]],hw:15}],
@@ -150,4 +161,14 @@ MAPS.cindervale={id:'cindervale',w:64,h:76,seed:20261208,
     sg(46,44,say(["CINDERVALE GYM","The first badge of the Calder League is earned here."]),CV().small[4]);
     res(26,6,38,12);res(20,12,30,20);
     scatter(7,5,58,48,71,'tree');scatter(5,5,58,22,28,'tree');scatter(7,5,58,5,26,'boulder');scatter(10,5,58,44,72,'bush');scatter(18,5,58,5,72,'rock');
+    // ---- the mine head (Batch 2 art), placed after the seeded scatter ----
+    const M=WA.mine;
+    placeHouse({tx:30,ty:4,spr:'cindervale_mine_entrance',half:3,dx:0});
+    for(const x of[26,34]){block(x,5,x,5);addB({x:tc(x),y:6*T-2,img:M.small[1],sh:.2,sc:.8});lights.push({x:tc(x)+6,y:6*T-2,hgt:30,r:60,lamp:1})}
+    bigNear(21,14,M.large[2],.62,1,say(["The lift cage for the deep shaft. The cable hums faintly.","A tally board beside it counts who is down. Today: fourteen, and one Leader."]));
+    bigNear(42,11,M.large[0],.6,1,say(["Spoil from the first cut, a hundred years old.","Children have worn a slide down one side of it."]));
+    propNear(39,13,M.small[3],.8,.5,say(["A lump of ore set aside for the assay office. It glints where the pick caught it."]));
+    propNear(23,18,M.small[7],.75,.4,say(["A toolbox, left open. Every tool is in its place, so somebody is coming back."]));
+    propNear(38,19,M.small[5],.75,.2,say(["A shovel, stuck upright in the gravel."]));propNear(24,10,M.small[6],.75,.2,say(["A pickaxe, the handle worn pale by one pair of hands."]));
+    sprinkle(22,5,58,5,30,[WA.r2.veg[3],WA.r2.veg[4],WA.r2.veg[5]],.85);sprinkle(10,5,58,44,72,[WA.r2.veg[6],WA.r2.veg[7]],.85);
   }};

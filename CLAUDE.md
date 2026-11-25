@@ -27,7 +27,7 @@ Run both `playthrough.py` modes after any change to gameplay, layout or input. T
 | `src/ui.js` | `UI`: the chooser overlay used by every menu, screen fades, the evolution scene. |
 | `src/battle_core.js` | Battle presentation: canvas, particles, tweens, lights, the procedural arenas, move animations (`ANIM`), the move table (`MV`), synthesized sound (`S`). |
 | `src/battle_game.js` | Battle rules: Kith instances, stats, XP, turn flow, AI, catching, traits, items. Exports the `Battle` object. |
-| `src/ow_core.js` | Overworld engine: the tile grid, placing helpers (`placeHouse`, `prop`, `scatter`, `wallIn`), painted ground (paths, paving, rails, gravel, pond), perspective ground plane, billboards, lighting, chimney smoke, time of day. |
+| `src/ow_core.js` | Overworld engine: the tile grid, placing helpers (`placeHouse`, `prop`, `bigNear`, `sprinkle`, `scatter`, `wallIn`), painted ground (paths, paving, rails, gravel, pond), perspective ground plane, billboards, lighting, chimney smoke, time of day. |
 | `src/maps.js` | The areas: `MAPS.hearthmoss` (village and Route 1), `MAPS.route2`, `MAPS.cindervale`. Each has a size, a seed, ground features, exits, pick-up items and a `build()` that places everything standing. |
 | `src/game.js` | The game itself: save data, input, dialog, NPCs, story scenes, encounters, menus, title screen, main loop. |
 | `src/data.json` | Generated. Species, natures, traits, type chart and every image as a data URI. Do not edit by hand. |
@@ -76,7 +76,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 
 1. Interiors: the player's house and Wren's lab (move the starter scene and June's healing indoors). Needs interior art from the artist pipeline.
 2. Resonance introduction event (proposed: the second Cole battle on Route 3).
-3. Cindervale: the Stone Gym battle with Dara Flint (her art is merged, not wired), the mines (needs art: a mine entrance and cave set), the Provisioner as a working shop. Hearthmoss and Route 1 have not been enlarged yet; that means splitting them into two areas and re-seating every Chapter One scene.
+3. Cindervale: the Stone Gym battle with Dara Flint (her art is merged, not wired), the mines as a place to walk into (the entrance and mine props are placed in the yard; the inside needs cave floor and wall art). Hearthmoss and Route 1 have not been enlarged yet; that means splitting them into two areas and re-seating every Chapter One scene.
 4. Selling to shops, more shops, storage access, and the rest of the held items in `data/items.json`.
 5. More of the 279 moves in `MV`, and more working traits (currently: Overgrowth, Kindling, Undercurrent, Hard Claws, Sharp Eyes, Static Fur, Accelerate, Opening Gambit, Molting, Gatherer).
 6. Trust, Oathbonds and organization Standing (designed, not built).
@@ -88,6 +88,7 @@ ChatGPT is the lead asset artist and publishes approved art on the `art-producti
 - No interiors yet; the starter scene happens at a table outside the lab, and in Cindervale the Rest Lodge attendant and the Archive curator work outside their buildings.
 - Cindervale's Gym and mine road are closed in the story (Dara is on shift, a foreman at a rope fence). The Provisioner sells from a counter outside his building; shops are buy only.
 - Route 2 and Cindervale reuse the `route` and `town` music.
+- An area with `upland:[y0,y1]` swaps its scattered trees, bushes and rocks for the Route 2 upland art (`WA.r2`), fully at row y0 and above and fading out by row y1. The swap never touches the seeded random stream, so layouts stay put. Mine art is `WA.mine`.
 - The pack's 16×16 ground atlas, UI nine-slices, type labels and painted battle scenes are in `assets/` but not used.
 - Ember types cannot be burned and Volt types cannot be paralyzed; no other statuses exist yet.
 - Much of `battle_core.js` and `ow_core.js` is dense, minified-style code carried over from prototypes. Refactor freely, but check desktop and a 390×844 phone viewport after any change.
