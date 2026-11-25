@@ -1,0 +1,107 @@
+{
+  "cell": [
+    128,
+    96
+  ],
+  "cells": [
+    {
+      "id": "research_desk",
+      "col": 0,
+      "row": 0,
+      "bounds": [
+        15,
+        30,
+        98,
+        66
+      ]
+    },
+    {
+      "id": "bookshelf_research",
+      "col": 1,
+      "row": 0,
+      "bounds": [
+        30,
+        25,
+        67,
+        71
+      ]
+    },
+    {
+      "id": "bookshelf_supplies",
+      "col": 2,
+      "row": 0,
+      "bounds": [
+        33,
+        29,
+        61,
+        67
+      ]
+    },
+    {
+      "id": "specimen_case_botanical",
+      "col": 0,
+      "row": 1,
+      "bounds": [
+        25,
+        32,
+        77,
+        64
+      ]
+    },
+    {
+      "id": "starter_table",
+      "col": 1,
+      "row": 1,
+      "bounds": [
+        14,
+        19,
+        100,
+        77
+      ]
+    },
+    {
+      "id": "specimen_case_mineral",
+      "col": 2,
+      "row": 1,
+      "bounds": [
+        25,
+        32,
+        77,
+        64
+      ]
+    },
+    {
+      "id": "chalkboard",
+      "col": 0,
+      "row": 2,
+      "bounds": [
+        27,
+        40,
+        74,
+        56
+      ]
+    },
+    {
+      "id": "healing_station",
+      "col": 1,
+      "row": 2,
+      "bounds": [
+        13,
+        28,
+        101,
+        68
+      ]
+    },
+    {
+      "id": "storage_crates",
+      "col": 2,
+      "row": 2,
+      "bounds": [
+        31,
+        53,
+        65,
+        43
+      ]
+    }
+  ]
+}
